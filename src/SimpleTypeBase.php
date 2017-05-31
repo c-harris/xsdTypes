@@ -6,18 +6,47 @@ namespace AlgoWeb\xsdTypes;
  */
 abstract class SimpleTypeBase
 {
-    /** @Exclude */
+    /**
+     * @Exclude
+     * @var array Defines a list of acceptable values
+     */
     private $enumeration = array();
-    /** @Exclude */
-    private $length = null;
-    /** @Exclude */
+    /**
+     * @Exclude
+     * @var integer Specifies the maximum number of characters or list items allowed. Must be equal to or greater than zero
+     */
     private $maxLength = null;
-    /** @Exclude */
+    /**
+     * @Exclude
+     * @var integer Specifies the minimum number of characters or list items allowed. Must be equal to or greater than zero
+     */
     private $minLength = null;
-    /** @Exclude */
+    /**
+     * @Exclude
+     * @var string Specifies how white space (line feeds, tabs, spaces, and carriage returns) is handled
+     */
     private $whiteSpaceHandle = "preserve";
-    /** @Exclude */
+    /**
+     * @Exclude
+     * @var string Defines the exact sequence of characters that are acceptable
+     */
     private $pattern = null;
+    /**
+     * @Exclude
+     * @var string Specifies the maximum number of decimal places allowed. Must be equal to or greater than zero
+     */
+    private $fractionDigits = null;
+    /**
+     * @Exclude
+     * @var integer Specifies the lower bounds for numeric values (the value must be greater than this value)
+     */
+    private $minExclusive = null;
+    /**
+     * @Exclude
+     * @var integer Specifies the upper bounds for numeric values (the value must be less than this value)
+     */
+    private $maxExclusive = null;
+
     /**
      * @property mixed $__value
      */
@@ -70,6 +99,7 @@ abstract class SimpleTypeBase
         }
     }
 
+
     private function isBaseValid($v)
     {
         $stringLen = strlen($v);
@@ -109,7 +139,7 @@ abstract class SimpleTypeBase
      * @param string $string the string to check
      * @return bool true if string matches pattern
      */
-    protected function matchesRegexPattern($pattern, $string)
+    private function matchesRegexPattern($pattern, $string)
     {
         $matches = null;
         return (1 == preg_match($pattern, $string, $matches) && $string == $matches[0]);
@@ -123,8 +153,10 @@ abstract class SimpleTypeBase
             case "enumeration":
                 $this->setEnumoration($value);
                 return;
+            case "totalDigits":
             case "length":
-                $this->setLength($value);
+                $this->setMaxLength($value);
+                $this->setMinLength($value);
                 return;
             case "maxLength":
                 $this->setMaxLength($value);
@@ -137,6 +169,21 @@ abstract class SimpleTypeBase
                 return;
             case "pattern":
                 $this->setPattern($value);
+                return;
+            case "fractionDigits":
+                $this->setFractionDigits($value);
+                return;
+            case "minInclusive":
+                $value--;
+            // bump down by one to become MinExclusive
+            case "minExclusive":
+                $this->setMinExclusive($value);
+                return;
+            case "maxInclusive":
+                $value++;
+            // bump up by one to become MaxExclusive
+            case "maxExclusive":
+                $this->setMaxExclusive($value);
                 return;
             default:
                 throw new \InvalidArgumentException("Invalid parameters (facets) assignment for anyURI: " . __CLASS__);
@@ -154,26 +201,20 @@ abstract class SimpleTypeBase
         $this->enumeration = $value;
     }
 
-    private function setLength($value)
-    {
-        $this->checkLength($value);
-        $this->length = $value;
-    }
-
-    private function checkLength($value)
-    {
-        if (((int)$value) != $value) {
-            throw new \InvalidArgumentException("length values MUST be castable to int " . __CLASS__);
-        }
-        if (0 >= $value) {
-            throw new \InvalidArgumentException("length values MUST be greater then 0 " . __CLASS__);
-        }
-    }
-
     private function setMaxLength($value)
     {
         $this->checkLength($value);
         $this->maxLength = $value;
+    }
+
+    private function checkLength($value, $min = 0)
+    {
+        if (((int)$value) != $value) {
+            throw new \InvalidArgumentException("length values MUST be castable to int " . __CLASS__);
+        }
+        if ($min >= $value) {
+            throw new \InvalidArgumentException("length values MUST be greater then 0 " . __CLASS__);
+        }
     }
 
     private function setMinLength($value)
@@ -204,6 +245,24 @@ abstract class SimpleTypeBase
     private function checkPattern($pattern)
     {
         return (@preg_match($pattern, null) === false);
+    }
+
+    private function setFractionDigits($value)
+    {
+        $this->checkLength($value);
+        $this->fractionDigits = $value;
+    }
+
+    private function setMinExclusive($value)
+    {
+        $this->checkLength($value, -1);
+        $this->minExclusive = $value;
+    }
+
+    private function setMaxExclusive($value)
+    {
+        $this->checkLength($value);
+        $this->maxExclusive = $value;
     }
 
     /**
