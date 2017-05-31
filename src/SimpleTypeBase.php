@@ -4,17 +4,17 @@ namespace AlgoWeb\xsdTypes;
 /**
  * Base Class representing xsd anySimpleTypes
  * @property-write array $enumeration Defines a list of acceptable values
- * @property-write array $fractionDigits Specifies the maximum number of decimal places allowed. Must be equal to or greater than zero
- * @property-write array $length Specifies the exact number of characters or list items allowed. Must be equal to or greater than zero
- * @property-write array $maxExclusive Specifies the upper bounds for numeric values (the value must be less than this value)
- * @property-write array $maxInclusive Specifies the upper bounds for numeric values (the value must be less than or equal to this value)
- * @property-write array $maxLength Specifies the maximum number of characters or list items allowed. Must be equal to or greater than zero
- * @property-write array $minExclusive Specifies the lower bounds for numeric values (the value must be greater than this value)
- * @property-write array $minInclusive Specifies the lower bounds for numeric values (the value must be greater than or equal to this value)
- * @property-write array $minLength Specifies the lower bounds for numeric values (the value must be greater than or equal to this value)
- * @property-write array $pattern Defines the exact sequence of characters that are acceptable
- * @property-write array $totalDigits Specifies the exact number of digits allowed. Must be greater than zero
- * @property-write array whiteSpace Specifies how white space (line feeds, tabs, spaces, and carriage returns) is handled
+ * @property-write integer $fractionDigits Specifies the maximum number of decimal places allowed. Must be equal to or greater than zero
+ * @property-write integer $length Specifies the exact number of characters or list items allowed. Must be equal to or greater than zero
+ * @property-write integer $maxExclusive Specifies the upper bounds for numeric values (the value must be less than this value)
+ * @property-write integer $maxInclusive Specifies the upper bounds for numeric values (the value must be less than or equal to this value)
+ * @property-write integer $maxLength Specifies the maximum number of characters or list items allowed. Must be equal to or greater than zero
+ * @property-write integer $minExclusive Specifies the lower bounds for numeric values (the value must be greater than this value)
+ * @property-write integer $minInclusive Specifies the lower bounds for numeric values (the value must be greater than or equal to this value)
+ * @property-write integer $minLength Specifies the lower bounds for numeric values (the value must be greater than or equal to this value)
+ * @property-write string $pattern Defines the exact sequence of characters that are acceptable
+ * @property-write integer $totalDigits Specifies the exact number of digits allowed. Must be greater than zero
+ * @property-write string $whiteSpace Specifies how white space (line feeds, tabs, spaces, and carriage returns) is handled
  */
 abstract class SimpleTypeBase
 {
@@ -37,7 +37,7 @@ abstract class SimpleTypeBase
      * @Exclude
      * @var string Specifies how white space (line feeds, tabs, spaces, and carriage returns) is handled
      */
-    private $whiteSpaceHandle = "preserve";
+    private $whiteSpace = "preserve";
     /**
      * @Exclude
      * @var string Defines the exact sequence of characters that are acceptable
@@ -94,7 +94,7 @@ abstract class SimpleTypeBase
 
     protected function fixValue($v)
     {
-        return $this->fixWhitespace($v, $this->whiteSpaceHandle);
+        return $this->fixWhitespace($v, $this->whiteSpace);
     }
 
     protected function fixWhitespace($val, $handle = "preserve")
@@ -254,7 +254,7 @@ abstract class SimpleTypeBase
         if (!in_array($value, ["preserve", "replace", "collapse"])) {
             throw new \InvalidArgumentException("Invalid white space handleing method " . __CLASS__);
         }
-        $this->whiteSpaceHandle = $value;
+        $this->whiteSpace = $value;
     }
 
     private function setPattern($value)

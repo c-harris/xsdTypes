@@ -16,7 +16,7 @@ class anyURI extends SimpleTypeBase
      */
     public function __construct($value)
     {
-        $this->whiteSpaceHandle = "collapse";
+        $this->whiteSpace = "collapse";
         parent::__construct($value);
     }
     // TODO: Relative URIs aren't absolutized by the W3C XML Schema.

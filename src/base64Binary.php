@@ -15,7 +15,7 @@ class base64Binary extends SimpleTypeBase
      */
     public function __construct($value)
     {
-        $this->whiteSpaceHandle = "collapse";
+        $this->whiteSpace = "collapse";
         // In base64 encoding, the character set is [A-Z, a-z, 0-9, and + /].
         // If the rest length is less than 4, the string is padded with '=' characters.
         // ^([A-Za-z0-9+/]{4})* means the string starts with 0 or more base64 groups

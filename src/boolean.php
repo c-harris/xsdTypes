@@ -15,7 +15,7 @@ class boolean
      */
     public function __construct($value)
     {
-        $this->whiteSpaceHandle = "replace";
+        $this->whiteSpace = "replace";
         parent::__construct($value);
     }
 
