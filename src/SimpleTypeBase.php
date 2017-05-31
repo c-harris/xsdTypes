@@ -196,24 +196,10 @@ abstract class SimpleTypeBase
             case "pattern":
                 $this->setPattern($value);
                 return;
-            case "fractionDigits":
-                $this->setFractionDigits($value);
-                return;
-            case "minInclusive":
-                $value--;
-            // bump down by one to become MinExclusive
-            case "minExclusive":
-                $this->setMinExclusive($value);
-                return;
-            case "maxInclusive":
-                $value++;
-            // bump up by one to become MaxExclusive
-            case "maxExclusive":
-                $this->setMaxExclusive($value);
-                return;
             default:
-                throw new \InvalidArgumentException("Invalid parameters (facets) assignment for anyURI: " . __CLASS__);
+                $this->handleSetNumeric($name, $value);
         }
+
     }
 
     private function setEnumoration($value)
@@ -271,6 +257,30 @@ abstract class SimpleTypeBase
     private function checkRegexValidPattern($pattern)
     {
         return (@preg_match($pattern, null) === false);
+    }
+
+    private function handleSetNumeric($name, $value)
+    {
+        switch ($name) {
+
+            case "fractionDigits":
+                $this->setFractionDigits($value);
+                return;
+            case "minInclusive":
+                $value--;
+            // bump down by one to become MinExclusive
+            case "minExclusive":
+                $this->setMinExclusive($value);
+                return;
+            case "maxInclusive":
+                $value++;
+            // bump up by one to become MaxExclusive
+            case "maxExclusive":
+                $this->setMaxExclusive($value);
+                return;
+            default:
+                throw new \InvalidArgumentException("Invalid parameters (facets) assignment for: " . __CLASS__);
+        }
     }
 
     private function setFractionDigits($value)
