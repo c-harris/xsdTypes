@@ -34,7 +34,7 @@ class boolean
         if (0 === strcasecmp($v, "true")) {
             return true;
         }
-        if (0 === strcasecmp($v, "true")) {
+        if (0 === strcasecmp($v, "false")) {
             return false;
         }
         return $v;
