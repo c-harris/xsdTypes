@@ -2,10 +2,12 @@
 
 namespace AlgoWeb\xsdTypes;
 
-/*
+/**
  * This datatype corresponds normatively to the XLink href attribute.
  * Its value space includes the URIs defined by RFCs 2396 and 2732, but its lexical space doesn't require the character
  * escapes needed to include non-ASCII characters in a URIs.
+ * @package AlgoWeb\xsdTypes
+ * @property-write string $whiteSpace Specifies how white space (line feeds, tabs, spaces, and carriage returns) is handled
  */
 class anyURI extends SimpleTypeBase
 {

@@ -5,6 +5,7 @@ namespace AlgoWeb\xsdTypes;
 /*
  * The value space of xsd:base64Binary is the set of arbitrary binary contents.
  * Its lexical space is the same set after base64 coding. This coding is described in Section 6.8 of RFC 2045.
+  * @property-write string $whiteSpace Specifies how white space (line feeds, tabs, spaces, and carriage returns) is handled
  */
 class base64Binary extends SimpleTypeBase
 {

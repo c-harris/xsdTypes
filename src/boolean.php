@@ -5,6 +5,7 @@ namespace AlgoWeb\xsdTypes;
 /**
  * The value space of xsd:boolean is true and false. Its lexical space accepts true, false, and also 1 (for true) and 0 (for false).
  * @package AlgoWeb\xsdTypes
+ * @property-write string $whiteSpace Specifies how white space (line feeds, tabs, spaces, and carriage returns) is handled
  */
 class boolean extends SimpleTypeBase
 {
