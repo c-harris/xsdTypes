@@ -4,5 +4,125 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="PHP" type="php">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/composer" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/doctrine/annotations" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/doctrine/inflector" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/doctrine/instantiator" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/doctrine/lexer" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/fiunchinho/phpunit-randomizer" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/guzzlehttp/guzzle" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/guzzlehttp/promises" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/guzzlehttp/psr7" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/hamcrest/hamcrest-php" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/illuminate/contracts" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/illuminate/support" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/jms/metadata" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/jms/parser-lib" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/jms/serializer" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/mockery/mockery" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/myclabs/deep-copy" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/phpcollection/phpcollection" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/phpdocumentor/reflection-common" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/phpdocumentor/reflection-docblock" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/phpdocumentor/type-resolver" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/phpoption/phpoption" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/phpspec/prophecy" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/phpunit/php-code-coverage" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/phpunit/php-file-iterator" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/phpunit/php-text-template" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/phpunit/php-timer" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/phpunit/php-token-stream" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/phpunit/phpunit" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/phpunit/phpunit-mock-objects" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/psr/http-message" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/psr/log" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/satooshi/php-coveralls" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/sebastian/code-unit-reverse-lookup" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/sebastian/comparator" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/sebastian/diff" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/sebastian/environment" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/sebastian/exporter" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/sebastian/global-state" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/sebastian/object-enumerator" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/sebastian/recursion-context" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/sebastian/resource-operations" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/sebastian/version" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/symfony/config" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/symfony/console" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/symfony/debug" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/symfony/filesystem" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/symfony/polyfill-mbstring" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/symfony/stopwatch" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/symfony/yaml" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/webmozart/assert" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/composer" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/doctrine/annotations" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/doctrine/inflector" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/doctrine/instantiator" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/doctrine/lexer" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/fiunchinho/phpunit-randomizer" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/guzzlehttp/guzzle" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/guzzlehttp/promises" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/guzzlehttp/psr7" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/hamcrest/hamcrest-php" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/illuminate/contracts" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/illuminate/support" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/jms/metadata" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/jms/parser-lib" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/jms/serializer" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/mockery/mockery" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/myclabs/deep-copy" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/phpcollection/phpcollection" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/phpdocumentor/reflection-common" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/phpdocumentor/reflection-docblock" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/phpdocumentor/type-resolver" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/phpoption/phpoption" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/phpspec/prophecy" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/phpunit/php-code-coverage" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/phpunit/php-file-iterator" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/phpunit/php-text-template" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/phpunit/php-timer" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/phpunit/php-token-stream" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/phpunit/phpunit" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/phpunit/phpunit-mock-objects" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/psr/http-message" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/psr/log" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/satooshi/php-coveralls" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/sebastian/code-unit-reverse-lookup" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/sebastian/comparator" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/sebastian/diff" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/sebastian/environment" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/sebastian/exporter" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/sebastian/global-state" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/sebastian/object-enumerator" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/sebastian/recursion-context" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/sebastian/resource-operations" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/sebastian/version" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/symfony/config" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/symfony/console" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/symfony/debug" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/symfony/filesystem" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/symfony/polyfill-mbstring" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/symfony/stopwatch" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/symfony/yaml" />
+          <root url="file://$MODULE_DIR$/../ODataMetadata/vendor/webmozart/assert" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="PHARS">
+        <CLASSES>
+          <root url="phar://$MODULE_DIR$/../ODataMetadata/vendor/phpunit/phpunit/tests/_files/phpunit-example-extension/tools/phpunit.d/phpunit-example-extension-1.0.0.phar/" />
+        </CLASSES>
+        <SOURCES>
+          <root url="phar://$MODULE_DIR$/../ODataMetadata/vendor/phpunit/phpunit/tests/_files/phpunit-example-extension/tools/phpunit.d/phpunit-example-extension-1.0.0.phar/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>
