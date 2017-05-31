@@ -36,7 +36,7 @@ class base64Binary extends SimpleTypeBase
     protected function isValid($v)
     {
         if (!is_scalar($v) && !is_string($v)) {
-            throw new \InvalidArgumentException("you must assign a valid uri to anyURI " . __CLASS__);
+            throw new \InvalidArgumentException("you must assign a valid value to base64Binary " . __CLASS__);
         }
     }
 }
