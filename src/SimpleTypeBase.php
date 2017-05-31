@@ -3,6 +3,18 @@ namespace AlgoWeb\xsdTypes;
 
 /**
  * Base Class representing xsd anySimpleTypes
+ * @property-write array $enumeration Defines a list of acceptable values
+ * @property-write array $fractionDigits Specifies the maximum number of decimal places allowed. Must be equal to or greater than zero
+ * @property-write array $length Specifies the exact number of characters or list items allowed. Must be equal to or greater than zero
+ * @property-write array $maxExclusive Specifies the upper bounds for numeric values (the value must be less than this value)
+ * @property-write array $maxInclusive Specifies the upper bounds for numeric values (the value must be less than or equal to this value)
+ * @property-write array $maxLength Specifies the maximum number of characters or list items allowed. Must be equal to or greater than zero
+ * @property-write array $minExclusive Specifies the lower bounds for numeric values (the value must be greater than this value)
+ * @property-write array $minInclusive Specifies the lower bounds for numeric values (the value must be greater than or equal to this value)
+ * @property-write array $minLength Specifies the lower bounds for numeric values (the value must be greater than or equal to this value)
+ * @property-write array $pattern Defines the exact sequence of characters that are acceptable
+ * @property-write array $totalDigits Specifies the exact number of digits allowed. Must be greater than zero
+ * @property-write array whiteSpace Specifies how white space (line feeds, tabs, spaces, and carriage returns) is handled
  */
 abstract class SimpleTypeBase
 {
@@ -98,7 +110,6 @@ abstract class SimpleTypeBase
                 throw new \InvalidArgumentException(__CLASS__ . " Called Fix whitespace with invalid handle operation");
         }
     }
-
 
     private function isBaseValid($v)
     {
@@ -273,5 +284,16 @@ abstract class SimpleTypeBase
     public function __toString()
     {
         return strval($this->__value);
+    }
+
+    private function checkMinLength($v)
+    {
+        $stringLen = strlen($v);
+        if ($this->minLength != null) {
+            if ($stringLen > $this->minLength) {
+                throw new \InvalidArgumentException("the provided value for " . __CLASS__ . " is to long minLength: "
+                    . $this->minLength);
+            }
+        }
     }
 }
