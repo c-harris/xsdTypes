@@ -13,11 +13,18 @@ namespace AlgoWeb\xsdTypes;
  * Its lexical space allows any number of insignificant leading and trailing zeros (after the decimal point).
  * @package AlgoWeb\xsdTypes
  */
-class decimal
+class decimal extends SimpleTypeBase
 {
     public function __construct($value)
     {
         $this->whiteSpace = "replace";
         parent::__construct($value);
+    }
+
+    protected function isValid($v)
+    {
+        if (!is_numeric($v)) {
+            throw new \InvalidArgumentException("failed to provide numeric value " . __CLASS__);
+        }
     }
 }
