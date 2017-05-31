@@ -175,30 +175,24 @@ abstract class SimpleTypeBase
 
     public function __set($name, $value)
     {
-        switch ($name) {
-            case "enumeration":
-                $this->setEnumoration($value);
-                return;
-            case "totalDigits":
-            case "length":
-                $this->setMaxLength($value);
-                $this->setMinLength($value);
-                return;
-            case "maxLength":
-                $this->setMaxLength($value);
-                return;
-            case "minLength":
-                $this->setMinLength($value);
-                return;
-            case "whiteSpaceHandle":
-                $this->setWhiteSpaceHandle($value);
-                return;
-            case "pattern":
-                $this->setPattern($value);
-                return;
-            default:
-                $this->handleSetNumeric($name, $value);
+        if (!in_array($name, ["enumeration", "totalDigits", "length", "maxLength", "minLength", "whiteSpace",
+            "pattern", "fractionDigits", "minInclusive", "minExclusive", "maxExclusive"])
+        ) {
+            throw new \InvalidArgumentException("Invalid parameters (facets) assignment for: " . __CLASS__);
         }
+        $setFunctionName = "set" . ucfirst($name);
+        $this->$setFunctionName($value);
+    }
+
+    /**
+     * Gets a string value
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return strval($this->__value);
+
     }
 
     private function setEnumoration($value)
@@ -212,10 +206,16 @@ abstract class SimpleTypeBase
         $this->enumeration = $value;
     }
 
-    private function setMaxLength($value)
+    private function setLength($value)
+    {
+        $this->setMinLength($value);
+        $this->setMaxLength($value);
+    }
+
+    private function setMinLength($value)
     {
         $this->checkLength($value);
-        $this->maxLength = $value;
+        $this->minLength = $value;
     }
 
     private function checkLength($value, $min = 0)
@@ -228,10 +228,10 @@ abstract class SimpleTypeBase
         }
     }
 
-    private function setMinLength($value)
+    private function setMaxLength($value)
     {
         $this->checkLength($value);
-        $this->minLength = $value;
+        $this->maxLength = $value;
     }
 
     private function setWhiteSpaceHandle($value)
@@ -258,30 +258,6 @@ abstract class SimpleTypeBase
         return (@preg_match($pattern, null) === false);
     }
 
-    private function handleSetNumeric($name, $value)
-    {
-        switch ($name) {
-
-            case "fractionDigits":
-                $this->setFractionDigits($value);
-                return;
-            case "minInclusive":
-                $value--;
-            // bump down by one to become MinExclusive
-            case "minExclusive":
-                $this->setMinExclusive($value);
-                return;
-            case "maxInclusive":
-                $value++;
-            // bump up by one to become MaxExclusive
-            case "maxExclusive":
-                $this->setMaxExclusive($value);
-                return;
-            default:
-                throw new \InvalidArgumentException("Invalid parameters (facets) assignment for: " . __CLASS__);
-        }
-    }
-
     private function setFractionDigits($value)
     {
         $this->checkLength($value);
@@ -298,15 +274,5 @@ abstract class SimpleTypeBase
     {
         $this->checkLength($value);
         $this->maxExclusive = $value;
-    }
-
-    /**
-     * Gets a string value
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        return strval($this->__value);
     }
 }
