@@ -8,7 +8,18 @@ namespace AlgoWeb\xsdTypes;
  * escapes needed to include non-ASCII characters in a URIs.
  */
 class anyURI extends SimpleTypeBase
-{// TODO: Relative URIs aren't absolutized by the W3C XML Schema.
+{
+    /**
+     * Construct
+     *
+     * @param mixed $value
+     */
+    public function __construct($value)
+    {
+        $this->whiteSpaceHandle = "collapse";
+        parent::__construct($value);
+    }
+    // TODO: Relative URIs aren't absolutized by the W3C XML Schema.
     // The Recommendation states that "it is impractical for processors to check that a value is
     // a context-appropriate URI reference," thus freeing schema processors from having to validate
     // the correctness of the URI.
@@ -18,6 +29,5 @@ class anyURI extends SimpleTypeBase
         if (!is_scalar($v) && !is_string($v)) {
             throw new \InvalidArgumentException("you must assign a valid uri to anyURI " . __CLASS__);
         }
-
     }
 }

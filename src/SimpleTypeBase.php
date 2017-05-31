@@ -15,7 +15,7 @@ abstract class SimpleTypeBase
     /** @Exclude */
     private $minLength = null;
     /** @Exclude */
-    private $whiteSpaceHandle = "collapse";
+    private $whiteSpaceHandle = "preserve";
     /** @Exclude */
     private $pattern = null;
     /**
