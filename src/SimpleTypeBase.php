@@ -94,9 +94,8 @@ abstract class SimpleTypeBase
 
     protected function fixValue($v)
     {
-
         $v = $this->fixWhitespace($v, $this->whiteSpace);
-        return $this->fixFractionDigits($v,$this->fractionDigits);
+        return $this->fixFractionDigits($v, $this->fractionDigits);
     }
 
     protected function fixWhitespace($val, $handle = "preserve")
@@ -113,8 +112,9 @@ abstract class SimpleTypeBase
         }
     }
 
-    protected function fixFractionDigits($val,$fractionDigits = null){
-        if(null ==$fractionDigits ) {
+    protected function fixFractionDigits($val, $fractionDigits = null)
+    {
+        if (null ==$fractionDigits) {
             return $val;
         }
         return round($val);

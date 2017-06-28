@@ -8,7 +8,6 @@
 
 namespace AlgoWeb\xsdTypes;
 
-
 class byte extends short
 {
     public function __construct($value)
