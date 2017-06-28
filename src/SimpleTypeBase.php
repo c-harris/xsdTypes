@@ -94,7 +94,9 @@ abstract class SimpleTypeBase
 
     protected function fixValue($v)
     {
-        return $this->fixWhitespace($v, $this->whiteSpace);
+
+        $v = $this->fixWhitespace($v, $this->whiteSpace);
+        return $this->fixFractionDigits($v,$this->fractionDigits);
     }
 
     protected function fixWhitespace($val, $handle = "preserve")
@@ -109,6 +111,13 @@ abstract class SimpleTypeBase
             default:
                 throw new \InvalidArgumentException(__CLASS__ . " Called Fix whitespace with invalid handle operation");
         }
+    }
+
+    protected function fixFractionDigits($val,$fractionDigits = null){
+        if(null ==$fractionDigits ) {
+            return $val;
+        }
+        return round($val);
     }
 
     private function isBaseValid($v)
