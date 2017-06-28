@@ -8,7 +8,6 @@
 
 namespace AlgoWeb\xsdTypes;
 
-
 class short extends int
 {
     public function __construct($value)
