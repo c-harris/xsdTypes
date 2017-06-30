@@ -7,7 +7,8 @@ use AlgoWeb\xsdTypes\Facets\PatternTrait;
 use AlgoWeb\xsdTypes\Facets\WhiteSpaceTrait;
 
 /**
- * The type xsd:anySimpleType is the base type from which all other built-in types are derived. Any value (including an empty value) is allowed for xsd:anySimpleType.
+ * The type xsd:anySimpleType is the base type from which all other built-in types are derived.
+ * Any value (including an empty value) is allowed for xsd:anySimpleType.
  * handles facets enumeration, length, maxLength, minLength, pattern
  *
  * @package AlgoWeb\xsdTypes

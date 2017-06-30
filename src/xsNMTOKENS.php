@@ -2,7 +2,8 @@
 namespace AlgoWeb\xsdTypes;
 
 /**
- * The type xsd:NMTOKENS represents a list of NMTOKEN values separated by whitespace. There must be at least one NMTOKEN in the list.
+ * The type xsd:NMTOKENS represents a list of NMTOKEN values separated by whitespace. There must be at least one
+ * NMTOKEN in the list.
  *
  * @package AlgoWeb\xsdTypes
  */

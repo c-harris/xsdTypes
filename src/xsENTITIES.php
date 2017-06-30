@@ -3,7 +3,9 @@
 namespace AlgoWeb\xsdTypes;
 
 /**
- * The type xsd:ENTITIES represents a list of ENTITY values separated by whitespace. There must be at least one ENTITY in the list. Each of the ENTITY values must match the name of an unparsed entity that has been declared in a document type definition (DTD) for the instance.
+ * The type xsd:ENTITIES represents a list of ENTITY values separated by whitespace.
+ * There must be at least one ENTITY in the list. Each of the ENTITY values must match the name of an unparsed entity
+ * that has been declared in a document type definition (DTD) for the instance.
  *
  * @package AlgoWeb\xsdTypes
  */
