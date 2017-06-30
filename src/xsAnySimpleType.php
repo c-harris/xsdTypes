@@ -56,7 +56,7 @@ abstract class xsAnySimpleType
     {
         return $this->fixValue($this->fixWhitespace($value));
     }
-    protected abstract function fixValue($value);
+    abstract protected function fixValue($value);
     protected function fixWhitespace($val)
     {
         switch ($this->whiteSpace) {
@@ -137,7 +137,7 @@ abstract class xsAnySimpleType
         return (1 == preg_match($pattern, $string, $matches) && $string == $matches[0]);
     }
 
-    protected abstract function isOK($value);
+    abstract protected function isOK($value);
 
     protected function setLengthFacet($value)
     {
@@ -190,5 +190,4 @@ abstract class xsAnySimpleType
     {
         return (@preg_match($pattern, null) === false);
     }
-
 }
