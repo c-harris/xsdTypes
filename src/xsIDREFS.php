@@ -17,12 +17,7 @@ class xsIDREFS extends xsAnySimpleType
 
     protected function fixValue($value)
     {
-        foreach ($value as $v) {
-            if (!($v instanceof IDREF)) {
-                throw new \InvalidArgumentException("The array provided to : " . __CLASS__ . " Must be an array of ");
-            }
-            $v->fixValue($v);
-        }
+        return $value;
     }
 
     protected function isOK($value)

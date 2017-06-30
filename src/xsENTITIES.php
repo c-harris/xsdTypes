@@ -22,16 +22,14 @@ class xsENTITIES extends xsAnySimpleType
 
     protected function fixValue($value)
     {
-        foreach ($value as $v) {
-            $v->fixValue($v);
-        }
+        return $value;
     }
 
     protected function isOK($value)
     {
         if (!is_array($value)) {
             throw new \InvalidArgumentException(
-                "the provided value for " . __CLASS__ . " Must be an array of type xsIDREF "
+                "the provided value for " . __CLASS__ . " Must be an array of type xsENTITY "
             );
         }
         foreach ($value as $v) {
