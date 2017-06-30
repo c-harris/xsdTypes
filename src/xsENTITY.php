@@ -9,5 +9,4 @@ namespace AlgoWeb\xsdTypes;
  */
 class xsENTITY extends xsNCName
 {
-
 }

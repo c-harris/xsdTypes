@@ -2,7 +2,6 @@
 
 namespace AlgoWeb\xsdTypes;
 
-
 class xsIDREFS extends xsAnySimpleType
 {
     /**
