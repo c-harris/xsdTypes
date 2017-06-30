@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4864e311-a358-44a7-afa6-a49dcc51d329" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/anySimpleType.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/xsLanguage.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/xsNMTOKEN.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/xsNMTOKENS.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/xsNormalizedString.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/xsString.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/xsToken.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/anySimpleType.php" afterPath="$PROJECT_DIR$/src/xsAnySimpleType.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SimpleTypeBase.php" afterPath="$PROJECT_DIR$/src/SimpleTypeBase.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,91 +21,71 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="anyURI.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/anyURI.php">
+      <file leaf-file-name="xsAnySimpleType.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/xsAnySimpleType.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="10" lean-forward="true" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+            <state relative-caret-position="17">
+              <caret line="111" column="9" lean-forward="true" selection-start-line="111" selection-start-column="9" selection-end-line="111" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SimpleTypeBase.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SimpleTypeBase.php">
+      <file leaf-file-name="xsString.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/xsString.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="142" column="5" lean-forward="true" selection-start-line="132" selection-start-column="0" selection-end-line="142" selection-end-column="5" />
+            <state relative-caret-position="193">
+              <caret line="33" column="26" lean-forward="true" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="anySimpleType.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/anySimpleType.php">
+      <file leaf-file-name="xsNormalizedString.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/xsNormalizedString.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="571">
-              <caret line="123" column="5" lean-forward="false" selection-start-line="123" selection-start-column="5" selection-end-line="123" selection-end-column="5" />
+            <state relative-caret-position="357">
+              <caret line="26" column="45" lean-forward="false" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="decimal.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/decimal.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="22" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="integer.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/integer.php">
+      <file leaf-file-name="xsToken.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/xsToken.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
-              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="20" selection-end-column="5" />
+              <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="long.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/long.php">
+      <file leaf-file-name="xsLanguage.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/xsLanguage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="21" selection-end-column="5" />
+            <state relative-caret-position="455">
+              <caret line="43" column="12" lean-forward="false" selection-start-line="43" selection-start-column="12" selection-end-line="45" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="int.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/int.php">
+      <file leaf-file-name="xsNMTOKEN.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/xsNMTOKEN.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
-              <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="22" selection-end-column="1" />
+              <caret line="14" column="31" lean-forward="false" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="short.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/short.php">
+      <file leaf-file-name="xsNMTOKENS.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/xsNMTOKENS.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="18" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="byte.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/byte.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="17" column="33" lean-forward="false" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+            <state relative-caret-position="102">
+              <caret line="11" column="133" lean-forward="false" selection-start-line="11" selection-start-column="133" selection-end-line="11" selection-end-column="133" />
               <folding />
             </state>
           </provider>
@@ -118,6 +103,11 @@
       </file>
     </leaf>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>isOKInternal</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -132,6 +122,13 @@
         <option value="$PROJECT_DIR$/src/byte.php" />
         <option value="$PROJECT_DIR$/src/SimpleTypeBase.php" />
         <option value="$PROJECT_DIR$/src/anySimpleType.php" />
+        <option value="$PROJECT_DIR$/src/xsToken.php" />
+        <option value="$PROJECT_DIR$/src/xsString.php" />
+        <option value="$PROJECT_DIR$/src/xsNormalizedString.php" />
+        <option value="$PROJECT_DIR$/src/xsLanguage.php" />
+        <option value="$PROJECT_DIR$/src/xsNMTOKEN.php" />
+        <option value="$PROJECT_DIR$/src/xsAnySimpleType.php" />
+        <option value="$PROJECT_DIR$/src/xsNMTOKENS.php" />
       </list>
     </option>
   </component>
@@ -283,7 +280,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1496235604163</updated>
-      <workItem from="1498632824380" duration="3764000" />
+      <workItem from="1498632824380" duration="6471000" />
     </task>
     <task id="LOCAL-00001" summary="added more basic types">
       <created>1498633990235</created>
@@ -292,11 +289,32 @@
       <option name="project" value="LOCAL" />
       <updated>1498633990235</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Got anySimpleType Sorted Out">
+      <created>1498816629450</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1498816629450</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Cleanup">
+      <created>1498816672956</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1498816672956</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Removed old files">
+      <created>1498816705666</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1498816705666</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3764000" />
+    <option name="totallyTimeSpent" value="6471000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -306,7 +324,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32982087" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -329,7 +347,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added more basic types" />
-    <option name="LAST_COMMIT_MESSAGE" value="added more basic types" />
+    <MESSAGE value="Got anySimpleType Sorted Out" />
+    <MESSAGE value="Cleanup" />
+    <MESSAGE value="Removed old files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed old files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -347,15 +368,15 @@
     <entry file="file://$PROJECT_DIR$/src/anyURI.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="14" column="10" lean-forward="true" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+          <caret line="15" column="10" lean-forward="true" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/integer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="20" selection-end-column="5" />
+        <state relative-caret-position="204">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -363,23 +384,23 @@
     <entry file="file://$PROJECT_DIR$/src/decimal.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="22" selection-end-column="5" />
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="23" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/long.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="21" selection-end-column="5" />
+        <state relative-caret-position="204">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/int.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="22" selection-end-column="1" />
+        <state relative-caret-position="170">
+          <caret line="15" column="9" lean-forward="true" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -402,16 +423,64 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SimpleTypeBase.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="142" column="5" lean-forward="true" selection-start-line="132" selection-start-column="0" selection-end-line="142" selection-end-column="5" />
+        <state relative-caret-position="323">
+          <caret line="145" column="5" lean-forward="true" selection-start-line="145" selection-start-column="5" selection-end-line="145" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/anySimpleType.php">
+    <entry file="file://$PROJECT_DIR$/src/xsNormalizedString.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="571">
-          <caret line="123" column="5" lean-forward="false" selection-start-line="123" selection-start-column="5" selection-end-line="123" selection-end-column="5" />
+        <state relative-caret-position="357">
+          <caret line="26" column="45" lean-forward="false" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsToken.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsLanguage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="43" column="12" lean-forward="false" selection-start-line="43" selection-start-column="12" selection-end-line="45" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsString.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="33" column="26" lean-forward="true" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsAnySimpleType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="111" column="9" lean-forward="true" selection-start-line="111" selection-start-column="9" selection-end-line="111" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsNMTOKEN.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="14" column="31" lean-forward="false" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsNMTOKENS.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="11" column="133" lean-forward="false" selection-start-line="11" selection-start-column="133" selection-end-line="11" selection-end-column="133" />
           <folding />
         </state>
       </provider>

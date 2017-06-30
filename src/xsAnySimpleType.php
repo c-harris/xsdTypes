@@ -1,8 +1,12 @@
 <?php
 namespace AlgoWeb\xsdTypes;
 
-
-abstract class anySimpleType
+/**
+ * The type xsd:anySimpleType is the base type from which all other built-in types are derived. Any value (including an empty value) is allowed for xsd:anySimpleType.
+ * handles facets enumeration, length, maxLength, minLength, pattern
+ * @package AlgoWeb\xsdTypes
+ */
+abstract class xsAnySimpleType
 {
     /**
      * @Exclude
@@ -71,9 +75,9 @@ abstract class anySimpleType
         $this->checkMaxLength($value);
         $this->checkMinLength($value);
         $this->checkPattern($value);
-        return $this->isOK();
+        return $this->isOK($value);
     }
-    protected abstract function isOK();
+    protected abstract function isOK($value);
     private function checkMinLength($v)
     {
         $stringLen = strlen($v);
@@ -138,7 +142,7 @@ abstract class anySimpleType
         $this->setMaxLengthFacet($value);
     }
 
-    private function setMinLengthFacet($value)
+    protected function setMinLengthFacet($value)
     {
         $this->checkValidMinMaxLength($value);
         $this->minLength = $value;
