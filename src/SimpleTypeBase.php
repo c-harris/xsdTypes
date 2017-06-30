@@ -129,44 +129,6 @@ abstract class SimpleTypeBase
         $this->isValid($v);
     }
 
-    private function checkMinLength($v)
-    {
-        $stringLen = strlen($v);
-        if ($this->minLength != null) {
-            if ($stringLen > $this->minLength) {
-                throw new \InvalidArgumentException("the provided value for " . __CLASS__ . " is to long minLength: "
-                    . $this->minLength);
-            }
-        }
-    }
-
-    private function checkMaxLength($v)
-    {
-        $stringLen = strlen($v);
-        if ($this->maxLength != null) {
-            if ($stringLen < $this->maxLength) {
-                throw new \InvalidArgumentException("the provided value for " . __CLASS__ . " is to short MaxLength: "
-                    . $this->maxLength);
-            }
-        }
-    }
-
-    private function checkEnumeration($v)
-    {
-        if (is_array($this->enumeration) && !in_array($v, $this->enumeration)) {
-            throw new \InvalidArgumentException("the provided value for " . __CLASS__ . " is not " .
-                implode(" || ", $this->enumeration));
-        }
-    }
-
-    private function checkPattern($v)
-    {
-        if ($this->pattern != null) {
-            if (!$this->matchesRegexPattern($this->pattern, $v)) {
-                throw new \InvalidArgumentException("assigned value that dose not match pattern " . __CLASS__);
-            }
-        }
-    }
 
     /**
      * Checks a pattern against a string
@@ -214,57 +176,7 @@ abstract class SimpleTypeBase
         $this->enumeration = $value;
     }
 
-    private function setLength($value)
-    {
-        $this->setMinLength($value);
-        $this->setMaxLength($value);
-    }
 
-    private function setMinLength($value)
-    {
-        $this->checkLength($value);
-        $this->minLength = $value;
-    }
-
-    private function checkLength($value, $min = 0)
-    {
-        if (((int)$value) != $value) {
-            throw new \InvalidArgumentException("length values MUST be castable to int " . __CLASS__);
-        }
-        if ($min >= $value) {
-            throw new \InvalidArgumentException("length values MUST be greater then 0 " . __CLASS__);
-        }
-    }
-
-    private function setMaxLength($value)
-    {
-        $this->checkLength($value);
-        $this->maxLength = $value;
-    }
-
-    private function setWhiteSpaceHandle($value)
-    {
-        if (!in_array($value, ["preserve", "replace", "collapse"])) {
-            throw new \InvalidArgumentException("Invalid white space handleing method " . __CLASS__);
-        }
-        $this->whiteSpace = $value;
-    }
-
-    private function setPattern($value)
-    {
-        if (!$this->checkRegexValidPattern($value)) {
-            $value = "/" . $value . "/";
-            if (!$this->checkRegexValidPattern($value)) {
-                throw new \InvalidArgumentException("Invalid regex Pattern provided: " . __CLASS__);
-            }
-        }
-        $this->pattern = $value;
-    }
-
-    private function checkRegexValidPattern($pattern)
-    {
-        return (@preg_match($pattern, null) === false);
-    }
 
     private function setFractionDigits($value)
     {
@@ -274,7 +186,7 @@ abstract class SimpleTypeBase
 
     private function setMinExclusive($value)
     {
-        $this->checkLength($value, -1);
+            $this->checkLength($value, -1);
         $this->minExclusive = $value;
     }
 
