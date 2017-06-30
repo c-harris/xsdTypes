@@ -50,6 +50,4 @@ abstract class xsAnySimpleType
 
 
     abstract protected function isOK($value);
-
-
 }

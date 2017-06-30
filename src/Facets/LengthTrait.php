@@ -1,6 +1,7 @@
 <?php
 
 namespace AlgoWeb\xsdTypes\Facets;
+
 trait LengthTrait
 {
     /**
@@ -67,5 +68,4 @@ trait LengthTrait
             }
         }
     }
-
 }

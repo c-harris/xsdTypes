@@ -8,7 +8,6 @@
 
 namespace AlgoWeb\xsdTypes\Facets;
 
-
 trait WhiteSpaceTrait
 {
     /**

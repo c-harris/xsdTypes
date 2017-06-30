@@ -22,7 +22,6 @@ class xsIDREFS extends xsAnySimpleType
                 throw new \InvalidArgumentException("The array provided to : " . __CLASS__ . " Must be an array of ");
             }
             $v->fixValue($v);
-
         }
     }
 
