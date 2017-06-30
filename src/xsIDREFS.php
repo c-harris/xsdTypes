@@ -1,12 +1,9 @@
 <?php
+
 namespace AlgoWeb\xsdTypes;
 
-/**
- * The type xsd:NMTOKENS represents a list of NMTOKEN values separated by whitespace. There must be at least one NMTOKEN in the list.
- *
- * @package AlgoWeb\xsdTypes
- */
-class xsNMTOKENS extends xsAnySimpleType
+
+class xsIDREFS extends xsAnySimpleType
 {
     /**
      * Construct
@@ -16,18 +13,11 @@ class xsNMTOKENS extends xsAnySimpleType
     public function __construct($value)
     {
         parent::__construct($value);
-        $this->setWhiteSpaceFacet("collapse");
         $this->setMinLengthFacet(1);
     }
+
     protected function fixValue($value)
     {
-        if (is_string($value)) {
-            $parts = explode(" ", $value);
-            $value = [];
-            foreach ($parts as $part) {
-                $value[] = new xsNMTOKEN($part);
-            }
-        }
         foreach ($value as $v) {
             $v->fixValue($v);
         }
@@ -37,7 +27,7 @@ class xsNMTOKENS extends xsAnySimpleType
     {
         if (!is_array($value)) {
             throw new \InvalidArgumentException(
-                "the provided value for " . __CLASS__ . " Must be an array of type xsNMTOKEN "
+                "the provided value for " . __CLASS__ . " Must be an array of type xsIDREF "
             );
         }
         foreach ($value as $v) {
