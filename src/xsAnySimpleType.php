@@ -4,6 +4,7 @@ namespace AlgoWeb\xsdTypes;
 /**
  * The type xsd:anySimpleType is the base type from which all other built-in types are derived. Any value (including an empty value) is allowed for xsd:anySimpleType.
  * handles facets enumeration, length, maxLength, minLength, pattern
+ *
  * @package AlgoWeb\xsdTypes
  */
 abstract class xsAnySimpleType
@@ -77,17 +78,14 @@ abstract class xsAnySimpleType
         $this->checkPattern($value);
         return $this->isOK($value);
     }
-    protected abstract function isOK($value);
-    private function checkMinLength($v)
+
+    private function checkEnumeration($v)
     {
-        $stringLen = strlen($v);
-        if ($this->minLength != null) {
-            if ($stringLen > $this->minLength) {
-                throw new \InvalidArgumentException(
-                    "the provided value for " . __CLASS__ . " is to long minLength: "
-                    . $this->minLength
-                );
-            }
+        if (is_array($this->enumeration) && 0 != count($this->enumeration) && !in_array($v, $this->enumeration)) {
+            throw new \InvalidArgumentException(
+                "the provided value for " . __CLASS__ . " is not " .
+                implode(" || ", $this->enumeration)
+            );
         }
     }
 
@@ -104,13 +102,16 @@ abstract class xsAnySimpleType
         }
     }
 
-    private function checkEnumeration($v)
+    private function checkMinLength($v)
     {
-        if (is_array($this->enumeration) && 0 != count($this->enumeration) &&!in_array($v, $this->enumeration)) {
-            throw new \InvalidArgumentException(
-                "the provided value for " . __CLASS__ . " is not " .
-                implode(" || ", $this->enumeration)
-            );
+        $stringLen = strlen($v);
+        if ($this->minLength != null) {
+            if ($stringLen > $this->minLength) {
+                throw new \InvalidArgumentException(
+                    "the provided value for " . __CLASS__ . " is to long minLength: "
+                    . $this->minLength
+                );
+            }
         }
     }
 
@@ -136,6 +137,8 @@ abstract class xsAnySimpleType
         return (1 == preg_match($pattern, $string, $matches) && $string == $matches[0]);
     }
 
+    protected abstract function isOK($value);
+
     protected function setLengthFacet($value)
     {
         $this->setMinLengthFacet($value);
@@ -147,11 +150,6 @@ abstract class xsAnySimpleType
         $this->checkValidMinMaxLength($value);
         $this->minLength = $value;
     }
-    protected function setMaxLengthFacet($value)
-    {
-        $this->checkValidMinMaxLength($value);
-        $this->maxLength = $value;
-    }
 
     private function checkValidMinMaxLength($value, $min = 0)
     {
@@ -161,6 +159,12 @@ abstract class xsAnySimpleType
         if ($min >= $value) {
             throw new \InvalidArgumentException("length values MUST be greater then 0 " . __CLASS__);
         }
+    }
+
+    protected function setMaxLengthFacet($value)
+    {
+        $this->checkValidMinMaxLength($value);
+        $this->maxLength = $value;
     }
 
     protected function setWhiteSpaceFacet($value)

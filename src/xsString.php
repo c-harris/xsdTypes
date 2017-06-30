@@ -21,9 +21,10 @@ namespace AlgoWeb\xsdTypes;
  * "This
  * is on two lines."
  * Invalid values           Comment
- * "AT&T"	                    ampersand must be escaped
+ * "AT&T"                        ampersand must be escaped
  * "3 < 4"                    the "less than" symbol must be escaped
  * But most of that should be handled by JSM
+ *
  * @package AlgoWeb\xsdTypes
  */
 class xsString extends xsAnySimpleType
@@ -41,12 +42,12 @@ class xsString extends xsAnySimpleType
     }
     protected function fixValue($value)
     {
-return $value;
+        return $value;
     }
 
     protected function isOK($value)
     {
-        if(is_array($value) || is_object($value)){
+        if (is_array($value) || is_object($value)) {
             throw new \InvalidArgumentException(
                 "the provided value for " . __CLASS__ . " is should not be an array or an object: "
             );
