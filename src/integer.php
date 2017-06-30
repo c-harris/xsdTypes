@@ -10,6 +10,7 @@ namespace AlgoWeb\xsdTypes;
 
 /**
  * xsd:integer — Signed integers of arbitrary length
+ *
  * @package AlgoWeb\xsdTypes
  */
 class integer extends decimal

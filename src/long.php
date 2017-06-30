@@ -10,6 +10,7 @@ namespace AlgoWeb\xsdTypes;
 
 /**
  * xsd:long — 64-bit signed integers
+ *
  * @package AlgoWeb\xsdTypes
  */
 class long extends integer

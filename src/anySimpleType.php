@@ -47,24 +47,26 @@ abstract class anySimpleType
         $this->__value = $this->fixValueInteral($value);
     }
 
-    private function fixValueInteral($value){
+    private function fixValueInteral($value)
+    {
         return $this->fixValue($this->fixWhitespace($value));
     }
     protected abstract function fixValue($value);
     protected function fixWhitespace($val)
     {
         switch ($this->whiteSpace) {
-            case "preserve":
-                return $val;
-            case "replace":
-                return preg_replace('/\s/', ' ', $val);
-            case "collapse":
-                return preg_replace('/\s+/', ' ', $val);
-            default:
-                throw new \InvalidArgumentException(__CLASS__ . " Called Fix whitespace with invalid handle operation");
+        case "preserve":
+            return $val;
+        case "replace":
+            return preg_replace('/\s/', ' ', $val);
+        case "collapse":
+            return preg_replace('/\s+/', ' ', $val);
+        default:
+            throw new \InvalidArgumentException(__CLASS__ . " Called Fix whitespace with invalid handle operation");
         }
     }
-    protected function isOKInternal($value){
+    protected function isOKInternal($value)
+    {
         $this->checkEnumeration($value);
         $this->checkMaxLength($value);
         $this->checkMinLength($value);
@@ -77,8 +79,10 @@ abstract class anySimpleType
         $stringLen = strlen($v);
         if ($this->minLength != null) {
             if ($stringLen > $this->minLength) {
-                throw new \InvalidArgumentException("the provided value for " . __CLASS__ . " is to long minLength: "
-                    . $this->minLength);
+                throw new \InvalidArgumentException(
+                    "the provided value for " . __CLASS__ . " is to long minLength: "
+                    . $this->minLength
+                );
             }
         }
     }
@@ -88,8 +92,10 @@ abstract class anySimpleType
         $stringLen = strlen($v);
         if ($this->maxLength != null) {
             if ($stringLen < $this->maxLength) {
-                throw new \InvalidArgumentException("the provided value for " . __CLASS__ . " is to short MaxLength: "
-                    . $this->maxLength);
+                throw new \InvalidArgumentException(
+                    "the provided value for " . __CLASS__ . " is to short MaxLength: "
+                    . $this->maxLength
+                );
             }
         }
     }
@@ -97,8 +103,10 @@ abstract class anySimpleType
     private function checkEnumeration($v)
     {
         if (is_array($this->enumeration) && 0 != count($this->enumeration) &&!in_array($v, $this->enumeration)) {
-            throw new \InvalidArgumentException("the provided value for " . __CLASS__ . " is not " .
-                implode(" || ", $this->enumeration));
+            throw new \InvalidArgumentException(
+                "the provided value for " . __CLASS__ . " is not " .
+                implode(" || ", $this->enumeration)
+            );
         }
     }
 
@@ -113,8 +121,9 @@ abstract class anySimpleType
 
     /**
      * Checks a pattern against a string
-     * @param string $pattern the regex pattern
-     * @param string $string the string to check
+     *
+     * @param  string $pattern the regex pattern
+     * @param  string $string  the string to check
      * @return bool true if string matches pattern
      */
     private function matchesRegexPattern($pattern, $string)

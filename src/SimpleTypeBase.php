@@ -3,6 +3,7 @@ namespace AlgoWeb\xsdTypes;
 
 /**
  * Base Class representing xsd anySimpleTypes
+ *
  * @property-write array $enumeration Defines a list of acceptable values
  * @property-write integer $fractionDigits Specifies the maximum number of decimal places allowed. Must be equal to or greater than zero
  * @property-write integer $length Specifies the exact number of characters or list items allowed. Must be equal to or greater than zero
@@ -77,7 +78,7 @@ abstract class SimpleTypeBase
     /**
      * Gets or sets the inner value
      *
-     * @param mixed ...$value
+     * @param  mixed ...$value
      * @return mixed
      * @throws \Exception
      */
@@ -94,6 +95,7 @@ abstract class SimpleTypeBase
 
     protected function fixValue($v)
     {
+
         $v = $this->fixWhitespace($v, $this->whiteSpace);
         return $this->fixFractionDigits($v, $this->fractionDigits);
     }
@@ -101,20 +103,20 @@ abstract class SimpleTypeBase
     protected function fixWhitespace($val, $handle = "preserve")
     {
         switch ($handle) {
-            case "preserve":
-                return $val;
-            case "replace":
-                return preg_replace('/\s/', ' ', $val);
-            case "collapse":
-                return preg_replace('/\s+/', ' ', $val);
-            default:
-                throw new \InvalidArgumentException(__CLASS__ . " Called Fix whitespace with invalid handle operation");
+        case "preserve":
+            return $val;
+        case "replace":
+            return preg_replace('/\s/', ' ', $val);
+        case "collapse":
+            return preg_replace('/\s+/', ' ', $val);
+        default:
+            throw new \InvalidArgumentException(__CLASS__ . " Called Fix whitespace with invalid handle operation");
         }
     }
 
-    protected function fixFractionDigits($val, $fractionDigits = null)
+    protected function fixFractionDigits($val,$fractionDigits = null)
     {
-        if (null ==$fractionDigits) {
+        if(null ==$fractionDigits ) {
             return $val;
         }
         return round($val);
@@ -132,8 +134,9 @@ abstract class SimpleTypeBase
 
     /**
      * Checks a pattern against a string
-     * @param string $pattern the regex pattern
-     * @param string $string the string to check
+     *
+     * @param  string $pattern the regex pattern
+     * @param  string $string  the string to check
      * @return bool true if string matches pattern
      */
     private function matchesRegexPattern($pattern, $string)
@@ -146,8 +149,10 @@ abstract class SimpleTypeBase
 
     public function __set($name, $value)
     {
-        if (!in_array($name, ["enumeration", "totalDigits", "length", "maxLength", "minLength", "whiteSpace",
-            "pattern", "fractionDigits", "minInclusive", "minExclusive", "maxExclusive"])
+        if (!in_array(
+            $name, ["enumeration", "totalDigits", "length", "maxLength", "minLength", "whiteSpace",
+            "pattern", "fractionDigits", "minInclusive", "minExclusive", "maxExclusive"]
+        )
         ) {
             throw new \InvalidArgumentException("Invalid parameters (facets) assignment for: " . __CLASS__);
         }
