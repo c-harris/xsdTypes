@@ -26,6 +26,5 @@ class xsToken extends xsNormalizedString
     {
         parent::__construct($value);
         $this->setWhiteSpaceFacet("collapse");
-
     }
 }

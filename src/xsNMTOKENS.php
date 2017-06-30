@@ -25,18 +25,17 @@ class xsNMTOKENS extends xsAnySimpleType
         parent::__construct($value);
         $this->setWhiteSpaceFacet("collapse");
         $this->setMinLengthFacet(1);
-
     }
     protected function fixValue($value)
     {
         if (is_string($value)) {
             $parts = explode(" ", $value);
             $value = [];
-            foreach($parts as $part){
+            foreach ($parts as $part) {
                 $value[] = new xsnmtoken($part);
             }
         }
-        foreach($value as $v){
+        foreach ($value as $v) {
             $v->fixValue($v);
         }
     }
@@ -48,7 +47,7 @@ class xsNMTOKENS extends xsAnySimpleType
                 "the provided value for " . __CLASS__ . " Must be an array of type xsNMTOKEN "
             );
         }
-        foreach($value as $v){
+        foreach ($value as $v) {
             $v->isOKInternal();
         }
     }
