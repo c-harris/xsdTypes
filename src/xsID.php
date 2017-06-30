@@ -15,5 +15,4 @@ namespace AlgoWeb\xsdTypes;
  */
 class xsID extends xsNCName
 {
-
 }

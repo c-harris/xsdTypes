@@ -9,5 +9,4 @@ namespace AlgoWeb\xsdTypes;
  */
 class IDREF extends xsNCName
 {
-
 }
