@@ -1,6 +1,7 @@
 <?php
 
 namespace AlgoWeb\xsdTypes;
+
 /**
  * The type xsd:IDREFS represents a list of IDREF values separated by whitespace. There must be at least one IDREF in
  * the list. Each of the IDREF values must match an ID contained in the same XML document.
