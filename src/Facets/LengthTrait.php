@@ -15,12 +15,18 @@ trait LengthTrait
      */
     private $minLength = null;
 
+    /**
+     * @param integer $value Specifies the exact number of characters or list items allowed. Must be equal to or greater than zero
+     */
     protected function setLengthFacet($value)
     {
         $this->setMinLengthFacet($value);
         $this->setMaxLengthFacet($value);
     }
 
+    /**
+     * @param integer $value Specifies the minimum number of characters or list items allowed. Must be equal to or greater than zero
+     */
     protected function setMinLengthFacet($value)
     {
         $this->checkValidMinMaxLength($value);
@@ -37,6 +43,9 @@ trait LengthTrait
         }
     }
 
+    /**
+     * @param integer $value Specifies the maximum number of characters or list items allowed. Must be equal to or greater than zero
+     */
     protected function setMaxLengthFacet($value)
     {
         $this->checkValidMinMaxLength($value);

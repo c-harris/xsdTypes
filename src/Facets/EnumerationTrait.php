@@ -16,11 +16,17 @@ trait EnumerationTrait
      */
     private $enumeration = null;
 
+    /**
+     * @param array $enumorationValues Defines a list of acceptable values
+     */
     protected function setEnumeration(array $enumorationValues)
     {
         $this->enumeration = $enumorationValues;
     }
 
+    /**
+     * @param string $enumorationValue adds a value to the enumeration set.
+     */
     protected function addEnumoration($enumorationValue)
     {
         if (!is_array($this->enumeration)) {

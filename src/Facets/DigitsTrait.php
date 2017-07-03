@@ -15,6 +15,9 @@ trait DigitsTrait
      */
     private $totalDigits = null;
 
+    /**
+     * @param integer $fd Specifies the exact number of digits allowed. Must be greater than zero
+     */
     public function setTotalDigits($fd)
     {
         $this->checkDigitLength($fd);
@@ -53,6 +56,9 @@ trait DigitsTrait
         }
     }
 
+    /**
+     * @param integer $fd Specifies the maximum number of decimal places allowed. Must be equal to or greater than zero
+     */
     public function setFractionDigits($fd)
     {
         $this->checkDigitLength($fd);
