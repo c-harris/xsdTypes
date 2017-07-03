@@ -15,8 +15,6 @@ class xsNMTOKEN extends xsToken
     {
         parent::__construct($value);
         $this->setPatternFacet("\c+");
-        if ('AlgoWeb\xsdTypes\xsNMTOKEN' == get_class($this)) {
-            $this->fixValue();
-        }
+
     }
 }

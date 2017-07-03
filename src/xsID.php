@@ -25,8 +25,5 @@ class xsID extends xsNCName
     public function __construct($value)
     {
         parent::__construct($value);
-        if ('AlgoWeb\xsdTypes\xsID' == get_class($this)) {
-            $this->fixValue();
-        }
     }
 }

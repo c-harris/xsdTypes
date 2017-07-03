@@ -36,9 +36,7 @@ class xsString extends xsAnySimpleType
     {
         parent::__construct($value);
         $this->setWhiteSpaceFacet("preserve");
-        if ('AlgoWeb\xsdTypes\xsString' == get_class($this)) {
-            $this->fixValue();
-        }
+
     }
 
     protected function isOK()

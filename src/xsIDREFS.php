@@ -18,9 +18,6 @@ class xsIDREFS extends xsAnySimpleType
     {
         parent::__construct($value);
         $this->setMinLengthFacet(1);
-        if ('AlgoWeb\xsdTypes\xsIDREFS' == get_class($this)) {
-            $this->fixValue();
-        }
     }
 
     protected function isOK()

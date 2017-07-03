@@ -21,8 +21,6 @@ class xsName extends xsToken
     {
         parent::__construct($value);
         $this->setPatternFacet("\i\c*");
-        if ('AlgoWeb\xsdTypes\xsName' == get_class($this)) {
-            $this->fixValue();
-        }
+
     }
 }

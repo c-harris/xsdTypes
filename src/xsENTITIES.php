@@ -20,9 +20,6 @@ class xsENTITIES extends xsAnySimpleType
     {
         parent::__construct($value);
         $this->setMinLengthFacet(1);
-        if ('AlgoWeb\xsdTypes\xsENTITIES' == get_class($this)) {
-            $this->fixValue();
-        }
     }
 
     protected function isOK()

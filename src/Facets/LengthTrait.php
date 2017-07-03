@@ -112,4 +112,17 @@ trait LengthTrait
             );
         }
     }
+
+    private function assertLength($lengthGood)
+    {
+
+    }
+
+    private function getLengthForValue($v)
+    {
+        if (is_array($v)) {
+            return count($v);
+        }
+        return strlen($v);
+    }
 }

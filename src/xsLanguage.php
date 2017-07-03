@@ -37,9 +37,7 @@ class xsLanguage extends xsToken
         parent::__construct($value);
         $this->setPatternFacet("[a-zA-Z]{1,8}(-[a-zA-Z0-9]{1,8})*");
         $this->setWhiteSpaceFacet("collapse");
-        if ('AlgoWeb\xsdTypes\xsLanguage' == get_class($this)) {
-            $this->fixValue();
-        }
+
     }
 
     protected function fixValue()

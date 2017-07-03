@@ -18,9 +18,9 @@ abstract class xsAnySimpleType
     use WhiteSpaceTrait, PatternTrait, EnumerationTrait, LengthTrait;
     /**
      * @Exclude
-     * @var boolean indicates if the object is still initializing.d
+     * @var boolean indicates if value has been fixed.
      */
-    protected $initializing = false;
+    protected $fixed = false;
 
     /**
      * @property mixed $__value
@@ -37,6 +37,15 @@ abstract class xsAnySimpleType
         $this->__value = $value;
     }
 
+    public function __toString()
+    {
+        if (!$this->fixed) {
+            $this->fixValue();
+            $this->isOKInternal();
+        }
+        return $this->__value;
+    }
+
     protected function fixValue()
     {
         $this->__value = $this->fixWhitespace($this->__value);
@@ -48,9 +57,8 @@ abstract class xsAnySimpleType
         $this->checkMaxLength($this->__value);
         $this->checkMinLength($this->__value);
         $this->checkPattern($this->__value);
-        return $this->isOK();
+        $this->isOK();
     }
-
 
     abstract protected function isOK();
 }

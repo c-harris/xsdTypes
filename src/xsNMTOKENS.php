@@ -19,9 +19,7 @@ class xsNMTOKENS extends xsAnySimpleType
         parent::__construct($value);
         $this->setWhiteSpaceFacet("collapse");
         $this->setMinLengthFacet(1);
-        if ('AlgoWeb\xsdTypes\xsNMTOKENS' == get_class($this)) {
-            $this->fixValue();
-        }
+
     }
 
     protected function fixValue()

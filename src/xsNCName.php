@@ -21,8 +21,6 @@ class xsNCName extends xsName
     {
         parent::__construct($value);
         $this->setPatternFacet("[\i-[:]][\c-[:]]*");
-        if ('AlgoWeb\xsdTypes\xsNCName' == get_class($this)) {
-            $this->fixValue();
-        }
+
     }
 }

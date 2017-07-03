@@ -18,11 +18,6 @@ class IDREF extends xsNCName
      */
     public function __construct($value)
     {
-        $this->initializing = true;
         parent::__construct($value);
-        if ('AlgoWeb\xsdTypes\IDREF' == get_class($this)) {
-            $this->fixValue();
-        }
-        $this->initializing = false;
     }
 }
