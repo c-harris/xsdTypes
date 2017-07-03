@@ -2,8 +2,7 @@
 
 namespace AlgoWeb\xsdTypes\Facets;
 
-
-trait digitsTrait
+trait DigitsTrait
 {
     /**
      * @Exclude
