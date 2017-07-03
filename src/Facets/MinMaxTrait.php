@@ -8,7 +8,6 @@
 
 namespace AlgoWeb\xsdTypes\Facets;
 
-
 trait MinMaxTrait
 {
     /**
@@ -52,7 +51,6 @@ trait MinMaxTrait
     public function setMinInclusive($v)
     {
         $this->minInclusive = $v;
-
     }
 
     public function CheckMinMax($v)
