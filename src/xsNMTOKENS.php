@@ -36,7 +36,6 @@ class xsNMTOKENS extends xsAnySimpleType
         foreach ($this->__value as $v) {
             $v->fixValue($v);
         }
-
     }
 
     protected function isOK()
