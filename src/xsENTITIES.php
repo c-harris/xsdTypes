@@ -14,7 +14,7 @@ class xsENTITIES extends xsAnySimpleType
     /**
      * Construct
      *
-     * @param mixed $value
+     * @param xsENTITY $value
      */
     public function __construct($value)
     {

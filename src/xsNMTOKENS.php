@@ -12,7 +12,7 @@ class xsNMTOKENS extends xsAnySimpleType
     /**
      * Construct
      *
-     * @param mixed $value
+     * @param xsNMTOKEN $value
      */
     public function __construct($value)
     {

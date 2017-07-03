@@ -15,7 +15,7 @@ class xsName extends xsToken
     /**
      * Construct
      *
-     * @param mixed $value
+     * @param string $value
      */
     public function __construct($value)
     {

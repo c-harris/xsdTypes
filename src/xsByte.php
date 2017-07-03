@@ -18,7 +18,7 @@ class xsByte extends xsShort
     /**
      * Construct
      *
-     * @param mixed $value
+     * @param int $value
      */
     public function __construct($value)
     {

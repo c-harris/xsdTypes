@@ -21,7 +21,7 @@ class xsDecimal extends xsAnySimpleType
     /**
      * Construct
      *
-     * @param mixed $value
+     * @param double $value
      */
     public function __construct($value)
     {

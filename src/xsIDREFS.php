@@ -12,7 +12,7 @@ class xsIDREFS extends xsAnySimpleType
     /**
      * Construct
      *
-     * @param mixed $value
+     * @param xsIDREF $value
      */
     public function __construct($value)
     {

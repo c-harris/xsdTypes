@@ -11,6 +11,11 @@ namespace AlgoWeb\xsdTypes;
  */
 class xsNMTOKEN extends xsToken
 {
+    /**
+     * Construct
+     *
+     * @param string $value
+     */
     public function __construct($value)
     {
         parent::__construct($value);

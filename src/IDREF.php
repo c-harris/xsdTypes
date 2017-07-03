@@ -14,7 +14,7 @@ class IDREF extends xsNCName
     /**
      * Construct
      *
-     * @param mixed $value
+     * @param string $value
      */
     public function __construct($value)
     {
