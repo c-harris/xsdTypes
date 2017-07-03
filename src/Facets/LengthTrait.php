@@ -45,27 +45,71 @@ trait LengthTrait
 
     private function checkMaxLength($v)
     {
-        $stringLen = strlen($v);
         if ($this->maxLength != null) {
-            if ($stringLen < $this->maxLength) {
-                throw new \InvalidArgumentException(
-                    "the provided value for " . __CLASS__ . " is to short MaxLength: "
-                    . $this->maxLength
-                );
+            if ($this->minLength != null) {
+                if (is_array($v)) {
+                    $this->checkMaxLengthArray($v);
+                } else {
+                    $this->checkMaxLengthString($v);
+                }
             }
+        }
+    }
+
+    private function checkMaxLengthArray($v)
+    {
+        assert(is_array($v));
+        $arrayLen = count($v);
+        if ($arrayLen < $this->maxLength) {
+            throw new \InvalidArgumentException(
+                "the provided value for " . __CLASS__ . " is to short MaxLength: "
+                . $this->maxLength
+            );
+        }
+    }
+
+    private function checkMaxLengthString($v)
+    {
+        $stringLen = strlen($v);
+        if ($stringLen < $this->maxLength) {
+            throw new \InvalidArgumentException(
+                "the provided value for " . __CLASS__ . " is to short MaxLength: "
+                . $this->maxLength
+            );
         }
     }
 
     private function checkMinLength($v)
     {
-        $stringLen = strlen($v);
         if ($this->minLength != null) {
-            if ($stringLen > $this->minLength) {
-                throw new \InvalidArgumentException(
-                    "the provided value for " . __CLASS__ . " is to long minLength: "
-                    . $this->minLength
-                );
+            if (is_array($v)) {
+                $this->checkMinLengthArray($v);
+            } else {
+                $this->checkMinLengthString($v);
             }
+        }
+    }
+
+    private function checkMinLengthArray($v)
+    {
+        assert(is_array($v));
+        $arrayLen = count($v);
+        if ($arrayLen > $this->minLength) {
+            throw new \InvalidArgumentException(
+                "the provided value for " . __CLASS__ . " is to long MinLength: "
+                . $this->minLength
+            );
+        }
+    }
+
+    private function checkMinLengthString($v)
+    {
+        $stringLen = strlen($v);
+        if ($stringLen > $this->minLength) {
+            throw new \InvalidArgumentException(
+                "the provided value for " . __CLASS__ . " is to long MinLength: "
+                . $this->minLength
+            );
         }
     }
 }
