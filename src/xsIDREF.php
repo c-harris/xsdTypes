@@ -8,8 +8,6 @@
 
 namespace AlgoWeb\xsdTypes;
 
-
 class xsIDREF extends xsNCName
 {
-
 }
