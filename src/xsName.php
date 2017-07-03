@@ -21,6 +21,5 @@ class xsName extends xsToken
     {
         parent::__construct($value);
         $this->setPatternFacet("\i\c*");
-
     }
 }

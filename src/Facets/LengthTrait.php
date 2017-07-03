@@ -115,7 +115,6 @@ trait LengthTrait
 
     private function assertLength($lengthGood)
     {
-
     }
 
     private function getLengthForValue($v)

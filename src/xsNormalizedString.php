@@ -24,6 +24,5 @@ class xsNormalizedString extends xsString
     {
         parent::__construct($value);
         $this->setWhiteSpaceFacet("replace");
-
     }
 }

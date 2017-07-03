@@ -21,6 +21,5 @@ class xsNCName extends xsName
     {
         parent::__construct($value);
         $this->setPatternFacet("[\i-[:]][\c-[:]]*");
-
     }
 }
