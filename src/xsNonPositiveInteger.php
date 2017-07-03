@@ -18,7 +18,7 @@ class xsNonPositiveInteger extends xsInteger
     /**
      * Construct
      *
-     * @param mixed $value
+     * @param int $value
      */
     public function __construct($value)
     {
