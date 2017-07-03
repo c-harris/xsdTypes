@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Barnso
- * Date: 4/07/2017
- * Time: 12:55 AM
- */
-
 namespace AlgoWeb\xsdTypes;
 
 /**

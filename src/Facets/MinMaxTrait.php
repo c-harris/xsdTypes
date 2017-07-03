@@ -1,13 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Barnso
- * Date: 3/07/2017
- * Time: 10:19 PM
- */
-
 namespace AlgoWeb\xsdTypes\Facets;
 
+//TODO: we need to extend this to handle dates.
 trait MinMaxTrait
 {
     /**
@@ -26,7 +20,11 @@ trait MinMaxTrait
      */
     public function setMaxExclusive($v)
     {
-        $this->maxInclusive = $v - 1;
+        if (is_int($v)) {
+            $this->maxInclusive = $v - 1;
+        } else {
+            $this->minInclusive = $v - 0.000001;
+        }
     }
 
     /**
@@ -42,7 +40,11 @@ trait MinMaxTrait
      */
     public function setMinExclusive($v)
     {
-        $this->minInclusive = $v - 1;
+        if (is_int($v)) {
+            $this->minInclusive = $v + 1;
+        } else {
+            $this->minInclusive = $v + 0.000001;
+        }
     }
 
     /**

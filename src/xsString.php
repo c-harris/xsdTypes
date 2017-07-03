@@ -1,6 +1,8 @@
 <?php
 namespace AlgoWeb\xsdTypes;
 
+use AlgoWeb\xsdTypes\Facets\LengthTrait;
+
 /**
  * The type xsd:string represents a character string that may contain any Unicode character allowed by XML. Certain
  * characters, namely the "less than" symbol (<) and the ampersand (&), must be escaped (using the entities
@@ -28,6 +30,7 @@ namespace AlgoWeb\xsdTypes;
 class xsString extends xsAnySimpleType
 {
     use LengthTrait;
+
     /**
      * Construct
      *

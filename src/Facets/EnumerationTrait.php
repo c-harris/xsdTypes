@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Barnso
- * Date: 30/06/2017
- * Time: 9:17 PM
- */
-
 namespace AlgoWeb\xsdTypes\Facets;
 
 trait EnumerationTrait

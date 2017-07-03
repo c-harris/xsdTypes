@@ -1,5 +1,4 @@
 <?php
-
 namespace AlgoWeb\xsdTypes;
 
 use AlgoWeb\xsdTypes\Facets\DigitsTrait;
@@ -39,5 +38,6 @@ class xsDecimal extends xsAnySimpleType
     {
         $this->checkDigitLength($this->__value);
         $this->checkFractionDigits($this->__value);
+        $this->CheckMinMax($this->__value);
     }
 }
