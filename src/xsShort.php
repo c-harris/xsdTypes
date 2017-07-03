@@ -1,0 +1,29 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Barnso
+ * Date: 4/07/2017
+ * Time: 1:00 AM
+ */
+
+namespace AlgoWeb\xsdTypes;
+
+/**
+ * The type xsd:short represents an integer between -32768 and 32767. An xsd:short is a sequence of digits,
+ * optionally preceded by a + or - sign. Leading zeros are permitted, but decimal points are not.
+ * @package AlgoWeb\xsdTypes
+ */
+class xsShort extends xsInt
+{
+    /**
+     * Construct
+     *
+     * @param mixed $value
+     */
+    public function __construct($value)
+    {
+        parent::__construct($value);
+        $this->setMaxInclusive(32767);
+        $this->setMinInclusive(-32768);
+    }
+}
