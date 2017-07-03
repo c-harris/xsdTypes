@@ -3,21 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4864e311-a358-44a7-afa6-a49dcc51d329" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Facets/LengthTrait.php" afterPath="$PROJECT_DIR$/src/Facets/LengthTrait.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/IDREF.php" afterPath="$PROJECT_DIR$/src/IDREF.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsAnySimpleType.php" afterPath="$PROJECT_DIR$/src/xsAnySimpleType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsENTITIES.php" afterPath="$PROJECT_DIR$/src/xsENTITIES.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsENTITY.php" afterPath="$PROJECT_DIR$/src/xsENTITY.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsID.php" afterPath="$PROJECT_DIR$/src/xsID.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsIDREFS.php" afterPath="$PROJECT_DIR$/src/xsIDREFS.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsLanguage.php" afterPath="$PROJECT_DIR$/src/xsLanguage.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsNCName.php" afterPath="$PROJECT_DIR$/src/xsNCName.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsNMTOKEN.php" afterPath="$PROJECT_DIR$/src/xsNMTOKEN.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsNMTOKENS.php" afterPath="$PROJECT_DIR$/src/xsNMTOKENS.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsName.php" afterPath="$PROJECT_DIR$/src/xsName.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsNormalizedString.php" afterPath="$PROJECT_DIR$/src/xsNormalizedString.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsString.php" afterPath="$PROJECT_DIR$/src/xsString.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsToken.php" afterPath="$PROJECT_DIR$/src/xsToken.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,20 +16,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="xsIDREFS.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/xsIDREFS.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="19" column="36" lean-forward="false" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="xsLanguage.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/xsLanguage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
+            <state relative-caret-position="255">
               <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
               <folding />
             </state>
@@ -103,17 +80,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="xsString.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="xsString.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/xsString.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+            <state relative-caret-position="440">
+              <caret line="45" column="46" lean-forward="false" selection-start-line="45" selection-start-column="46" selection-end-line="45" selection-end-column="46" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="xsToken.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="xsToken.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/xsToken.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="431">
@@ -123,11 +100,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="xsENTITIES.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/xsENTITIES.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="29" column="14" lean-forward="true" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="xsAnySimpleType.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/xsAnySimpleType.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="584">
-              <caret line="57" column="9" lean-forward="false" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
+            <state relative-caret-position="363">
+              <caret line="55" column="48" lean-forward="false" selection-start-line="55" selection-start-column="48" selection-end-line="55" selection-end-column="48" />
               <folding>
                 <element signature="e#35#80#0#PHP" expanded="true" />
               </folding>
@@ -176,9 +163,9 @@
         <option value="$PROJECT_DIR$/src/xsNMTOKEN.php" />
         <option value="$PROJECT_DIR$/src/xsNMTOKENS.php" />
         <option value="$PROJECT_DIR$/src/xsNormalizedString.php" />
-        <option value="$PROJECT_DIR$/src/xsString.php" />
-        <option value="$PROJECT_DIR$/src/xsAnySimpleType.php" />
         <option value="$PROJECT_DIR$/src/xsToken.php" />
+        <option value="$PROJECT_DIR$/src/xsAnySimpleType.php" />
+        <option value="$PROJECT_DIR$/src/xsString.php" />
       </list>
     </option>
   </component>
@@ -466,7 +453,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1496235604163</updated>
-      <workItem from="1498632824380" duration="16659000" />
+      <workItem from="1498632824380" duration="16807000" />
     </task>
     <task id="LOCAL-00001" summary="added more basic types">
       <created>1498633990235</created>
@@ -552,11 +539,18 @@
       <option name="project" value="LOCAL" />
       <updated>1499077863432</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Moved the isok check to the __toostring method">
+      <created>1499082353560</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1499082353560</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16659000" />
+    <option name="totallyTimeSpent" value="16807000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -603,7 +597,8 @@
     <MESSAGE value="Comment Cleanup" />
     <MESSAGE value="latest set of attempted changes" />
     <MESSAGE value="Moved Legth trait to handle arrays" />
-    <option name="LAST_COMMIT_MESSAGE" value="Moved Legth trait to handle arrays" />
+    <MESSAGE value="Moved the isok check to the __toostring method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Moved the isok check to the __toostring method" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -714,7 +709,7 @@
         <state relative-caret-position="108">
           <caret line="91" column="45" lean-forward="false" selection-start-line="91" selection-start-column="45" selection-end-line="91" selection-end-column="45" />
           <folding>
-            <marker date="1499078033006" expanded="true" signature="3419:3420" ph="{...}" />
+            <marker date="1499082349916" expanded="true" signature="3426:3427" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -723,14 +718,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="36" lean-forward="false" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsENTITIES.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="21" column="36" lean-forward="false" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
           <folding />
         </state>
       </provider>
@@ -757,14 +744,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
           <caret line="19" column="36" lean-forward="false" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsLanguage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -805,6 +784,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsENTITIES.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="14" lean-forward="true" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/xsNormalizedString.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -813,28 +800,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsString.php">
+    <entry file="file://$PROJECT_DIR$/src/xsToken.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+        <state relative-caret-position="431">
+          <caret line="26" column="46" lean-forward="false" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/xsAnySimpleType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="584">
-          <caret line="57" column="9" lean-forward="false" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
+        <state relative-caret-position="363">
+          <caret line="55" column="48" lean-forward="false" selection-start-line="55" selection-start-column="48" selection-end-line="55" selection-end-column="48" />
           <folding>
             <element signature="e#35#80#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsToken.php">
+    <entry file="file://$PROJECT_DIR$/src/xsLanguage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="26" column="46" lean-forward="false" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
+        <state relative-caret-position="255">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsString.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="45" column="46" lean-forward="false" selection-start-line="45" selection-start-column="46" selection-end-line="45" selection-end-column="46" />
           <folding />
         </state>
       </provider>

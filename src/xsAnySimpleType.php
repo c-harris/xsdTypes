@@ -2,7 +2,6 @@
 namespace AlgoWeb\xsdTypes;
 
 use AlgoWeb\xsdTypes\Facets\EnumerationTrait;
-use AlgoWeb\xsdTypes\Facets\LengthTrait;
 use AlgoWeb\xsdTypes\Facets\PatternTrait;
 use AlgoWeb\xsdTypes\Facets\WhiteSpaceTrait;
 
@@ -15,7 +14,7 @@ use AlgoWeb\xsdTypes\Facets\WhiteSpaceTrait;
  */
 abstract class xsAnySimpleType
 {
-    use WhiteSpaceTrait, PatternTrait, EnumerationTrait, LengthTrait;
+    use WhiteSpaceTrait, PatternTrait, EnumerationTrait;
     /**
      * @Exclude
      * @var boolean indicates if value has been fixed.
@@ -54,8 +53,6 @@ abstract class xsAnySimpleType
     protected function isOKInternal()
     {
         $this->checkEnumeration($this->__value);
-        $this->checkMaxLength($this->__value);
-        $this->checkMinLength($this->__value);
         $this->checkPattern($this->__value);
         $this->isOK();
     }
