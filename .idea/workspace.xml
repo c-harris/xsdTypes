@@ -2,44 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4864e311-a358-44a7-afa6-a49dcc51d329" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/xsAnyURI.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/xsBase64Binary.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/xsBoolean.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/xsDouble.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/xsFloat.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/xsHexBinary.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/xsNOTATION.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/xsQName.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Facets/DigitsTrait.php" afterPath="$PROJECT_DIR$/src/Facets/DigitsTrait.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Facets/EnumerationTrait.php" afterPath="$PROJECT_DIR$/src/Facets/EnumerationTrait.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Facets/LengthTrait.php" afterPath="$PROJECT_DIR$/src/Facets/LengthTrait.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Facets/MinMaxTrait.php" afterPath="$PROJECT_DIR$/src/Facets/MinMaxTrait.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Facets/PatternTrait.php" afterPath="$PROJECT_DIR$/src/Facets/PatternTrait.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Facets/WhiteSpaceTrait.php" afterPath="$PROJECT_DIR$/src/Facets/WhiteSpaceTrait.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/IDREF.php" afterPath="$PROJECT_DIR$/src/IDREF.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsByte.php" afterPath="$PROJECT_DIR$/src/xsByte.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsDecimal.php" afterPath="$PROJECT_DIR$/src/xsDecimal.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsENTITIES.php" afterPath="$PROJECT_DIR$/src/xsENTITIES.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsENTITY.php" afterPath="$PROJECT_DIR$/src/xsENTITY.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsID.php" afterPath="$PROJECT_DIR$/src/xsID.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsIDREF.php" afterPath="$PROJECT_DIR$/src/xsIDREF.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsIDREFS.php" afterPath="$PROJECT_DIR$/src/xsIDREFS.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsInt.php" afterPath="$PROJECT_DIR$/src/xsInt.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsInteger.php" afterPath="$PROJECT_DIR$/src/xsInteger.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsLong.php" afterPath="$PROJECT_DIR$/src/xsLong.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsNCName.php" afterPath="$PROJECT_DIR$/src/xsNCName.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsName.php" afterPath="$PROJECT_DIR$/src/xsName.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsNegativeInteger.php" afterPath="$PROJECT_DIR$/src/xsNegativeInteger.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsNonNegativeInteger.php" afterPath="$PROJECT_DIR$/src/xsNonNegativeInteger.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsNonPositiveInteger.php" afterPath="$PROJECT_DIR$/src/xsNonPositiveInteger.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsPositiveInteger.php" afterPath="$PROJECT_DIR$/src/xsPositiveInteger.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsShort.php" afterPath="$PROJECT_DIR$/src/xsShort.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsString.php" afterPath="$PROJECT_DIR$/src/xsString.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsUnsignedByte.php" afterPath="$PROJECT_DIR$/src/xsUnsignedByte.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsUnsignedInt.php" afterPath="$PROJECT_DIR$/src/xsUnsignedInt.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsUnsignedLong.php" afterPath="$PROJECT_DIR$/src/xsUnsignedLong.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsUnsignedShort.php" afterPath="$PROJECT_DIR$/src/xsUnsignedShort.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -51,34 +15,14 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="xsNOTATION.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/xsNOTATION.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="xsPositiveInteger.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/xsPositiveInteger.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-              <folding>
-                <marker date="1499099065699" expanded="true" signature="347:541" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="xsQName.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/xsQName.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
               <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-              <folding />
+              <folding>
+                <marker date="1499099217646" expanded="true" signature="526:894" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -97,7 +41,7 @@
         <entry file="file://$PROJECT_DIR$/src/xsString.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="544">
-              <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="41" selection-end-column="5" />
+              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="42" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -118,6 +62,26 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
               <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LengthTrait.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Facets/LengthTrait.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MinMaxTrait.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Facets/MinMaxTrait.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="50" column="38" lean-forward="false" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -145,11 +109,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="xsUnsignedShort.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="xsUnsignedShort.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/xsUnsignedShort.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <state relative-caret-position="238">
+              <caret line="14" column="7" lean-forward="true" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -189,7 +153,6 @@
         <option value="$PROJECT_DIR$/src/xsToken.php" />
         <option value="$PROJECT_DIR$/src/xsString.php" />
         <option value="$PROJECT_DIR$/src/xsBoolean.php" />
-        <option value="$PROJECT_DIR$/src/Facets/MinMaxTrait.php" />
         <option value="$PROJECT_DIR$/src/Facets/DigitsTrait.php" />
         <option value="$PROJECT_DIR$/src/Facets/EnumerationTrait.php" />
         <option value="$PROJECT_DIR$/src/Facets/LengthTrait.php" />
@@ -224,6 +187,7 @@
         <option value="$PROJECT_DIR$/src/xsUnsignedInt.php" />
         <option value="$PROJECT_DIR$/src/xsUnsignedLong.php" />
         <option value="$PROJECT_DIR$/src/xsUnsignedShort.php" />
+        <option value="$PROJECT_DIR$/src/Facets/MinMaxTrait.php" />
       </list>
     </option>
   </component>
@@ -322,9 +286,15 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Facets/LengthTrait.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/xsAnyURI.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/xsBase64Binary.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/xsBoolean.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/xsDouble.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/xsFloat.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/xsHexBinary.php</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/xsIDREF.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/xsPositiveInteger.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/xsNOTATION.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/xsQName.php</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -508,7 +478,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1496235604163</updated>
-      <workItem from="1498632824380" duration="24806000" />
+      <workItem from="1498632824380" duration="25080000" />
     </task>
     <task id="LOCAL-00001" summary="added more basic types">
       <created>1498633990235</created>
@@ -643,11 +613,18 @@
       <option name="project" value="LOCAL" />
       <updated>1499094913475</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Cleanup pass">
+      <created>1499099082755</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1499099082755</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24806000" />
+    <option name="totallyTimeSpent" value="25080000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -676,6 +653,32 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -701,7 +704,8 @@
     <MESSAGE value="added basic numeric types from xsd" />
     <MESSAGE value="added basic negative numeric types from xsd" />
     <MESSAGE value="Comment cleanup pass" />
-    <option name="LAST_COMMIT_MESSAGE" value="Comment cleanup pass" />
+    <MESSAGE value="Cleanup pass" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleanup pass" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -791,22 +795,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Facets/LengthTrait.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Facets/MinMaxTrait.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Facets/PatternTrait.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -877,9 +865,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="e#35#75#0#PHP" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1055,7 +1041,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1499099217596" expanded="true" signature="848:1216" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1073,7 +1061,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1499099217646" expanded="true" signature="526:894" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1088,7 +1078,7 @@
     <entry file="file://$PROJECT_DIR$/src/xsString.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="41" selection-end-column="5" />
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="42" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -1097,22 +1087,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="20" lean-forward="false" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsUnsignedByte.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsUnsignedInt.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1129,8 +1103,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/xsUnsignedShort.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="7" lean-forward="true" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsUnsignedInt.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsUnsignedByte.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Facets/LengthTrait.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Facets/MinMaxTrait.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="50" column="38" lean-forward="false" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="38" />
           <folding />
         </state>
       </provider>
