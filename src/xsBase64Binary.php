@@ -2,7 +2,6 @@
 
 namespace AlgoWeb\xsdTypes;
 
-
 use AlgoWeb\xsdTypes\Facets\LengthTrait;
 
 /**
