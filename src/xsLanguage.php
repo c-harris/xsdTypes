@@ -37,31 +37,37 @@ class xsLanguage extends xsToken
         parent::__construct($value);
         $this->setPatternFacet("[a-zA-Z]{1,8}(-[a-zA-Z0-9]{1,8})*");
         $this->setWhiteSpaceFacet("collapse");
+        if ('AlgoWeb\xsdTypes\xsLanguage' == get_class($this)) {
+            $this->fixValue();
+        }
     }
-    protected function fixValue($value)
+
+    protected function fixValue()
     {
-        $value = trim($value);
-        return parent::fixValue($value);
+        parent::fixValue();
+
+        $this->__value = trim($this->__value);
     }
-    protected function isOK($value)
+
+    protected function isOK()
     {
-        parent::isOK($value);
-        if (null == $value) {
+        parent::isOK($this->__value);
+        if (null == $this->__value) {
             throw new \InvalidArgumentException(
                 "the provided value for " . __CLASS__ . " can not be null "
             );
         }
-        if (!is_string($value)) {
+        if (!is_string($this->__value)) {
             throw new \InvalidArgumentException(
                 "the provided value for " . __CLASS__ . " Must be a string "
             );
         }
-        if (empty(trim($value))) {
+        if (empty(trim($this->__value))) {
             throw new \InvalidArgumentException(
                 "the provided value for " . __CLASS__ . " Must be a not be a blank string "
             );
         }
-        if (8 < strlen($value)) {
+        if (8 < strlen($this->__value)) {
             throw new \InvalidArgumentException(
                 "the provided value for " . __CLASS__ . " Must be a not be longer then 8 characters "
             );

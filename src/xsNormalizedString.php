@@ -24,5 +24,8 @@ class xsNormalizedString extends xsString
     {
         parent::__construct($value);
         $this->setWhiteSpaceFacet("replace");
+        if ('AlgoWeb\xsdTypes\xsNormalizedString' == get_class($this)) {
+            $this->fixValue();
+        }
     }
 }

@@ -16,12 +16,16 @@ use AlgoWeb\xsdTypes\Facets\WhiteSpaceTrait;
 abstract class xsAnySimpleType
 {
     use WhiteSpaceTrait, PatternTrait, EnumerationTrait, LengthTrait;
-
+    /**
+     * @Exclude
+     * @var boolean indicates if the object is still initializing.d
+     */
+    protected $initializing = false;
 
     /**
      * @property mixed $__value
      */
-    private $__value = null;
+    protected $__value = null;
 
     /**
      * Construct
@@ -30,25 +34,23 @@ abstract class xsAnySimpleType
      */
     public function __construct($value)
     {
-        $this->__value = $this->fixValueInteral($value);
+        $this->__value = $value;
     }
 
-    private function fixValueInteral($value)
+    protected function fixValue()
     {
-        return $this->fixValue($this->fixWhitespace($value));
+        $this->__value = $this->fixWhitespace($this->__value);
     }
 
-    abstract protected function fixValue($value);
-
-    protected function isOKInternal($value)
+    protected function isOKInternal()
     {
-        $this->checkEnumeration($value);
-        $this->checkMaxLength($value);
-        $this->checkMinLength($value);
-        $this->checkPattern($value);
-        return $this->isOK($value);
+        $this->checkEnumeration($this->__value);
+        $this->checkMaxLength($this->__value);
+        $this->checkMinLength($this->__value);
+        $this->checkPattern($this->__value);
+        return $this->isOK();
     }
 
 
-    abstract protected function isOK($value);
+    abstract protected function isOK();
 }

@@ -12,4 +12,16 @@ namespace AlgoWeb\xsdTypes;
  */
 class xsENTITY extends xsNCName
 {
+    /**
+     * Construct
+     *
+     * @param mixed $value
+     */
+    public function __construct($value)
+    {
+        parent::__construct($value);
+        if ('AlgoWeb\xsdTypes\xsENTITY' == get_class($this)) {
+            $this->fixValue();
+        }
+    }
 }

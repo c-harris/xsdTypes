@@ -25,5 +25,8 @@ class xsToken extends xsNormalizedString
     {
         parent::__construct($value);
         $this->setWhiteSpaceFacet("collapse");
+        if ('AlgoWeb\xsdTypes\xsToken' == get_class($this)) {
+            $this->fixValue();
+        }
     }
 }

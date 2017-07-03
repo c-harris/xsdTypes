@@ -17,4 +17,16 @@ namespace AlgoWeb\xsdTypes;
  */
 class xsID extends xsNCName
 {
+    /**
+     * Construct
+     *
+     * @param mixed $value
+     */
+    public function __construct($value)
+    {
+        parent::__construct($value);
+        if ('AlgoWeb\xsdTypes\xsID' == get_class($this)) {
+            $this->fixValue();
+        }
+    }
 }

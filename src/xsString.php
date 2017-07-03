@@ -36,15 +36,14 @@ class xsString extends xsAnySimpleType
     {
         parent::__construct($value);
         $this->setWhiteSpaceFacet("preserve");
-    }
-    protected function fixValue($value)
-    {
-        return $value;
+        if ('AlgoWeb\xsdTypes\xsString' == get_class($this)) {
+            $this->fixValue();
+        }
     }
 
-    protected function isOK($value)
+    protected function isOK()
     {
-        if (is_array($value) || is_object($value)) {
+        if (is_array($this->__value) || is_object($this->__value)) {
             throw new \InvalidArgumentException(
                 "the provided value for " . __CLASS__ . " is should not be an array or an object: "
             );

@@ -20,21 +20,19 @@ class xsENTITIES extends xsAnySimpleType
     {
         parent::__construct($value);
         $this->setMinLengthFacet(1);
+        if ('AlgoWeb\xsdTypes\xsENTITIES' == get_class($this)) {
+            $this->fixValue();
+        }
     }
 
-    protected function fixValue($value)
+    protected function isOK()
     {
-        return $value;
-    }
-
-    protected function isOK($value)
-    {
-        if (!is_array($value)) {
+        if (!is_array($this->__value)) {
             throw new \InvalidArgumentException(
                 "the provided value for " . __CLASS__ . " Must be an array of type xsENTITY "
             );
         }
-        foreach ($value as $v) {
+        foreach ($this->__value as $v) {
             $v->isOKInternal();
         }
     }
