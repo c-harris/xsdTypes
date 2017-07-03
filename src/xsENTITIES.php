@@ -1,6 +1,8 @@
 <?php
 namespace AlgoWeb\xsdTypes;
 
+use AlgoWeb\xsdTypes\Facets\LengthTrait;
+
 /**
  * The type xsd:ENTITIES represents a list of ENTITY values separated by whitespace.
  * There must be at least one ENTITY in the list. Each of the ENTITY values must match the name of an unparsed entity
@@ -10,6 +12,8 @@ namespace AlgoWeb\xsdTypes;
  */
 class xsENTITIES extends xsAnySimpleType
 {
+    use LengthTrait;
+
     /**
      * Construct
      *

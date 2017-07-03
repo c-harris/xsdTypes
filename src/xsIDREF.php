@@ -9,4 +9,13 @@ namespace AlgoWeb\xsdTypes;
  */
 class xsIDREF extends xsNCName
 {
+    /**
+     * Construct
+     *
+     * @param string $value
+     */
+    public function __construct($value)
+    {
+        parent::__construct($value);
+    }
 }
