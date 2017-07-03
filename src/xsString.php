@@ -36,7 +36,6 @@ class xsString extends xsAnySimpleType
     {
         parent::__construct($value);
         $this->setWhiteSpaceFacet("preserve");
-
     }
 
     protected function isOK()

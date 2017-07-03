@@ -19,7 +19,6 @@ class xsNMTOKENS extends xsAnySimpleType
         parent::__construct($value);
         $this->setWhiteSpaceFacet("collapse");
         $this->setMinLengthFacet(1);
-
     }
 
     protected function fixValue()

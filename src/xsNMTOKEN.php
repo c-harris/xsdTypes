@@ -15,6 +15,5 @@ class xsNMTOKEN extends xsToken
     {
         parent::__construct($value);
         $this->setPatternFacet("\c+");
-
     }
 }
