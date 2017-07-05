@@ -28,12 +28,14 @@ class xsStringTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider testxsStringTestValidDataProvider
+     * @param mixed $duration
+     * @param mixed $message
      */
-    public function testxsStringTestValid($duration, $message) {
+    public function testxsStringTestValid($duration, $message)
+    {
         $d = new xsUnsignedShort($duration);
         $e = (string)$d;
-        $this->assertEquals($duration,$e,$message);
-
+        $this->assertEquals($duration, $e, $message);
     }
 
     public function testxsStringTestValidDataProvider()
@@ -51,16 +53,21 @@ is on two lines.', ''),
     }
     /**
      * @dataProvider testxsStringTestInvalidDataProvider
+     * @param mixed $duration
+     * @param mixed $message
      */
-    public function testxsStringTestInvalid($duration, $message) {
+    public function testxsStringTestInvalid($duration, $message)
+    {
         try {
             $d = new xsUnsignedShort($duration);
             $e = (string)$d;
             $this->fail($message);
-        }catch(\Exception $e){}
+        } catch (\Exception $e) {
+        }
     }
 
-    public function testxsStringTestInvalidDataProvider() {
+    public function testxsStringTestInvalidDataProvider()
+    {
         return array(
             array('AT&T', 'ampersand must be escaped'),
             array('3 < 4', 'the "less than" symbol must be escaped'),
