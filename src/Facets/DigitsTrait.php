@@ -17,13 +17,13 @@ trait DigitsTrait
     /**
      * @param int $fd Specifies the exact number of digits allowed.  Must be greater than zero
      */
-    public function setTotalDigits($fd)
+    public function setTotalDigits($fd): void
     {
         $this->checkDigitLength($fd);
         $this->totalDigits = $fd;
     }
 
-    private function checkDigitLength($fd)
+    private function checkDigitLength($fd): void
     {
         if (!is_numeric($fd)) {
             throw new \InvalidArgumentException(
@@ -42,7 +42,7 @@ trait DigitsTrait
         }
     }
 
-    public function checkTotalDigits($v)
+    public function checkTotalDigits($v): void
     {
         if (null == $this->totalDigits) {
             return;
@@ -58,13 +58,13 @@ trait DigitsTrait
     /**
      * @param int $fd Specifies the maximum number of decimal places allowed.  Must be equal to or greater than zero
      */
-    public function setFractionDigits($fd)
+    public function setFractionDigits($fd): void
     {
         $this->checkDigitLength($fd);
         $this->fractionDigits = $fd;
     }
 
-    public function checkFractionDigits($v)
+    public function checkFractionDigits($v): void
     {
         if (null == $this->fractionDigits) {
             return;

@@ -31,7 +31,7 @@ class xsGYear extends xsAnySimpleType
         $this->setWhiteSpaceFacet('collapse');
     }
 
-    public function fixValue()
+    public function fixValue(): void
     {
         parent::fixValue();
         $v = new \DateTime($this->value);
@@ -39,7 +39,7 @@ class xsGYear extends xsAnySimpleType
         $this->value = $v->format('Y');
     }
 
-    protected function isOK()
+    protected function isOK(): void
     {
         $this->CheckMinMax(new \Date($this->value));
     }

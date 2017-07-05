@@ -39,14 +39,14 @@ class xsLanguage extends xsToken
         $this->setWhiteSpaceFacet('collapse');
     }
 
-    protected function fixValue()
+    protected function fixValue(): void
     {
         parent::fixValue();
 
         $this->value = trim($this->value);
     }
 
-    protected function isOK()
+    protected function isOK(): void
     {
         parent::isOK();
         if (empty(trim($this->value))) {

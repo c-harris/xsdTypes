@@ -20,7 +20,7 @@ class xsBoolean extends xsAnySimpleType
         $this->setWhiteSpaceFacet('collapse');
     }
 
-    protected function isOK()
+    protected function isOK(): void
     {
         if (boolval($this->value) !== $this->value) {
             throw new \InvalidArgumentException(

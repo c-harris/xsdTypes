@@ -32,14 +32,14 @@ class xsGDay extends xsAnySimpleType
         $this->setWhiteSpaceFacet('collapse');
     }
 
-    public function fixValue()
+    public function fixValue(): void
     {
         parent::fixValue();
         $v = new \DateTime($this->value);
         $this->value = '--' . $v->format('d');
     }
 
-    protected function isOK()
+    protected function isOK(): void
     {
         $this->CheckMinMax(new \Date($this->value));
     }

@@ -28,13 +28,13 @@ class xsDecimal extends xsAnySimpleType
         $this->setWhiteSpaceFacet('collapse');
     }
 
-    protected function fixValue()
+    protected function fixValue(): void
     {
         parent::fixValue();
         $this->value = $this->fixFractionDigits($this->value);
     }
 
-    protected function isOK()
+    protected function isOK(): void
     {
         $this->checkDigitLength($this->value);
         $this->checkFractionDigits($this->value);

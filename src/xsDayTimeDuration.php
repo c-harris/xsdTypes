@@ -19,7 +19,7 @@ namespace AlgoWeb\xsdTypes;
  */
 class xsDayTimeDuration extends xsDuration
 {
-    public function fixValue()
+    public function fixValue(): void
     {
         parent::fixValue();
         $v = new \DateInterval($this->value);

@@ -25,7 +25,7 @@ class xsNMTOKENS extends xsAnySimpleType
         $this->setMinLengthFacet(1);
     }
 
-    protected function fixValue()
+    protected function fixValue(): void
     {
         if (is_string($this->value)) {
             $parts = explode(' ', $this->value);
@@ -40,7 +40,7 @@ class xsNMTOKENS extends xsAnySimpleType
         }
     }
 
-    protected function isOK()
+    protected function isOK(): void
     {
         if (!is_array($this->value)) {
             throw new \InvalidArgumentException(

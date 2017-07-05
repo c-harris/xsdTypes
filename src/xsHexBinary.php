@@ -25,7 +25,7 @@ class xsHexBinary extends xsAnySimpleType
         $this->setWhiteSpaceFacet('collapse');
     }
 
-    protected function isOK()
+    protected function isOK(): void
     {
         $this->checkLength($this->value);
     }
