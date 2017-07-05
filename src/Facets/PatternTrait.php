@@ -23,12 +23,17 @@ trait PatternTrait
         $this->pattern[] = $value;
     }
 
+    /**
+     * @param string $value
+     */
     private function checkRegexValidPattern($pattern)
     {
         return (false === @preg_match($pattern, null));
     }
 
-
+    /**
+     * @param string $value
+     */
     private function checkPattern($v)
     {
         if (!empty($this->pattern)) {
