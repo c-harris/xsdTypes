@@ -63,21 +63,21 @@ trait MinMaxTrait
     public function checkMinMax($v)
     {
         if (null != $this->minInclusive) {
-            $this->CheckMin($v);
+            $this->checkMin($v);
         }
         if (null != $this->maxInclusive) {
-            $this->CheckMax($v);
+            $this->checkMax($v);
         }
     }
 
-    private function CheckMin($v)
+    private function checkMin($v)
     {
         if ($v < $this->minInclusive) {
             throw new \InvalidArgumentException('Value less than allowed min value ' . __CLASS__);
         }
     }
 
-    private function CheckMax($v)
+    private function checkMax($v)
     {
         if ($v > $this->maxInclusive) {
             throw new \InvalidArgumentException('Value greater than allowed max value ' . __CLASS__);

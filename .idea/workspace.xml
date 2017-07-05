@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4864e311-a358-44a7-afa6-a49dcc51d329" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsGDay.php" afterPath="$PROJECT_DIR$/src/xsGDay.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Facets/MinMaxTrait.php" afterPath="$PROJECT_DIR$/src/Facets/MinMaxTrait.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -69,14 +69,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MinMaxTrait.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MinMaxTrait.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Facets/MinMaxTrait.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="79" column="22" lean-forward="false" selection-start-line="79" selection-start-column="22" selection-end-line="79" selection-end-column="22" />
+            <state relative-caret-position="856">
+              <caret line="72" column="21" lean-forward="false" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="21" />
               <folding>
-                <marker date="1499250082101" expanded="true" signature="69:101" ph=" @Exclude ..." />
-                <marker date="1499250082101" expanded="true" signature="1722:1908" ph=" @param integer|double|\DateTime|\DateInterval $v Specifies the lower bounds for numeric values (the value must be greater than or equal to this value) ..." />
+                <marker date="1499251722254" expanded="true" signature="69:101" ph=" @Exclude ..." />
+                <marker date="1499251722254" expanded="true" signature="1722:1908" ph=" @param integer|double|\DateTime|\DateInterval $v Specifies the lower bounds for numeric values (the value must be greater than or equal to this value) ..." />
               </folding>
             </state>
           </provider>
@@ -105,11 +105,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="xsGDay.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="xsGDay.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/xsGDay.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+            <state relative-caret-position="295">
+              <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -180,10 +180,10 @@
         <option value="$PROJECT_DIR$/src/xsName.php" />
         <option value="$PROJECT_DIR$/src/xsNCName.php" />
         <option value="$PROJECT_DIR$/src/xsNMTOKEN.php" />
-        <option value="$PROJECT_DIR$/src/Facets/MinMaxTrait.php" />
         <option value="$PROJECT_DIR$/src/Facets/PatternTrait.php" />
         <option value="$PROJECT_DIR$/src/xsDuration.php" />
         <option value="$PROJECT_DIR$/src/xsGDay.php" />
+        <option value="$PROJECT_DIR$/src/Facets/MinMaxTrait.php" />
       </list>
     </option>
   </component>
@@ -467,7 +467,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1496235604163</updated>
-      <workItem from="1498632824380" duration="42617000" />
+      <workItem from="1498632824380" duration="43406000" />
     </task>
     <task id="LOCAL-00001" summary="added more basic types">
       <created>1498633990235</created>
@@ -791,11 +791,18 @@
       <option name="project" value="LOCAL" />
       <updated>1499250629362</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="fixed format for gday">
+      <created>1499250947450</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1499250947450</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42617000" />
+    <option name="totallyTimeSpent" value="43406000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -803,10 +810,10 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32982087" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982087" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982087" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32982087" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982087" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982087" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -855,7 +862,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="Comment cleanup pass" />
     <MESSAGE value="Cleanup pass" />
     <MESSAGE value="fixing a scrutinizer issue" />
     <MESSAGE value="forgot to add some traits" />
@@ -880,7 +886,8 @@
     <MESSAGE value="cleanup" />
     <MESSAGE value="line length fix" />
     <MESSAGE value="more cleanups" />
-    <option name="LAST_COMMIT_MESSAGE" value="more cleanups" />
+    <MESSAGE value="fixed format for gday" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed format for gday" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1295,17 +1302,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Facets/MinMaxTrait.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="79" column="22" lean-forward="false" selection-start-line="79" selection-start-column="22" selection-end-line="79" selection-end-column="22" />
-          <folding>
-            <marker date="1499250082101" expanded="true" signature="69:101" ph=" @Exclude ..." />
-            <marker date="1499250082101" expanded="true" signature="1722:1908" ph=" @param integer|double|\DateTime|\DateInterval $v Specifies the lower bounds for numeric values (the value must be greater than or equal to this value) ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Facets/PatternTrait.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -1327,9 +1323,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/xsGDay.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+        <state relative-caret-position="295">
+          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Facets/MinMaxTrait.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="856">
+          <caret line="72" column="21" lean-forward="false" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="21" />
+          <folding>
+            <marker date="1499251722254" expanded="true" signature="69:101" ph=" @Exclude ..." />
+            <marker date="1499251722254" expanded="true" signature="1722:1908" ph=" @param integer|double|\DateTime|\DateInterval $v Specifies the lower bounds for numeric values (the value must be greater than or equal to this value) ..." />
+          </folding>
         </state>
       </provider>
     </entry>
