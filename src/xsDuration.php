@@ -29,7 +29,7 @@ class xsDuration extends xsAnySimpleType
     public function __construct($value)
     {
         parent::__construct($value);
-        $this->setWhiteSpaceFacet("collapse");
+        $this->setWhiteSpaceFacet('collapse');
     }
 
     public function fixValue()
@@ -39,11 +39,11 @@ class xsDuration extends xsAnySimpleType
         $this->value = $this->format($v);
     }
 
-    protected function format(\DateInterval $tint, $pattern = "PnYnMnDTnHnMnS")
+    protected function format(\DateInterval $tint, $pattern = 'PnYnMnDTnHnMnS')
     {
-        $sReturn = "";
+        $sReturn = '';
         for ($i = 0; $i < strlen($pattern); $i++) {
-            if ($pattern[$i] == "n") {
+            if ($pattern[$i] == 'n') {
                 $sReturn .= $tint->strtolower($pattern[$i + 1]);
                 continue;
             }

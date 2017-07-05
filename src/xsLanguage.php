@@ -35,8 +35,8 @@ class xsLanguage extends xsToken
     public function __construct($value)
     {
         parent::__construct($value);
-        $this->setPatternFacet("[a-zA-Z]{1,8}(-[a-zA-Z0-9]{1,8})*");
-        $this->setWhiteSpaceFacet("collapse");
+        $this->setPatternFacet('[a-zA-Z]{1,8}(-[a-zA-Z0-9]{1,8})*');
+        $this->setWhiteSpaceFacet('collapse');
     }
 
     protected function fixValue()
@@ -51,12 +51,12 @@ class xsLanguage extends xsToken
         parent::isOK();
         if (empty(trim($this->value))) {
             throw new \InvalidArgumentException(
-                "The provided value for " . __CLASS__ . " must not be a blank string."
+                'The provided value for ' . __CLASS__ . ' must not be a blank string.'
             );
         }
         if (8 < strlen($this->value)) {
             throw new \InvalidArgumentException(
-                "The provided value for " . __CLASS__ . " must not be longer than 8 characters."
+                'The provided value for ' . __CLASS__ . ' must not be longer than 8 characters.'
             );
         }
     }

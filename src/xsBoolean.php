@@ -17,14 +17,14 @@ class xsBoolean extends xsAnySimpleType
     public function __construct($value)
     {
         parent::__construct($value);
-        $this->setWhiteSpaceFacet("collapse");
+        $this->setWhiteSpaceFacet('collapse');
     }
 
     protected function isOK()
     {
         if (boolval($this->value) !== $this->value) {
             throw new \InvalidArgumentException(
-                "The provided value for " . __CLASS__ . " needs to be a boolean."
+                'The provided value for ' . __CLASS__ . ' needs to be a boolean.'
             );
         }
     }
