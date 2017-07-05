@@ -1,5 +1,6 @@
 <?php
 namespace AlgoWeb\xsdTypes\Facets;
+
 /**
  * Generated Test Class.
  */
