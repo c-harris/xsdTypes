@@ -5,9 +5,10 @@ namespace AlgoWeb\xsdTypes;
 use AlgoWeb\xsdTypes\Facets\MinMaxTrait;
 
 /**
- * The type xsd:gYear represents a specific calendar year. The letter g signifies "Gregorian." The format of xsd:gYear
- * is CCYY. No left truncation is allowed. To represent years later than 9999, additional digits can be added to the
- * left of the year value. To represent years before 0001, a preceding minus sign ("-") is allowed.
+ * The type xsd:gYearMonth represents a specific month of a specific year. The letter g signifies "Gregorian." The
+ * format of xsd:gYearMonth is CCYY-MM. No left truncation is allowed on either part. To represents years later than
+ * 9999, additional digits can be added to the left of the year value. To represent years before 0001,
+ * a preceding minus sign ("-") is permitted.
  *
  * An optional time zone expression may be added at the end of the value. The letter Z is used to indicate Coordinated
  * Universal Time (UTC). All other time zones are represented by their difference from Coordinated Universal Time in
@@ -16,7 +17,7 @@ use AlgoWeb\xsdTypes\Facets\MinMaxTrait;
  * unknown; it is not assumed to be UTC.
  * @package AlgoWeb\xsdTypes
  */
-class xsGYear extends xsAnySimpleType
+class xsGYearMonth extends xsAnySimpleType
 {
     use MinMaxTrait;
 
@@ -36,7 +37,7 @@ class xsGYear extends xsAnySimpleType
         parent::fixValue();
         $v = new \DateTime($this->value);
         //TODO: TechDebt, This needs to format to
-        $this->value = $v->format('Y');
+        $this->value = $v->format(\DateTime::RFC3339);
     }
 
     protected function isOK()
