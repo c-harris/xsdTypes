@@ -6,7 +6,7 @@ namespace AlgoWeb\xsdTypes;
  * The type xsd:yearMonthDuration represents a duration of time expressed as a number of years and months. The format
  * of xsd:yearMonthDuration is PnYnM, where P is a literal value that starts the expression, nY is the number of years
  * followed by a literal Y, nM is the number of months followed by a literal M. The following rules apply to
- * xsd:yearMonthDuration values:
+ * xsd:yearMonthDuration values:.
  *
  * - Either of these numbers and corresponding designators may be absent if they are equal to 0, but at least
  *   one number and designator must appear.
