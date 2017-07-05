@@ -32,7 +32,7 @@ class xsYearMonthDurationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-         * @dataProvider testPersonDataProvider
+         * @dataProvider testXsYearMonthDurationValidDataProvider
      */
     public function testXsYearMonthDurationValid($duration, $message) {
         $d = new xsYearMonthDuration($duration);
@@ -51,7 +51,7 @@ class xsYearMonthDurationTest extends \PHPUnit_Framework_TestCase
         );
     }
     /**
-     * @dataProvider testPersonDataProvider
+     * @dataProvider testXsYearMonthDurationInvalidDataProvider
      */
     public function testXsYearMonthDurationInvalid($duration, $message) {
         try {
