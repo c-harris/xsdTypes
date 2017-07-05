@@ -60,7 +60,7 @@ trait MinMaxTrait
         $this->minInclusive = $v;
     }
 
-    public function CheckMinMax($v)
+    public function checkMinMax($v)
     {
         if (null != $this->minInclusive) {
             $this->CheckMin($v);

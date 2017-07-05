@@ -10,17 +10,17 @@ trait PatternTrait
     private $pattern = array();
 
     /**
-     * @param string $value
+     * @param string $newPattern
      */
-    protected function setPatternFacet($value)
+    protected function setPatternFacet($newPattern)
     {
-        if (!$this->checkRegexValidPattern($value)) {
-            $value = '/' . $value . '/';
-            if (!$this->checkRegexValidPattern($value)) {
+        if (!$this->checkRegexValidPattern($newPattern)) {
+            $newPattern = '/' . $newPattern . '/';
+            if (!$this->checkRegexValidPattern($newPattern)) {
                 throw new \InvalidArgumentException('Invalid regex pattern provided: ' . __CLASS__);
             }
         }
-        $this->pattern[] = $value;
+        $this->pattern[] = $newPattern;
     }
 
     /**
