@@ -47,11 +47,9 @@ class xsUnsignedShortTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsUnsignedShortTestInvalidDataProvider
      */
     public function testxsUnsignedShortTestInvalid($duration, $message) {
-        try {
             $d = new xsUnsignedShort($duration);
             $e = (string)$d;
-            $this->fail($message);
-        }catch(\Exception $e){}
+            $this->assertEquals('',$e,$message);
     }
 
     public function testxsUnsignedShortTestInvalidDataProvider() {

@@ -47,11 +47,10 @@ class xsPositiveIntegerTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsPositiveIntegerTestInvalidDataProvider
      */
     public function testxsPositiveIntegerTestInvalid($duration, $message) {
-        try {
             $d = new xsPositiveInteger($duration);
             $e = (string)$d;
             $this->fail($message);
-        }catch(\Exception $e){}
+            $this->assertEquals('',$e,$message);
     }
 
     public function testxsPositiveIntegerTestInvalidDataProvider() {

@@ -53,11 +53,9 @@ is on two lines.', 'when parsed, the line break will be replaced with a space'),
      * @dataProvider testxsNormalizedStringTestInvalidDataProvider
      */
     public function testxsNormalizedStringTestInvalid($duration, $message) {
-        try {
             $d = new xsNormalizedString($duration);
             $e = (string)$d;
-            $this->fail($message);
-        }catch(\Exception $e){}
+            $this->assertEquals('',$e,$message);
     }
 
     public function testxsNormalizedStringTestInvalidDataProvider() {

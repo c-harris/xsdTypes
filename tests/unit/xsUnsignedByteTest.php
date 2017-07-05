@@ -47,11 +47,10 @@ class xsUnsignedByteTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsUnsignedByteTestInvalidDataProvider
      */
     public function testxsUnsignedByteTestInvalid($duration, $message) {
-        try {
             $d = new xsUnsignedByte($duration);
             $e = (string)$d;
-            $this->fail($message);
-        }catch(\Exception $e){}
+            $this->assertEquals('',$e,$message);
+
     }
 
     public function testxsUnsignedByteTestInvalidDataProvider() {

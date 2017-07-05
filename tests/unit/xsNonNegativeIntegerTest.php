@@ -47,11 +47,10 @@ class xsNonNegativeIntegerTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxxsNonNegativeIntegerTestInvalidDataProvider
      */
     public function testxsNonNegativeIntegerTestInvalid($duration, $message) {
-        try {
             $d = new xsNonNegativeInteger($duration);
             $e = (string)$d;
-            $this->fail($message);
-        }catch(\Exception $e){}
+            $this->assertEquals('',$e,$message);
+
     }
 
     public function testxsNonNegativeIntegerTestInvalidDataProvider() {

@@ -46,11 +46,10 @@ class xsQNameTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsQNameTestInvalidDataProvider
      */
     public function testxsQNameTestInvalid($duration, $message) {
-        try {
             $d = new xsQName($duration);
             $e = (string)$d;
             $this->fail($message);
-        }catch(\Exception $e){}
+            $this->assertEquals('',$e,$message);
     }
 
     public function testxsQNameTestInvalidDataProvider() {

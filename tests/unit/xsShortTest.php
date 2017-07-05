@@ -49,11 +49,10 @@ class xsShortTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsShortTestInvalidDataProvider
      */
     public function testxsShortTestInvalid($duration, $message) {
-        try {
             $d = new xsShort($duration);
             $e = (string)$d;
             $this->fail($message);
-        }catch(\Exception $e){}
+            $this->assertEquals('',$e,$message);
     }
 
     public function testxsShortTestInvalidDataProvider() {

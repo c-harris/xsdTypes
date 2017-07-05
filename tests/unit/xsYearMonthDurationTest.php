@@ -1,7 +1,7 @@
 <?php
 namespace AlgoWeb\xsdTypes;
 
-use AlgoWeb\xsdTypes\xsYearMonthDuration;
+
 
 /**
  * Generated Test Class.
@@ -49,11 +49,10 @@ class xsYearMonthDurationTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testXsYearMonthDurationInvalidDataProvider
      */
     public function testXsYearMonthDurationInvalid($duration, $message) {
-        try {
             $d = new xsYearMonthDuration($duration);
             $e = (string)$d;
             $this->fail($message);
-        }catch(\Exception $e){}
+            $this->assertEquals('',$e,$message);
     }
 
     public function testXsYearMonthDurationInvalidDataProvider() {

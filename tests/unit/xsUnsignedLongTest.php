@@ -47,11 +47,9 @@ class xsUnsignedLongTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsUnsignedLongTestInvalidDataProvider
      */
     public function testxsUnsignedLongTestInvalid($duration, $message) {
-        try {
             $d = new xsUnsignedLong($duration);
             $e = (string)$d;
-            $this->fail($message);
-        }catch(\Exception $e){}
+        $this->assertEquals('',$e,$message);
     }
 
     public function testxsUnsignedLongTestInvalidDataProvider() {

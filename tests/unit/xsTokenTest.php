@@ -53,11 +53,10 @@ is on two lines.', 'when parsed, the line break will be replaced with a space'),
      * @dataProvider testxsTokenTestInvalidDataProvider
      */
     public function testxsTokenTestInvalid($duration, $message) {
-        try {
             $d = new xsToken($duration);
             $e = (string)$d;
-            $this->fail($message);
-        }catch(\Exception $e){}
+            $this->assertEquals('',$e,$message);
+
     }
 
     public function testxsTokenTestInvalidDataProvider() {

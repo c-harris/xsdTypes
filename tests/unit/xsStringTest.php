@@ -53,11 +53,10 @@ is on two lines.', ''),
      * @dataProvider testxsStringTestInvalidDataProvider
      */
     public function testxsStringTestInvalid($duration, $message) {
-        try {
             $d = new xsUnsignedShort($duration);
             $e = (string)$d;
-            $this->fail($message);
-        }catch(\Exception $e){}
+            $this->assertEquals('',$e,$message);
+
     }
 
     public function testxsStringTestInvalidDataProvider() {
