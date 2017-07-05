@@ -17,7 +17,7 @@ namespace AlgoWeb\xsdTypes;
 class xsID extends xsNCName
 {
     /**
-     * Construct
+     * Construct.
      *
      * @param string $value
      */

@@ -17,7 +17,7 @@ abstract class xsAnySimpleType
     use WhiteSpaceTrait, PatternTrait, EnumerationTrait;
     /**
      * @Exclude
-     * @var boolean indicates if value has been fixed.
+     * @var bool indicates if value has been fixed
      */
     protected $fixed = false;
 
@@ -27,7 +27,7 @@ abstract class xsAnySimpleType
     protected $value = null;
 
     /**
-     * Construct
+     * Construct.
      *
      * @param mixed $value
      */

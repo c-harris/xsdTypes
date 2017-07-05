@@ -16,7 +16,7 @@ namespace AlgoWeb\xsdTypes;
 class xsNormalizedString extends xsString
 {
     /**
-     * Construct
+     * Construct.
      *
      * @param string $value
      */

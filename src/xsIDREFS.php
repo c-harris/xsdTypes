@@ -13,7 +13,7 @@ class xsIDREFS extends xsAnySimpleType
     use LengthTrait;
 
     /**
-     * Construct
+     * Construct.
      *
      * @param xsIDREF $value
      */

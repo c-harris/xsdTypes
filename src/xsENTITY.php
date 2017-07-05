@@ -12,7 +12,7 @@ namespace AlgoWeb\xsdTypes;
 class xsENTITY extends xsNCName
 {
     /**
-     * Construct
+     * Construct.
      *
      * @param mixed $value
      */

@@ -28,7 +28,7 @@ namespace AlgoWeb\xsdTypes;
 class xsLanguage extends xsToken
 {
     /**
-     * Construct
+     * Construct.
      *
      * @param string $value
      */

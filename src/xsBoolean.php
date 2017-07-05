@@ -10,7 +10,7 @@ namespace AlgoWeb\xsdTypes;
 class xsBoolean extends xsAnySimpleType
 {
     /**
-     * Construct
+     * Construct.
      *
      * @param bool $value
      */

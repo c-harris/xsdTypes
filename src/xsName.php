@@ -12,7 +12,7 @@ namespace AlgoWeb\xsdTypes;
 class xsName extends xsToken
 {
     /**
-     * Construct
+     * Construct.
      *
      * @param string $value
      */

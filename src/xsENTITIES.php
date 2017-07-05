@@ -15,7 +15,7 @@ class xsENTITIES extends xsAnySimpleType
     use LengthTrait;
 
     /**
-     * Construct
+     * Construct.
      *
      * @param xsENTITY $value
      */

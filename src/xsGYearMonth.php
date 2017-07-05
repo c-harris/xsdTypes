@@ -22,7 +22,7 @@ class xsGYearMonth extends xsAnySimpleType
     use MinMaxTrait;
 
     /**
-     * Construct
+     * Construct.
      *
      * @param string $value
      */

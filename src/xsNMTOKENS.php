@@ -14,7 +14,7 @@ class xsNMTOKENS extends xsAnySimpleType
     use LengthTrait;
 
     /**
-     * Construct
+     * Construct.
      *
      * @param array $value
      */

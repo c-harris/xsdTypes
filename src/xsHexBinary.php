@@ -15,7 +15,7 @@ class xsHexBinary extends xsAnySimpleType
     use LengthTrait;
 
     /**
-     * Construct
+     * Construct.
      *
      * @param string $value
      */

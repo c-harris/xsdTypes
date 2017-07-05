@@ -10,7 +10,7 @@ namespace AlgoWeb\xsdTypes;
 class xsIDREF extends xsNCName
 {
     /**
-     * Construct
+     * Construct.
      *
      * @param string $value
      */

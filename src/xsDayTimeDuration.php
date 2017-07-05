@@ -20,7 +20,7 @@ namespace AlgoWeb\xsdTypes;
 class xsDayTimeDuration extends xsDuration
 {
     /**
-     * Construct
+     * Construct.
      *
      * @param string $value
      */

@@ -21,7 +21,7 @@ class xsGMonthDay extends xsAnySimpleType
     use MinMaxTrait;
 
     /**
-     * Construct
+     * Construct.
      *
      * @param string $value
      */
