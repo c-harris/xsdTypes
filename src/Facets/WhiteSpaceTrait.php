@@ -9,6 +9,11 @@ trait WhiteSpaceTrait
      */
     private $whiteSpace = 'preserve';
 
+    /**
+     * Changes the input value in accordance with the defined white space handler.
+     * @param string $val
+     * @return string
+     */
     protected function fixWhitespace($val)
     {
         switch ($this->whiteSpace) {

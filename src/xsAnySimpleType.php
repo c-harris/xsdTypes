@@ -57,5 +57,9 @@ abstract class xsAnySimpleType
         $this->isOK();
     }
 
+    /**
+     * preforms subclass specific checks to make sure the contained value is OK.
+     * @return void
+     */
     abstract protected function isOK();
 }
