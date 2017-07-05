@@ -11,7 +11,7 @@ trait WhiteSpaceTrait
 
     /**
      * Changes the input value in accordance with the defined white space handler.
-     * @param string $val
+     * @param  string $val
      * @return string
      */
     protected function fixWhitespace($val)
