@@ -1,22 +1,21 @@
 <?php
 namespace AlgoWeb\xsdTypes\Facets;
 
-//TODO: we need to extend this to handle dates.
 trait MinMaxTrait
 {
     /**
      * @Exclude
-     * @var integer|double|\DateTime Specifies the lower bounds for numeric values (the value must be greater than or equal to this value)
+     * @var integer|double|\DateTime|\DateInterval Specifies the lower bounds for numeric values (the value must be greater than or equal to this value)
      */
     private $minInclusive = null;
     /**
      * @Exclude
-     * @var integer|double|\DateTime Specifies the upper bounds for numeric values (the value must be less than or equal to this value)
+     * @var integer|double|\DateTime|\DateInterval Specifies the upper bounds for numeric values (the value must be less than or equal to this value)
      */
     private $maxInclusive = null;
 
     /**
-     * @param integer|double|\DateTime $v Specifies the upper bounds for numeric values (the value must be less than this value)
+     * @param integer|double|\DateTime|\DateInterval $v Specifies the upper bounds for numeric values (the value must be less than this value)
      */
     public function setMaxExclusive($v)
     {
@@ -28,7 +27,7 @@ trait MinMaxTrait
     }
 
     /**
-     * @param integer|double|\DateTime $v Specifies the upper bounds for numeric values (the value must be less than or equal to this value)
+     * @param integer|double|\DateTime|\DateInterval $v Specifies the upper bounds for numeric values (the value must be less than or equal to this value)
      */
     public function setMaxInclusive($v)
     {
@@ -36,7 +35,7 @@ trait MinMaxTrait
     }
 
     /**
-     * @param integer|double|\DateTime $v Specifies the lower bounds for numeric values (the value must be greater than this value)
+     * @param integer|double|\DateTime|\DateInterval $v Specifies the lower bounds for numeric values (the value must be greater than this value)
      */
     public function setMinExclusive($v)
     {
@@ -48,7 +47,7 @@ trait MinMaxTrait
     }
 
     /**
-     * @param integer|double|\DateTime $v Specifies the lower bounds for numeric values (the value must be greater than or equal to this value)
+     * @param integer|double|\DateTime|\DateInterval $v Specifies the lower bounds for numeric values (the value must be greater than or equal to this value)
      */
     public function setMinInclusive($v)
     {
