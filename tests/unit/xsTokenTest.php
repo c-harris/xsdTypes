@@ -30,7 +30,7 @@ class xsTokenTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsTokenTestValidDataProvider
      */
     public function testxsTokenTestValid($duration, $message) {
-        $d = new xsUnsignedShort($duration);
+        $d = new xsToken($duration);
         $e = (string)$d;
         $this->assertEquals($duration,$e,$message);
 
@@ -54,7 +54,7 @@ is on two lines.', 'when parsed, the line break will be replaced with a space'),
      */
     public function testxsTokenTestInvalid($duration, $message) {
         try {
-            $d = new xsUnsignedShort($duration);
+            $d = new xsToken($duration);
             $e = (string)$d;
             $this->fail($message);
         }catch(\Exception $e){}

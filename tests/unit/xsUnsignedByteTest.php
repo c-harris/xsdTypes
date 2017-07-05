@@ -30,7 +30,7 @@ class xsUnsignedByteTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsUnsignedByteTestValidDataProvider
      */
     public function testxsUnsignedByteTestValid($duration, $message) {
-        $d = new xsUnsignedShort($duration);
+        $d = new xsUnsignedByte($duration);
         $e = (string)$d;
         $this->assertEquals($duration,$e,$message);
 
@@ -48,7 +48,7 @@ class xsUnsignedByteTest extends \PHPUnit_Framework_TestCase
      */
     public function testxsUnsignedByteTestInvalid($duration, $message) {
         try {
-            $d = new xsUnsignedShort($duration);
+            $d = new xsUnsignedByte($duration);
             $e = (string)$d;
             $this->fail($message);
         }catch(\Exception $e){}

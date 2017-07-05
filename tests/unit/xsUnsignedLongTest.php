@@ -30,7 +30,7 @@ class xsUnsignedLongTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsUnsignedLongTestValidDataProvider
      */
     public function testxsUnsignedLongTestValid($duration, $message) {
-        $d = new xsUnsignedShort($duration);
+        $d = new xsUnsignedLong($duration);
         $e = (string)$d;
         $this->assertEquals($duration,$e,$message);
 
@@ -48,7 +48,7 @@ class xsUnsignedLongTest extends \PHPUnit_Framework_TestCase
      */
     public function testxsUnsignedLongTestInvalid($duration, $message) {
         try {
-            $d = new xsUnsignedShort($duration);
+            $d = new xsUnsignedLong($duration);
             $e = (string)$d;
             $this->fail($message);
         }catch(\Exception $e){}

@@ -9,18 +9,12 @@ namespace AlgoWeb\xsdTypes;
 class xsShortTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var \AlgoWeb\xsdTypes\xsShort
-     */
-    protected $object;
-
-    /**
      * Sets up the fixture, for example, opens a network connection.
      * This method is called before a test is executed.
      */
     protected function setUp()
     {
         parent::setUp();
-        $this->object = new \AlgoWeb\xsdTypes\xsShort();
     }
 
     /**
@@ -33,144 +27,40 @@ class xsShortTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers \AlgoWeb\xsdTypes\xsShort::__toString
-     * @todo   Implement test__toString().
+     * @dataProvider testxsShortTestValidDataProvider
      */
-    public function test__toString()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+    public function testxsShortTestValid($duration, $message) {
+        $d = new xsShort($duration);
+        $e = (string)$d;
+        $this->assertEquals($duration,$e,$message);
+
     }
 
+    public function testxsShortTestValidDataProvider() {
+        return array(
+            array(+3, 'Positive 1'),
+            array('122', '122'),
+            array('0', 'zero'),
+            array(-1231, 'negative 1231'),
 
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsShort::setTotalDigits
-     * @todo   Implement testSetTotalDigits().
-     */
-    public function testSetTotalDigits()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
         );
     }
-
-
     /**
-     * @covers \AlgoWeb\xsdTypes\xsShort::checkTotalDigits
-     * @todo   Implement testCheckTotalDigits().
+     * @dataProvider testxsShortTestInvalidDataProvider
      */
-    public function testCheckTotalDigits()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+    public function testxsShortTestInvalid($duration, $message) {
+        try {
+            $d = new xsShort($duration);
+            $e = (string)$d;
+            $this->fail($message);
+        }catch(\Exception $e){}
     }
 
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsShort::setFractionDigits
-     * @todo   Implement testSetFractionDigits().
-     */
-    public function testSetFractionDigits()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsShort::checkFractionDigits
-     * @todo   Implement testCheckFractionDigits().
-     */
-    public function testCheckFractionDigits()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsShort::fixFractionDigits
-     * @todo   Implement testFixFractionDigits().
-     */
-    public function testFixFractionDigits()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsShort::setMaxExclusive
-     * @todo   Implement testSetMaxExclusive().
-     */
-    public function testSetMaxExclusive()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsShort::setMaxInclusive
-     * @todo   Implement testSetMaxInclusive().
-     */
-    public function testSetMaxInclusive()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsShort::setMinExclusive
-     * @todo   Implement testSetMinExclusive().
-     */
-    public function testSetMinExclusive()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsShort::setMinInclusive
-     * @todo   Implement testSetMinInclusive().
-     */
-    public function testSetMinInclusive()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsShort::checkMinMax
-     * @todo   Implement testCheckMinMax().
-     */
-    public function testCheckMinMax()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
+    public function testxsShortTestInvalidDataProvider() {
+        return array(
+            array('32770', 'number is too large'),
+            array('3.0', 'value must not contain a decimal point'),
+            array('', '	an empty value is not valid, unless xsi:nil is used'),
         );
     }
 }

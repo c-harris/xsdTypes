@@ -9,18 +9,12 @@ namespace AlgoWeb\xsdTypes;
 class xsQNameTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var \AlgoWeb\xsdTypes\xsQName
-     */
-    protected $object;
-
-    /**
      * Sets up the fixture, for example, opens a network connection.
      * This method is called before a test is executed.
      */
     protected function setUp()
     {
         parent::setUp();
-        $this->object = new \AlgoWeb\xsdTypes\xsQName();
     }
 
     /**
@@ -33,14 +27,37 @@ class xsQNameTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers \AlgoWeb\xsdTypes\xsQName::__toString
-     * @todo   Implement test__toString().
+     * @dataProvider testxsQNameTestValidDataProvider
      */
-    public function test__toString()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
+    public function testxsQNameTestValid($duration, $message) {
+        $d = new xsQName($duration);
+        $e = (string)$d;
+        $this->assertEquals($duration,$e,$message);
+
+    }
+
+    public function testxsQNameTestValidDataProvider() {
+        return array(
+            array('pre:myElement', 'valid assuming the prefix "pre" is mapped to a namespace in scope'),
+            array('myElement', 'prefix and colon are optional'),
+        );
+    }
+    /**
+     * @dataProvider testxsQNameTestInvalidDataProvider
+     */
+    public function testxsQNameTestInvalid($duration, $message) {
+        try {
+            $d = new xsQName($duration);
+            $e = (string)$d;
+            $this->fail($message);
+        }catch(\Exception $e){}
+    }
+
+    public function testxsQNameTestInvalidDataProvider() {
+        return array(
+            array(':myElement', '	a QName must not start with a colon'),
+            array('pre:3rdElement', 'the local part must not start with a number; it must be a valid NCName'),
+            array('', '	an empty value is not valid, unless xsi:nil is used'),
         );
     }
 }

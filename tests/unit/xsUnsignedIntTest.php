@@ -30,7 +30,7 @@ class xsUnsignedIntTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsUnsignedIntTestValidDataProvider
      */
     public function testxsUnsignedIntTestValid($duration, $message) {
-        $d = new xsUnsignedShort($duration);
+        $d = new xsUnsignedInt($duration);
         $e = (string)$d;
         $this->assertEquals($duration,$e,$message);
 
@@ -48,7 +48,7 @@ class xsUnsignedIntTest extends \PHPUnit_Framework_TestCase
      */
     public function testxsUnsignedIntTestInvalid($duration, $message) {
         try {
-            $d = new xsUnsignedShort($duration);
+            $d = new xsUnsignedInt($duration);
             $e = (string)$d;
             $this->fail($message);
         }catch(\Exception $e){}

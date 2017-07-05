@@ -9,18 +9,12 @@ namespace AlgoWeb\xsdTypes;
 class xsPositiveIntegerTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var \AlgoWeb\xsdTypes\xsPositiveInteger
-     */
-    protected $object;
-
-    /**
      * Sets up the fixture, for example, opens a network connection.
      * This method is called before a test is executed.
      */
     protected function setUp()
     {
         parent::setUp();
-        $this->object = new \AlgoWeb\xsdTypes\xsPositiveInteger();
     }
 
     /**
@@ -33,144 +27,39 @@ class xsPositiveIntegerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers \AlgoWeb\xsdTypes\xsPositiveInteger::__toString
-     * @todo   Implement test__toString().
+     * @dataProvider testxsPositiveIntegerTestValidDataProvider
      */
-    public function test__toString()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+    public function testxsPositiveIntegerTestValid($duration, $message) {
+        $d = new xsPositiveInteger($duration);
+        $e = (string)$d;
+        $this->assertEquals($duration,$e,$message);
+
     }
 
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsPositiveInteger::setTotalDigits
-     * @todo   Implement testSetTotalDigits().
-     */
-    public function testSetTotalDigits()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
+    public function testxsPositiveIntegerTestValidDataProvider() {
+        return array(
+            array(122, '122'),
+            array('+3', '122'),
+            array('00122', 'leading zeros are permitted'),
         );
     }
-
-
     /**
-     * @covers \AlgoWeb\xsdTypes\xsPositiveInteger::checkTotalDigits
-     * @todo   Implement testCheckTotalDigits().
+     * @dataProvider testxsPositiveIntegerTestInvalidDataProvider
      */
-    public function testCheckTotalDigits()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+    public function testxsPositiveIntegerTestInvalid($duration, $message) {
+        try {
+            $d = new xsPositiveInteger($duration);
+            $e = (string)$d;
+            $this->fail($message);
+        }catch(\Exception $e){}
     }
 
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsPositiveInteger::setFractionDigits
-     * @todo   Implement testSetFractionDigits().
-     */
-    public function testSetFractionDigits()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsPositiveInteger::checkFractionDigits
-     * @todo   Implement testCheckFractionDigits().
-     */
-    public function testCheckFractionDigits()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsPositiveInteger::fixFractionDigits
-     * @todo   Implement testFixFractionDigits().
-     */
-    public function testFixFractionDigits()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsPositiveInteger::setMaxExclusive
-     * @todo   Implement testSetMaxExclusive().
-     */
-    public function testSetMaxExclusive()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsPositiveInteger::setMaxInclusive
-     * @todo   Implement testSetMaxInclusive().
-     */
-    public function testSetMaxInclusive()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsPositiveInteger::setMinExclusive
-     * @todo   Implement testSetMinExclusive().
-     */
-    public function testSetMinExclusive()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsPositiveInteger::setMinInclusive
-     * @todo   Implement testSetMinInclusive().
-     */
-    public function testSetMinInclusive()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsPositiveInteger::checkMinMax
-     * @todo   Implement testCheckMinMax().
-     */
-    public function testCheckMinMax()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
+    public function testxsPositiveIntegerTestInvalidDataProvider() {
+        return array(
+            array('0', '0 is not considered positive'),
+            array('-3', 'value cannot be negative'),
+            array('3.0', 'value must not contain a decimal point'),
+            array('', '	an empty value is not valid, unless xsi:nil is used'),
         );
     }
 }
