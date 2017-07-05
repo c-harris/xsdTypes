@@ -23,8 +23,8 @@ use AlgoWeb\xsdTypes\Facets\LengthTrait;
  * represented instead as ../%C3%A9dition.html, with the é escaped as %C3%A9.  However, the anyURI type will accept
  * these characters either escaped or unescaped.  With the exception of the characters % and #, it will assume that
  * unescaped characters are intended to be escaped when used in an actual URI, although the schema processor will do
- * nothing to alter them.  It is valid for an anyURI value to contain a space, but this practice is strongly discouraged.
- * Spaces should instead be escaped using %20.
+ * nothing to alter them.  It is valid for an anyURI value to contain a space, but this practice is strongly
+ * discouraged. Spaces should instead be escaped using %20.
  *
  * The schema processor is not required to parse the contents of an xsd:anyURI value to determine whether it is valid
  * according to any particular URI scheme.  Since the bare minimum rules for valid URI references are fairly generic,
@@ -35,6 +35,7 @@ use AlgoWeb\xsdTypes\Facets\LengthTrait;
  * Note that when relative URI references such as "../prod" are used as values of xsd:anyURI, no attempt is made to
  * determine or keep track of the base URI to which they may be applied.  For more information on URIs, see RFC 2396,
  * Uniform Resource Identifiers (URI): Generic Syntax.
+ *
  * @package AlgoWeb\xsdTypes
  */
 class xsAnyURI extends xsAnySimpleType

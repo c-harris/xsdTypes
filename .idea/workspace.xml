@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="4864e311-a358-44a7-afa6-a49dcc51d329" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsAnySimpleType.php" afterPath="$PROJECT_DIR$/src/xsAnySimpleType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Facets/LengthTrait.php" afterPath="$PROJECT_DIR$/src/Facets/LengthTrait.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Facets/MinMaxTrait.php" afterPath="$PROJECT_DIR$/src/Facets/MinMaxTrait.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Facets/PatternTrait.php" afterPath="$PROJECT_DIR$/src/Facets/PatternTrait.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsAnyURI.php" afterPath="$PROJECT_DIR$/src/xsAnyURI.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,34 +18,24 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MinMaxTrait.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Facets/MinMaxTrait.php">
+      <file leaf-file-name="xsNOTATION.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/xsNOTATION.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-408">
-              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding>
-                <marker date="1499248315027" expanded="true" signature="59:2318" ph="{...}" />
-                <marker date="1499248315027" expanded="true" signature="69:101" ph=" @Exclude ..." />
-                <marker date="1499248315027" expanded="true" signature="1477:1612" ph=" @param integer|double|\DateTime|\DateInterval $v Specifies the lower bounds for numeric values (the value must be greater than or equal to this value) ..." />
-                <marker date="1499248315027" expanded="true" signature="1654:1700" ph="{...}" />
-                <marker date="1499248315027" expanded="true" signature="1737:1921" ph="{...}" />
-                <marker date="1499248315027" expanded="true" signature="1786:1828" ph="..." />
-                <marker date="1499248315027" expanded="true" signature="1872:1914" ph="..." />
-                <marker date="1499248315027" expanded="true" signature="1956:2051" ph="{...}" />
-                <marker date="1499248315027" expanded="true" signature="2002:2051" ph="..." />
-                <marker date="1499248315027" expanded="true" signature="2286:2309" ph="..." />
-                <marker date="1499248315027" expanded="true" signature="2286:2316" ph="{...}" />
-              </folding>
+            <state relative-caret-position="595">
+              <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="xsGDay.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/xsGDay.php">
+      <file leaf-file-name="xsPositiveInteger.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/xsPositiveInteger.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="10" column="2" lean-forward="false" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
-              <folding />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1499247321336" expanded="true" signature="362:557" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -57,105 +50,73 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LengthTrait.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Facets/LengthTrait.php">
+      <file leaf-file-name="xsShort.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/xsShort.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="35" column="18" lean-forward="false" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
-              <folding>
-                <marker date="1499248618140" expanded="true" signature="59:2773" ph="{...}" />
-                <marker date="1499248618140" expanded="true" signature="1015:1069" ph=" @param int     $value ..." />
-                <marker date="1499248618140" expanded="true" signature="1133:1439" ph="{...}" />
-                <marker date="1499248618140" expanded="true" signature="1178:1290" ph="..." />
-                <marker date="1499248618140" expanded="true" signature="1321:1432" ph="..." />
-                <marker date="1499248618140" expanded="true" signature="1448:1584" ph=" @param int $value Specifies the maximum number of characters or list items allowed.  Must be equal to or greater than zero ..." />
-                <marker date="1499248618140" expanded="true" signature="1635:1729" ph="{...}" />
-                <marker date="1499248618140" expanded="true" signature="1767:1957" ph="{...}" />
-                <marker date="1499248618140" expanded="true" signature="1813:1861" ph="..." />
-                <marker date="1499248618140" expanded="true" signature="1902:1950" ph="..." />
-                <marker date="1499248618140" expanded="true" signature="1998:2288" ph="{...}" />
-                <marker date="1499248618140" expanded="true" signature="2088:2281" ph="..." />
-                <marker date="1499248618140" expanded="true" signature="2332:2439" ph="{...}" />
-                <marker date="1499248618140" expanded="true" signature="2366:2405" ph="..." />
-                <marker date="1499248618140" expanded="true" signature="2480:2771" ph="{...}" />
-                <marker date="1499248618140" expanded="true" signature="2570:2764" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PatternTrait.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Facets/PatternTrait.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="26" column="29" lean-forward="false" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WhiteSpaceTrait.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Facets/WhiteSpaceTrait.php">
+      <file leaf-file-name="xsString.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/xsString.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="12" column="44" lean-forward="false" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
+            <state relative-caret-position="595">
+              <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="xsAnySimpleType.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/xsAnySimpleType.php">
+      <file leaf-file-name="xsToken.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/xsToken.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="48" column="91" lean-forward="true" selection-start-line="48" selection-start-column="91" selection-end-line="48" selection-end-column="91" />
-              <folding>
-                <element signature="e#35#80#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="xsDuration.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/xsDuration.php">
+      <file leaf-file-name="xsUnsignedByte.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/xsUnsignedByte.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="51" column="24" lean-forward="false" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
-              <folding>
-                <marker date="1499248315481" expanded="true" signature="39:704" ph=" The type xsd:duration represents a duration of time expressed as a number of years, months, days, hours, minutes, ..." />
-                <marker date="1499248315481" expanded="true" signature="1392:1433" ph=" Construct ..." />
-                <marker date="1499248315481" expanded="true" signature="1392:2222" ph="{...}" />
-                <marker date="1499248315481" expanded="true" signature="1475:1553" ph="{...}" />
-                <marker date="1499248315481" expanded="true" signature="1929:2084" ph="..." />
-                <marker date="1499248315481" expanded="true" signature="1929:2116" ph="{...}" />
-                <marker date="1499248315481" expanded="true" signature="1932:2036" ph="..." />
-                <marker date="1499248315481" expanded="true" signature="2147:2220" ph="{...}" />
-              </folding>
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="xsDayTimeDuration.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/xsDayTimeDuration.php">
+      <file leaf-file-name="xsUnsignedInt.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/xsUnsignedInt.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="1" lean-forward="false" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-              <folding>
-                <marker date="1499247333781" expanded="true" signature="1243:1420" ph="{...}" />
-                <marker date="1499247333781" expanded="true" signature="1276:1418" ph="{...}" />
-              </folding>
+            <state relative-caret-position="17">
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="xsYearMonthDuration.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="xsUnsignedShort.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/xsUnsignedShort.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="7" lean-forward="false" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="xsYearMonthDuration.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/xsYearMonthDuration.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
               <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding>
                 <marker date="1499248316283" expanded="true" signature="39:419" ph=" The type xsd:yearMonthDuration represents a duration of time expressed as a number of years and months. The format ..." />
-                <marker date="1499248316283" expanded="true" signature="1019:1156" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -209,14 +170,12 @@
         <option value="$PROJECT_DIR$/src/xsIDREF.php" />
         <option value="$PROJECT_DIR$/src/xsIDREFS.php" />
         <option value="$PROJECT_DIR$/src/xsENTITIES.php" />
-        <option value="$PROJECT_DIR$/src/xsAnyURI.php" />
         <option value="$PROJECT_DIR$/src/xsBase64Binary.php" />
         <option value="$PROJECT_DIR$/src/xsHexBinary.php" />
         <option value="$PROJECT_DIR$/src/xsNOTATION.php" />
         <option value="$PROJECT_DIR$/src/xsString.php" />
         <option value="$PROJECT_DIR$/src/xsLanguage.php" />
         <option value="$PROJECT_DIR$/src/xsDateTime.php" />
-        <option value="$PROJECT_DIR$/src/Facets/MinMaxTrait.php" />
         <option value="$PROJECT_DIR$/src/xsGMonthDay.php" />
         <option value="$PROJECT_DIR$/src/xsGYear.php" />
         <option value="$PROJECT_DIR$/src/xsGMonth.php" />
@@ -226,10 +185,12 @@
         <option value="$PROJECT_DIR$/src/xsYearMonthDuration.php" />
         <option value="$PROJECT_DIR$/src/xsGDay.php" />
         <option value="$PROJECT_DIR$/src/xsQName.php" />
-        <option value="$PROJECT_DIR$/src/Facets/LengthTrait.php" />
-        <option value="$PROJECT_DIR$/src/Facets/PatternTrait.php" />
         <option value="$PROJECT_DIR$/src/Facets/WhiteSpaceTrait.php" />
         <option value="$PROJECT_DIR$/src/xsAnySimpleType.php" />
+        <option value="$PROJECT_DIR$/src/Facets/LengthTrait.php" />
+        <option value="$PROJECT_DIR$/src/Facets/MinMaxTrait.php" />
+        <option value="$PROJECT_DIR$/src/Facets/PatternTrait.php" />
+        <option value="$PROJECT_DIR$/src/xsAnyURI.php" />
       </list>
     </option>
   </component>
@@ -513,7 +474,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1496235604163</updated>
-      <workItem from="1498632824380" duration="40905000" />
+      <workItem from="1498632824380" duration="41290000" />
     </task>
     <task id="LOCAL-00001" summary="added more basic types">
       <created>1498633990235</created>
@@ -802,11 +763,18 @@
       <option name="project" value="LOCAL" />
       <updated>1499249020930</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="more documentation work">
+      <created>1499249225390</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1499249225390</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40905000" />
+    <option name="totallyTimeSpent" value="41290000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -901,249 +869,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Facets/EnumerationTrait.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsBoolean.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="21" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsByte.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsDecimal.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsDouble.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsENTITY.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsFloat.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsID.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <marker date="1499247320869" expanded="true" signature="38:656" ph=" The type xsd:ID is used for an attribute that uniquely identifies an element in an XML document. An xsd:ID value must be an NCName. This means that it must start with a letter or underscore, and can only contain letters, digits, underscores, hyphens, and periods. ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsInt.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsInteger.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsLong.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsName.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <marker date="1499247321230" expanded="true" signature="38:443" ph=" The type xsd:Name represents an XML name, which can be used as an element-type name or attribute name, among other things. Specifically, this means that values must start with a letter, underscore(_), or colon (:), and may contain only letters, digits, underscores (_), colons (:), hyphens (-), and periods (.). Colons should only be used to separate namespace prefixes from local names. ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsNCName.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <marker date="1499247321176" expanded="true" signature="38:395" ph=" The type xsd:NCName represents an XML non-colonized name, which is simply a name that does not contain colons. An xsd:NCName value must start with either a letter or underscore (_) and may contain only letters, digits, underscores (_), hyphens (-), and periods (.). This is equivalent to the Name type, except that colons are not permitted. ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsNegativeInteger.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsNMTOKEN.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="16" lean-forward="false" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsNonNegativeInteger.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <marker date="1499247321282" expanded="true" signature="367:562" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsNonPositiveInteger.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsNormalizedString.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="20" lean-forward="false" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsPositiveInteger.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <marker date="1499247321336" expanded="true" signature="362:557" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsShort.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsToken.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="20" lean-forward="false" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsUnsignedByte.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsNMTOKENS.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="27" column="33" lean-forward="false" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
-          <folding>
-            <marker date="1499248316031" expanded="true" signature="80:167" ph=" The type xsd:NMTOKENS represents a list of NMTOKEN values separated by whitespace. There must be at least one ..." />
-            <marker date="1499248316031" expanded="true" signature="1286:1348" ph="{...}" />
-            <marker date="1499248316031" expanded="true" signature="1286:1350" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/IDREF.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsIDREF.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="5" lean-forward="false" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-          <folding>
-            <marker date="1499247320920" expanded="true" signature="38:382" ph=" CThe type xsd:IDREF is used for an attribute that references an ID. All attributes of type xsd:IDREF must reference ..." />
-            <marker date="1499247320920" expanded="true" signature="415:577" ph="{...}" />
-            <marker date="1499247320920" expanded="true" signature="425:484" ph=" Construct ..." />
-            <marker date="1499247320920" expanded="true" signature="526:575" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsIDREFS.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <marker date="1499248315931" expanded="true" signature="80:163" ph=" The type xsd:IDREFS represents a list of IDREF values separated by whitespace. There must be at least one IDREF in ..." />
-            <marker date="1499248315931" expanded="true" signature="875:937" ph="{...}" />
-            <marker date="1499248315931" expanded="true" signature="875:939" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsENTITIES.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-          <folding>
-            <marker date="1499248315531" expanded="true" signature="80:216" ph=" The type xsd:ENTITIES represents a list of ENTITY values separated by whitespace. ..." />
-            <marker date="1499248315531" expanded="true" signature="931:993" ph="{...}" />
-            <marker date="1499248315531" expanded="true" signature="931:995" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/xsUnsignedLong.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1158,76 +883,93 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsUnsignedShort.php">
+    <entry file="file://$PROJECT_DIR$/src/Facets/LengthTrait.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="7" lean-forward="false" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+        <state relative-caret-position="102">
+          <caret line="18" column="25" lean-forward="false" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Facets/DigitsTrait.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1031">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Facets/EnumerationTrait.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-153">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Facets/MinMaxTrait.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-45">
+          <caret line="55" column="51" lean-forward="false" selection-start-line="55" selection-start-column="51" selection-end-line="55" selection-end-column="51" />
           <folding>
-            <marker date="1499247321644" expanded="true" signature="38:283" ph=" The type xsd:unsignedShort represents an integer between 0 and 65535. An xsd:unsignedShort is a sequence of digits, ..." />
-            <marker date="1499247321644" expanded="true" signature="329:527" ph="{...}" />
-            <marker date="1499247321644" expanded="true" signature="339:395" ph=" Construct ..." />
-            <marker date="1499247321644" expanded="true" signature="437:525" ph="{...}" />
+            <marker date="1499249604972" expanded="true" signature="69:101" ph=" @Exclude ..." />
+            <marker date="1499249604972" expanded="true" signature="1722:1908" ph=" @param integer|double|\DateTime|\DateInterval $v Specifies the lower bounds for numeric values (the value must be greater than or equal to this value) ..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsUnsignedInt.php">
+    <entry file="file://$PROJECT_DIR$/src/Facets/PatternTrait.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <marker date="1499247321542" expanded="true" signature="38:284" ph=" The type xsd:unsignedInt represents an integer between 0 and 4294967295. An xsd:unsignedInt is a sequence of digits, ..." />
-            <marker date="1499247321542" expanded="true" signature="329:532" ph="{...}" />
-            <marker date="1499247321542" expanded="true" signature="339:395" ph=" Construct ..." />
-            <marker date="1499247321542" expanded="true" signature="437:530" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsBase64Binary.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+        <state relative-caret-position="159">
+          <caret line="42" column="24" lean-forward="false" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsHexBinary.php">
+    <entry file="file://$PROJECT_DIR$/src/Facets/WhiteSpaceTrait.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        <state relative-caret-position="-11">
+          <caret line="12" column="44" lean-forward="false" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsNOTATION.php">
+    <entry file="file://$PROJECT_DIR$/src/xsAnySimpleType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsString.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+        <state relative-caret-position="142">
+          <caret line="48" column="91" lean-forward="true" selection-start-line="48" selection-start-column="91" selection-end-line="48" selection-end-column="91" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/xsAnyURI.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="52" selection-end-column="5" />
+        <state relative-caret-position="151">
+          <caret line="26" column="16" lean-forward="false" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsLanguage.php">
+    <entry file="file://$PROJECT_DIR$/src/xsBase64Binary.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="48" column="23" lean-forward="true" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
+        <state relative-caret-position="576">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsBoolean.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsByte.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1238,77 +980,6 @@
           <caret line="4" column="40" lean-forward="false" selection-start-line="4" selection-start-column="40" selection-end-line="5" selection-end-column="0" />
           <folding>
             <marker date="1499248315331" expanded="true" signature="958:1455" ph="{...}" />
-            <marker date="1499248315331" expanded="true" signature="990:1049" ph=" Construct ..." />
-            <marker date="1499248315331" expanded="true" signature="1091:1187" ph="{...}" />
-            <marker date="1499248315331" expanded="true" signature="1219:1356" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsGYear.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="27" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="29" selection-end-column="27" />
-          <folding>
-            <marker date="1499248315781" expanded="true" signature="1029:1088" ph=" Construct ..." />
-            <marker date="1499248315781" expanded="true" signature="1130:1226" ph="{...}" />
-            <marker date="1499248315781" expanded="true" signature="1258:1430" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsGMonth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="46" column="0" lean-forward="false" selection-start-line="18" selection-start-column="14" selection-end-line="46" selection-end-column="0" />
-          <folding>
-            <marker date="1499248315681" expanded="true" signature="1027:1086" ph=" Construct ..." />
-            <marker date="1499248315681" expanded="true" signature="1128:1224" ph="{...}" />
-            <marker date="1499248315681" expanded="true" signature="1256:1443" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsGYearMonth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-136">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding>
-            <marker date="1499248315831" expanded="true" signature="1079:1138" ph=" Construct ..." />
-            <marker date="1499248315831" expanded="true" signature="1180:1276" ph="{...}" />
-            <marker date="1499248315831" expanded="true" signature="1308:1495" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsGMonthDay.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="20" lean-forward="false" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-          <folding>
-            <marker date="1499248315731" expanded="true" signature="957:1016" ph=" Construct ..." />
-            <marker date="1499248315731" expanded="true" signature="1058:1154" ph="{...}" />
-            <marker date="1499248315731" expanded="true" signature="1186:1373" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Facets/MinMaxTrait.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-408">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <marker date="1499248315027" expanded="true" signature="59:2318" ph="{...}" />
-            <marker date="1499248315027" expanded="true" signature="69:101" ph=" @Exclude ..." />
-            <marker date="1499248315027" expanded="true" signature="1477:1612" ph=" @param integer|double|\DateTime|\DateInterval $v Specifies the lower bounds for numeric values (the value must be greater than or equal to this value) ..." />
-            <marker date="1499248315027" expanded="true" signature="1654:1700" ph="{...}" />
-            <marker date="1499248315027" expanded="true" signature="1737:1921" ph="{...}" />
-            <marker date="1499248315027" expanded="true" signature="1786:1828" ph="..." />
-            <marker date="1499248315027" expanded="true" signature="1872:1914" ph="..." />
-            <marker date="1499248315027" expanded="true" signature="1956:2051" ph="{...}" />
-            <marker date="1499248315027" expanded="true" signature="2002:2051" ph="..." />
-            <marker date="1499248315027" expanded="true" signature="2286:2309" ph="..." />
-            <marker date="1499248315027" expanded="true" signature="2286:2316" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1317,46 +988,261 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="1" lean-forward="false" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-          <folding>
-            <marker date="1499247333781" expanded="true" signature="1243:1420" ph="{...}" />
-            <marker date="1499247333781" expanded="true" signature="1276:1418" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsYearMonthDuration.php">
+    <entry file="file://$PROJECT_DIR$/src/xsDecimal.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <marker date="1499248316283" expanded="true" signature="39:419" ph=" The type xsd:yearMonthDuration represents a duration of time expressed as a number of years and months. The format ..." />
-            <marker date="1499248316283" expanded="true" signature="1019:1156" ph="{...}" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsDouble.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/xsDuration.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
+        <state relative-caret-position="346">
           <caret line="51" column="24" lean-forward="false" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
           <folding>
             <marker date="1499248315481" expanded="true" signature="39:704" ph=" The type xsd:duration represents a duration of time expressed as a number of years, months, days, hours, minutes, ..." />
             <marker date="1499248315481" expanded="true" signature="1392:1433" ph=" Construct ..." />
-            <marker date="1499248315481" expanded="true" signature="1392:2222" ph="{...}" />
-            <marker date="1499248315481" expanded="true" signature="1475:1553" ph="{...}" />
-            <marker date="1499248315481" expanded="true" signature="1929:2084" ph="..." />
-            <marker date="1499248315481" expanded="true" signature="1929:2116" ph="{...}" />
-            <marker date="1499248315481" expanded="true" signature="1932:2036" ph="..." />
-            <marker date="1499248315481" expanded="true" signature="2147:2220" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsENTITIES.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <folding>
+            <marker date="1499248315531" expanded="true" signature="80:216" ph=" The type xsd:ENTITIES represents a list of ENTITY values separated by whitespace. ..." />
+            <marker date="1499248315531" expanded="true" signature="931:993" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsENTITY.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsFloat.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-147">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/xsGDay.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
+        <state relative-caret-position="-147">
           <caret line="10" column="2" lean-forward="false" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsGMonth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="12" column="67" lean-forward="false" selection-start-line="12" selection-start-column="67" selection-end-line="12" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsGMonthDay.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="20" lean-forward="false" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsGYear.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="27" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="29" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsGYearMonth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsHexBinary.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsID.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1499247320869" expanded="true" signature="38:656" ph=" The type xsd:ID is used for an attribute that uniquely identifies an element in an XML document. An xsd:ID value must be an NCName. This means that it must start with a letter or underscore, and can only contain letters, digits, underscores, hyphens, and periods. ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsIDREF.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="5" lean-forward="false" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsIDREFS.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <marker date="1499248315931" expanded="true" signature="80:163" ph=" The type xsd:IDREFS represents a list of IDREF values separated by whitespace. There must be at least one IDREF in ..." />
+            <marker date="1499248315931" expanded="true" signature="875:937" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsInt.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsInteger.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsLanguage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="48" column="23" lean-forward="true" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsLong.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsName.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1499247321230" expanded="true" signature="38:443" ph=" The type xsd:Name represents an XML name, which can be used as an element-type name or attribute name, among other things. Specifically, this means that values must start with a letter, underscore(_), or colon (:), and may contain only letters, digits, underscores (_), colons (:), hyphens (-), and periods (.). Colons should only be used to separate namespace prefixes from local names. ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsNCName.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1499247321176" expanded="true" signature="38:395" ph=" The type xsd:NCName represents an XML non-colonized name, which is simply a name that does not contain colons. An xsd:NCName value must start with either a letter or underscore (_) and may contain only letters, digits, underscores (_), hyphens (-), and periods (.). This is equivalent to the Name type, except that colons are not permitted. ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsNegativeInteger.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsNMTOKEN.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsNMTOKENS.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="27" column="33" lean-forward="false" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+          <folding>
+            <marker date="1499248316031" expanded="true" signature="80:167" ph=" The type xsd:NMTOKENS represents a list of NMTOKEN values separated by whitespace. There must be at least one ..." />
+            <marker date="1499248316031" expanded="true" signature="1286:1348" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsNonNegativeInteger.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1499247321282" expanded="true" signature="367:562" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsNonPositiveInteger.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsNormalizedString.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsNOTATION.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsPositiveInteger.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1499247321336" expanded="true" signature="362:557" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1368,53 +1254,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Facets/LengthTrait.php">
+    <entry file="file://$PROJECT_DIR$/src/xsShort.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="35" column="18" lean-forward="false" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
-          <folding>
-            <marker date="1499248618140" expanded="true" signature="59:2773" ph="{...}" />
-            <marker date="1499248618140" expanded="true" signature="1015:1069" ph=" @param int     $value ..." />
-            <marker date="1499248618140" expanded="true" signature="1133:1439" ph="{...}" />
-            <marker date="1499248618140" expanded="true" signature="1178:1290" ph="..." />
-            <marker date="1499248618140" expanded="true" signature="1321:1432" ph="..." />
-            <marker date="1499248618140" expanded="true" signature="1448:1584" ph=" @param int $value Specifies the maximum number of characters or list items allowed.  Must be equal to or greater than zero ..." />
-            <marker date="1499248618140" expanded="true" signature="1635:1729" ph="{...}" />
-            <marker date="1499248618140" expanded="true" signature="1767:1957" ph="{...}" />
-            <marker date="1499248618140" expanded="true" signature="1813:1861" ph="..." />
-            <marker date="1499248618140" expanded="true" signature="1902:1950" ph="..." />
-            <marker date="1499248618140" expanded="true" signature="1998:2288" ph="{...}" />
-            <marker date="1499248618140" expanded="true" signature="2088:2281" ph="..." />
-            <marker date="1499248618140" expanded="true" signature="2332:2439" ph="{...}" />
-            <marker date="1499248618140" expanded="true" signature="2366:2405" ph="..." />
-            <marker date="1499248618140" expanded="true" signature="2480:2771" ph="{...}" />
-            <marker date="1499248618140" expanded="true" signature="2570:2764" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Facets/PatternTrait.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="26" column="29" lean-forward="false" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Facets/WhiteSpaceTrait.php">
+    <entry file="file://$PROJECT_DIR$/src/xsString.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="12" column="44" lean-forward="false" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
+        <state relative-caret-position="595">
+          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsAnySimpleType.php">
+    <entry file="file://$PROJECT_DIR$/src/xsToken.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="48" column="91" lean-forward="true" selection-start-line="48" selection-start-column="91" selection-end-line="48" selection-end-column="91" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsUnsignedByte.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsUnsignedInt.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsUnsignedShort.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="7" lean-forward="false" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsYearMonthDuration.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
-            <element signature="e#35#80#0#PHP" expanded="true" />
+            <marker date="1499248316283" expanded="true" signature="39:419" ph=" The type xsd:yearMonthDuration represents a duration of time expressed as a number of years and months. The format ..." />
           </folding>
         </state>
       </provider>
