@@ -9,7 +9,7 @@ namespace AlgoWeb\xsdTypes;
 class xsUnsignedByte extends xsUnsignedShort
 {
     /**
-     * Construct
+     * Construct.
      *
      * @param int $value
      */

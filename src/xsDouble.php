@@ -20,9 +20,9 @@ class xsDouble extends xsAnySimpleType
     use MinMaxTrait;
 
     /**
-     * Construct
+     * Construct.
      *
-     * @param double $value
+     * @param float $value
      */
     public function __construct($value)
     {

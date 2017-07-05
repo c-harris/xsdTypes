@@ -9,7 +9,7 @@ namespace AlgoWeb\xsdTypes;
 class xsByte extends xsShort
 {
     /**
-     * Construct
+     * Construct.
      *
      * @param int $value
      */

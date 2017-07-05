@@ -12,7 +12,7 @@ namespace AlgoWeb\xsdTypes;
 class xsNCName extends xsName
 {
     /**
-     * Construct
+     * Construct.
      *
      * @param string $value
      */

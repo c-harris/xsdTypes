@@ -9,7 +9,7 @@ namespace AlgoWeb\xsdTypes;
 class xsLong extends xsInteger
 {
     /**
-     * Construct
+     * Construct.
      *
      * @param int $value
      */

@@ -20,7 +20,7 @@ class xsFloat extends xsAnySimpleType
     use MinMaxTrait;
 
     /**
-     * Construct
+     * Construct.
      *
      * @param float $value
      */

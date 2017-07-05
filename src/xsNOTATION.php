@@ -20,7 +20,7 @@ abstract class xsNOTATION extends xsAnySimpleType
     use LengthTrait;
 
     /**
-     * Construct
+     * Construct.
      *
      * @param string $value
      */

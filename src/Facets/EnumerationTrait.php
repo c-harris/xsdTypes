@@ -18,7 +18,7 @@ trait EnumerationTrait
     }
 
     /**
-     * @param string $enumerationValue Adds a value to the enumeration set.
+     * @param string $enumerationValue adds a value to the enumeration set
      */
     protected function addEnumeration($enumerationValue)
     {

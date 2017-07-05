@@ -8,7 +8,7 @@ namespace AlgoWeb\xsdTypes;
  * nY is the number of years followed by a literal Y, nM is the number of months followed by a literal M, nD is the
  * number of days followed by a literal D, T is a literal value that separates the date and time, nH is the number of
  * hours followed by a literal H, nM is the number of minutes followed by a literal M, and nS is the number of seconds
- * followed by a literal S. The following rules apply to xsd:duration values:
+ * followed by a literal S. The following rules apply to xsd:duration values:.
  *
  * - Any of these numbers and corresponding designators may be absent if they are equal to 0, but at least one number and designator must appear.
  *  - The numbers may be any unsigned integer, with the exception of the number of seconds, which may be an unsigned decimal number.
@@ -22,7 +22,7 @@ class xsDuration extends xsAnySimpleType
     use MinMaxTrait;
 
     /**
-     * Construct
+     * Construct.
      *
      * @param string $value
      */

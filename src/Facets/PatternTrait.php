@@ -5,7 +5,7 @@ trait PatternTrait
 {
     /**
      * @Exclude
-     * @var string Defines the exact sequence of characters that are acceptable.
+     * @var string defines the exact sequence of characters that are acceptable
      */
     private $pattern = array();
 
@@ -38,11 +38,11 @@ trait PatternTrait
     }
 
     /**
-     * Checks a pattern against a string
+     * Checks a pattern against a string.
      *
      * @param  string $pattern the regex pattern
-     * @param  string $string the string to check
-     * @return bool true if string matches pattern
+     * @param  string $string  the string to check
+     * @return bool   true if string matches pattern
      */
     private function matchesRegexPattern($pattern, $string)
     {
