@@ -62,8 +62,6 @@ abstract class xsAnySimpleType
 
     /**
      * preforms subclass specific checks to make sure the contained value is OK.
-     *
-     * @return null
      */
     abstract protected function isOK();
 }
