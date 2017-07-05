@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4864e311-a358-44a7-afa6-a49dcc51d329" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsDayTimeDuration.php" afterPath="$PROJECT_DIR$/src/xsDayTimeDuration.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsYearMonthDuration.php" afterPath="$PROJECT_DIR$/src/xsYearMonthDuration.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -103,24 +103,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="xsDayTimeDuration.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="xsDayTimeDuration.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/xsDayTimeDuration.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
+            <state relative-caret-position="-17">
               <caret line="23" column="6" lean-forward="true" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="xsYearMonthDuration.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="xsYearMonthDuration.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/xsYearMonthDuration.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-              <folding>
-                <marker date="1499242519365" expanded="true" signature="992:2214" ph="{...}" />
-              </folding>
+            <state relative-caret-position="584">
+              <caret line="49" column="9" lean-forward="false" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -191,9 +189,9 @@
         <option value="$PROJECT_DIR$/src/xsGDay.php" />
         <option value="$PROJECT_DIR$/src/xsDuration.php" />
         <option value="$PROJECT_DIR$/src/Facets/MinMaxTrait.php" />
-        <option value="$PROJECT_DIR$/src/xsYearMonthDuration.php" />
         <option value="$PROJECT_DIR$/src/xsGMonthDay.php" />
         <option value="$PROJECT_DIR$/src/xsDayTimeDuration.php" />
+        <option value="$PROJECT_DIR$/src/xsYearMonthDuration.php" />
       </list>
     </option>
   </component>
@@ -465,7 +463,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1496235604163</updated>
-      <workItem from="1498632824380" duration="37156000" />
+      <workItem from="1498632824380" duration="37215000" />
     </task>
     <task id="LOCAL-00001" summary="added more basic types">
       <created>1498633990235</created>
@@ -677,11 +675,18 @@
       <option name="project" value="LOCAL" />
       <updated>1499245111325</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="fixed extention">
+      <created>1499245131133</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1499245131133</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37156000" />
+    <option name="totallyTimeSpent" value="37215000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -741,7 +746,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="Code cleanup" />
     <MESSAGE value="finished the xsd:string tree" />
     <MESSAGE value="Moved Facets into their own traits" />
     <MESSAGE value="Added facets, cleaned up some checks" />
@@ -766,7 +770,8 @@
     <MESSAGE value="broke up MinMax Checks" />
     <MESSAGE value="added the DateTime related Types" />
     <MESSAGE value="fixed tech debt" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed tech debt" />
+    <MESSAGE value="fixed extention" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed extention" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1195,16 +1200,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsYearMonthDuration.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <marker date="1499242519365" expanded="true" signature="992:2214" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/xsGDay.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
@@ -1233,8 +1228,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/xsDayTimeDuration.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
+        <state relative-caret-position="-17">
           <caret line="23" column="6" lean-forward="true" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsYearMonthDuration.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="584">
+          <caret line="49" column="9" lean-forward="false" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
           <folding />
         </state>
       </provider>

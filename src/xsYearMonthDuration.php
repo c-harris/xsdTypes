@@ -16,7 +16,7 @@ namespace AlgoWeb\xsdTypes;
  * Schema 1.0 specification and is therefore not supported for use in XML Schema 1.0 schemas.
  * @package AlgoWeb\xsdTypes
  */
-class xsYearMonthDuration extends xsDurationextends
+class xsYearMonthDuration extends xsDuration
 {
     /**
      * Construct
@@ -48,27 +48,6 @@ class xsYearMonthDuration extends xsDurationextends
         if ($this->m) {
             $sReturn .= $tint->m . 'M';
         }
-
-        if ($this->d) {
-            $sReturn .= $tint->d . 'D';
-        }
-
-        if ($tint->h || $tint->i || $tint->s) {
-            $sReturn .= 'T';
-
-            if ($this->h) {
-                $sReturn .= $tint->h . 'H';
-            }
-
-            if ($this->i) {
-                $sReturn .= $tint->i . 'M';
-            }
-
-            if ($this->s) {
-                $sReturn .= $tint->s . 'S';
-            }
-        }
-
         return $sReturn;
     }
 
