@@ -1,0 +1,22 @@
+language: php
+
+php:
+  - 5.6
+  - 7.0
+  - 7.1
+  - nightly
+
+
+before_script:
+  - composer install
+
+script:
+  - mkdir -p build/logs
+  - php vendor/bin/phpunit-randomizer --coverage-clover build/logs/clover.xml --order rand
+
+after_script:
+  - php vendor/bin/coveralls --exclude-no-stmt
+
+after_success:
+  - coveralls
+
