@@ -18,7 +18,7 @@ namespace AlgoWeb\xsdTypes;
  */
 class xsYearMonthDuration extends xsDuration
 {
-    public function fixValue()
+    public function fixValue(): void
     {
         parent::fixValue();
         $v = new \DateInterval($this->value);

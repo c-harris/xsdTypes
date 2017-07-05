@@ -23,7 +23,7 @@ class xsIDREFS extends xsAnySimpleType
         $this->setMinLengthFacet(1);
     }
 
-    protected function isOK()
+    protected function isOK(): void
     {
         parent::isOK();
         if (!is_array($this->value)) {

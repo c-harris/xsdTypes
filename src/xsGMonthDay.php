@@ -31,7 +31,7 @@ class xsGMonthDay extends xsAnySimpleType
         $this->setWhiteSpaceFacet('collapse');
     }
 
-    public function fixValue()
+    public function fixValue(): void
     {
         parent::fixValue();
         $v = new \DateTime($this->value);
@@ -39,7 +39,7 @@ class xsGMonthDay extends xsAnySimpleType
         $this->value = $v->format(\DateTime::RFC3339);
     }
 
-    protected function isOK()
+    protected function isOK(): void
     {
         $this->CheckMinMax(new \Date($this->value));
     }

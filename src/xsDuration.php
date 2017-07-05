@@ -37,7 +37,7 @@ class xsDuration extends xsAnySimpleType
         $this->setWhiteSpaceFacet('collapse');
     }
 
-    public function fixValue()
+    public function fixValue(): void
     {
         parent::fixValue();
         $v = new \DateInterval($this->value);
@@ -58,7 +58,7 @@ class xsDuration extends xsAnySimpleType
         return $sReturn;
     }
 
-    protected function isOK()
+    protected function isOK(): void
     {
         $this->CheckMinMax(new \DateInterval($this->value));
     }

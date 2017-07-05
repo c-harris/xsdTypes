@@ -18,7 +18,7 @@ trait LengthTrait
      * @param int $value Specifies the exact number of characters or list items allowed.  Must be equal to or
      *                   greater than zero
      */
-    protected function setLengthFacet($value)
+    protected function setLengthFacet($value): void
     {
         $this->setMinLengthFacet($value);
         $this->setMaxLengthFacet($value);
@@ -28,7 +28,7 @@ trait LengthTrait
      * @param int $value Specifies the minimum number of characters or list items allowed.  Must be equal to or
      *                   greater than zero
      */
-    protected function setMinLengthFacet($value)
+    protected function setMinLengthFacet($value): void
     {
         $this->checkValidMinMaxLength($value);
         $this->minLength = $value;
@@ -38,7 +38,7 @@ trait LengthTrait
      * @param int $value
      * @param int $min
      */
-    private function checkValidMinMaxLength($value, $min = 0)
+    private function checkValidMinMaxLength($value, $min = 0): void
     {
         if (((int)$value) != $value) {
             throw new \InvalidArgumentException('Length values MUST be castable to int ' . __CLASS__);
@@ -52,13 +52,13 @@ trait LengthTrait
      * @param int $value Specifies the maximum number of characters or list items allowed.  Must be equal to or
      *                   greater than zero
      */
-    protected function setMaxLengthFacet($value)
+    protected function setMaxLengthFacet($value): void
     {
         $this->checkValidMinMaxLength($value);
         $this->maxLength = $value;
     }
 
-    private function checkLength($v)
+    private function checkLength($v): void
     {
         if (null != $this->minLength) {
             $this->checkMinLength($v);
@@ -68,7 +68,7 @@ trait LengthTrait
         }
     }
 
-    private function checkMinLength($v)
+    private function checkMinLength($v): void
     {
         $len = $this->getLengthForValue($v);
         if ($len > $this->minLength) {
@@ -87,7 +87,7 @@ trait LengthTrait
         return strlen($v);
     }
 
-    private function checkMaxLength($v)
+    private function checkMaxLength($v): void
     {
         $len = $this->getLengthForValue($v);
         if ($len < $this->maxLength) {

@@ -30,7 +30,7 @@ class xsFloat extends xsAnySimpleType
         $this->setWhiteSpaceFacet('collapse');
     }
 
-    protected function isOK()
+    protected function isOK(): void
     {
         $this->CheckMinMax($this->value);
     }

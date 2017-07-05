@@ -25,7 +25,7 @@ class xsENTITIES extends xsAnySimpleType
         $this->setMinLengthFacet(1);
     }
 
-    protected function isOK()
+    protected function isOK(): void
     {
         if (!is_array($this->value)) {
             throw new \InvalidArgumentException(

@@ -31,7 +31,7 @@ trait WhiteSpaceTrait
     /**
      * @param string $value
      */
-    protected function setWhiteSpaceFacet($value)
+    protected function setWhiteSpaceFacet($value): void
     {
         if (!in_array($value, ['preserve', 'replace', 'collapse'])) {
             throw new \InvalidArgumentException('Invalid whitespace handling method ' . __CLASS__);

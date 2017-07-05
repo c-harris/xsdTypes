@@ -48,12 +48,12 @@ abstract class xsAnySimpleType
     /**
      * makes changes to the value to compensate for rounding conditions or white space handling.
      */
-    protected function fixValue()
+    protected function fixValue(): void
     {
         $this->value = $this->fixWhitespace($this->value);
     }
 
-    protected function isOKInternal()
+    protected function isOKInternal(): void
     {
         $this->checkEnumeration($this->value);
         $this->checkPattern($this->value);

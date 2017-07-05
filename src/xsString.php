@@ -42,7 +42,7 @@ class xsString extends xsAnySimpleType
         $this->setWhiteSpaceFacet('preserve');
     }
 
-    protected function isOK()
+    protected function isOK(): void
     {
         $this->checkLength($this->value);
         if (is_array($this->value) || is_object($this->value)) {

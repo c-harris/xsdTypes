@@ -12,7 +12,7 @@ trait EnumerationTrait
     /**
      * @param array $enumerationValues Defines a list of acceptable values
      */
-    protected function setEnumeration(array $enumerationValues)
+    protected function setEnumeration(array $enumerationValues): void
     {
         $this->enumeration = $enumerationValues;
     }
@@ -20,7 +20,7 @@ trait EnumerationTrait
     /**
      * @param string $enumerationValue adds a value to the enumeration set
      */
-    protected function addEnumeration($enumerationValue)
+    protected function addEnumeration($enumerationValue): void
     {
         if (!is_array($this->enumeration)) {
             $this->enumeration = [];
@@ -28,7 +28,7 @@ trait EnumerationTrait
         $this->enumeration[] = $enumerationValue;
     }
 
-    private function checkEnumeration($v)
+    private function checkEnumeration($v): void
     {
         if (is_array($this->enumeration) && 0 != count($this->enumeration) && !in_array($v, $this->enumeration)) {
             throw new \InvalidArgumentException(

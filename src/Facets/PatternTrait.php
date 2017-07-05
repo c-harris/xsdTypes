@@ -12,7 +12,7 @@ trait PatternTrait
     /**
      * @param string $newPattern
      */
-    protected function setPatternFacet($newPattern)
+    protected function setPatternFacet($newPattern): void
     {
         if (!$this->checkRegexValidPattern($newPattern)) {
             $newPattern = '/' . $newPattern . '/';
@@ -34,7 +34,7 @@ trait PatternTrait
     /**
      * @param string $v
      */
-    private function checkPattern($v)
+    private function checkPattern($v): void
     {
         if (!empty($this->pattern)) {
             foreach ($this->pattern as $pattern) {
