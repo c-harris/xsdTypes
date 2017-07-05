@@ -17,7 +17,7 @@ namespace AlgoWeb\xsdTypes;
  *  - If no time items (hour, minute, second) are present, the letter T must not appear.
  * @package AlgoWeb\xsdTypes
  */
-class xsDurationextends extends xsAnySimpleType
+class xsDuration extends xsAnySimpleType
 {
     use MinMaxTrait;
 
