@@ -39,39 +39,16 @@ class xsDuration extends xsAnySimpleType
         $this->value = $this->format($v);
     }
 
-    protected function format(\DateInterval $tint)
+    protected function format(\DateInterval $tint, $pattern = "PnYnMnDTnHnMnS")
     {
-        $sReturn = 'P';
-
-        if ($this->y) {
-            $sReturn .= $tint->y . 'Y';
-        }
-
-        if ($this->m) {
-            $sReturn .= $tint->m . 'M';
-        }
-
-        if ($this->d) {
-            $sReturn .= $tint->d . 'D';
-        }
-
-        if ($tint->h || $tint->i || $tint->s) {
-            $sReturn .= 'T';
-
-            if ($this->h) {
-                $sReturn .= $tint->h . 'H';
+        $sReturn = "";
+        for ($i = 0; $i < strlen($pattern); $i++) {
+            if ($pattern[$i] == "n") {
+                $sReturn .= $tint->strtolower($pattern[$i + 1]);
+                continue;
             }
-
-            if ($this->i) {
-                $sReturn .= $tint->i . 'M';
-            }
-
-            if ($this->s) {
-                $sReturn .= $tint->s . 'S';
-            }
+            $sReturn .= $pattern[$i];
         }
-
-        return $sReturn;
     }
 
     protected function isOK()

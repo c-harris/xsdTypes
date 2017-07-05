@@ -34,36 +34,6 @@ class xsDayTimeDuration extends xsDuration
     {
         parent::fixValue();
         $v = new \DateInterval($this->value);
-        $this->value = $this->format($v);
-    }
-    protected function format(\DateInterval $tint)
-    {
-        $sReturn = 'P';
-        if ($this->d) {
-            $sReturn .= $tint->d . 'D';
-        }
-
-        if ($tint->h || $tint->i || $tint->s) {
-            $sReturn .= 'T';
-
-            if ($this->h) {
-                $sReturn .= $tint->h . 'H';
-            }
-
-            if ($this->i) {
-                $sReturn .= $tint->i . 'M';
-            }
-
-            if ($this->s) {
-                $sReturn .= $tint->s . 'S';
-            }
-        }
-
-        return $sReturn;
-    }
-
-    protected function isOK()
-    {
-        $this->CheckMinMax(new \DateInterval($this->value));
+        $this->value = $this->format($v, 'PnDTnHnMnS');
     }
 }

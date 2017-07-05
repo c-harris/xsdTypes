@@ -33,25 +33,6 @@ class xsYearMonthDuration extends xsDuration
     {
         parent::fixValue();
         $v = new \DateInterval($this->value);
-        $this->value = $this->format($v);
-    }
-
-    protected function format(\DateInterval $tint)
-    {
-        $sReturn = 'P';
-
-        if ($this->y) {
-            $sReturn .= $tint->y . 'Y';
-        }
-
-        if ($this->m) {
-            $sReturn .= $tint->m . 'M';
-        }
-        return $sReturn;
-    }
-
-    protected function isOK()
-    {
-        $this->CheckMinMax(new \DateInterval($this->value));
+        $this->value = $this->format($v, 'PnYnM');
     }
 }
