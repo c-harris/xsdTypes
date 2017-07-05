@@ -101,8 +101,8 @@
       <file leaf-file-name="PatternTrait.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Facets/PatternTrait.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="34" column="7" lean-forward="false" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
+            <state relative-caret-position="176">
+              <caret line="26" column="29" lean-forward="false" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -514,7 +514,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1496235604163</updated>
-      <workItem from="1498632824380" duration="40332000" />
+      <workItem from="1498632824380" duration="40394000" />
     </task>
     <task id="LOCAL-00001" summary="added more basic types">
       <created>1498633990235</created>
@@ -782,11 +782,18 @@
       <option name="project" value="LOCAL" />
       <updated>1499248425406</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="more documentation">
+      <created>1499248656038</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1499248656038</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40332000" />
+    <option name="totallyTimeSpent" value="40394000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -846,7 +853,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="Moved Legth trait to handle arrays" />
     <MESSAGE value="Moved the isok check to the __toostring method" />
     <MESSAGE value="Realised i had one to many traits on top level" />
     <MESSAGE value="setup the digits trait" />
@@ -871,7 +877,8 @@
     <MESSAGE value="forgot return value" />
     <MESSAGE value="cleaned up comments" />
     <MESSAGE value="some doc type cleanups" />
-    <option name="LAST_COMMIT_MESSAGE" value="some doc type cleanups" />
+    <MESSAGE value="more documentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="more documentation" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1393,8 +1400,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Facets/PatternTrait.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="34" column="7" lean-forward="false" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
+        <state relative-caret-position="176">
+          <caret line="26" column="29" lean-forward="false" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
           <folding />
         </state>
       </provider>

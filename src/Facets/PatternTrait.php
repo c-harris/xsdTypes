@@ -24,7 +24,7 @@ trait PatternTrait
     }
 
     /**
-     * @param string $value
+     * @param string $pattern
      */
     private function checkRegexValidPattern($pattern)
     {
@@ -32,7 +32,7 @@ trait PatternTrait
     }
 
     /**
-     * @param string $value
+     * @param string $v
      */
     private function checkPattern($v)
     {
