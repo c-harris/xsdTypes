@@ -54,7 +54,7 @@ class xsNonPositiveIntegerTest extends \PHPUnit_Framework_TestCase
         }catch(\Exception $e){}
     }
 
-    public function testxsPositiveIntegerTestTestInvalidDataProvider() {
+    public function testxsPositiveIntegerTestInvalidDataProvider() {
         return array(
             array('122', '	value cannot be positive'),
             array('+3', 'value cannot be positive'),
