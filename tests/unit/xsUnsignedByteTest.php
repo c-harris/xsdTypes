@@ -28,15 +28,18 @@ class xsUnsignedByteTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider testxsUnsignedByteTestValidDataProvider
+     * @param mixed $duration
+     * @param mixed $message
      */
-    public function testxsUnsignedByteTestValid($duration, $message) {
+    public function testxsUnsignedByteTestValid($duration, $message)
+    {
         $d = new xsUnsignedByte($duration);
         $e = (string)$d;
-        $this->assertEquals($duration,$e,$message);
-
+        $this->assertEquals($duration, $e, $message);
     }
 
-    public function testxsUnsignedByteTestValidDataProvider() {
+    public function testxsUnsignedByteTestValidDataProvider()
+    {
         return array(
             array(+3, 'Positive 1'),
             array('122', '122'),
@@ -45,15 +48,18 @@ class xsUnsignedByteTest extends \PHPUnit_Framework_TestCase
     }
     /**
      * @dataProvider testxsUnsignedByteTestInvalidDataProvider
+     * @param mixed $duration
+     * @param mixed $message
      */
-    public function testxsUnsignedByteTestInvalid($duration, $message) {
-            $d = new xsUnsignedByte($duration);
-            $e = (string)$d;
-            $this->assertEquals('',$e,$message);
-
+    public function testxsUnsignedByteTestInvalid($duration, $message)
+    {
+        $d = new xsUnsignedByte($duration);
+        $e = (string)$d;
+        $this->assertEquals('', $e, $message);
     }
 
-    public function testxsUnsignedByteTestInvalidDataProvider() {
+    public function testxsUnsignedByteTestInvalidDataProvider()
+    {
         return array(
             array('-123', '	negative values are not allowed'),
             array('256', 'number is too large'),
