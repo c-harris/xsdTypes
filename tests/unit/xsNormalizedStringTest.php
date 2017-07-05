@@ -28,12 +28,14 @@ class xsNormalizedStringTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider testxsNormalizedStringTestValidDataProvider
+     * @param mixed $duration
+     * @param mixed $message
      */
-    public function testxsNormalizedStringTestValid($duration, $message) {
+    public function testxsNormalizedStringTestValid($duration, $message)
+    {
         $d = new xsNormalizedString($duration);
         $e = (string)$d;
-        $this->assertEquals($duration,$e,$message);
-
+        $this->assertEquals($duration, $e, $message);
     }
 
     public function testxsNormalizedStringTestValidDataProvider()
@@ -51,16 +53,21 @@ is on two lines.', 'when parsed, the line break will be replaced with a space'),
     }
     /**
      * @dataProvider testxsNormalizedStringTestInvalidDataProvider
+     * @param mixed $duration
+     * @param mixed $message
      */
-    public function testxsNormalizedStringTestInvalid($duration, $message) {
+    public function testxsNormalizedStringTestInvalid($duration, $message)
+    {
         try {
             $d = new xsNormalizedString($duration);
             $e = (string)$d;
             $this->fail($message);
-        }catch(\Exception $e){}
+        } catch (\Exception $e) {
+        }
     }
 
-    public function testxsNormalizedStringTestInvalidDataProvider() {
+    public function testxsNormalizedStringTestInvalidDataProvider()
+    {
         return array(
             array('AT&T', 'ampersand must be escaped'),
             array('3 < 4', 'the "less than" symbol must be escaped'),
