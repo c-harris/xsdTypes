@@ -23,6 +23,9 @@ trait WhiteSpaceTrait
         }
     }
 
+    /**
+     * @param string $value
+     */
     protected function setWhiteSpaceFacet($value)
     {
         if (!in_array($value, ['preserve', 'replace', 'collapse'])) {

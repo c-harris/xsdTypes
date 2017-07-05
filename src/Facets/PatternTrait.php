@@ -5,10 +5,13 @@ trait PatternTrait
 {
     /**
      * @Exclude
-     * @var string defines the exact sequence of characters that are acceptable
+     * @var array defines the exact sequence of characters that are acceptable
      */
     private $pattern = array();
 
+    /**
+     * @param string $value
+     */
     protected function setPatternFacet($value)
     {
         if (!$this->checkRegexValidPattern($value)) {
