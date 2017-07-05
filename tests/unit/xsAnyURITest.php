@@ -9,18 +9,12 @@ namespace AlgoWeb\xsdTypes;
 class xsAnyURITest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var \AlgoWeb\xsdTypes\xsAnyURI
-     */
-    protected $object;
-
-    /**
      * Sets up the fixture, for example, opens a network connection.
      * This method is called before a test is executed.
      */
     protected function setUp()
     {
         parent::setUp();
-        $this->object = new \AlgoWeb\xsdTypes\xsAnyURI();
     }
 
     /**
@@ -33,14 +27,48 @@ class xsAnyURITest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers \AlgoWeb\xsdTypes\xsAnyURI::__toString
-     * @todo   Implement test__toString().
+     * @dataProvider testxsAnyURIValidDataProvider
      */
-    public function test__toString()
+    public function testxsAnyURIValid($duration, $message)
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
+        $d = new xsAnyURI($duration);
+        $e = (string)$d;
+        $this->assertEquals($duration, $e, $message);
+
+    }
+
+    public function testxsAnyURIValidDataProvider()
+    {
+        return array(
+            array('http://datypic.com', 'absolute URI (also a URL)'),
+            array('mailto:info@datypic.com', 'absolute URI'),
+            array('../%C3%A9dition.html', 'relative URI containing escaped non-ASCII character'),
+            array('../édition.html', 'relative URI containing unescaped non-ASCII character'),
+            array('http://datypic.com/prod.html#shirt', 'URI with fragment identifier'),
+            array('../prod.html#shirt', 'relative URI with fragment identifier'),
+            array('urn:example:org', 'URN'),
+            array('', 'an empty value is allowed'),
+        );
+    }
+
+    /**
+     * @dataProvider testxsAnyURIInvalidDataProvider
+     */
+    public function testxsAnyURIInvalid($duration, $message)
+    {
+        try {
+            $d = new xsBase64Binary($duration);
+            $e = (string)$d;
+            $this->fail($message);
+        }catch(\Exception $e){}
+        $this->assertEquals('', $e, $message);
+    }
+
+    public function testxsAnyURIInvalidDataProvider()
+    {
+        return array(
+            array('http://datypic.com#frag1#frag2', 'too many # characters'),
+            array('http://datypic.com#f% rag', ' character followed by something other than two hexadecimal digits'),
         );
     }
 }
