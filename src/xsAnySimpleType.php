@@ -38,9 +38,14 @@ abstract class xsAnySimpleType
 
     public function __toString()
     {
-        if (!$this->fixed) {
-            $this->fixValue();
-            $this->isOKInternal();
+        try {
+            if (!$this->fixed) {
+                $this->fixValue();
+                $this->isOKInternal();
+            }
+        } catch (\Exception $e) {
+            trigger_error($e->getMessage());
+            $this->value = "";
         }
         return $this->value;
     }
