@@ -28,7 +28,7 @@ class xsGYear extends xsAnySimpleType
     public function __construct($value)
     {
         parent::__construct($value);
-        $this->setWhiteSpaceFacet("collapse");
+        $this->setWhiteSpaceFacet('collapse');
     }
 
     public function fixValue()

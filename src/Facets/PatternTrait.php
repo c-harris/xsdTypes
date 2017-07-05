@@ -12,9 +12,9 @@ trait PatternTrait
     protected function setPatternFacet($value)
     {
         if (!$this->checkRegexValidPattern($value)) {
-            $value = "/" . $value . "/";
+            $value = '/' . $value . '/';
             if (!$this->checkRegexValidPattern($value)) {
-                throw new \InvalidArgumentException("Invalid regex pattern provided: " . __CLASS__);
+                throw new \InvalidArgumentException('Invalid regex pattern provided: ' . __CLASS__);
             }
         }
         $this->pattern[] = $value;
@@ -31,7 +31,7 @@ trait PatternTrait
         if (!empty($this->pattern)) {
             foreach ($this->pattern as $pattern) {
                 if (!$this->matchesRegexPattern($pattern, $v)) {
-                    throw new \InvalidArgumentException("Assigned value for " . __CLASS__ . " does not match pattern " . $pattern);
+                    throw new \InvalidArgumentException('Assigned value for ' . __CLASS__ . ' does not match pattern ' . $pattern);
                 }
             }
         }

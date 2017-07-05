@@ -23,6 +23,6 @@ class xsNormalizedString extends xsString
     public function __construct($value)
     {
         parent::__construct($value);
-        $this->setWhiteSpaceFacet("replace");
+        $this->setWhiteSpaceFacet('replace');
     }
 }

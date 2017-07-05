@@ -39,7 +39,7 @@ class xsString extends xsAnySimpleType
     public function __construct($value)
     {
         parent::__construct($value);
-        $this->setWhiteSpaceFacet("preserve");
+        $this->setWhiteSpaceFacet('preserve');
     }
 
     protected function isOK()
@@ -47,7 +47,7 @@ class xsString extends xsAnySimpleType
         $this->checkLength($this->value);
         if (is_array($this->value) || is_object($this->value)) {
             throw new \InvalidArgumentException(
-                "The provided value for " . __CLASS__ . " must not be an array or an object."
+                'The provided value for ' . __CLASS__ . ' must not be an array or an object.'
             );
         }
     }

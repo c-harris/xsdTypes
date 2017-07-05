@@ -7,26 +7,26 @@ trait WhiteSpaceTrait
      * @Exclude
      * @var string specifies how whitespace (line feeds, tabs, spaces, and carriage returns) is handled
      */
-    private $whiteSpace = "preserve";
+    private $whiteSpace = 'preserve';
 
     protected function fixWhitespace($val)
     {
         switch ($this->whiteSpace) {
-            case "preserve":
+            case 'preserve':
                 return $val;
-            case "replace":
+            case 'replace':
                 return preg_replace('/\s/', ' ', $val);
-            case "collapse":
+            case 'collapse':
                 return preg_replace('/\s+/', ' ', $val);
             default:
-                throw new \InvalidArgumentException(__CLASS__ . " called fixWhitespace with invalid handle operation.");
+                throw new \InvalidArgumentException(__CLASS__ . ' called fixWhitespace with invalid handle operation.');
         }
     }
 
     protected function setWhiteSpaceFacet($value)
     {
-        if (!in_array($value, ["preserve", "replace", "collapse"])) {
-            throw new \InvalidArgumentException("Invalid whitespace handling method " . __CLASS__);
+        if (!in_array($value, ['preserve', 'replace', 'collapse'])) {
+            throw new \InvalidArgumentException('Invalid whitespace handling method ' . __CLASS__);
         }
         $this->whiteSpace = $value;
     }
