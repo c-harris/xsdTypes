@@ -28,12 +28,14 @@ class xsTokenTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider testxsTokenTestValidDataProvider
+     * @param mixed $duration
+     * @param mixed $message
      */
-    public function testxsTokenTestValid($duration, $message) {
+    public function testxsTokenTestValid($duration, $message)
+    {
         $d = new xsToken($duration);
         $e = (string)$d;
-        $this->assertEquals($duration,$e,$message);
-
+        $this->assertEquals($duration, $e, $message);
     }
 
     public function testxsTokenTestValidDataProvider()
@@ -51,16 +53,21 @@ is on two lines.', 'when parsed, the line break will be replaced with a space'),
     }
     /**
      * @dataProvider testxsTokenTestInvalidDataProvider
+     * @param mixed $duration
+     * @param mixed $message
      */
-    public function testxsTokenTestInvalid($duration, $message) {
+    public function testxsTokenTestInvalid($duration, $message)
+    {
         try {
             $d = new xsToken($duration);
             $e = (string)$d;
             $this->fail($message);
-        }catch(\Exception $e){}
+        } catch (\Exception $e) {
+        }
     }
 
-    public function testxsTokenTestInvalidDataProvider() {
+    public function testxsTokenTestInvalidDataProvider()
+    {
         return array(
             array('AT&T', 'ampersand must be escaped'),
             array('3 < 4', 'the "less than" symbol must be escaped'),

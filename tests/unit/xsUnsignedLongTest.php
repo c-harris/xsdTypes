@@ -28,15 +28,18 @@ class xsUnsignedLongTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider testxsUnsignedLongTestValidDataProvider
+     * @param mixed $duration
+     * @param mixed $message
      */
-    public function testxsUnsignedLongTestValid($duration, $message) {
+    public function testxsUnsignedLongTestValid($duration, $message)
+    {
         $d = new xsUnsignedLong($duration);
         $e = (string)$d;
-        $this->assertEquals($duration,$e,$message);
-
+        $this->assertEquals($duration, $e, $message);
     }
 
-    public function testxsUnsignedLongTestValidDataProvider() {
+    public function testxsUnsignedLongTestValidDataProvider()
+    {
         return array(
             array(+3, 'Positive 1'),
             array('122', '122'),
@@ -45,16 +48,21 @@ class xsUnsignedLongTest extends \PHPUnit_Framework_TestCase
     }
     /**
      * @dataProvider testxsUnsignedLongTestInvalidDataProvider
+     * @param mixed $duration
+     * @param mixed $message
      */
-    public function testxsUnsignedLongTestInvalid($duration, $message) {
+    public function testxsUnsignedLongTestInvalid($duration, $message)
+    {
         try {
             $d = new xsUnsignedLong($duration);
             $e = (string)$d;
             $this->fail($message);
-        }catch(\Exception $e){}
+        } catch (\Exception $e) {
+        }
     }
 
-    public function testxsUnsignedLongTestInvalidDataProvider() {
+    public function testxsUnsignedLongTestInvalidDataProvider()
+    {
         return array(
             array('-123', '	negative values are not allowed'),
             array('18446744073709551620', 'number is too large'),
