@@ -36,8 +36,6 @@ class xsDayTimeDuration extends xsDuration
         $v = new \DateInterval($this->value);
         $this->value = $this->format($v);
     }
-
-//TODO: TechDebt.this needs to be more specific fo the type.
     protected function format(\DateInterval $tint)
     {
         $sReturn = 'P';
