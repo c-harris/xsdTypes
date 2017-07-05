@@ -17,7 +17,7 @@ trait PatternTrait
         if (!$this->checkRegexValidPattern($regexPatternToAdd)) {
             $regexPatternToAdd = '/' . $regexPatternToAdd . '/';
             if (!$this->checkRegexValidPattern($regexPatternToAdd)) {
-                throw new \InvalidArgumentException('Invalid regex pattern provided: ' . __CLASS__);
+                throw new \InvalidArgumentException('Invalid regex pattern provided: ' . get_class($this));
             }
         }
         $this->pattern[] = $regexPatternToAdd;
@@ -39,7 +39,7 @@ trait PatternTrait
         if (!empty($this->pattern)) {
             foreach ($this->pattern as $pattern) {
                 if (!$this->matchesRegexPattern($pattern, $v)) {
-                    throw new \InvalidArgumentException('Assigned value for ' . __CLASS__ .
+                    throw new \InvalidArgumentException('Assigned value for ' . get_class($this) .
                         ' does not match pattern ' . $pattern);
                 }
             }

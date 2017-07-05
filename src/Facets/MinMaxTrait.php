@@ -73,14 +73,14 @@ trait MinMaxTrait
     private function checkMin($v)
     {
         if ($v < $this->minInclusive) {
-            throw new \InvalidArgumentException('Value less than allowed min value ' . __CLASS__);
+            throw new \InvalidArgumentException('Value less than allowed min value ' . get_class($this));
         }
     }
 
     private function checkMax($v)
     {
         if ($v > $this->maxInclusive) {
-            throw new \InvalidArgumentException('Value greater than allowed max value ' . __CLASS__);
+            throw new \InvalidArgumentException('Value greater than allowed max value ' . get_class($this));
         }
     }
 }

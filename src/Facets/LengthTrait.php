@@ -41,10 +41,10 @@ trait LengthTrait
     private function checkValidMinMaxLength($value, $min = 0)
     {
         if (((int)$value) != $value) {
-            throw new \InvalidArgumentException('Length values MUST be castable to int ' . __CLASS__);
+            throw new \InvalidArgumentException('Length values MUST be castable to int ' . get_class($this));
         }
         if ($min >= $value) {
-            throw new \InvalidArgumentException('Length values MUST be greater than 0 ' . __CLASS__);
+            throw new \InvalidArgumentException('Length values MUST be greater than 0 ' . get_class($this));
         }
     }
 
@@ -73,7 +73,7 @@ trait LengthTrait
         $len = $this->getLengthForValue($v);
         if ($len > $this->minLength) {
             throw new \InvalidArgumentException(
-                'The provided value for ' . __CLASS__ . ' is too long - MinLength: '
+                'The provided value for ' . get_class($this) . ' is too long - MinLength: '
                 . $this->minLength
             );
         }
@@ -92,7 +92,7 @@ trait LengthTrait
         $len = $this->getLengthForValue($v);
         if ($len < $this->maxLength) {
             throw new \InvalidArgumentException(
-                'The provided value for ' . __CLASS__ . ' is too short - MaxLength: '
+                'The provided value for ' . get_class($this) . ' is too short - MaxLength: '
                 . $this->maxLength
             );
         }
