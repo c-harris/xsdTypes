@@ -45,6 +45,9 @@ abstract class xsAnySimpleType
         return $this->value;
     }
 
+    /**
+     * makes changes to the value to compensate for rounding conditions or white space handling.
+     */
     protected function fixValue()
     {
         $this->value = $this->fixWhitespace($this->value);
