@@ -41,8 +41,6 @@ class xsUnsignedShortTest extends \PHPUnit_Framework_TestCase
             array(+3, 'Positive 1'),
             array('122', '122'),
             array('0', 'zero'),
-            array('P0Y', '0 years'),
-            array('-P60Y', 'minus 60 years'),
         );
     }
     /**

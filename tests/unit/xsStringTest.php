@@ -9,18 +9,12 @@ namespace AlgoWeb\xsdTypes;
 class xsStringTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var \AlgoWeb\xsdTypes\xsString
-     */
-    protected $object;
-
-    /**
      * Sets up the fixture, for example, opens a network connection.
      * This method is called before a test is executed.
      */
     protected function setUp()
     {
         parent::setUp();
-        $this->object = new \AlgoWeb\xsdTypes\xsString();
     }
 
     /**
@@ -33,14 +27,43 @@ class xsStringTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers \AlgoWeb\xsdTypes\xsString::__toString
-     * @todo   Implement test__toString().
+     * @dataProvider testxsStringTestValidDataProvider
      */
-    public function test__toString()
+    public function testxsStringTestValid($duration, $message) {
+        $d = new xsUnsignedShort($duration);
+        $e = (string)$d;
+        $this->assertEquals($duration,$e,$message);
+
+    }
+
+    public function testxsStringTestValidDataProvider()
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
+        return array(
+            array('This is a string!', 'normal string'),
+            array('Édition française.', 'unicodeString'),
+            array('12.5	', 'number as string'),
+            array('', 'an empty string is valid'),
+            array('PB&amp;J', 'when parsed, it will become "PB&J"'),
+            array('   Separated by 3 spaces.', ''),
+            array('This
+is on two lines.', ''),
+        );
+    }
+    /**
+     * @dataProvider testxsStringTestInvalidDataProvider
+     */
+    public function testxsStringTestInvalid($duration, $message) {
+        try {
+            $d = new xsUnsignedShort($duration);
+            $e = (string)$d;
+            $this->fail($message);
+        }catch(\Exception $e){}
+    }
+
+    public function testxsStringTestInvalidDataProvider() {
+        return array(
+            array('AT&T', 'ampersand must be escaped'),
+            array('3 < 4', 'the "less than" symbol must be escaped'),
         );
     }
 }
