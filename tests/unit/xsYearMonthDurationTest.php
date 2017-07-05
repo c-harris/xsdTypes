@@ -1,7 +1,7 @@
 <?php
-
-
 namespace AlgoWeb\xsdTypes;
+
+use AlgoWeb\xsdTypes\xsYearMonthDuration;
 
 /**
  * Generated Test Class.
@@ -20,7 +20,6 @@ class xsYearMonthDurationTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->object = new \AlgoWeb\xsdTypes\xsYearMonthDuration();
     }
 
     /**
@@ -33,92 +32,47 @@ class xsYearMonthDurationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers \AlgoWeb\xsdTypes\xsYearMonthDuration::fixValue
-     * @todo   Implement testFixValue().
+         * @dataProvider testPersonDataProvider
      */
-    public function testFixValue()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+    public function testXsYearMonthDurationValid($duration, $message) {
+        $d = new xsYearMonthDuration($duration);
+        $e = (string)$d;
+        $this->assertEquals($duration,$e,$message);
+
     }
 
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsYearMonthDuration::__toString
-     * @todo   Implement test__toString().
-     */
-    public function test__toString()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
+    public function testXsYearMonthDurationValidDataProvider() {
+        return array(
+            array('P2Y6M', '2 years, 6 months'),
+            array('P20M', '20 months (the number of months can be more than 12)'),
+            array('P0Y20M', '20 months (0 is permitted as a number, but is not required)'),
+            array('P0Y', '0 years'),
+            array('-P60Y', 'minus 60 years'),
         );
     }
-
-
     /**
-     * @covers \AlgoWeb\xsdTypes\xsYearMonthDuration::setMaxExclusive
-     * @todo   Implement testSetMaxExclusive().
+     * @dataProvider testPersonDataProvider
      */
-    public function testSetMaxExclusive()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+    public function testXsYearMonthDurationInvalid($duration, $message) {
+        try {
+            $d = new xsYearMonthDuration($duration);
+            $e = (string)$d;
+            $this->fail($message);
+        }catch(\Exception $e){}
     }
 
+    public function testXsYearMonthDurationInvalidDataProvider() {
+        return array(
+            array('P2Y6M5DT12H35M30S', 'components other than years or months are not allowed'),
+            array('P-20M', 'the minus sign must appear first'),
+            array('P20MT', '"T" must not be present'),
+            array('P1YM', 'no value is specified for months, so "M" must not be present'),
+            array('-P15.5Y', 'numbers cannot be expressed as a decimal'),
+            array('1Y2M', '"P" must always be present'),
+            array('P2M1Y', 'years must appear before months'),
+            array('P', 'at least one number and designator are required'),
+            array('', 'an empty value is not valid, unless xsi:nil is used'),
 
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsYearMonthDuration::setMaxInclusive
-     * @todo   Implement testSetMaxInclusive().
-     */
-    public function testSetMaxInclusive()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsYearMonthDuration::setMinExclusive
-     * @todo   Implement testSetMinExclusive().
-     */
-    public function testSetMinExclusive()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsYearMonthDuration::setMinInclusive
-     * @todo   Implement testSetMinInclusive().
-     */
-    public function testSetMinInclusive()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsYearMonthDuration::checkMinMax
-     * @todo   Implement testCheckMinMax().
-     */
-    public function testCheckMinMax()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
         );
     }
 }
