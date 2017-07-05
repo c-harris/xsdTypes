@@ -19,17 +19,6 @@ namespace AlgoWeb\xsdTypes;
  */
 class xsDayTimeDuration extends xsDuration
 {
-    /**
-     * Construct.
-     *
-     * @param string $value
-     */
-    public function __construct($value)
-    {
-        parent::__construct($value);
-        $this->setWhiteSpaceFacet("collapse");
-    }
-
     public function fixValue()
     {
         parent::fixValue();
