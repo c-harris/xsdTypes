@@ -49,6 +49,7 @@ class xsDuration extends xsAnySimpleType
             }
             $sReturn .= $pattern[$i];
         }
+        return $sReturn;
     }
 
     protected function isOK()
