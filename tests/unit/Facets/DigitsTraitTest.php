@@ -1,5 +1,6 @@
 <?php
 namespace AlgoWeb\xsdTypes\Facets;
+
 /**
  * Generated Test Class.
  */
@@ -85,5 +86,4 @@ class DigitsTraitTest extends \PHPUnit_Framework_TestCase
             'This test has not been implemented yet.'
         );
     }
-
 }

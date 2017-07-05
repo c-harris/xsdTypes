@@ -173,5 +173,4 @@ class xsUnsignedByteTest extends \PHPUnit_Framework_TestCase
             'This test has not been implemented yet.'
         );
     }
-
 }
