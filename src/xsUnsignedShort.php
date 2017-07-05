@@ -9,7 +9,7 @@ namespace AlgoWeb\xsdTypes;
 class xsUnsignedShort extends xsUnsignedInt
 {
     /**
-     * Construct
+     * Construct.
      *
      * @param int $value
      */

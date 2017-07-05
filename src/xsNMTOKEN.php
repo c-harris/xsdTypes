@@ -12,13 +12,13 @@ namespace AlgoWeb\xsdTypes;
 class xsNMTOKEN extends xsToken
 {
     /**
-     * Construct
+     * Construct.
      *
      * @param string $value
      */
     public function __construct($value)
     {
         parent::__construct($value);
-        $this->setPatternFacet("\c+");
+        $this->setPatternFacet('\c+');
     }
 }

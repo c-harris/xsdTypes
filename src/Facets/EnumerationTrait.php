@@ -18,7 +18,7 @@ trait EnumerationTrait
     }
 
     /**
-     * @param string $enumerationValue Adds a value to the enumeration set.
+     * @param string $enumerationValue adds a value to the enumeration set
      */
     protected function addEnumeration($enumerationValue)
     {
@@ -32,8 +32,8 @@ trait EnumerationTrait
     {
         if (is_array($this->enumeration) && 0 != count($this->enumeration) && !in_array($v, $this->enumeration)) {
             throw new \InvalidArgumentException(
-                "The provided value for " . __CLASS__ . " is not " .
-                implode(" || ", $this->enumeration)
+                'The provided value for ' . __CLASS__ . ' is not ' .
+                implode(' || ', $this->enumeration)
             );
         }
     }

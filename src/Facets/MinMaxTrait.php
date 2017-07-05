@@ -1,22 +1,24 @@
 <?php
 namespace AlgoWeb\xsdTypes\Facets;
 
-//TODO: we need to extend this to handle dates.
 trait MinMaxTrait
 {
     /**
      * @Exclude
-     * @var integer|double|\DateTime Specifies the lower bounds for numeric values (the value must be greater than or equal to this value)
+     * @var int|float|\DateTime|\DateInterval Specifies the lower bounds for numeric values (the value must be greater
+     *                                        than or equal to this value)
      */
     private $minInclusive = null;
     /**
      * @Exclude
-     * @var integer|double|\DateTime Specifies the upper bounds for numeric values (the value must be less than or equal to this value)
+     * @var int|float|\DateTime|\DateInterval Specifies the upper bounds for numeric values (the value must be less
+     *                                        than or equal to this value)
      */
     private $maxInclusive = null;
 
     /**
-     * @param integer|double|\DateTime $v Specifies the upper bounds for numeric values (the value must be less than this value)
+     * @param int|float|\DateTime|\DateInterval $v Specifies the upper bounds for numeric values (the value must be
+     *                                             less than this value)
      */
     public function setMaxExclusive($v)
     {
@@ -28,7 +30,8 @@ trait MinMaxTrait
     }
 
     /**
-     * @param integer|double|\DateTime $v Specifies the upper bounds for numeric values (the value must be less than or equal to this value)
+     * @param int|float|\DateTime|\DateInterval $v Specifies the upper bounds for numeric values
+     *                                             (the value must be less than or equal to this value)
      */
     public function setMaxInclusive($v)
     {
@@ -36,7 +39,8 @@ trait MinMaxTrait
     }
 
     /**
-     * @param integer|double|\DateTime $v Specifies the lower bounds for numeric values (the value must be greater than this value)
+     * @param int|float|\DateTime|\DateInterval $v Specifies the lower bounds for numeric values
+     *                                             (the value must be greater than this value)
      */
     public function setMinExclusive($v)
     {
@@ -48,34 +52,35 @@ trait MinMaxTrait
     }
 
     /**
-     * @param integer|double|\DateTime $v Specifies the lower bounds for numeric values (the value must be greater than or equal to this value)
+     * @param int|float|\DateTime|\DateInterval $v Specifies the lower bounds for numeric values
+     *                                             (the value must be greater than or equal to this value)
      */
     public function setMinInclusive($v)
     {
         $this->minInclusive = $v;
     }
 
-    public function CheckMinMax($v)
+    public function checkMinMax($v)
     {
         if (null != $this->minInclusive) {
-            $this->CheckMin($v);
+            $this->checkMin($v);
         }
         if (null != $this->maxInclusive) {
-            $this->CheckMax($v);
+            $this->checkMax($v);
         }
     }
 
-    private function CheckMin($v)
+    private function checkMin($v)
     {
         if ($v < $this->minInclusive) {
-            throw new \InvalidArgumentException("Value less than allowed min value " . __CLASS__);
+            throw new \InvalidArgumentException('Value less than allowed min value ' . __CLASS__);
         }
     }
 
-    private function CheckMax($v)
+    private function checkMax($v)
     {
         if ($v > $this->maxInclusive) {
-            throw new \InvalidArgumentException("Value greater than allowed max value " . __CLASS__);
+            throw new \InvalidArgumentException('Value greater than allowed max value ' . __CLASS__);
         }
     }
 }

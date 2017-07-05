@@ -16,13 +16,13 @@ namespace AlgoWeb\xsdTypes;
 class xsNormalizedString extends xsString
 {
     /**
-     * Construct
+     * Construct.
      *
      * @param string $value
      */
     public function __construct($value)
     {
         parent::__construct($value);
-        $this->setWhiteSpaceFacet("replace");
+        $this->setWhiteSpaceFacet('replace');
     }
 }

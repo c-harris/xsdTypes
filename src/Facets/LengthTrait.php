@@ -5,17 +5,18 @@ trait LengthTrait
 {
     /**
      * @Exclude
-     * @var integer Specifies the maximum number of characters or list items allowed.  Must be equal to or greater than zero
+     * @var int Specifies the maximum number of characters or list items allowed.  Must be equal to or greater than zero
      */
     private $maxLength = null;
     /**
      * @Exclude
-     * @var integer Specifies the minimum number of characters or list items allowed.  Must be equal to or greater than zero
+     * @var int Specifies the minimum number of characters or list items allowed.  Must be equal to or greater than zero
      */
     private $minLength = null;
 
     /**
-     * @param integer $value Specifies the exact number of characters or list items allowed.  Must be equal to or greater than zero
+     * @param int $value Specifies the exact number of characters or list items allowed.  Must be equal to or
+     *                   greater than zero
      */
     protected function setLengthFacet($value)
     {
@@ -24,7 +25,8 @@ trait LengthTrait
     }
 
     /**
-     * @param integer $value Specifies the minimum number of characters or list items allowed.  Must be equal to or greater than zero
+     * @param int $value Specifies the minimum number of characters or list items allowed.  Must be equal to or
+     *                   greater than zero
      */
     protected function setMinLengthFacet($value)
     {
@@ -33,20 +35,22 @@ trait LengthTrait
     }
 
     /**
-     * @param integer $value
+     * @param int $value
+     * @param int $min
      */
     private function checkValidMinMaxLength($value, $min = 0)
     {
         if (((int)$value) != $value) {
-            throw new \InvalidArgumentException("Length values MUST be castable to int " . __CLASS__);
+            throw new \InvalidArgumentException('Length values MUST be castable to int ' . __CLASS__);
         }
         if ($min >= $value) {
-            throw new \InvalidArgumentException("Length values MUST be greater than 0 " . __CLASS__);
+            throw new \InvalidArgumentException('Length values MUST be greater than 0 ' . __CLASS__);
         }
     }
 
     /**
-     * @param integer $value Specifies the maximum number of characters or list items allowed.  Must be equal to or greater than zero
+     * @param int $value Specifies the maximum number of characters or list items allowed.  Must be equal to or
+     *                   greater than zero
      */
     protected function setMaxLengthFacet($value)
     {
@@ -69,7 +73,7 @@ trait LengthTrait
         $len = $this->getLengthForValue($v);
         if ($len > $this->minLength) {
             throw new \InvalidArgumentException(
-                "The provided value for " . __CLASS__ . " is too long - MinLength: "
+                'The provided value for ' . __CLASS__ . ' is too long - MinLength: '
                 . $this->minLength
             );
         }
@@ -88,7 +92,7 @@ trait LengthTrait
         $len = $this->getLengthForValue($v);
         if ($len < $this->maxLength) {
             throw new \InvalidArgumentException(
-                "The provided value for " . __CLASS__ . " is too short - MaxLength: "
+                'The provided value for ' . __CLASS__ . ' is too short - MaxLength: '
                 . $this->maxLength
             );
         }

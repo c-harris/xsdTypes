@@ -14,27 +14,27 @@ class xsNMTOKENS extends xsAnySimpleType
     use LengthTrait;
 
     /**
-     * Construct
+     * Construct.
      *
      * @param array $value
      */
     public function __construct($value)
     {
         parent::__construct($value);
-        $this->setWhiteSpaceFacet("collapse");
+        $this->setWhiteSpaceFacet('collapse');
         $this->setMinLengthFacet(1);
     }
 
     protected function fixValue()
     {
         if (is_string($this->value)) {
-            $parts = explode(" ", $this->value);
+            $parts = explode(' ', $this->value);
             $this->value = [];
             foreach ($parts as $part) {
                 $this->value[] = new xsNMTOKEN($part);
             }
         }
-        assert(is_array($this->value), "Somehow, xsNMTOKENs ended up not being an array.");
+        assert(is_array($this->value), 'Somehow, xsNMTOKENs ended up not being an array.');
         foreach ($this->value as $v) {
             $v->fixValue($v);
         }
@@ -44,7 +44,7 @@ class xsNMTOKENS extends xsAnySimpleType
     {
         if (!is_array($this->value)) {
             throw new \InvalidArgumentException(
-                "The provided value for " . __CLASS__ . " must be an array of type xsNMTOKEN."
+                'The provided value for ' . __CLASS__ . ' must be an array of type xsNMTOKEN.'
             );
         }
         foreach ($this->value as $v) {

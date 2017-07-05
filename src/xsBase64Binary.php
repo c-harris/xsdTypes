@@ -6,7 +6,7 @@ use AlgoWeb\xsdTypes\Facets\LengthTrait;
 
 /**
  * The type xsd:base64Binary represents binary data as a sequence of binary octets.  It uses base64 encoding, as
- * described in RFC 2045.  The following rules apply to xsd:base64Binary values:
+ * described in RFC 2045.  The following rules apply to xsd:base64Binary values:.
  *
  * - The following characters are allowed: the letters A to Z (upper and lower case), digits 0 through 9, the plus sign
  *     ("+"), the slash ("/"), the equals sign ("=") and XML whitespace characters.
@@ -23,14 +23,14 @@ class xsBase64Binary extends xsAnySimpleType
     use LengthTrait;
 
     /**
-     * Construct
+     * Construct.
      *
      * @param string $value
      */
     public function __construct($value)
     {
         parent::__construct($value);
-        $this->setWhiteSpaceFacet("collapse");
+        $this->setWhiteSpaceFacet('collapse');
     }
 
     protected function isOK()

@@ -12,13 +12,13 @@ namespace AlgoWeb\xsdTypes;
 class xsNCName extends xsName
 {
     /**
-     * Construct
+     * Construct.
      *
      * @param string $value
      */
     public function __construct($value)
     {
         parent::__construct($value);
-        $this->setPatternFacet("[\i-[:]][\c-[:]]*");
+        $this->setPatternFacet('[\i-[:]][\c-[:]]*');
     }
 }

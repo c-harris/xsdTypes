@@ -17,7 +17,7 @@ abstract class xsAnySimpleType
     use WhiteSpaceTrait, PatternTrait, EnumerationTrait;
     /**
      * @Exclude
-     * @var boolean indicates if value has been fixed.
+     * @var bool indicates if value has been fixed
      */
     protected $fixed = false;
 
@@ -27,7 +27,7 @@ abstract class xsAnySimpleType
     protected $value = null;
 
     /**
-     * Construct
+     * Construct.
      *
      * @param mixed $value
      */
@@ -45,6 +45,9 @@ abstract class xsAnySimpleType
         return $this->value;
     }
 
+    /**
+     * makes changes to the value to compensate for rounding conditions or white space handling.
+     */
     protected function fixValue()
     {
         $this->value = $this->fixWhitespace($this->value);
@@ -57,5 +60,10 @@ abstract class xsAnySimpleType
         $this->isOK();
     }
 
+    /**
+     * preforms subclass specific checks to make sure the contained value is OK.
+     *
+     * @return null
+     */
     abstract protected function isOK();
 }

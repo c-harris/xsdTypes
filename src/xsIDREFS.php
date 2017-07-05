@@ -13,7 +13,7 @@ class xsIDREFS extends xsAnySimpleType
     use LengthTrait;
 
     /**
-     * Construct
+     * Construct.
      *
      * @param xsIDREF $value
      */
@@ -28,7 +28,7 @@ class xsIDREFS extends xsAnySimpleType
         parent::isOK();
         if (!is_array($this->value)) {
             throw new \InvalidArgumentException(
-                "The provided value for " . __CLASS__ . " must be an array of type xsIDREF."
+                'The provided value for ' . __CLASS__ . ' must be an array of type xsIDREF.'
             );
         }
         foreach ($this->value as $v) {

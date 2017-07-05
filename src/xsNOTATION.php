@@ -20,14 +20,14 @@ abstract class xsNOTATION extends xsAnySimpleType
     use LengthTrait;
 
     /**
-     * Construct
+     * Construct.
      *
      * @param string $value
      */
     public function __construct($value)
     {
         parent::__construct($value);
-        $this->setWhiteSpaceFacet("collapse");
+        $this->setWhiteSpaceFacet('collapse');
     }
 
     protected function isOK()

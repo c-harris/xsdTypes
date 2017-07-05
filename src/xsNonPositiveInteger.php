@@ -10,7 +10,7 @@ namespace AlgoWeb\xsdTypes;
 class xsNonPositiveInteger extends xsInteger
 {
     /**
-     * Construct
+     * Construct.
      *
      * @param int $value
      */
