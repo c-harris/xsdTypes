@@ -8,5 +8,4 @@ namespace AlgoWeb\xsdTypes;
  */
 class xsIDTest extends \PHPUnit_Framework_TestCase
 {
-
 }
