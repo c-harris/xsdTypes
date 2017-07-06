@@ -9,9 +9,56 @@ namespace AlgoWeb\xsdTypes;
 class xsFloatTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var \AlgoWeb\xsdTypes\xsFloat
+     * @dataProvider testxsFloatValidDataProvider
      */
-    protected $object;
+    public function testxsFloatValid($input, $message)
+    {
+        try {
+            $d = new xsFloat($input);
+            $s = (string)$d;
+        } catch (\Exception $e) {
+            $this->fail($message . ' with Exception ' . $e->getMessage());
+        }
+    }
+
+    public function testxsFloatValidDataProvider()
+    {
+        return array(
+            array('-3E2', 'any value valid for decimal is also valid for float'),
+            array('4268.22752E11', 'any value valid for decimal is also valid for float'),
+            array('+24.3e-3	', 'any value valid for decimal is also valid for float'),
+            array('12', 'any value valid for decimal is also valid for float'),
+            array('+3.5	', 'any value valid for decimal is also valid for float'),
+            array('-INF	', 'negative infinity'),
+            array('-0	', 'Zero'),
+            array('NaN', 'Not a Number'),
+
+        );
+    }
+
+    /**
+     * @dataProvider testxsFloatInvalidDataProvider
+     */
+    public function testxsFloatInvalid($input, $message)
+    {
+        try {
+            $d = new xsFloat($input);
+            $s = (string)$d;
+            $this->fail($message);
+        } catch (\Exception $e) {
+        }
+        $this->assertEquals('', $s, $message);
+    }
+
+    public function testxsFloatInvalidDataProvider()
+    {
+        return array(
+            array('-3E2.4', 'the exponent must be an integer'),
+            array('12E', 'an exponent must be specified if "E" is present'),
+            array('NAN', 'values are case-sensitive, must be capitalized correctly'),
+            array('', 'an empty value is not valid, unless xsi:nil is used'),
+        );
+    }
 
     /**
      * Sets up the fixture, for example, opens a network connection.
@@ -20,7 +67,6 @@ class xsFloatTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->object = new \AlgoWeb\xsdTypes\xsFloat();
     }
 
     /**
@@ -30,82 +76,5 @@ class xsFloatTest extends \PHPUnit_Framework_TestCase
     protected function tearDown()
     {
         parent::tearDown();
-    }
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsFloat::__toString
-     * @todo   Implement test__toString().
-     */
-    public function test__toString()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsFloat::setMaxExclusive
-     * @todo   Implement testSetMaxExclusive().
-     */
-    public function testSetMaxExclusive()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsFloat::setMaxInclusive
-     * @todo   Implement testSetMaxInclusive().
-     */
-    public function testSetMaxInclusive()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsFloat::setMinExclusive
-     * @todo   Implement testSetMinExclusive().
-     */
-    public function testSetMinExclusive()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsFloat::setMinInclusive
-     * @todo   Implement testSetMinInclusive().
-     */
-    public function testSetMinInclusive()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsFloat::checkMinMax
-     * @todo   Implement testCheckMinMax().
-     */
-    public function testCheckMinMax()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
     }
 }
