@@ -60,11 +60,11 @@ class xsAnyURITest extends \PHPUnit_Framework_TestCase
     {
         try {
             $d = new xsAnyURI($input);
-            $e = (string)$d;
+            $s = (string)$d;
             $this->fail($message);
         } catch (\Exception $e) {
         }
-        $this->assertEquals('', $e, $message);
+        $this->assertEquals('', $s, $message);
     }
 
     public function testxsAnyURIInvalidDataProvider()

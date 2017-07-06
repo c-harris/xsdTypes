@@ -60,11 +60,11 @@ class xsBooleanTest extends \PHPUnit_Framework_TestCase
 {
         try {
             $d = new xsBoolean($input);
-            $e = (string)$d;
+            $p = (string)$d;
             $this->fail($message);
         } catch (\Exception $e) {
         }
-        $this->assertEquals('', $e, $message);
+        $this->assertEquals('', $p, $message);
     }
 
     public function testxsBooleanInvalidDataProvider()

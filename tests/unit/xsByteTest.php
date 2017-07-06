@@ -56,11 +56,11 @@ class xsByteTest extends \PHPUnit_Framework_TestCase
 {
         try {
             $d = new xsByte($input);
-            $e = (string)$d;
+            $s = (string)$d;
             $this->fail($message);
         } catch (\Exception $e) {
         }
-        $this->assertEquals('', $e, $message);
+        $this->assertEquals('', $s, $message);
     }
 
     public function testxsByteInvalidDataProvider()

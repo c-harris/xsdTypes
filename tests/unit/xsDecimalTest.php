@@ -63,11 +63,11 @@ class xsDecimalTest extends \PHPUnit_Framework_TestCase
 {
         try {
             $d = new xsDecimal($input);
-            $e = (string)$d;
+            $s = (string)$d;
             $this->fail($message);
         } catch (\Exception $e) {
         }
-        $this->assertEquals('', $e, $message);
+        $this->assertEquals('', $s, $message);
     }
 
     public function testxsDecimalInvalidDataProvider()

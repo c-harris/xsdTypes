@@ -56,11 +56,11 @@ class xsDateTimeTest extends \PHPUnit_Framework_TestCase
 {
         try {
             $d = new xsDateTime($input);
-            $e = (string)$d;
+            $s = (string)$d;
             $this->fail($message);
         } catch (\Exception $e) {
         }
-        $this->assertEquals('', $e, $message);
+        $this->assertEquals('', $s, $message);
     }
 
     public function testxsDateTimeInvalidDataProvider()

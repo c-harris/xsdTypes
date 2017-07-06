@@ -58,10 +58,10 @@ class xsBase64BinaryTest extends \PHPUnit_Framework_TestCase
     {
         try {
             $d = new xsBase64Binary($input);
-            $e = (string)$d;
+            $s = (string)$d;
             $this->fail($message);
         }catch(\Exception $e){}
-        $this->assertEquals('', $e, $message);
+        $this->assertEquals('', $s, $message);
     }
 
     public function testxsBase64BinaryInvalidDataProvider()
