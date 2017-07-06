@@ -47,7 +47,10 @@ abstract class xsAnySimpleType
             trigger_error($e->getMessage() .'--'.$e->getTraceAsString());
             $this->value = "";
         }
-        return $this->value;
+        if(is_array($this->value)){
+            return implode(" ", $this->value);
+        }
+        return (string)$this->value;
     }
 
     /**
