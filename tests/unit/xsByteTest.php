@@ -28,6 +28,8 @@ class xsByteTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider testxsByteValidDataProvider
+     * @param mixed $input
+     * @param mixed $message
      */
     public function testxsByteValid($input, $message)
     {
@@ -35,12 +37,12 @@ class xsByteTest extends \PHPUnit_Framework_TestCase
             $d = new xsByte($input);
             $e = (string)$d;
         } catch (\Exception $e) {
-    $this->fail($message . ' with Exception ' . $e->getMessage());
-}
+            $this->fail($message . ' with Exception ' . $e->getMessage());
+        }
     }
 
     public function testxsByteValidDataProvider()
-{
+    {
         return array(
             array(+3, 'positive 3'),
             array(122, 'postive 122'),
@@ -51,9 +53,11 @@ class xsByteTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider testxsByteInvalidDataProvider
+     * @param mixed $input
+     * @param mixed $message
      */
     public function testxsByteInvalid($input, $message)
-{
+    {
         try {
             $d = new xsByte($input);
             $s = (string)$d;
@@ -64,7 +68,7 @@ class xsByteTest extends \PHPUnit_Framework_TestCase
     }
 
     public function testxsByteInvalidDataProvider()
-{
+    {
         return array(
             array(130, 'number is too large'),
             array('', 'an empty value is not valid, unless xsi:nil is used'),
