@@ -3,11 +3,9 @@
  * Created by PhpStorm.
  * User: Barnso
  * Date: 6/07/2017
- * Time: 3:57 PM
+ * Time: 3:57 PM.
  */
-
 namespace AlgoWeb\xsdTypes\Facets;
-
 
 trait XMLPatterns
 {
@@ -79,13 +77,13 @@ trait XMLPatterns
     private static $Name;
     private static $Names;
     private static $Nmtoken;
-        private static function init()
-        {
-            self::$Letter = self::$BaseChar . '|' . self::$Ideographic;
-            self::$NameChar = self::$Letter .'|'. self::$Digit .'|.|-|_|:|'. self::$CombiningChar .'|'. self::$Extender;
-            self::$Name = 	'('.self::$Letter .'|_|:)('.self::$NameChar.')*';
-            self::$Names = self::$Name .'(\x{20}'.self::$Name.')*';
-            self::$Nmtoken = '('.self::$NameChar.')+';
-            self::$Nmtokens =  self::$Nmtoken .'(\x{20}'.self::$Nmtoken.')*';
-        }
+    private static function init()
+    {
+        self::$Letter = self::$BaseChar . '|' . self::$Ideographic;
+        self::$NameChar = self::$Letter .'|'. self::$Digit .'|.|-|_|:|'. self::$CombiningChar .'|'. self::$Extender;
+        self::$Name =    '('.self::$Letter .'|_|:)('.self::$NameChar.')*';
+        self::$Names = self::$Name .'(\x{20}'.self::$Name.')*';
+        self::$Nmtoken = '('.self::$NameChar.')+';
+        self::$Nmtokens =  self::$Nmtoken .'(\x{20}'.self::$Nmtoken.')*';
+    }
 }

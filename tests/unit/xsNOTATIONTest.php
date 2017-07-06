@@ -6,5 +6,4 @@ namespace AlgoWeb\xsdTypes;
  */
 class xsNOTATIONTest extends \PHPUnit_Framework_TestCase
 {
-
 }
