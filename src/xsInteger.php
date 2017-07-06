@@ -18,6 +18,6 @@ class xsInteger extends xsDecimal
     {
         parent::__construct($value);
         $this->setFractionDigits(0);
-        $this->setPatternFacet('[\-+]?[0-9]+');
+        $this->setPatternFacet('/[\-+]?[0-9]+/');
     }
 }
