@@ -8,5 +8,4 @@ namespace AlgoWeb\xsdTypes;
  */
 class xsIDREFSTest extends \PHPUnit_Framework_TestCase
 {
-
 }

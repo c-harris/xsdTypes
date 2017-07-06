@@ -10,6 +10,8 @@ class xsNegativeIntegerTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @dataProvider testxsNegativeIntegerValidDataProvider
+     * @param mixed $input
+     * @param mixed $message
      */
     public function testxsNegativeIntegerValid($input, $message)
     {
@@ -31,6 +33,8 @@ class xsNegativeIntegerTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider testxsNegativeIntegerInvalidDataProvider
+     * @param mixed $input
+     * @param mixed $message
      */
     public function testxsNegativeIntegerInvalid($input, $message)
     {
