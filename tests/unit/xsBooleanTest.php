@@ -28,6 +28,8 @@ class xsBooleanTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider testxsBooleanValidDataProvider
+     * @param mixed $input
+     * @param mixed $message
      */
     public function testxsBooleanValid($input, $message)
     {
@@ -35,12 +37,12 @@ class xsBooleanTest extends \PHPUnit_Framework_TestCase
             $d = new xsBoolean($input);
             $e = (string)$d;
         } catch (\Exception $e) {
-    $this->fail($message . ' with Exception ' . $e->getMessage());
-}
+            $this->fail($message . ' with Exception ' . $e->getMessage());
+        }
     }
 
     public function testxsBooleanValidDataProvider()
-{
+    {
         return array(
             array(true, 'bool true'),
             array(false, 'bool false'),
@@ -55,9 +57,11 @@ class xsBooleanTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider testxsBooleanInvalidDataProvider
+     * @param mixed $input
+     * @param mixed $message
      */
     public function testxsBooleanInvalid($input, $message)
-{
+    {
         try {
             $d = new xsBoolean($input);
             $p = (string)$d;
@@ -68,7 +72,7 @@ class xsBooleanTest extends \PHPUnit_Framework_TestCase
     }
 
     public function testxsBooleanInvalidDataProvider()
-{
+    {
         return array(
             array('T', 'the word "true" must be spelled out'),
             array('', 'an empty value is not valid, unless xsi:nil is used'),
