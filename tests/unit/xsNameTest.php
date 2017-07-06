@@ -9,9 +9,51 @@ namespace AlgoWeb\xsdTypes;
 class xsNameTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var \AlgoWeb\xsdTypes\xsName
+     * @dataProvider testxsNameValidDataProvider
      */
-    protected $object;
+    public function testxsNameValid($input, $message)
+    {
+        try {
+            $d = new xsName($input);
+            $s = (string)$d;
+        } catch (\Exception $e) {
+            $this->fail($message . ' with Exception ' . $e->getMessage());
+        }
+    }
+
+    public function testxsNameValidDataProvider()
+    {
+        return array(
+            array('myElement', ''),
+            array('_my.Element', ''),
+            array('my-element', ''),
+            array('pre:myelement3', 'this is recommended only if pre is a namespace prefix; otherwise, colons ' .
+                'should not be used'),
+        );
+    }
+
+    /**
+     * @dataProvider testxsNameInvalidDataProvider
+     */
+    public function testxsNameInvalid($input, $message)
+    {
+        try {
+            $d = new xsName($input);
+            $s = (string)$d;
+            $this->fail($message);
+        } catch (\Exception $e) {
+        }
+        $this->assertEquals('', $s, $message);
+    }
+
+    public function testxsNameInvalidDataProvider()
+    {
+        return array(
+            array('-myelement', 'a Name must not start with a hyphen'),
+            array('3rdElement', 'a Name must not start with a number'),
+            array('', 'an empty value is not valid, unless xsi:nil is used'),
+        );
+    }
 
     /**
      * Sets up the fixture, for example, opens a network connection.
@@ -20,7 +62,6 @@ class xsNameTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->object = new \AlgoWeb\xsdTypes\xsName();
     }
 
     /**
@@ -30,17 +71,5 @@ class xsNameTest extends \PHPUnit_Framework_TestCase
     protected function tearDown()
     {
         parent::tearDown();
-    }
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsName::__toString
-     * @todo   Implement test__toString().
-     */
-    public function test__toString()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
     }
 }
