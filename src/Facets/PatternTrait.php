@@ -19,7 +19,7 @@ trait PatternTrait
             self::init();
         }
         $regexPatternToAdd = $this->ProcessRegex($regexPatternToAdd, $ProcessMultiCharacterEscape);
-        if ($this->checkRegexValidPattern($regexPatternToAdd)) {
+        if (!$this->checkRegexValidPattern($regexPatternToAdd)) {
             $regexPatternToAdd = '/' . $regexPatternToAdd . '/';
             if (!$this->checkRegexValidPattern($regexPatternToAdd)) {
                 throw new \InvalidArgumentException('Invalid regex pattern provided: ' . get_class($this));
@@ -61,7 +61,7 @@ trait PatternTrait
      */
     private function checkRegexValidPattern($pattern)
     {
-        return (false === @preg_match($pattern, null));
+        return !(false === @preg_match($pattern, null));
     }
 
     /**
