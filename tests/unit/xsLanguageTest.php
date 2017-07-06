@@ -10,6 +10,8 @@ class xsLanguageTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @dataProvider testxsLanguageValidDataProvider
+     * @param mixed $input
+     * @param mixed $message
      */
     public function testxsLanguageValid($input, $message)
     {
@@ -44,6 +46,8 @@ class xsLanguageTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider testxsLanguageInvalidDataProvider
+     * @param mixed $input
+     * @param mixed $message
      */
     public function testxsLanguageInvalid($input, $message)
     {
