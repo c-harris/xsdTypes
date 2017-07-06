@@ -10,6 +10,8 @@ class xsFloatTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @dataProvider testxsFloatValidDataProvider
+     * @param mixed $input
+     * @param mixed $message
      */
     public function testxsFloatValid($input, $message)
     {
@@ -38,6 +40,8 @@ class xsFloatTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider testxsFloatInvalidDataProvider
+     * @param mixed $input
+     * @param mixed $message
      */
     public function testxsFloatInvalid($input, $message)
     {
