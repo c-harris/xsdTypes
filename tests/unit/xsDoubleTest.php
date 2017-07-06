@@ -28,6 +28,8 @@ class xsDoubleTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider testxsDoubleValidDataProvider
+     * @param mixed $input
+     * @param mixed $message
      */
     public function testxsDoubleValid($input, $message)
     {
@@ -56,6 +58,8 @@ class xsDoubleTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider testxsDoubleInvalidDataProvider
+     * @param mixed $input
+     * @param mixed $message
      */
     public function testxsDoubleInvalid($input, $message)
     {
