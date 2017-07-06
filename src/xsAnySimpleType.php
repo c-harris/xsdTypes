@@ -45,10 +45,10 @@ abstract class xsAnySimpleType
             }
         } catch (\Exception $e) {
             trigger_error($e->getMessage() .'--'.$e->getTraceAsString());
-            $this->value = "";
+            $this->value = '';
         }
-        if(is_array($this->value)){
-            return implode(" ", $this->value);
+        if (is_array($this->value)) {
+            return implode(' ', $this->value);
         }
         return (string)$this->value;
     }
