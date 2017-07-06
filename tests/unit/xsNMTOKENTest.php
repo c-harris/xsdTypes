@@ -9,9 +9,48 @@ namespace AlgoWeb\xsdTypes;
 class xsNMTOKENTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var \AlgoWeb\xsdTypes\xsNMTOKEN
+     * @dataProvider testxsNMTOKENValidDataProvider
      */
-    protected $object;
+    public function testxsNMTOKENValid($input, $message)
+    {
+        try {
+            $d = new xsNMTOKEN($input);
+            $s = (string)$d;
+        } catch (\Exception $e) {
+            $this->fail($message . ' with Exception ' . $e->getMessage());
+        }
+    }
+
+    public function testxsNMTOKENValidDataProvider()
+    {
+        return array(
+            array('ABCD', ''),
+            array('123_456', ''),
+            array('  starts_with_a_space', 'when parsed, leading spaces will be removed'),
+        );
+    }
+
+    /**
+     * @dataProvider testxsNMTOKENInvalidDataProvider
+     */
+    public function testxsNMTOKENInvalid($input, $message)
+    {
+        try {
+            $d = new xsNMTOKEN($input);
+            $s = (string)$d;
+            $this->fail($message);
+        } catch (\Exception $e) {
+        }
+        $this->assertEquals('', $s, $message);
+    }
+
+    public function testxsNMTOKENInvalidDataProvider()
+    {
+        return array(
+            array('contains a space', 'value must not contain a space'),
+            array('', 'an empty value is not valid, unless xsi:nil is used'),
+        );
+    }
 
     /**
      * Sets up the fixture, for example, opens a network connection.
@@ -20,7 +59,6 @@ class xsNMTOKENTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->object = new \AlgoWeb\xsdTypes\xsNMTOKEN();
     }
 
     /**
@@ -30,17 +68,5 @@ class xsNMTOKENTest extends \PHPUnit_Framework_TestCase
     protected function tearDown()
     {
         parent::tearDown();
-    }
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsNMTOKEN::__toString
-     * @todo   Implement test__toString().
-     */
-    public function test__toString()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
     }
 }

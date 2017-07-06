@@ -9,9 +9,46 @@ namespace AlgoWeb\xsdTypes;
 class xsNMTOKENSTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var \AlgoWeb\xsdTypes\xsNMTOKENS
+     * @dataProvider testxsNMTOKENSValidDataProvider
      */
-    protected $object;
+    public function testxsNMTOKENSValid($input, $message)
+    {
+        try {
+            $d = new xsNMTOKENS($input);
+            $s = (string)$d;
+        } catch (\Exception $e) {
+            $this->fail($message . ' with Exception ' . $e->getMessage());
+        }
+    }
+
+    public function testxsNMTOKENSValidDataProvider()
+    {
+        return array(
+            array('ABCD 123', ''),
+            array('ABCD ', 'one-item list'),
+        );
+    }
+
+    /**
+     * @dataProvider testxsNMTOKENSInvalidDataProvider
+     */
+    public function testxsNMTOKENSInvalid($input, $message)
+    {
+        try {
+            $d = new xsNMTOKENS($input);
+            $s = (string)$d;
+            $this->fail($message);
+        } catch (\Exception $e) {
+        }
+        $this->assertEquals('', $s, $message);
+    }
+
+    public function testxsNMTOKENSInvalidDataProvider()
+    {
+        return array(
+            array('', 'an empty value is not valid, unless xsi:nil is used'),
+        );
+    }
 
     /**
      * Sets up the fixture, for example, opens a network connection.
@@ -20,7 +57,6 @@ class xsNMTOKENSTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->object = new \AlgoWeb\xsdTypes\xsNMTOKENS();
     }
 
     /**
@@ -30,17 +66,5 @@ class xsNMTOKENSTest extends \PHPUnit_Framework_TestCase
     protected function tearDown()
     {
         parent::tearDown();
-    }
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsNMTOKENS::__toString
-     * @todo   Implement test__toString().
-     */
-    public function test__toString()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
     }
 }
