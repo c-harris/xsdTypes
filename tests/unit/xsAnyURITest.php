@@ -28,6 +28,8 @@ class xsAnyURITest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider testxsAnyURIValidDataProvider
+     * @param mixed $input
+     * @param mixed $message
      */
     public function testxsAnyURIValid($input, $message)
     {
@@ -55,6 +57,8 @@ class xsAnyURITest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider testxsAnyURIInvalidDataProvider
+     * @param mixed $input
+     * @param mixed $message
      */
     public function testxsAnyURIInvalid($input, $message)
     {
