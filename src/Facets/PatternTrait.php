@@ -19,7 +19,7 @@ trait PatternTrait
             self::init();
         }
         $regexPatternToAdd = $this->ProcessRegex($regexPatternToAdd, $ProcessMultiCharacterEscape);
-        if (!$this->checkRegexValidPattern($regexPatternToAdd)) {
+        if ($this->checkRegexValidPattern($regexPatternToAdd)) {
             $regexPatternToAdd = '/' . $regexPatternToAdd . '/';
             if (!$this->checkRegexValidPattern($regexPatternToAdd)) {
                 throw new \InvalidArgumentException('Invalid regex pattern provided: ' . get_class($this));

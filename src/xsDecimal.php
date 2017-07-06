@@ -32,6 +32,7 @@ class xsDecimal extends xsAnySimpleType
     {
         parent::fixValue();
         $this->value = $this->fixFractionDigits($this->value);
+
     }
 
     protected function isOK()
