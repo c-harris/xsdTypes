@@ -10,6 +10,8 @@ class xsLongTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @dataProvider testxsLongValidDataProvider
+     * @param mixed $input
+     * @param mixed $message
      */
     public function testxsLongValid($input, $message)
     {
@@ -33,6 +35,8 @@ class xsLongTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider testxsLongInvalidDataProvider
+     * @param mixed $input
+     * @param mixed $message
      */
     public function testxsLongInvalid($input, $message)
     {
