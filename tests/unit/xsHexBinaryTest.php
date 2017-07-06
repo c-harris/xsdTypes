@@ -10,6 +10,8 @@ class xsHexBinaryTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @dataProvider testxsHexBinaryValidDataProvider
+     * @param mixed $input
+     * @param mixed $message
      */
     public function testxsHexBinaryValid($input, $message)
     {
@@ -33,6 +35,8 @@ class xsHexBinaryTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider testxsHexBinaryInvalidDataProvider
+     * @param mixed $input
+     * @param mixed $message
      */
     public function testxsHexBinaryInvalid($input, $message)
     {
