@@ -79,6 +79,7 @@ trait XMLPatterns
     private static $Name;
     private static $Names;
     private static $Nmtoken;
+    private static $Nmtokens;
         private static function init()
         {
             self::$Letter = self::$BaseChar . '|' . self::$Ideographic;
