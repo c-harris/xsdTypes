@@ -3,6 +3,7 @@ namespace AlgoWeb\xsdTypes\Facets;
 
 trait PatternTrait
 {
+    use XMLPatterns;
     /**
      * @Exclude
      * @var array defines the exact sequence of characters that are acceptable
@@ -12,8 +13,12 @@ trait PatternTrait
     /**
      * @param string $regexPatternToAdd
      */
-    protected function setPatternFacet($regexPatternToAdd)
+    protected function setPatternFacet($regexPatternToAdd, $ProcessMultiCharacterEscape = true)
     {
+        if(null == self::$Letter){
+            self::init();
+        }
+        $regexPatternToAdd = $this->ProcessRegex($regexPatternToAdd, $ProcessMultiCharacterEscape);
         if (!$this->checkRegexValidPattern($regexPatternToAdd)) {
             $regexPatternToAdd = '/' . $regexPatternToAdd . '/';
             if (!$this->checkRegexValidPattern($regexPatternToAdd)) {
@@ -21,6 +26,34 @@ trait PatternTrait
             }
         }
         $this->pattern[] = $regexPatternToAdd;
+    }
+
+    private function ProcessRegex($regexPattern, $ProcessMultiCharacterEscape){
+        if(!$ProcessMultiCharacterEscape){
+            return $regexPattern;
+        }
+        if(null == self::$NameChar){
+            init();
+        }
+        /**
+         *
+         */
+        $regexPattern = str_replace('\S','[^\s]',$regexPattern);
+        /**
+         * \x{20} matches the character   with index 2016 (3210 or 408) literally (case sensitive)
+         * \t matches a tab character (ASCII 9)
+         * \n matches a line-feed (newline) character (ASCII 10)
+         * \r matches a carriage return (ASCII 13)
+         */
+        $regexPattern = str_replace('\s','[\x{20}\t\n\r]',$regexPattern);
+        $regexPattern = str_replace('\I','[^\i]',$regexPattern);
+        $regexPattern = str_replace('\i',self::$Letter.'|_|:',$regexPattern);
+        $regexPattern = str_replace('\c',self::$NameChar,$regexPattern);
+        $regexPattern = str_replace('\D','[^\d]',$regexPattern);
+        $regexPattern = str_replace('\d','\p{Nd}',$regexPattern);
+        $regexPattern = str_replace('\W','[^\w]',$regexPattern);
+        $regexPattern = str_replace('\w','[\x{0000}-\x{10FFFF}]-[\p{P}\p{Z}\p{C}] ',$regexPattern);
+        return $regexPattern;
     }
 
     /**
