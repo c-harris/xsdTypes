@@ -1,8 +1,6 @@
 <?php
 namespace AlgoWeb\xsdTypes;
 
-
-
 /**
  * Generated Test Class.
  */
@@ -27,16 +25,19 @@ class xsYearMonthDurationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-         * @dataProvider testXsYearMonthDurationValidDataProvider
+     * @dataProvider testXsYearMonthDurationValidDataProvider
+     * @param mixed $duration
+     * @param mixed $message
      */
-    public function testXsYearMonthDurationValid($duration, $message) {
+    public function testXsYearMonthDurationValid($duration, $message)
+    {
         $d = new xsYearMonthDuration($duration);
         $e = (string)$d;
-        $this->assertEquals($duration,$e,$message);
-
+        $this->assertEquals($duration, $e, $message);
     }
 
-    public function testXsYearMonthDurationValidDataProvider() {
+    public function testXsYearMonthDurationValidDataProvider()
+    {
         return array(
             array('P2Y6M', '2 years, 6 months'),
             array('P20M', '20 months (the number of months can be more than 12)'),
@@ -47,15 +48,19 @@ class xsYearMonthDurationTest extends \PHPUnit_Framework_TestCase
     }
     /**
      * @dataProvider testXsYearMonthDurationInvalidDataProvider
+     * @param mixed $duration
+     * @param mixed $message
      */
-    public function testXsYearMonthDurationInvalid($duration, $message) {
-            $d = new xsYearMonthDuration($duration);
-            $e = (string)$d;
-            $this->fail($message);
-            $this->assertEquals('',$e,$message);
+    public function testXsYearMonthDurationInvalid($duration, $message)
+    {
+        $d = new xsYearMonthDuration($duration);
+        $e = (string)$d;
+        $this->fail($message);
+        $this->assertEquals('', $e, $message);
     }
 
-    public function testXsYearMonthDurationInvalidDataProvider() {
+    public function testXsYearMonthDurationInvalidDataProvider()
+    {
         return array(
             array('P2Y6M5DT12H35M30S', 'components other than years or months are not allowed'),
             array('P-20M', 'the minus sign must appear first'),

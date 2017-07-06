@@ -28,6 +28,8 @@ class xsDecimalTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider testxsDecimalValidDataProvider
+     * @param mixed $input
+     * @param mixed $message
      */
     public function testxsDecimalValid($input, $message)
     {
@@ -35,12 +37,12 @@ class xsDecimalTest extends \PHPUnit_Framework_TestCase
             $d = new xsDecimal($input);
             $e = (string)$d;
         } catch (\Exception $e) {
-    $this->fail($message . ' with Exception ' . $e->getMessage());
-}
+            $this->fail($message . ' with Exception ' . $e->getMessage());
+        }
     }
 
     public function testxsDecimalValidDataProvider()
-{
+    {
         return array(
             array(3.0, ''),
             array(-3.0, 'a negative sign is permitted'),
@@ -58,9 +60,11 @@ class xsDecimalTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider testxsDecimalInvalidDataProvider
+     * @param mixed $input
+     * @param mixed $message
      */
     public function testxsDecimalInvalid($input, $message)
-{
+    {
         try {
             $d = new xsDecimal($input);
             $e = (string)$d;
@@ -71,7 +75,7 @@ class xsDecimalTest extends \PHPUnit_Framework_TestCase
     }
 
     public function testxsDecimalInvalidDataProvider()
-{
+    {
         return array(
             array('3,5', 'commas are not permitted; the decimal separator must be a period'),
             array('', 'an empty value is not valid, unless xsi:nil is used'),
