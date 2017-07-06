@@ -28,15 +28,18 @@ class xsQNameTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider testxsQNameTestValidDataProvider
+     * @param mixed $duration
+     * @param mixed $message
      */
-    public function testxsQNameTestValid($duration, $message) {
+    public function testxsQNameTestValid($duration, $message)
+    {
         $d = new xsQName($duration);
         $e = (string)$d;
-        $this->assertEquals($duration,$e,$message);
-
+        $this->assertEquals($duration, $e, $message);
     }
 
-    public function testxsQNameTestValidDataProvider() {
+    public function testxsQNameTestValidDataProvider()
+    {
         return array(
             array('pre:myElement', 'valid assuming the prefix "pre" is mapped to a namespace in scope'),
             array('myElement', 'prefix and colon are optional'),
@@ -44,15 +47,19 @@ class xsQNameTest extends \PHPUnit_Framework_TestCase
     }
     /**
      * @dataProvider testxsQNameTestInvalidDataProvider
+     * @param mixed $duration
+     * @param mixed $message
      */
-    public function testxsQNameTestInvalid($duration, $message) {
-            $d = new xsQName($duration);
-            $e = (string)$d;
-            $this->fail($message);
-            $this->assertEquals('',$e,$message);
+    public function testxsQNameTestInvalid($duration, $message)
+    {
+        $d = new xsQName($duration);
+        $e = (string)$d;
+        $this->fail($message);
+        $this->assertEquals('', $e, $message);
     }
 
-    public function testxsQNameTestInvalidDataProvider() {
+    public function testxsQNameTestInvalidDataProvider()
+    {
         return array(
             array(':myElement', '	a QName must not start with a colon'),
             array('pre:3rdElement', 'the local part must not start with a number; it must be a valid NCName'),

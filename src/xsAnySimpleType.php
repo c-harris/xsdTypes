@@ -45,7 +45,7 @@ abstract class xsAnySimpleType
             }
         } catch (\Exception $e) {
             trigger_error($e->getMessage());
-            $this->value = "";
+            $this->value = '';
         }
         return $this->value;
     }

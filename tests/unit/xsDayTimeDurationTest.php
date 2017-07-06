@@ -28,6 +28,8 @@ class xsDayTimeDurationTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider testxsDayTimeDurationValidDataProvider
+     * @param mixed $input
+     * @param mixed $message
      */
     public function testxsDayTimeDurationValid($input, $message)
     {
@@ -35,12 +37,12 @@ class xsDayTimeDurationTest extends \PHPUnit_Framework_TestCase
             $d = new xsDayTimeDuration($input);
             $e = (string)$d;
         } catch (\Exception $e) {
-    $this->fail($message . ' with Exception ' . $e->getMessage());
-}
+            $this->fail($message . ' with Exception ' . $e->getMessage());
+        }
     }
 
     public function testxsDayTimeDurationValidDataProvider()
-{
+    {
         return array(
             array('P2Y6M5DT12H35M30S', '2 years, 6 months, 5 days, 12 hours, 35 minutes, 30 seconds'),
             array('P1DT2H', '1 day, 2 hours'),
@@ -55,9 +57,11 @@ class xsDayTimeDurationTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider testxsDayTimeDurationInvalidDataProvider
+     * @param mixed $input
+     * @param mixed $message
      */
     public function testxsDayTimeDurationInvalid($input, $message)
-{
+    {
         try {
             $d = new xsBase64Binary($input);
             $e = (string)$d;
@@ -68,7 +72,7 @@ class xsDayTimeDurationTest extends \PHPUnit_Framework_TestCase
     }
 
     public function testxsDayTimeDurationInvalidDataProvider()
-{
+    {
         return array(
             array('P-20M', 'the minus sign must appear first'),
             array('P20MT', 'no time items are present, so "T" must not be present'),
