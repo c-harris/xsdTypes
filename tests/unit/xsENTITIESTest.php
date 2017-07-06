@@ -8,5 +8,4 @@ namespace AlgoWeb\xsdTypes;
  */
 class xsENTITIESTest extends \PHPUnit_Framework_TestCase
 {
-
 }
