@@ -9,9 +9,49 @@ namespace AlgoWeb\xsdTypes;
 class xsGMonthDayTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var \AlgoWeb\xsdTypes\xsGMonthDay
+     * @dataProvider testxsGMonthDayValidDataProvider
      */
-    protected $object;
+    public function testxsGMonthDayValid($input, $message)
+    {
+        try {
+            $d = new xsGMonthDay($input);
+            $s = (string)$d;
+        } catch (\Exception $e) {
+            $this->fail($message . ' with Exception ' . $e->getMessage());
+        }
+    }
+
+    public function testxsGMonthDayValidDataProvider()
+    {
+        return array(
+            array('--04-12', 'April 12'),
+            array('--04-12Z', 'April 12, Coordinated Universal Time (UTC)'),
+        );
+    }
+
+    /**
+     * @dataProvider testxsGMonthDayInvalidDataProvider
+     */
+    public function testxsGMonthDayInvalid($input, $message)
+    {
+        try {
+            $d = new xsGMonthDay($input);
+            $s = (string)$d;
+            $this->fail($message);
+        } catch (\Exception $e) {
+        }
+        $this->assertEquals('', $s, $message);
+    }
+
+    public function testxsGMonthDayInvalidDataProvider()
+    {
+        return array(
+            array('04-12', 'the leading hyphens are required'),
+            array('--04-31', 'it must be a valid day of the year (April has 30 days)'),
+            array('--4-6', 'the month and day must be 2 digits each'),
+            array('', 'an empty value is not valid, unless xsi:nil is used'),
+        );
+    }
 
     /**
      * Sets up the fixture, for example, opens a network connection.
@@ -20,7 +60,6 @@ class xsGMonthDayTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->object = new \AlgoWeb\xsdTypes\xsGMonthDay();
     }
 
     /**
@@ -30,95 +69,5 @@ class xsGMonthDayTest extends \PHPUnit_Framework_TestCase
     protected function tearDown()
     {
         parent::tearDown();
-    }
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsGMonthDay::fixValue
-     * @todo   Implement testFixValue().
-     */
-    public function testFixValue()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsGMonthDay::__toString
-     * @todo   Implement test__toString().
-     */
-    public function test__toString()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsGMonthDay::setMaxExclusive
-     * @todo   Implement testSetMaxExclusive().
-     */
-    public function testSetMaxExclusive()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsGMonthDay::setMaxInclusive
-     * @todo   Implement testSetMaxInclusive().
-     */
-    public function testSetMaxInclusive()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsGMonthDay::setMinExclusive
-     * @todo   Implement testSetMinExclusive().
-     */
-    public function testSetMinExclusive()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsGMonthDay::setMinInclusive
-     * @todo   Implement testSetMinInclusive().
-     */
-    public function testSetMinInclusive()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsGMonthDay::checkMinMax
-     * @todo   Implement testCheckMinMax().
-     */
-    public function testCheckMinMax()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
     }
 }
