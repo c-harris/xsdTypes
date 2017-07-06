@@ -10,6 +10,8 @@ class xsNameTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @dataProvider testxsNameValidDataProvider
+     * @param mixed $input
+     * @param mixed $message
      */
     public function testxsNameValid($input, $message)
     {
@@ -34,6 +36,8 @@ class xsNameTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider testxsNameInvalidDataProvider
+     * @param mixed $input
+     * @param mixed $message
      */
     public function testxsNameInvalid($input, $message)
     {

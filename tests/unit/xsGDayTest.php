@@ -10,6 +10,8 @@ class xsGDayTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @dataProvider testxsGDayValidDataProvider
+     * @param mixed $input
+     * @param mixed $message
      */
     public function testxsGDayValid($input, $message)
     {
@@ -30,6 +32,8 @@ class xsGDayTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider testxsGDayInvalidDataProvider
+     * @param mixed $input
+     * @param mixed $message
      */
     public function testxsGDayInvalid($input, $message)
     {
