@@ -28,6 +28,8 @@ class xsDateTimeTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider testxsDateTimeValidDataProvider
+     * @param mixed $input
+     * @param mixed $message
      */
     public function testxsDateTimeValid($input, $message)
     {
@@ -35,12 +37,12 @@ class xsDateTimeTest extends \PHPUnit_Framework_TestCase
             $d = new xsDateTime($input);
             $e = (string)$d;
         } catch (\Exception $e) {
-    $this->fail($message . ' with Exception ' . $e->getMessage());
-}
+            $this->fail($message . ' with Exception ' . $e->getMessage());
+        }
     }
 
     public function testxsDateTimeValidDataProvider()
-{
+    {
         return array(
             array('2004-04-12T13:20:00', '1:20 pm on April 12, 2004'),
             array('2004-04-12T13:20:15.5', '1:20 pm and 15.5 seconds on April 12, 2004'),
@@ -51,9 +53,11 @@ class xsDateTimeTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider testxsDateTimeInvalidDataProvider
+     * @param mixed $input
+     * @param mixed $message
      */
     public function testxsDateTimeInvalid($input, $message)
-{
+    {
         try {
             $d = new xsDateTime($input);
             $e = (string)$d;
@@ -64,7 +68,7 @@ class xsDateTimeTest extends \PHPUnit_Framework_TestCase
     }
 
     public function testxsDateTimeInvalidDataProvider()
-{
+    {
         return array(
             array('2004-04-12T13:00', 'seconds must be specified'),
             array('2004-04-1213:20:00', 'the letter T is required'),
