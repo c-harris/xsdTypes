@@ -18,7 +18,7 @@ class xsInteger extends xsDecimal
     {
         parent::__construct($value);
         $this->setFractionDigits(0);
-        /**
+        /*
          * Match a single character present in the list below [\-+]?
          * ? Quantifier — Matches between zero and one times, as many times as possible, giving back as needed (greedy)
          * \- matches the character - literally (case sensitive)
