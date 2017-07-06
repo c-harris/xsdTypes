@@ -55,7 +55,7 @@ class xsByteTest extends \PHPUnit_Framework_TestCase
     public function testxsByteInvalid($input, $message)
 {
         try {
-            $d = new xsBase64Binary($input);
+            $d = new xsByte($input);
             $e = (string)$d;
             $this->fail($message);
         } catch (\Exception $e) {

@@ -59,7 +59,7 @@ class xsDayTimeDurationTest extends \PHPUnit_Framework_TestCase
     public function testxsDayTimeDurationInvalid($input, $message)
 {
         try {
-            $d = new xsBase64Binary($input);
+            $d = new xsDayTimeDuration($input);
             $e = (string)$d;
             $this->fail($message);
         } catch (\Exception $e) {

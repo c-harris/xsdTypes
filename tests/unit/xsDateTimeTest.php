@@ -55,7 +55,7 @@ class xsDateTimeTest extends \PHPUnit_Framework_TestCase
     public function testxsDateTimeInvalid($input, $message)
 {
         try {
-            $d = new xsBase64Binary($input);
+            $d = new xsDateTime($input);
             $e = (string)$d;
             $this->fail($message);
         } catch (\Exception $e) {

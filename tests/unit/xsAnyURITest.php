@@ -59,7 +59,7 @@ class xsAnyURITest extends \PHPUnit_Framework_TestCase
     public function testxsAnyURIInvalid($input, $message)
     {
         try {
-            $d = new xsBase64Binary($input);
+            $d = new xsAnyURI($input);
             $e = (string)$d;
             $this->fail($message);
         } catch (\Exception $e) {
