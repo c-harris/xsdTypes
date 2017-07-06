@@ -44,7 +44,7 @@ abstract class xsAnySimpleType
                 $this->isOKInternal();
             }
         } catch (\Exception $e) {
-            trigger_error($e->getMessage());
+            trigger_error($e->getMessage() .'--'.$e->getTraceAsString());
             $this->value = "";
         }
         return $this->value;

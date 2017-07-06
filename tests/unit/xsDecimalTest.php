@@ -62,7 +62,7 @@ class xsDecimalTest extends \PHPUnit_Framework_TestCase
     public function testxsDecimalInvalid($input, $message)
 {
         try {
-            $d = new xsBase64Binary($input);
+            $d = new xsDecimal($input);
             $e = (string)$d;
             $this->fail($message);
         } catch (\Exception $e) {
