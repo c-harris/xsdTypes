@@ -10,6 +10,8 @@ class xsIntTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @dataProvider testxsIntValidDataProvider
+     * @param mixed $input
+     * @param mixed $message
      */
     public function testxsIntValid($input, $message)
     {
@@ -33,6 +35,8 @@ class xsIntTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider testxsIntInvalidDataProvider
+     * @param mixed $input
+     * @param mixed $message
      */
     public function testxsIntInvalid($input, $message)
     {
