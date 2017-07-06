@@ -22,10 +22,10 @@ class xsBoolean extends xsAnySimpleType
     protected function fixValue()
     {
         parent::fixValue();
-        if($this->value == 0){
+        if ($this->value == 0) {
             $this->value = false;
         }
-        if($this->value == 1){
+        if ($this->value == 1) {
             $this->value = true;
         }
     }
