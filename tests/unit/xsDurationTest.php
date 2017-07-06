@@ -10,6 +10,8 @@ class xsDurationTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @dataProvider testxsDurationValidDataProvider
+     * @param mixed $input
+     * @param mixed $message
      */
     public function testxsDurationValid($input, $message)
     {
@@ -38,6 +40,8 @@ class xsDurationTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider testxsDurationInvalidDataProvider
+     * @param mixed $input
+     * @param mixed $message
      */
     public function testxsDurationInvalid($input, $message)
     {
