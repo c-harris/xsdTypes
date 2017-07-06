@@ -9,9 +9,48 @@ namespace AlgoWeb\xsdTypes;
 class xsHexBinaryTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var \AlgoWeb\xsdTypes\xsHexBinary
+     * @dataProvider testxsHexBinaryValidDataProvider
      */
-    protected $object;
+    public function testxsHexBinaryValid($input, $message)
+    {
+        try {
+            $d = new xsHexBinary($input);
+            $s = (string)$d;
+        } catch (\Exception $e) {
+            $this->fail($message . ' with Exception ' . $e->getMessage());
+        }
+    }
+
+    public function testxsHexBinaryValidDataProvider()
+    {
+        return array(
+            array('0FB8', ''),
+            array('0fb8', 'equivalent to 0FB8'),
+            array('', 'an empty value is valid'),
+
+        );
+    }
+
+    /**
+     * @dataProvider testxsHexBinaryInvalidDataProvider
+     */
+    public function testxsHexBinaryInvalid($input, $message)
+    {
+        try {
+            $d = new xsHexBinary($input);
+            $s = (string)$d;
+            $this->fail($message);
+        } catch (\Exception $e) {
+        }
+        $this->assertEquals('', $s, $message);
+    }
+
+    public function testxsHexBinaryInvalidDataProvider()
+    {
+        return array(
+            array('FB8', 'an odd number of characters is not valid; characters must appear in pairs'),
+        );
+    }
 
     /**
      * Sets up the fixture, for example, opens a network connection.
@@ -20,7 +59,6 @@ class xsHexBinaryTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->object = new \AlgoWeb\xsdTypes\xsHexBinary();
     }
 
     /**
@@ -30,17 +68,5 @@ class xsHexBinaryTest extends \PHPUnit_Framework_TestCase
     protected function tearDown()
     {
         parent::tearDown();
-    }
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsHexBinary::__toString
-     * @todo   Implement test__toString().
-     */
-    public function test__toString()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
     }
 }
