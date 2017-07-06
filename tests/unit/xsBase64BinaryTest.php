@@ -29,11 +29,14 @@ class xsBase64BinaryTest extends \PHPUnit_Framework_TestCase
     /**
      * @dataProvider testxsBase64BinaryValidDataProvider
      */
-    public function testxsBase64BinaryValid($duration, $message)
+    public function testxsBase64BinaryValid($input, $message)
     {
-        $d = new xsBase64Binary($duration);
-        $e = (string)$d;
-        $this->assertEquals($duration, $e, $message);
+        try {
+            $d = new xsBase64Binary($input);
+            $e = (string)$d;
+        } catch (\Exception $e) {
+            $this->fail($message . ' with Exception ' . $e->getMessage());
+        }
 
     }
 
@@ -51,10 +54,10 @@ class xsBase64BinaryTest extends \PHPUnit_Framework_TestCase
     /**
      * @dataProvider testxsBase64BinaryInvalidDataProvider
      */
-    public function testxsBase64BinaryInvalid($duration, $message)
+    public function testxsBase64BinaryInvalid($input, $message)
     {
         try {
-            $d = new xsBase64Binary($duration);
+            $d = new xsBase64Binary($input);
             $e = (string)$d;
             $this->fail($message);
         }catch(\Exception $e){}

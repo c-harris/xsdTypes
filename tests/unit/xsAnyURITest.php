@@ -29,12 +29,14 @@ class xsAnyURITest extends \PHPUnit_Framework_TestCase
     /**
      * @dataProvider testxsAnyURIValidDataProvider
      */
-    public function testxsAnyURIValid($duration, $message)
+    public function testxsAnyURIValid($input, $message)
     {
-        $d = new xsAnyURI($duration);
-        $e = (string)$d;
-        $this->assertEquals($duration, $e, $message);
-
+        try {
+            $d = new xsAnyURI($input);
+            $e = (string)$d;
+        } catch (\Exception $e) {
+            $this->fail($message . ' with Exception ' . $e->getMessage());
+        }
     }
 
     public function testxsAnyURIValidDataProvider()
@@ -54,13 +56,14 @@ class xsAnyURITest extends \PHPUnit_Framework_TestCase
     /**
      * @dataProvider testxsAnyURIInvalidDataProvider
      */
-    public function testxsAnyURIInvalid($duration, $message)
+    public function testxsAnyURIInvalid($input, $message)
     {
         try {
-            $d = new xsBase64Binary($duration);
+            $d = new xsBase64Binary($input);
             $e = (string)$d;
             $this->fail($message);
-        }catch(\Exception $e){}
+        } catch (\Exception $e) {
+        }
         $this->assertEquals('', $e, $message);
     }
 

@@ -9,18 +9,12 @@ namespace AlgoWeb\xsdTypes;
 class xsDateTimeTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var \AlgoWeb\xsdTypes\xsDateTime
-     */
-    protected $object;
-
-    /**
      * Sets up the fixture, for example, opens a network connection.
      * This method is called before a test is executed.
      */
     protected function setUp()
     {
         parent::setUp();
-        $this->object = new \AlgoWeb\xsdTypes\xsDateTime();
     }
 
     /**
@@ -33,92 +27,50 @@ class xsDateTimeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers \AlgoWeb\xsdTypes\xsDateTime::fixValue
-     * @todo   Implement testFixValue().
+     * @dataProvider testxsDateTimeValidDataProvider
      */
-    public function testFixValue()
+    public function testxsDateTimeValid($input, $message)
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
+        try {
+            $d = new xsDateTime($input);
+            $e = (string)$d;
+        } catch (\Exception $e) {
+    $this->fail($message . ' with Exception ' . $e->getMessage());
+}
+    }
+
+    public function testxsDateTimeValidDataProvider()
+{
+        return array(
+            array('2004-04-12T13:20:00', '1:20 pm on April 12, 2004'),
+            array('2004-04-12T13:20:15.5', '1:20 pm and 15.5 seconds on April 12, 2004'),
+            array('2004-04-12T13:20:00-05:00', '1:20 pm on April 12, 2004, US Eastern Standard Time'),
+            array('2004-04-12T13:20:00Z', '	1:20 pm on April 12, 2004, Coordinated Universal Time (UTC)'),
         );
     }
 
-
     /**
-     * @covers \AlgoWeb\xsdTypes\xsDateTime::__toString
-     * @todo   Implement test__toString().
+     * @dataProvider testxsDateTimeInvalidDataProvider
      */
-    public function test__toString()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+    public function testxsDateTimeInvalid($input, $message)
+{
+        try {
+            $d = new xsBase64Binary($input);
+            $e = (string)$d;
+            $this->fail($message);
+        } catch (\Exception $e) {
+        }
+        $this->assertEquals('', $e, $message);
     }
 
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsDateTime::setMaxExclusive
-     * @todo   Implement testSetMaxExclusive().
-     */
-    public function testSetMaxExclusive()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsDateTime::setMaxInclusive
-     * @todo   Implement testSetMaxInclusive().
-     */
-    public function testSetMaxInclusive()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsDateTime::setMinExclusive
-     * @todo   Implement testSetMinExclusive().
-     */
-    public function testSetMinExclusive()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsDateTime::setMinInclusive
-     * @todo   Implement testSetMinInclusive().
-     */
-    public function testSetMinInclusive()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsDateTime::checkMinMax
-     * @todo   Implement testCheckMinMax().
-     */
-    public function testCheckMinMax()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
+    public function testxsDateTimeInvalidDataProvider()
+{
+        return array(
+            array('2004-04-12T13:00', 'seconds must be specified'),
+            array('2004-04-1213:20:00', 'the letter T is required'),
+            array('99-04-12T13:00', 'the century must not be left truncated'),
+            array('2004-04-12', 'the time is required'),
+            array('', 'an empty value is not valid, unless xsi:nil is used'),
         );
     }
 }
