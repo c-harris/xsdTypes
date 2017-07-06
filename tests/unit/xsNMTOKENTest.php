@@ -10,6 +10,8 @@ class xsNMTOKENTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @dataProvider testxsNMTOKENValidDataProvider
+     * @param mixed $input
+     * @param mixed $message
      */
     public function testxsNMTOKENValid($input, $message)
     {
@@ -32,6 +34,8 @@ class xsNMTOKENTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider testxsNMTOKENInvalidDataProvider
+     * @param mixed $input
+     * @param mixed $message
      */
     public function testxsNMTOKENInvalid($input, $message)
     {
