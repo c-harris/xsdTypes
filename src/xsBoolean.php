@@ -19,7 +19,16 @@ class xsBoolean extends xsAnySimpleType
         parent::__construct($value);
         $this->setWhiteSpaceFacet('collapse');
     }
-
+    protected function fixValue()
+    {
+        parent::fixValue();
+        if($this->value == 0){
+            $this->value = false;
+        }
+        if($this->value == 1){
+            $this->value = true;
+        }
+    }
     protected function isOK()
     {
         if (boolval($this->value) !== $this->value) {

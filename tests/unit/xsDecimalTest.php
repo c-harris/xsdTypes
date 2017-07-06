@@ -9,18 +9,12 @@ namespace AlgoWeb\xsdTypes;
 class xsDecimalTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var \AlgoWeb\xsdTypes\xsDecimal
-     */
-    protected $object;
-
-    /**
      * Sets up the fixture, for example, opens a network connection.
      * This method is called before a test is executed.
      */
     protected function setUp()
     {
         parent::setUp();
-        $this->object = new \AlgoWeb\xsdTypes\xsDecimal();
     }
 
     /**
@@ -33,144 +27,54 @@ class xsDecimalTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers \AlgoWeb\xsdTypes\xsDecimal::__toString
-     * @todo   Implement test__toString().
+     * @dataProvider testxsDecimalValidDataProvider
      */
-    public function test__toString()
+    public function testxsDecimalValid($input, $message)
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
+        try {
+            $d = new xsDecimal($input);
+            $e = (string)$d;
+        } catch (\Exception $e) {
+    $this->fail($message . ' with Exception ' . $e->getMessage());
+}
+    }
+
+    public function testxsDecimalValidDataProvider()
+{
+        return array(
+            array(3.0, ''),
+            array(-3.0, 'a negative sign is permitted'),
+            array(+3.5, 'a positive sign is permitted'),
+            array(3, 'a decimal point is not required'),
+            array(.3, 'the value can start with a decimal point'),
+            array(0, ''),
+            array(-.3, ''),
+            array(0003.0, 'leading zeros are permitted'),
+            array(3.0000, 'trailing zeros are permitted'),
+
+
         );
     }
 
-
     /**
-     * @covers \AlgoWeb\xsdTypes\xsDecimal::setTotalDigits
-     * @todo   Implement testSetTotalDigits().
+     * @dataProvider testxsDecimalInvalidDataProvider
      */
-    public function testSetTotalDigits()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+    public function testxsDecimalInvalid($input, $message)
+{
+        try {
+            $d = new xsBase64Binary($input);
+            $e = (string)$d;
+            $this->fail($message);
+        } catch (\Exception $e) {
+        }
+        $this->assertEquals('', $e, $message);
     }
 
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsDecimal::checkTotalDigits
-     * @todo   Implement testCheckTotalDigits().
-     */
-    public function testCheckTotalDigits()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsDecimal::setFractionDigits
-     * @todo   Implement testSetFractionDigits().
-     */
-    public function testSetFractionDigits()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsDecimal::checkFractionDigits
-     * @todo   Implement testCheckFractionDigits().
-     */
-    public function testCheckFractionDigits()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsDecimal::fixFractionDigits
-     * @todo   Implement testFixFractionDigits().
-     */
-    public function testFixFractionDigits()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsDecimal::setMaxExclusive
-     * @todo   Implement testSetMaxExclusive().
-     */
-    public function testSetMaxExclusive()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsDecimal::setMaxInclusive
-     * @todo   Implement testSetMaxInclusive().
-     */
-    public function testSetMaxInclusive()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsDecimal::setMinExclusive
-     * @todo   Implement testSetMinExclusive().
-     */
-    public function testSetMinExclusive()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsDecimal::setMinInclusive
-     * @todo   Implement testSetMinInclusive().
-     */
-    public function testSetMinInclusive()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsDecimal::checkMinMax
-     * @todo   Implement testCheckMinMax().
-     */
-    public function testCheckMinMax()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
+    public function testxsDecimalInvalidDataProvider()
+{
+        return array(
+            array('3,5', 'commas are not permitted; the decimal separator must be a period'),
+            array('', 'an empty value is not valid, unless xsi:nil is used'),
         );
     }
 }
