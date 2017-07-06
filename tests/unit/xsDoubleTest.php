@@ -9,18 +9,12 @@ namespace AlgoWeb\xsdTypes;
 class xsDoubleTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var \AlgoWeb\xsdTypes\xsDouble
-     */
-    protected $object;
-
-    /**
      * Sets up the fixture, for example, opens a network connection.
      * This method is called before a test is executed.
      */
     protected function setUp()
     {
         parent::setUp();
-        $this->object = new \AlgoWeb\xsdTypes\xsDouble();
     }
 
     /**
@@ -33,79 +27,54 @@ class xsDoubleTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers \AlgoWeb\xsdTypes\xsDouble::__toString
-     * @todo   Implement test__toString().
+     * @dataProvider testxsDoubleValidDataProvider
      */
-    public function test__toString()
+    public function testxsDoubleValid($input, $message)
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
+        try {
+            $d = new xsDouble($input);
+            $e = (string)$d;
+        } catch (\Exception $e) {
+            $this->fail($message . ' with Exception ' . $e->getMessage());
+        }
+    }
+
+    public function testxsDoubleValidDataProvider()
+    {
+        return array(
+            array('-3E2', ''),
+            array('4268.22752E11', ''),
+            array('+24.3e-3', ''),
+            array('12', ''),
+            array('+3.5', 'any value valid for decimal is also valid for xsd:double'),
+            array('-INF', 'negative infinity'),
+            array('-0', '0'),
+            array('NaN', 'Not a Number'),
+
         );
     }
 
-
     /**
-     * @covers \AlgoWeb\xsdTypes\xsDouble::setMaxExclusive
-     * @todo   Implement testSetMaxExclusive().
+     * @dataProvider testxsDoubleInvalidDataProvider
      */
-    public function testSetMaxExclusive()
+    public function testxsDoubleInvalid($input, $message)
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+        try {
+            $d = new xsBase64Binary($input);
+            $e = (string)$d;
+            $this->fail($message);
+        } catch (\Exception $e) {
+        }
+        $this->assertEquals('', $e, $message);
     }
 
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsDouble::setMaxInclusive
-     * @todo   Implement testSetMaxInclusive().
-     */
-    public function testSetMaxInclusive()
+    public function testxsDoubleInvalidDataProvider()
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsDouble::setMinExclusive
-     * @todo   Implement testSetMinExclusive().
-     */
-    public function testSetMinExclusive()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsDouble::setMinInclusive
-     * @todo   Implement testSetMinInclusive().
-     */
-    public function testSetMinInclusive()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsDouble::checkMinMax
-     * @todo   Implement testCheckMinMax().
-     */
-    public function testCheckMinMax()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
+        return array(
+            array('-3E2.4', 'the exponent must be an integer'),
+            array('12E', 'an exponent must be specified if "E" is present'),
+            array('NAN', 'values are case-sensitive, must be capitalized correctly'),
+            array('', 'an empty value is not valid, unless xsi:nil is used'),
         );
     }
 }
