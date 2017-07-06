@@ -35,7 +35,7 @@ class xsLanguage extends xsToken
     public function __construct($value)
     {
         parent::__construct($value);
-        /**
+        /*
          * Match a single character present in the list below [a-zA-Z]{1,8}
          *     {1,8} Quantifier — Matches between 1 and 8 times, as many times as possible, giving back as needed (greedy)
          *     a-z a single character in the range between a (index 97) and z (index 122) (case sensitive)
