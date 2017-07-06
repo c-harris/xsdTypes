@@ -41,6 +41,6 @@ class xsGDay extends xsAnySimpleType
 
     protected function isOK()
     {
-        $this->CheckMinMax(new \Date($this->value));
+        $this->CheckMinMax(new \DateTime($this->value));
     }
 }
