@@ -30,7 +30,7 @@ class xsStringTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsStringTestValidDataProvider
      */
     public function testxsStringTestValid($duration, $message) {
-        $d = new xsUnsignedShort($duration);
+        $d = new xsString($duration);
         $e = (string)$d;
         $this->assertEquals($duration,$e,$message);
 
@@ -53,7 +53,7 @@ is on two lines.', ''),
      * @dataProvider testxsStringTestInvalidDataProvider
      */
     public function testxsStringTestInvalid($duration, $message) {
-            $d = new xsUnsignedShort($duration);
+            $d = new xsString($duration);
             $e = (string)$d;
             $this->assertEquals('',$e,$message);
 
