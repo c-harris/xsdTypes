@@ -28,15 +28,18 @@ class xsPositiveIntegerTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider testxsPositiveIntegerTestValidDataProvider
+     * @param mixed $duration
+     * @param mixed $message
      */
-    public function testxsPositiveIntegerTestValid($duration, $message) {
+    public function testxsPositiveIntegerTestValid($duration, $message)
+    {
         $d = new xsPositiveInteger($duration);
         $e = (string)$d;
-        $this->assertEquals($duration,$e,$message);
-
+        $this->assertEquals($duration, $e, $message);
     }
 
-    public function testxsPositiveIntegerTestValidDataProvider() {
+    public function testxsPositiveIntegerTestValidDataProvider()
+    {
         return array(
             array(122, '122'),
             array('+3', '122'),
@@ -45,15 +48,19 @@ class xsPositiveIntegerTest extends \PHPUnit_Framework_TestCase
     }
     /**
      * @dataProvider testxsPositiveIntegerTestInvalidDataProvider
+     * @param mixed $duration
+     * @param mixed $message
      */
-    public function testxsPositiveIntegerTestInvalid($duration, $message) {
-            $d = new xsPositiveInteger($duration);
-            $e = (string)$d;
-            $this->fail($message);
-            $this->assertEquals('',$e,$message);
+    public function testxsPositiveIntegerTestInvalid($duration, $message)
+    {
+        $d = new xsPositiveInteger($duration);
+        $e = (string)$d;
+        $this->fail($message);
+        $this->assertEquals('', $e, $message);
     }
 
-    public function testxsPositiveIntegerTestInvalidDataProvider() {
+    public function testxsPositiveIntegerTestInvalidDataProvider()
+    {
         return array(
             array('0', '0 is not considered positive'),
             array('-3', 'value cannot be negative'),
