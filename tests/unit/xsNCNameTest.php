@@ -9,9 +9,49 @@ namespace AlgoWeb\xsdTypes;
 class xsNCNameTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var \AlgoWeb\xsdTypes\xsNCName
+     * @dataProvider testxsNCNameValidDataProvider
      */
-    protected $object;
+    public function testxsNCNameValid($input, $message)
+    {
+        try {
+            $d = new xsNCName($input);
+            $s = (string)$d;
+        } catch (\Exception $e) {
+            $this->fail($message . ' with Exception ' . $e->getMessage());
+        }
+    }
+
+    public function testxsNCNameValidDataProvider()
+    {
+        return array(
+            array('myElement', ''),
+            array('_my.Element', ''),
+            array('my-element', ''),
+        );
+    }
+
+    /**
+     * @dataProvider testxsNCNameInvalidDataProvider
+     */
+    public function testxsNCNameInvalid($input, $message)
+    {
+        try {
+            $d = new xsNCName($input);
+            $s = (string)$d;
+            $this->fail($message);
+        } catch (\Exception $e) {
+        }
+        $this->assertEquals('', $s, $message);
+    }
+
+    public function testxsNCNameInvalidDataProvider()
+    {
+        return array(
+            array('pre:myElement', 'an NCName must not contain a colon'),
+            array('-myelement', 'an NCName must not start with a hyphen'),
+            array('', 'an empty value is not valid, unless xsi:nil is used'),
+        );
+    }
 
     /**
      * Sets up the fixture, for example, opens a network connection.
@@ -20,7 +60,6 @@ class xsNCNameTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->object = new \AlgoWeb\xsdTypes\xsNCName();
     }
 
     /**
@@ -30,17 +69,5 @@ class xsNCNameTest extends \PHPUnit_Framework_TestCase
     protected function tearDown()
     {
         parent::tearDown();
-    }
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsNCName::__toString
-     * @todo   Implement test__toString().
-     */
-    public function test__toString()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
     }
 }
