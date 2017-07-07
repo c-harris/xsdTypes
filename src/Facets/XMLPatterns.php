@@ -81,7 +81,8 @@ trait XMLPatterns
     private static function init()
     {
         self::$Letter = self::$BaseChar . '|' . self::$Ideographic;
-        self::$NameChar = self::$Letter . '|' . self::$Digit . '|.|-|_|:|' . self::$CombiningChar . '|' . self::$Extender;
+        self::$NameChar = self::$Letter . '|' . self::$Digit . '|.|-|_|:|' . self::$CombiningChar . '|'
+            . self::$Extender;
         self::$Name = '(' . self::$Letter . '|_|:)(' . self::$NameChar . ')*';
         self::$Names = self::$Name . '(\x{20}' . self::$Name . ')*';
         self::$Nmtoken = '(' . self::$NameChar . ')+';
