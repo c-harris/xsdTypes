@@ -12,14 +12,14 @@ trait PatternTrait
 
     /**
      * @param string $regexPatternToAdd
-     * @param mixed  $ProcessMultiCharacterEscape
+     * @param mixed  $processMultiCharacterEscape
      */
-    protected function setPatternFacet($regexPatternToAdd, $ProcessMultiCharacterEscape = true)
+    protected function setPatternFacet($regexPatternToAdd, $processMultiCharacterEscape = true)
     {
         if (null == self::$Letter) {
             self::init();
         }
-        $regexPatternToAdd = $this->ProcessRegex($regexPatternToAdd, $ProcessMultiCharacterEscape);
+        $regexPatternToAdd = $this->processRegex($regexPatternToAdd, $processMultiCharacterEscape);
         if (!$this->checkRegexValidPattern($regexPatternToAdd)) {
             $regexPatternToAdd = '/' . $regexPatternToAdd . '/';
             if (!$this->checkRegexValidPattern($regexPatternToAdd)) {
@@ -34,9 +34,9 @@ trait PatternTrait
      *
      * @return string
      */
-    private function ProcessRegex($regexPattern, $ProcessMultiCharacterEscape)
+    private function processRegex($regexPattern, $processMultiCharacterEscape)
     {
-        if (!$ProcessMultiCharacterEscape) {
+        if (!$processMultiCharacterEscape) {
             return $regexPattern;
         }
         if (null == self::$NameChar) {
