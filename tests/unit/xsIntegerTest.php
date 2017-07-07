@@ -41,8 +41,8 @@ class xsIntegerTest extends \PHPUnit_Framework_TestCase
      */
     public function testxsIntegerInvalid($input, $message)
     {
-            $d = new xsInteger($input);
-            $s = (string)$d;
+        $d = new xsInteger($input);
+        $s = (string)$d;
         $this->assertEquals('', $s, $message);
     }
 

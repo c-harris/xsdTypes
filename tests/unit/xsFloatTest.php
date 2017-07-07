@@ -45,8 +45,8 @@ class xsFloatTest extends \PHPUnit_Framework_TestCase
      */
     public function testxsFloatInvalid($input, $message)
     {
-            $d = new xsFloat($input);
-            $s = (string)$d;
+        $d = new xsFloat($input);
+        $s = (string)$d;
         $this->assertEquals('NaN', $s, $message);
     }
 

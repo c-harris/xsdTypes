@@ -40,9 +40,8 @@ class xsByteTest extends \PHPUnit_Framework_TestCase
      */
     public function testxsByteInvalid($input, $message)
     {
-
-            $d = new xsByte($input);
-            $s = (string)$d;
+        $d = new xsByte($input);
+        $s = (string)$d;
         $this->assertEquals('', $s, $message);
     }
 
