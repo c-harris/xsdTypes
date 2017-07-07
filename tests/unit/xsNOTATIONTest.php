@@ -14,7 +14,7 @@ class xsNOTATIONTest extends \PHPUnit_Framework_TestCase
      */
     public function testxsNOTATIONTestValid($duration, $message)
     {
-        $d = $this->getMockForAbstractClass("xsNOTATION", array($duration));
+        $d = $this->getMockForAbstractClass('xsNOTATION', array($duration));
         $e = (string)$d;
         $this->assertEquals($duration, $e, $message);
     }
@@ -35,7 +35,7 @@ class xsNOTATIONTest extends \PHPUnit_Framework_TestCase
      */
     public function testxsNOTATIONTestInvalid($duration, $message)
     {
-        $d = $this->getMockForAbstractClass("xsNOTATION", array($duration));
+        $d = $this->getMockForAbstractClass('xsNOTATION', array($duration));
         $e = (string)$d;
         $this->assertEquals('', $e, $message);
     }

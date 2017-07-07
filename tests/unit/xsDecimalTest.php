@@ -47,9 +47,9 @@ class xsDecimalTest extends \PHPUnit_Framework_TestCase
      */
     public function testxsDecimalInvalid($input, $message)
     {
-            $d = new xsDecimal($input);
-            $s = (string)$d;
-            $this->fail($message);
+        $d = new xsDecimal($input);
+        $s = (string)$d;
+        $this->fail($message);
         $this->assertEquals('', $s, $message);
     }
 
