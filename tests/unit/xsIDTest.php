@@ -41,8 +41,8 @@ class xsIDTest extends \PHPUnit_Framework_TestCase
      */
     public function testxsIDInvalid($input, $message)
     {
-            $d = new xsID($input);
-            $s = (string)$d;
+        $d = new xsID($input);
+        $s = (string)$d;
         $this->assertEquals('', $s, $message);
     }
 

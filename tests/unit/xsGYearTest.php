@@ -10,6 +10,8 @@ class xsGYearTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @dataProvider testxsGYearValidDataProvider
+     * @param mixed $input
+     * @param mixed $message
      */
     public function testxsGYearValid($input, $message)
     {
@@ -34,11 +36,13 @@ class xsGYearTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider testxsGYearInvalidDataProvider
+     * @param mixed $input
+     * @param mixed $message
      */
     public function testxsGYearInvalid($input, $message)
     {
-            $d = new xsGYear($input);
-            $s = (string)$d;
+        $d = new xsGYear($input);
+        $s = (string)$d;
         $this->assertEquals('', $s, $message);
     }
 

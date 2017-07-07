@@ -40,8 +40,8 @@ class xsDateTimeTest extends \PHPUnit_Framework_TestCase
      */
     public function testxsDateTimeInvalid($input, $message)
     {
-            $d = new xsDateTime($input);
-            $s = (string)$d;
+        $d = new xsDateTime($input);
+        $s = (string)$d;
         $this->assertEquals('', $s, $message);
     }
 

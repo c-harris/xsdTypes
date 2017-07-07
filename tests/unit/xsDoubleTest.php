@@ -45,8 +45,8 @@ class xsDoubleTest extends \PHPUnit_Framework_TestCase
      */
     public function testxsDoubleInvalid($input, $message)
     {
-            $d = new xsBase64Binary($input);
-            $s = (string)$d;
+        $d = new xsBase64Binary($input);
+        $s = (string)$d;
         $this->assertEquals('NaN', $s, $message);
     }
 
