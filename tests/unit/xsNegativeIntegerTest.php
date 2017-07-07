@@ -38,8 +38,8 @@ class xsNegativeIntegerTest extends \PHPUnit_Framework_TestCase
      */
     public function testxsNegativeIntegerInvalid($input, $message)
     {
-            $d = new xsNegativeInteger($input);
-            $s = (string)$d;
+        $d = new xsNegativeInteger($input);
+        $s = (string)$d;
         $this->assertEquals('', $s, $message);
     }
 
