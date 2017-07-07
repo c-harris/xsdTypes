@@ -30,7 +30,8 @@ class xsNonNegativeIntegerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @dataProvider testxxsNonNegativeIntegerTestInvalidDataProvider
+     * @dataProvider testxsNonNegativeIntegerTestInvalidDataProvider
+     *
      * @param mixed $duration
      * @param mixed $message
      */
