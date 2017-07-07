@@ -45,7 +45,6 @@ class xsNOTATIONTest extends \PHPUnit_Framework_TestCase
         return array(
             array(':myElement', '	a QName must not start with a colon'),
             array('pre:3rdElement', 'the local part must not start with a number; it must be a valid NCName'),
-            array('', '	an empty value is not valid, unless xsi:nil is used'),
         );
     }
 

@@ -51,7 +51,6 @@ class xsGMonthTest extends \PHPUnit_Framework_TestCase
             array('04', 'the leading hyphens are required'),
             array('--4', 'the month must be 2 digits'),
             array('--13	', 'the month must be a valid month'),
-            array('', 'an empty value is not valid, unless xsi:nil is used'),
         );
     }
 

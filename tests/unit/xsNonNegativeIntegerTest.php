@@ -9,24 +9,6 @@ namespace AlgoWeb\xsdTypes;
 class xsNonNegativeIntegerTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * Sets up the fixture, for example, opens a network connection.
-     * This method is called before a test is executed.
-     */
-    protected function setUp()
-    {
-        parent::setUp();
-    }
-
-    /**
-     * Tears down the fixture, for example, closes a network connection.
-     * This method is called after a test is executed.
-     */
-    protected function tearDown()
-    {
-        parent::tearDown();
-    }
-
-    /**
      * @dataProvider testxsNonNegativeIntegerTestValidDataProvider
      * @param mixed $duration
      * @param mixed $message
@@ -46,6 +28,7 @@ class xsNonNegativeIntegerTest extends \PHPUnit_Framework_TestCase
             array('00122', 'leading zeros are permitted'),
         );
     }
+
     /**
      * @dataProvider testxxsNonNegativeIntegerTestInvalidDataProvider
      * @param mixed $duration
@@ -63,7 +46,24 @@ class xsNonNegativeIntegerTest extends \PHPUnit_Framework_TestCase
         return array(
             array('-3', 'value cannot be negative'),
             array('3.0', 'value must not contain a decimal point'),
-            array('', '	an empty value is not valid, unless xsi:nil is used'),
         );
+    }
+
+    /**
+     * Sets up the fixture, for example, opens a network connection.
+     * This method is called before a test is executed.
+     */
+    protected function setUp()
+    {
+        parent::setUp();
+    }
+
+    /**
+     * Tears down the fixture, for example, closes a network connection.
+     * This method is called after a test is executed.
+     */
+    protected function tearDown()
+    {
+        parent::tearDown();
     }
 }

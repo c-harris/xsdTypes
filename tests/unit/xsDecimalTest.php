@@ -57,7 +57,6 @@ class xsDecimalTest extends \PHPUnit_Framework_TestCase
     {
         return array(
             array('3,5', 'commas are not permitted; the decimal separator must be a period'),
-            array('', 'an empty value is not valid, unless xsi:nil is used'),
         );
     }
 

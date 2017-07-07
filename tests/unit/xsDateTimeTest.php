@@ -52,7 +52,6 @@ class xsDateTimeTest extends \PHPUnit_Framework_TestCase
             array('2004-04-1213:20:00', 'the letter T is required'),
             array('99-04-12T13:00', 'the century must not be left truncated'),
             array('2004-04-12', 'the time is required'),
-            array('', 'an empty value is not valid, unless xsi:nil is used'),
         );
     }
 

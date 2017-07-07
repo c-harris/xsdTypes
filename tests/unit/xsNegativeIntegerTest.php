@@ -50,7 +50,6 @@ class xsNegativeIntegerTest extends \PHPUnit_Framework_TestCase
             array('122', 'value cannot be positive'),
             array('+3', 'value cannot be positive'),
             array('3.0', 'value must not contain a decimal point'),
-            array('', 'an empty value is not valid, unless xsi:nil is used'),
         );
     }
 

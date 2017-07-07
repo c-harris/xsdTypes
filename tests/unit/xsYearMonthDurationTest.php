@@ -52,8 +52,6 @@ class xsYearMonthDurationTest extends \PHPUnit_Framework_TestCase
             array('1Y2M', '"P" must always be present'),
             array('P2M1Y', 'years must appear before months'),
             array('P', 'at least one number and designator are required'),
-            array('', 'an empty value is not valid, unless xsi:nil is used'),
-
         );
     }
 

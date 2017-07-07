@@ -52,7 +52,6 @@ class xsNameTest extends \PHPUnit_Framework_TestCase
         return array(
             array('-myelement', 'a Name must not start with a hyphen'),
             array('3rdElement', 'a Name must not start with a number'),
-            array('', 'an empty value is not valid, unless xsi:nil is used'),
         );
     }
 

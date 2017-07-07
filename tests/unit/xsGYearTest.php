@@ -47,7 +47,6 @@ class xsGYearTest extends \PHPUnit_Framework_TestCase
         return array(
             array('99', 'the century must not be truncated'),
             array('922', 'no left truncation is allowed; leading zeros should be added if necessary'),
-            array('', 'an empty value is not valid, unless xsi:nil is used'),
         );
     }
 

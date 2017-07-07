@@ -56,7 +56,6 @@ class xsDoubleTest extends \PHPUnit_Framework_TestCase
             array('-3E2.4', 'the exponent must be an integer'),
             array('12E', 'an exponent must be specified if "E" is present'),
             array('NAN', 'values are case-sensitive, must be capitalized correctly'),
-            array('', 'an empty value is not valid, unless xsi:nil is used'),
         );
     }
 

@@ -46,7 +46,6 @@ class xsGYearMonthTest extends \PHPUnit_Framework_TestCase
             array('2004', 'the month is required'),
             array('2004-4', 'the month must be two digits'),
             array('2004-13', 'the month must be a valid month'),
-            array('', 'an empty value is not valid, unless xsi:nil is used'),
         );
     }
 

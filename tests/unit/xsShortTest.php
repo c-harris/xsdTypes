@@ -48,7 +48,6 @@ class xsShortTest extends \PHPUnit_Framework_TestCase
         return array(
             array('32770', 'number is too large'),
             array('3.0', 'value must not contain a decimal point'),
-            array('', '	an empty value is not valid, unless xsi:nil is used'),
         );
     }
 

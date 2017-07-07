@@ -62,7 +62,6 @@ class xsDayTimeDurationTest extends \PHPUnit_Framework_TestCase
             array('P2M1Y', 'years must appear before months'),
             array('P', 'at least one number and designator are required'),
             array('PT15.S', 'at least one digit must follow the decimal point if it appears'),
-            array('', 'an empty value is not valid, unless xsi:nil is used'),
         );
     }
 

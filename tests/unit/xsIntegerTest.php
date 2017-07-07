@@ -51,7 +51,6 @@ class xsIntegerTest extends \PHPUnit_Framework_TestCase
         return array(
             array('3.', 'an integer must not contain a decimal point'),
             array('3.0', 'an integer must not contain a decimal point'),
-            array('', 'an empty value is not valid, unless xsi:nil is used'),
         );
     }
 

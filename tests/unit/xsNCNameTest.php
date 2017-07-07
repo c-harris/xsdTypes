@@ -49,7 +49,6 @@ class xsNCNameTest extends \PHPUnit_Framework_TestCase
         return array(
             array('pre:myElement', 'an NCName must not contain a colon'),
             array('-myelement', 'an NCName must not start with a hyphen'),
-            array('', 'an empty value is not valid, unless xsi:nil is used'),
         );
     }
 

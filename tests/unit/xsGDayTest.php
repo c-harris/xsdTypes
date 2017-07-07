@@ -48,7 +48,6 @@ class xsGDayTest extends \PHPUnit_Framework_TestCase
             array('02', 'the leading hyphens are required'),
             array('---2', 'the day must be 2 digits'),
             array('---32', 'the day must be a valid day of the month; no month has 32 days'),
-            array('', 'an empty value is not valid, unless xsi:nil is used'),
         );
     }
 

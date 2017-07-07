@@ -50,7 +50,6 @@ class xsGMonthDayTest extends \PHPUnit_Framework_TestCase
             array('04-12', 'the leading hyphens are required'),
             array('--04-31', 'it must be a valid day of the year (April has 30 days)'),
             array('--4-6', 'the month and day must be 2 digits each'),
-            array('', 'an empty value is not valid, unless xsi:nil is used'),
         );
     }
 

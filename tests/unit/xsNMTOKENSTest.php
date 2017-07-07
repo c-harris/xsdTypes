@@ -46,7 +46,7 @@ class xsNMTOKENSTest extends \PHPUnit_Framework_TestCase
     public function testxsNMTOKENSInvalidDataProvider()
     {
         return array(
-            array('', 'an empty value is not valid, unless xsi:nil is used'),
+            array('__', 'double underscore should be invalid'),
         );
     }
 

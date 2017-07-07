@@ -53,7 +53,6 @@ class xsBooleanTest extends \PHPUnit_Framework_TestCase
     {
         return array(
             array('T', 'the word "true" must be spelled out'),
-            array('', 'an empty value is not valid, unless xsi:nil is used'),
         );
     }
 
