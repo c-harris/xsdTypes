@@ -42,7 +42,7 @@ class xsNonPositiveIntegerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('', $e, $message);
     }
 
-    public function testxsPositiveIntegerTestInvalidDataProvider()
+    public function testxsNonPositiveIntegerTestInvalidDataProvider()
     {
         return array(
             array('122', '	value cannot be positive'),
