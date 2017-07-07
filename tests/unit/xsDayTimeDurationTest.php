@@ -9,24 +9,6 @@ namespace AlgoWeb\xsdTypes;
 class xsDayTimeDurationTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * Sets up the fixture, for example, opens a network connection.
-     * This method is called before a test is executed.
-     */
-    protected function setUp()
-    {
-        parent::setUp();
-    }
-
-    /**
-     * Tears down the fixture, for example, closes a network connection.
-     * This method is called after a test is executed.
-     */
-    protected function tearDown()
-    {
-        parent::tearDown();
-    }
-
-    /**
      * @dataProvider testxsDayTimeDurationValidDataProvider
      * @param mixed $input
      * @param mixed $message
@@ -62,12 +44,9 @@ class xsDayTimeDurationTest extends \PHPUnit_Framework_TestCase
      */
     public function testxsDayTimeDurationInvalid($input, $message)
     {
-        try {
-            $d = new xsDayTimeDuration($input);
-            $s = (string)$d;
-            $this->fail($message);
-        } catch (\Exception $e) {
-        }
+        $d = new xsDayTimeDuration($input);
+        $s = (string)$d;
+        $this->fail($message);
         $this->assertEquals('', $s, $message);
     }
 
@@ -85,5 +64,23 @@ class xsDayTimeDurationTest extends \PHPUnit_Framework_TestCase
             array('PT15.S', 'at least one digit must follow the decimal point if it appears'),
             array('', 'an empty value is not valid, unless xsi:nil is used'),
         );
+    }
+
+    /**
+     * Sets up the fixture, for example, opens a network connection.
+     * This method is called before a test is executed.
+     */
+    protected function setUp()
+    {
+        parent::setUp();
+    }
+
+    /**
+     * Tears down the fixture, for example, closes a network connection.
+     * This method is called after a test is executed.
+     */
+    protected function tearDown()
+    {
+        parent::tearDown();
     }
 }

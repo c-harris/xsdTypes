@@ -41,12 +41,9 @@ class xsNameTest extends \PHPUnit_Framework_TestCase
      */
     public function testxsNameInvalid($input, $message)
     {
-        try {
             $d = new xsName($input);
             $s = (string)$d;
-            $this->fail($message);
-        } catch (\Exception $e) {
-        }
+
         $this->assertEquals('', $s, $message);
     }
 

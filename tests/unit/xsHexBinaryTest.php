@@ -40,12 +40,8 @@ class xsHexBinaryTest extends \PHPUnit_Framework_TestCase
      */
     public function testxsHexBinaryInvalid($input, $message)
     {
-        try {
             $d = new xsHexBinary($input);
             $s = (string)$d;
-            $this->fail($message);
-        } catch (\Exception $e) {
-        }
         $this->assertEquals('', $s, $message);
     }
 

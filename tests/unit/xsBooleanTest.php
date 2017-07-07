@@ -9,24 +9,6 @@ namespace AlgoWeb\xsdTypes;
 class xsBooleanTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * Sets up the fixture, for example, opens a network connection.
-     * This method is called before a test is executed.
-     */
-    protected function setUp()
-    {
-        parent::setUp();
-    }
-
-    /**
-     * Tears down the fixture, for example, closes a network connection.
-     * This method is called after a test is executed.
-     */
-    protected function tearDown()
-    {
-        parent::tearDown();
-    }
-
-    /**
      * @dataProvider testxsBooleanValidDataProvider
      * @param mixed $input
      * @param mixed $message
@@ -62,12 +44,8 @@ class xsBooleanTest extends \PHPUnit_Framework_TestCase
      */
     public function testxsBooleanInvalid($input, $message)
     {
-        try {
-            $d = new xsBoolean($input);
-            $p = (string)$d;
-            $this->fail($message);
-        } catch (\Exception $e) {
-        }
+        $d = new xsBoolean($input);
+        $p = (string)$d;
         $this->assertEquals('', $p, $message);
     }
 
@@ -77,5 +55,23 @@ class xsBooleanTest extends \PHPUnit_Framework_TestCase
             array('T', 'the word "true" must be spelled out'),
             array('', 'an empty value is not valid, unless xsi:nil is used'),
         );
+    }
+
+    /**
+     * Sets up the fixture, for example, opens a network connection.
+     * This method is called before a test is executed.
+     */
+    protected function setUp()
+    {
+        parent::setUp();
+    }
+
+    /**
+     * Tears down the fixture, for example, closes a network connection.
+     * This method is called after a test is executed.
+     */
+    protected function tearDown()
+    {
+        parent::tearDown();
     }
 }

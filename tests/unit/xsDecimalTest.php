@@ -9,24 +9,6 @@ namespace AlgoWeb\xsdTypes;
 class xsDecimalTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * Sets up the fixture, for example, opens a network connection.
-     * This method is called before a test is executed.
-     */
-    protected function setUp()
-    {
-        parent::setUp();
-    }
-
-    /**
-     * Tears down the fixture, for example, closes a network connection.
-     * This method is called after a test is executed.
-     */
-    protected function tearDown()
-    {
-        parent::tearDown();
-    }
-
-    /**
      * @dataProvider testxsDecimalValidDataProvider
      * @param mixed $input
      * @param mixed $message
@@ -65,12 +47,9 @@ class xsDecimalTest extends \PHPUnit_Framework_TestCase
      */
     public function testxsDecimalInvalid($input, $message)
     {
-        try {
             $d = new xsDecimal($input);
             $s = (string)$d;
             $this->fail($message);
-        } catch (\Exception $e) {
-        }
         $this->assertEquals('', $s, $message);
     }
 
@@ -80,5 +59,23 @@ class xsDecimalTest extends \PHPUnit_Framework_TestCase
             array('3,5', 'commas are not permitted; the decimal separator must be a period'),
             array('', 'an empty value is not valid, unless xsi:nil is used'),
         );
+    }
+
+    /**
+     * Sets up the fixture, for example, opens a network connection.
+     * This method is called before a test is executed.
+     */
+    protected function setUp()
+    {
+        parent::setUp();
+    }
+
+    /**
+     * Tears down the fixture, for example, closes a network connection.
+     * This method is called after a test is executed.
+     */
+    protected function tearDown()
+    {
+        parent::tearDown();
     }
 }

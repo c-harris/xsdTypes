@@ -39,12 +39,8 @@ class xsNCNameTest extends \PHPUnit_Framework_TestCase
      */
     public function testxsNCNameInvalid($input, $message)
     {
-        try {
             $d = new xsNCName($input);
             $s = (string)$d;
-            $this->fail($message);
-        } catch (\Exception $e) {
-        }
         $this->assertEquals('', $s, $message);
     }
 

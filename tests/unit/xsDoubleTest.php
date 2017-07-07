@@ -9,24 +9,6 @@ namespace AlgoWeb\xsdTypes;
 class xsDoubleTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * Sets up the fixture, for example, opens a network connection.
-     * This method is called before a test is executed.
-     */
-    protected function setUp()
-    {
-        parent::setUp();
-    }
-
-    /**
-     * Tears down the fixture, for example, closes a network connection.
-     * This method is called after a test is executed.
-     */
-    protected function tearDown()
-    {
-        parent::tearDown();
-    }
-
-    /**
      * @dataProvider testxsDoubleValidDataProvider
      * @param mixed $input
      * @param mixed $message
@@ -63,13 +45,9 @@ class xsDoubleTest extends \PHPUnit_Framework_TestCase
      */
     public function testxsDoubleInvalid($input, $message)
     {
-        try {
             $d = new xsBase64Binary($input);
             $s = (string)$d;
-            $this->fail($message);
-        } catch (\Exception $e) {
-        }
-        $this->assertEquals('', $s, $message);
+        $this->assertEquals('NaN', $s, $message);
     }
 
     public function testxsDoubleInvalidDataProvider()
@@ -80,5 +58,23 @@ class xsDoubleTest extends \PHPUnit_Framework_TestCase
             array('NAN', 'values are case-sensitive, must be capitalized correctly'),
             array('', 'an empty value is not valid, unless xsi:nil is used'),
         );
+    }
+
+    /**
+     * Sets up the fixture, for example, opens a network connection.
+     * This method is called before a test is executed.
+     */
+    protected function setUp()
+    {
+        parent::setUp();
+    }
+
+    /**
+     * Tears down the fixture, for example, closes a network connection.
+     * This method is called after a test is executed.
+     */
+    protected function tearDown()
+    {
+        parent::tearDown();
     }
 }

@@ -37,12 +37,8 @@ class xsGYearTest extends \PHPUnit_Framework_TestCase
      */
     public function testxsGYearInvalid($input, $message)
     {
-        try {
             $d = new xsGYear($input);
             $s = (string)$d;
-            $this->fail($message);
-        } catch (\Exception $e) {
-        }
         $this->assertEquals('', $s, $message);
     }
 

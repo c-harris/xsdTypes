@@ -40,12 +40,8 @@ class xsIntTest extends \PHPUnit_Framework_TestCase
      */
     public function testxsIntInvalid($input, $message)
     {
-        try {
             $d = new xsInt($input);
             $s = (string)$d;
-            $this->fail($message);
-        } catch (\Exception $e) {
-        }
         $this->assertEquals('', $s, $message);
     }
 

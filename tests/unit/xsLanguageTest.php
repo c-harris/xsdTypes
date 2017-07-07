@@ -51,12 +51,8 @@ class xsLanguageTest extends \PHPUnit_Framework_TestCase
      */
     public function testxsLanguageInvalid($input, $message)
     {
-        try {
             $d = new xsLanguage($input);
             $s = (string)$d;
-            $this->fail($message);
-        } catch (\Exception $e) {
-        }
         $this->assertEquals('', $s, $message);
     }
 

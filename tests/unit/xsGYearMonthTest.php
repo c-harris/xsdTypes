@@ -34,12 +34,8 @@ class xsGYearMonthTest extends \PHPUnit_Framework_TestCase
      */
     public function testxsGYearMonthInvalid($input, $message)
     {
-        try {
             $d = new xsGYearMonth($input);
             $s = (string)$d;
-            $this->fail($message);
-        } catch (\Exception $e) {
-        }
         $this->assertEquals('', $s, $message);
     }
 

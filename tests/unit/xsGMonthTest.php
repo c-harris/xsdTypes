@@ -39,12 +39,8 @@ class xsGMonthTest extends \PHPUnit_Framework_TestCase
      */
     public function testxsGMonthInvalid($input, $message)
     {
-        try {
             $d = new xsGMonth($input);
             $s = (string)$d;
-            $this->fail($message);
-        } catch (\Exception $e) {
-        }
         $this->assertEquals('', $s, $message);
     }
 

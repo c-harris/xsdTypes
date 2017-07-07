@@ -40,12 +40,9 @@ class xsLongTest extends \PHPUnit_Framework_TestCase
      */
     public function testxsLongInvalid($input, $message)
     {
-        try {
             $d = new xsLong($input);
             $s = (string)$d;
-            $this->fail($message);
-        } catch (\Exception $e) {
-        }
+
         $this->assertEquals('', $s, $message);
     }
 

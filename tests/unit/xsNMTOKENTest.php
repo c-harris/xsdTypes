@@ -39,12 +39,8 @@ class xsNMTOKENTest extends \PHPUnit_Framework_TestCase
      */
     public function testxsNMTOKENInvalid($input, $message)
     {
-        try {
             $d = new xsNMTOKEN($input);
             $s = (string)$d;
-            $this->fail($message);
-        } catch (\Exception $e) {
-        }
         $this->assertEquals('', $s, $message);
     }
 

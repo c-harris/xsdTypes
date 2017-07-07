@@ -37,7 +37,6 @@ class xsNOTATIONTest extends \PHPUnit_Framework_TestCase
     {
         $d = $this->getMockForAbstractClass("xsNOTATION", array($duration));
         $e = (string)$d;
-        $this->fail($message);
         $this->assertEquals('', $e, $message);
     }
 

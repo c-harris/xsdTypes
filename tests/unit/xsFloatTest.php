@@ -45,13 +45,9 @@ class xsFloatTest extends \PHPUnit_Framework_TestCase
      */
     public function testxsFloatInvalid($input, $message)
     {
-        try {
             $d = new xsFloat($input);
             $s = (string)$d;
-            $this->fail($message);
-        } catch (\Exception $e) {
-        }
-        $this->assertEquals('', $s, $message);
+        $this->assertEquals('NaN', $s, $message);
     }
 
     public function testxsFloatInvalidDataProvider()

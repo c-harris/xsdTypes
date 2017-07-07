@@ -37,12 +37,8 @@ class xsGDayTest extends \PHPUnit_Framework_TestCase
      */
     public function testxsGDayInvalid($input, $message)
     {
-        try {
             $d = new xsGDay($input);
             $s = (string)$d;
-            $this->fail($message);
-        } catch (\Exception $e) {
-        }
         $this->assertEquals('', $s, $message);
     }
 

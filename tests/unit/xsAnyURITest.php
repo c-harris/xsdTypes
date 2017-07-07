@@ -9,24 +9,6 @@ namespace AlgoWeb\xsdTypes;
 class xsAnyURITest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * Sets up the fixture, for example, opens a network connection.
-     * This method is called before a test is executed.
-     */
-    protected function setUp()
-    {
-        parent::setUp();
-    }
-
-    /**
-     * Tears down the fixture, for example, closes a network connection.
-     * This method is called after a test is executed.
-     */
-    protected function tearDown()
-    {
-        parent::tearDown();
-    }
-
-    /**
      * @dataProvider testxsAnyURIValidDataProvider
      * @param mixed $input
      * @param mixed $message
@@ -62,12 +44,8 @@ class xsAnyURITest extends \PHPUnit_Framework_TestCase
      */
     public function testxsAnyURIInvalid($input, $message)
     {
-        try {
-            $d = new xsAnyURI($input);
-            $s = (string)$d;
-            $this->fail($message);
-        } catch (\Exception $e) {
-        }
+        $d = new xsAnyURI($input);
+        $s = $d->__toString();
         $this->assertEquals('', $s, $message);
     }
 
@@ -77,5 +55,23 @@ class xsAnyURITest extends \PHPUnit_Framework_TestCase
             array('http://datypic.com#frag1#frag2', 'too many # characters'),
             array('http://datypic.com#f% rag', ' character followed by something other than two hexadecimal digits'),
         );
+    }
+
+    /**
+     * Sets up the fixture, for example, opens a network connection.
+     * This method is called before a test is executed.
+     */
+    protected function setUp()
+    {
+        parent::setUp();
+    }
+
+    /**
+     * Tears down the fixture, for example, closes a network connection.
+     * This method is called after a test is executed.
+     */
+    protected function tearDown()
+    {
+        parent::tearDown();
     }
 }

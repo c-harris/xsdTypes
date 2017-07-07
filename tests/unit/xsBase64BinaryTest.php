@@ -9,24 +9,6 @@ namespace AlgoWeb\xsdTypes;
 class xsBase64BinaryTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * Sets up the fixture, for example, opens a network connection.
-     * This method is called before a test is executed.
-     */
-    protected function setUp()
-    {
-        parent::setUp();
-    }
-
-    /**
-     * Tears down the fixture, for example, closes a network connection.
-     * This method is called after a test is executed.
-     */
-    protected function tearDown()
-    {
-        parent::tearDown();
-    }
-
-    /**
      * @dataProvider testxsBase64BinaryValidDataProvider
      * @param mixed $input
      * @param mixed $message
@@ -59,12 +41,8 @@ class xsBase64BinaryTest extends \PHPUnit_Framework_TestCase
      */
     public function testxsBase64BinaryInvalid($input, $message)
     {
-        try {
-            $d = new xsBase64Binary($input);
-            $s = (string)$d;
-            $this->fail($message);
-        } catch (\Exception $e) {
-        }
+        $d = new xsBase64Binary($input);
+        $s = (string)$d;
         $this->assertEquals('', $s, $message);
     }
 
@@ -74,5 +52,23 @@ class xsBase64BinaryTest extends \PHPUnit_Framework_TestCase
             array('FB8', 'an odd number of characters is not valid; characters appear in groups of four'),
             array('==0F', 'equals signs may only appear at the end'),
         );
+    }
+
+    /**
+     * Sets up the fixture, for example, opens a network connection.
+     * This method is called before a test is executed.
+     */
+    protected function setUp()
+    {
+        parent::setUp();
+    }
+
+    /**
+     * Tears down the fixture, for example, closes a network connection.
+     * This method is called after a test is executed.
+     */
+    protected function tearDown()
+    {
+        parent::tearDown();
     }
 }

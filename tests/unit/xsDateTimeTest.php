@@ -9,24 +9,6 @@ namespace AlgoWeb\xsdTypes;
 class xsDateTimeTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * Sets up the fixture, for example, opens a network connection.
-     * This method is called before a test is executed.
-     */
-    protected function setUp()
-    {
-        parent::setUp();
-    }
-
-    /**
-     * Tears down the fixture, for example, closes a network connection.
-     * This method is called after a test is executed.
-     */
-    protected function tearDown()
-    {
-        parent::tearDown();
-    }
-
-    /**
      * @dataProvider testxsDateTimeValidDataProvider
      * @param mixed $input
      * @param mixed $message
@@ -58,12 +40,8 @@ class xsDateTimeTest extends \PHPUnit_Framework_TestCase
      */
     public function testxsDateTimeInvalid($input, $message)
     {
-        try {
             $d = new xsDateTime($input);
             $s = (string)$d;
-            $this->fail($message);
-        } catch (\Exception $e) {
-        }
         $this->assertEquals('', $s, $message);
     }
 
@@ -76,5 +54,23 @@ class xsDateTimeTest extends \PHPUnit_Framework_TestCase
             array('2004-04-12', 'the time is required'),
             array('', 'an empty value is not valid, unless xsi:nil is used'),
         );
+    }
+
+    /**
+     * Sets up the fixture, for example, opens a network connection.
+     * This method is called before a test is executed.
+     */
+    protected function setUp()
+    {
+        parent::setUp();
+    }
+
+    /**
+     * Tears down the fixture, for example, closes a network connection.
+     * This method is called after a test is executed.
+     */
+    protected function tearDown()
+    {
+        parent::tearDown();
     }
 }

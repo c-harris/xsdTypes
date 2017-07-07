@@ -9,24 +9,6 @@ namespace AlgoWeb\xsdTypes;
 class xsByteTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * Sets up the fixture, for example, opens a network connection.
-     * This method is called before a test is executed.
-     */
-    protected function setUp()
-    {
-        parent::setUp();
-    }
-
-    /**
-     * Tears down the fixture, for example, closes a network connection.
-     * This method is called after a test is executed.
-     */
-    protected function tearDown()
-    {
-        parent::tearDown();
-    }
-
-    /**
      * @dataProvider testxsByteValidDataProvider
      * @param mixed $input
      * @param mixed $message
@@ -58,12 +40,9 @@ class xsByteTest extends \PHPUnit_Framework_TestCase
      */
     public function testxsByteInvalid($input, $message)
     {
-        try {
+
             $d = new xsByte($input);
             $s = (string)$d;
-            $this->fail($message);
-        } catch (\Exception $e) {
-        }
         $this->assertEquals('', $s, $message);
     }
 
@@ -73,5 +52,23 @@ class xsByteTest extends \PHPUnit_Framework_TestCase
             array(130, 'number is too large'),
             array('', 'an empty value is not valid, unless xsi:nil is used'),
         );
+    }
+
+    /**
+     * Sets up the fixture, for example, opens a network connection.
+     * This method is called before a test is executed.
+     */
+    protected function setUp()
+    {
+        parent::setUp();
+    }
+
+    /**
+     * Tears down the fixture, for example, closes a network connection.
+     * This method is called after a test is executed.
+     */
+    protected function tearDown()
+    {
+        parent::tearDown();
     }
 }

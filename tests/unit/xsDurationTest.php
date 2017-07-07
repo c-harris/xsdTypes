@@ -45,12 +45,8 @@ class xsDurationTest extends \PHPUnit_Framework_TestCase
      */
     public function testxsDurationInvalid($input, $message)
     {
-        try {
-            $d = new xsDuration($input);
-            $s = (string)$d;
-            $this->fail($message);
-        } catch (\Exception $e) {
-        }
+        $d = new xsDuration($input);
+        $s = (string)$d;
         $this->assertEquals('', $s, $message);
     }
 
