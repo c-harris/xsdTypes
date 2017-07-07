@@ -12,6 +12,7 @@ class xsBooleanTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsBooleanValidDataProvider
      * @param mixed $input
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsBooleanValid($input, $expected, $message)
     {
@@ -42,6 +43,7 @@ class xsBooleanTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsBooleanInvalidDataProvider
      * @param mixed $input
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsBooleanInvalid($input, $expected, $message)
     {
