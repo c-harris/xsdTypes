@@ -10,6 +10,8 @@ class xsGYearMonthTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @dataProvider testxsGYearMonthValidDataProvider
+     * @param mixed $input
+     * @param mixed $message
      */
     public function testxsGYearMonthValid($input, $message)
     {
@@ -31,6 +33,8 @@ class xsGYearMonthTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider testxsGYearMonthInvalidDataProvider
+     * @param mixed $input
+     * @param mixed $message
      */
     public function testxsGYearMonthInvalid($input, $message)
     {
