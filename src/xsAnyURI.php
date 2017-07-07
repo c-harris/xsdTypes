@@ -55,5 +55,12 @@ class xsAnyURI extends xsAnySimpleType
     protected function isOK()
     {
         $this->checkLength($this->value);
+        if (filter_var($this->value, FILTER_VALIDATE_URL) === FALSE) {
+            throw new \InvalidArgumentException('values passed to ' . get_class($this) . 'Must Be a Value URL');
+        }
+        if (substr_count($this->value, '#') > 1) {
+            throw new \InvalidArgumentException('values passed to ' . get_class($this) . 'Must Be a Value URL' .
+                ' this value has to many # characters');
+        }
     }
 }
