@@ -24,7 +24,8 @@ trait WhiteSpaceTrait
             case 'collapse':
                 return preg_replace('/\s+/', ' ', $val);
             default:
-                throw new \InvalidArgumentException(get_class($this) . ' called fixWhitespace with invalid handle operation.');
+                throw new \InvalidArgumentException(get_class($this) . ' called fixWhitespace with ' .
+                    'invalid handle operation.');
         }
     }
 
