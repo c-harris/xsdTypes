@@ -11,48 +11,48 @@ trait PatternTrait
     private $pattern = array();
 
     /**
-     * @param string $regexPatternToAdd
+     * @param string $newPatternToAdd
      * @param mixed  $processMultiCharacterEscape
      */
-    protected function setPatternFacet($regexPatternToAdd, $processMultiCharacterEscape = true)
+    protected function setPatternFacet($newPatternToAdd, $processMultiCharacterEscape = true)
     {
         if (null == self::$Letter) {
             self::init();
         }
-        $regexPatternToAdd = $this->processRegex($regexPatternToAdd, $processMultiCharacterEscape);
-        if (!$this->checkRegexValidPattern($regexPatternToAdd)) {
-            $regexPatternToAdd = '/' . $regexPatternToAdd . '/';
-            if (!$this->checkRegexValidPattern($regexPatternToAdd)) {
+        $newPatternToAdd = $this->processRegex($newPatternToAdd, $processMultiCharacterEscape);
+        if (!$this->checkRegexValidPattern($newPatternToAdd)) {
+            $newPatternToAdd = '/' . $newPatternToAdd . '/';
+            if (!$this->checkRegexValidPattern($newPatternToAdd)) {
                 throw new \InvalidArgumentException('Invalid regex pattern provided: ' . get_class($this));
             }
         }
-        $this->pattern[] = $regexPatternToAdd;
+        $this->pattern[] = $newPatternToAdd;
     }
 
     /**
-     * @param string $regexPattern
+     * @param string $patternToProcess
      *
      * @return string
      */
-    private function processRegex($regexPattern, $processMultiCharacterEscape)
+    private function processRegex($patternToProcess, $processMultiCharacterEscape)
     {
         if (!$processMultiCharacterEscape) {
-            return $regexPattern;
+            return $patternToProcess;
         }
         if (null == self::$NameChar) {
             init();
         }
-        
-        $regexPattern = str_replace('\S', '[^\s]', $regexPattern);
-        $regexPattern = str_replace('\s', '[\x{20}\t\n\r]', $regexPattern);
-        $regexPattern = str_replace('\I', '[^\i]', $regexPattern);
-        $regexPattern = str_replace('\i', self::$Letter . '|_|:', $regexPattern);
-        $regexPattern = str_replace('\c', self::$NameChar, $regexPattern);
-        $regexPattern = str_replace('\D', '[^\d]', $regexPattern);
-        $regexPattern = str_replace('\d', '\p{Nd}', $regexPattern);
-        $regexPattern = str_replace('\W', '[^\w]', $regexPattern);
-        $regexPattern = str_replace('\w', '[\x{0000}-\x{10FFFF}]-[\p{P}\p{Z}\p{C}] ', $regexPattern);
-        return $regexPattern;
+
+        $patternToProcess = str_replace('\S', '[^\s]', $patternToProcess);
+        $patternToProcess = str_replace('\s', '[\x{20}\t\n\r]', $patternToProcess);
+        $patternToProcess = str_replace('\I', '[^\i]', $patternToProcess);
+        $patternToProcess = str_replace('\i', self::$Letter . '|_|:', $patternToProcess);
+        $patternToProcess = str_replace('\c', self::$NameChar, $patternToProcess);
+        $patternToProcess = str_replace('\D', '[^\d]', $patternToProcess);
+        $patternToProcess = str_replace('\d', '\p{Nd}', $patternToProcess);
+        $patternToProcess = str_replace('\W', '[^\w]', $patternToProcess);
+        $patternToProcess = str_replace('\w', '[\x{0000}-\x{10FFFF}]-[\p{P}\p{Z}\p{C}] ', $patternToProcess);
+        return $patternToProcess;
     }
 
     /**
