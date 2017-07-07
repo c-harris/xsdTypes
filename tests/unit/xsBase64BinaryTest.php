@@ -12,6 +12,7 @@ class xsBase64BinaryTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsBase64BinaryValidDataProvider
      * @param mixed $input
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsBase64BinaryValid($input, $expected, $message)
     {
@@ -39,13 +40,13 @@ class xsBase64BinaryTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsBase64BinaryInvalidDataProvider
      * @param mixed $input
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsBase64BinaryInvalid($input, $expected, $message)
     {
         $d = new xsBase64Binary($input);
         $s = (string)$d;
         $this->assertEquals($expected, $s, $message);
-
     }
 
     public function testxsBase64BinaryInvalidDataProvider()
