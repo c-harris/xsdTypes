@@ -3,6 +3,7 @@ namespace AlgoWeb\xsdTypes\Facets;
 
 trait PatternTrait
 {
+    use XMLPatterns;
     /**
      * @Exclude
      * @var array defines the exact sequence of characters that are acceptable
@@ -10,17 +11,48 @@ trait PatternTrait
     private $pattern = array();
 
     /**
-     * @param string $regexPatternToAdd
+     * @param string $newPatternToAdd
+     * @param mixed  $processMultiCharacterEscape
      */
-    protected function setPatternFacet($regexPatternToAdd)
+    protected function setPatternFacet($newPatternToAdd, $processMultiCharacterEscape = true)
     {
-        if (!$this->checkRegexValidPattern($regexPatternToAdd)) {
-            $regexPatternToAdd = '/' . $regexPatternToAdd . '/';
-            if (!$this->checkRegexValidPattern($regexPatternToAdd)) {
-                throw new \InvalidArgumentException('Invalid regex pattern provided: ' . __CLASS__);
+        if (null == self::$Letter) {
+            self::init();
+        }
+        $newPatternToAdd = $this->processRegex($newPatternToAdd, $processMultiCharacterEscape);
+        if (!$this->checkRegexValidPattern($newPatternToAdd)) {
+            $newPatternToAdd = '/' . $newPatternToAdd . '/';
+            if (!$this->checkRegexValidPattern($newPatternToAdd)) {
+                throw new \InvalidArgumentException('Invalid regex pattern provided: ' . get_class($this));
             }
         }
-        $this->pattern[] = $regexPatternToAdd;
+        $this->pattern[] = $newPatternToAdd;
+    }
+
+    /**
+     * @param string $patternToProcess
+     *
+     * @return string
+     */
+    private function processRegex($patternToProcess, $processMultiCharacterEscape)
+    {
+        if (!$processMultiCharacterEscape) {
+            return $patternToProcess;
+        }
+        if (null == self::$NameChar) {
+            init();
+        }
+
+        $patternToProcess = str_replace('\S', '[^\s]', $patternToProcess);
+        $patternToProcess = str_replace('\s', '[\x{20}\t\n\r]', $patternToProcess);
+        $patternToProcess = str_replace('\I', '[^\i]', $patternToProcess);
+        $patternToProcess = str_replace('\i', self::$Letter . '|_|:', $patternToProcess);
+        $patternToProcess = str_replace('\c', self::$NameChar, $patternToProcess);
+        $patternToProcess = str_replace('\D', '[^\d]', $patternToProcess);
+        $patternToProcess = str_replace('\d', '\p{Nd}', $patternToProcess);
+        $patternToProcess = str_replace('\W', '[^\w]', $patternToProcess);
+        $patternToProcess = str_replace('\w', '[\x{0000}-\x{10FFFF}]-[\p{P}\p{Z}\p{C}] ', $patternToProcess);
+        return $patternToProcess;
     }
 
     /**
@@ -28,7 +60,7 @@ trait PatternTrait
      */
     private function checkRegexValidPattern($pattern)
     {
-        return (false === @preg_match($pattern, null));
+        return !(false === @preg_match($pattern, null));
     }
 
     /**
@@ -39,7 +71,7 @@ trait PatternTrait
         if (!empty($this->pattern)) {
             foreach ($this->pattern as $pattern) {
                 if (!$this->matchesRegexPattern($pattern, $v)) {
-                    throw new \InvalidArgumentException('Assigned value for ' . __CLASS__ .
+                    throw new \InvalidArgumentException('Assigned value for ' . get_class($this) .
                         ' does not match pattern ' . $pattern);
                 }
             }

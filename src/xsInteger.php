@@ -18,6 +18,15 @@ class xsInteger extends xsDecimal
     {
         parent::__construct($value);
         $this->setFractionDigits(0);
-        $this->setPatternFacet('[\-+]?[0-9]+');
+        /*
+         * Match a single character present in the list below [\-+]?
+         * ? Quantifier — Matches between zero and one times, as many times as possible, giving back as needed
+         * \- matches the character - literally (case sensitive)
+         * + matches the character + literally (case sensitive)
+         * Match a single character present in the list below [0-9]+
+         * + Quantifier — Matches between one and unlimited times, as many times as possible, giving back as needed
+         * 0-9 a single character in the range between 0 (index 48) and 9 (index 57) (case sensitive)
+         */
+        $this->setPatternFacet('/[\-+]?[0-9]+/');
     }
 }

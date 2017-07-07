@@ -23,21 +23,24 @@ trait DigitsTrait
         $this->totalDigits = $fd;
     }
 
+    /**
+     * @param integer $fd
+     */
     private function checkDigitLength($fd)
     {
         if (!is_numeric($fd)) {
             throw new \InvalidArgumentException(
-                'The provided fractionDigits for  ' . __CLASS__ . ' is non numeric.'
+                'The provided fractionDigits for  ' . get_class($this) . ' is non numeric.'
             );
         }
         if (abs($fd) != $fd) {
             throw new \InvalidArgumentException(
-                'The provided fractionDigits for  ' . __CLASS__ . ' must be non negative.'
+                'The provided fractionDigits for  ' . get_class($this) . ' must be non negative.'
             );
         }
         if (round($fd) != $fd) {
             throw new \InvalidArgumentException(
-                'The provided fractionDigits for  ' . __CLASS__ . ' must be a whole number.'
+                'The provided fractionDigits for  ' . get_class($this) . ' must be a whole number.'
             );
         }
     }
@@ -50,7 +53,7 @@ trait DigitsTrait
         $stringVal = explode('.', (string)$v);
         if ($this->totalDigits < strlen($stringVal[0])) {
             throw new \InvalidArgumentException(
-                'The number of fractionDigits for  ' . __CLASS__ . ' is greater than allowed.'
+                'The number of fractionDigits for  ' . get_class($this) . ' is greater than allowed.'
             );
         }
     }
@@ -64,6 +67,11 @@ trait DigitsTrait
         $this->fractionDigits = $fd;
     }
 
+    /**
+     * Checks the number of fraction digits to verify they are not longer then expected.
+     *
+     * @param float $v the value to check fraction digits on
+     */
     public function checkFractionDigits($v)
     {
         if (null == $this->fractionDigits) {
@@ -73,17 +81,22 @@ trait DigitsTrait
         if (2 == count($stringVal)) {
             if ($this->fractionDigits < strlen($stringVal[1])) {
                 throw new \InvalidArgumentException(
-                    'The number of fractionDigits for  ' . __CLASS__ . ' is greater than allowed.'
+                    'The number of fractionDigits for  ' . get_class($this) . ' is greater than allowed.'
                 );
             }
         }
     }
 
+    /**
+     * @param float $v the digit to be fixed
+     *
+     * @return float
+     */
     public function fixFractionDigits($v)
     {
         if (null != $this->fractionDigits) {
             return round($v, $this->fractionDigits);
         }
-        return;
+        return $v;
     }
 }

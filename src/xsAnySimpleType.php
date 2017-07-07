@@ -38,11 +38,19 @@ abstract class xsAnySimpleType
 
     public function __toString()
     {
-        if (!$this->fixed) {
-            $this->fixValue();
-            $this->isOKInternal();
+        try {
+            if (!$this->fixed) {
+                $this->fixValue();
+                $this->isOKInternal();
+            }
+        } catch (\Exception $e) {
+            trigger_error($e->getMessage() . '--' . $e->getTraceAsString());
+            $this->value = '';
         }
-        return $this->value;
+        if (is_array($this->value)) {
+            return implode(' ', $this->value);
+        }
+        return (string)$this->value;
     }
 
     /**

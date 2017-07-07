@@ -19,6 +19,9 @@ class xsNMTOKEN extends xsToken
     public function __construct($value)
     {
         parent::__construct($value);
+        /*
+         * \c+ matches the control sequence CTRL++ (ASCII 107)
+         */
         $this->setPatternFacet('\c+');
     }
 }

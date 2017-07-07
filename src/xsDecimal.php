@@ -36,7 +36,7 @@ class xsDecimal extends xsAnySimpleType
 
     protected function isOK()
     {
-        $this->checkDigitLength($this->value);
+        $this->checkTotalDigits($this->value);
         $this->checkFractionDigits($this->value);
         $this->CheckMinMax($this->value);
     }
