@@ -67,6 +67,11 @@ trait DigitsTrait
         $this->fractionDigits = $fd;
     }
 
+    /**
+     * Checks the number of fraction digits to verify they are not longer then expected.
+     *
+     * @param float $v the value to check fraction digits on
+     */
     public function checkFractionDigits($v)
     {
         if (null == $this->fractionDigits) {
@@ -82,6 +87,11 @@ trait DigitsTrait
         }
     }
 
+    /**
+     * @param float $v the digit to be fixed
+     *
+     * @return float
+     */
     public function fixFractionDigits($v)
     {
         if (null != $this->fractionDigits) {
