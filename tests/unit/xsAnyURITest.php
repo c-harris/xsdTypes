@@ -21,7 +21,7 @@ class xsAnyURITest extends \PHPUnit_Framework_TestCase
         } catch (\Exception $e) {
             $this->fail($message . ' with Exception ' . $e->getMessage());
         }
-        $this->assertEquals($r, $expected);
+        $this->assertEquals($expected, $r, $message);
     }
 
     public function testxsAnyURIValidDataProvider()
