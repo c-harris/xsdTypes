@@ -37,15 +37,16 @@ class xsLanguage extends xsToken
         parent::__construct($value);
         /*
          * Match a single character present in the list below [a-zA-Z]{1,8}
-         *     {1,8} Quantifier — Matches between 1 and 8 times, as many times as possible, giving back as needed (greedy)
+         *     {1,8} Quantifier — Matches between 1 and 8 times, as many times as possible, giving back as needed
          *     a-z a single character in the range between a (index 97) and z (index 122) (case sensitive)
          *     A-Z a single character in the range between A (index 65) and Z (index 90) (case sensitive)
          * 1st Capturing Group (-[a-zA-Z0-9]{1,8})*
-         * Quantifier — Matches between zero and unlimited times, as many times as possible, giving back as needed (greedy)
-         * A repeated capturing group will only capture the last iteration. Put a capturing group around the repeated group to capture all iterations or use a non-capturing group instead if you're not interested in the data
+         * Quantifier — Matches between zero and unlimited times, as many times as possible, giving back as needed
+         * A repeated capturing group will only capture the last iteration. Put a capturing group around the repeated
+         * group to capture all iterations or use a non-capturing group instead if you're not interested in the data
          * - matches the character - literally (case sensitive)
          *      Match a single character present in the list below [a-zA-Z0-9]{1,8}
-         *      {1,8} Quantifier — Matches between 1 and 8 times, as many times as possible, giving back as needed (greedy)
+         *      {1,8} Quantifier — Matches between 1 and 8 times, as many times as possible, giving back as needed
          *      a-z a single character in the range between a (index 97) and z (index 122) (case sensitive)
          *      A-Z a single character in the range between A (index 65) and Z (index 90) (case sensitive)
          *      0-9 a single character in the range between 0 (index 48) and 9 (index 57) (case sensitive)
