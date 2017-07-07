@@ -31,6 +31,7 @@ trait PatternTrait
 
     /**
      * @param string $regexPattern
+     * @param mixed  $processMultiCharacterEscape
      *
      * @return string
      */
