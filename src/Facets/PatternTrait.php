@@ -29,6 +29,11 @@ trait PatternTrait
         $this->pattern[] = $regexPatternToAdd;
     }
 
+    /**
+     * @param string $regexPattern
+     *
+     * @return string
+     */
     private function ProcessRegex($regexPattern, $ProcessMultiCharacterEscape)
     {
         if (!$ProcessMultiCharacterEscape) {
@@ -41,7 +46,7 @@ trait PatternTrait
         $regexPattern = str_replace('\S', '[^\s]', $regexPattern);
         $regexPattern = str_replace('\s', '[\x{20}\t\n\r]', $regexPattern);
         $regexPattern = str_replace('\I', '[^\i]', $regexPattern);
-        $regexPattern = str_replace('\i', self::$Letter.'|_|:', $regexPattern);
+        $regexPattern = str_replace('\i', self::$Letter . '|_|:', $regexPattern);
         $regexPattern = str_replace('\c', self::$NameChar, $regexPattern);
         $regexPattern = str_replace('\D', '[^\d]', $regexPattern);
         $regexPattern = str_replace('\d', '\p{Nd}', $regexPattern);

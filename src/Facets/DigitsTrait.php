@@ -23,6 +23,9 @@ trait DigitsTrait
         $this->totalDigits = $fd;
     }
 
+    /**
+     * @param integer $fd
+     */
     private function checkDigitLength($fd)
     {
         if (!is_numeric($fd)) {
