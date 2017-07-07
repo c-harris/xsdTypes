@@ -17,6 +17,6 @@ class xsNonNegativeInteger extends xsInteger
     public function __construct($value)
     {
         parent::__construct($value);
-        $this->setMinInclusive(0);
+        $this->setMinInclusive(0x0);
     }
 }
