@@ -3,28 +3,28 @@
  * Created by PhpStorm.
  * User: Barnso
  * Date: 12/07/2017
- * Time: 8:46 PM
+ * Time: 8:46 PM.
  */
-
 namespace AlgoWeb\xsdTypes\AxillaryClasses;
-
 
 class UriValidatorTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @dataProvider validUriProvider
+     * @param mixed $Uri
      */
     public function testValidUri($Uri)
     {
-        $this->assertEquals(TRUE, UriValidator::validate($Uri));
+        $this->assertEquals(true, UriValidator::validate($Uri));
     }
 
     /**
      * @dataProvider invalidUriProvider
+     * @param mixed $Uri
      */
     public function testInvalidUri($Uri)
     {
-        $this->assertEquals(FALSE, UriValidator::validate($Uri));
+        $this->assertEquals(false, UriValidator::validate($Uri));
     }
 
     public function validUriProvider()
@@ -42,8 +42,8 @@ class UriValidatorTest extends \PHPUnit_Framework_TestCase
     public function invalidUriProvider()
     {
         return array(
-            array("http://datypic.com#frag1#frag2"),
-            array("http://datypic.com#f% rag"),
+            array('http://datypic.com#frag1#frag2'),
+            array('http://datypic.com#f% rag'),
         );
     }
 }
