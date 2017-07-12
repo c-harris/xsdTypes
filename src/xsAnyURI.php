@@ -2,6 +2,8 @@
 
 namespace AlgoWeb\xsdTypes;
 
+use AlgoWeb\xsdTypes\AxillaryClasses\UriValidator;
+use AlgoWeb\xsdTypes\AxillaryClasses\UrnValidator;
 use AlgoWeb\xsdTypes\Facets\LengthTrait;
 
 /**
@@ -55,13 +57,8 @@ class xsAnyURI extends xsAnySimpleType
     protected function isOK()
     {
         $this->checkLength($this->value);
-
-        if (substr_count($this->value, '#') > 1) {
-            throw new \InvalidArgumentException('values passed to ' . get_class($this) . 'Must Be a Value URL' .
-                ' this value has to many # characters');
-        }
-        if (filter_var($this->value, FILTER_VALIDATE_URL) !== false) {
-            return;
+        if (!UrnValidator::validate($this->value) && !UriValidator::validate($this->value)) {
+            throw new \InvalidArgumentException("the value supplied to " . get_class($this) . " Must be a URI or URN");
         }
     }
 }

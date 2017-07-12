@@ -16,7 +16,7 @@ class UriValidator
      */
     public static function validate($uri)
     {
-        if (substr_count($uri, '#') > 1 || self::checkHexDigits($uri)) {
+        if (substr_count($uri, '#') > 1 || !self::checkHexDigits($uri)) {
             return false;
         }
         if (filter_var($uri, FILTER_VALIDATE_URL) !== false) {
