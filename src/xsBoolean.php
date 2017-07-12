@@ -22,7 +22,13 @@ class xsBoolean extends xsAnySimpleType
     protected function fixValue()
     {
         parent::fixValue();
-        $this->value = filter_var($this->value, FILTER_VALIDATE_BOOLEAN) ? 'true' : 'false';
+
+        $this->value = filter_var($this->value, FILTER_VALIDATE_BOOLEAN, ['options' => [],
+            'flags' => FILTER_NULL_ON_FAILURE]);
+        if (null === $this->value) {
+            throw new \InvalidArgumentException("the value passed to " . get_class($this) . 'was not a booliean');
+        }
+        $this->value = $this->value ? "true" : "false";
     }
     protected function isOK()
     {

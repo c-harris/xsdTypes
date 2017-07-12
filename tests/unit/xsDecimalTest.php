@@ -52,7 +52,6 @@ class xsDecimalTest extends \PHPUnit_Framework_TestCase
     {
         $d = new xsDecimal($input);
         $s = (string)$d;
-        $this->fail($message);
         $this->assertEquals($expected, $s, $message);
     }
 
