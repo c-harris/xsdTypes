@@ -37,11 +37,11 @@ class xsBase64Binary extends xsAnySimpleType
     {
         $this->checkLength($this->value);
         if (!(bool)preg_match('/^[a-zA-Z0-9\/\r\n+\s]*={0,2}$/', $this->value)) {
-            throw new \InvalidArgumentException("the value " . $this->value . " is not a valid base64 encoded string");
+            throw new \InvalidArgumentException('the value ' . $this->value . ' is not a valid base64 encoded string');
         }
         $lengthOfValue = strlen($this->value);
         if ($lengthOfValue % 2 != 0) {
-            throw new \InvalidArgumentException("the value " . $this->value . " is not a valid base64 encoded string" .
+            throw new \InvalidArgumentException('the value ' . $this->value . ' is not a valid base64 encoded string' .
                 'as it dose not contain an even number of characters');
         }
     }
