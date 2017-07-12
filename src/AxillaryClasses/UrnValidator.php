@@ -12,7 +12,7 @@ class UrnValidator
      *
      * @param string $urn the URN to validate
      *
-     * @return TRUE when the URN is valid, FALSE when invalid
+     * @return boolean TRUE when the URN is valid, FALSE when invalid
      */
     public static function validate($urn)
     {

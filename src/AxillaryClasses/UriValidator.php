@@ -13,7 +13,7 @@ class UriValidator
      *
      * @param string $uri the URI to validate
      *
-     * @return TRUE when the URI is valid, FALSE when invalid
+     * @return boolean TRUE when the URI is valid, FALSE when invalid
      */
     public static function validate($uri)
     {
