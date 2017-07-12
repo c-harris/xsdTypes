@@ -12,6 +12,7 @@ class xsPositiveIntegerTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsPositiveIntegerTestValidDataProvider
      * @param mixed $duration
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsPositiveIntegerTestValid($duration, $expected, $message)
     {
@@ -33,6 +34,7 @@ class xsPositiveIntegerTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsPositiveIntegerTestInvalidDataProvider
      * @param mixed $duration
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsPositiveIntegerTestInvalid($duration, $expected, $message)
     {

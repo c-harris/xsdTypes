@@ -12,6 +12,7 @@ class xsStringTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsStringTestValidDataProvider
      * @param mixed $duration
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsStringTestValid($duration, $expected, $message)
     {
@@ -39,6 +40,7 @@ is on two lines.', ''),
      * @dataProvider testxsStringTestInvalidDataProvider
      * @param mixed $duration
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsStringTestInvalid($duration, $expected, $message)
     {
