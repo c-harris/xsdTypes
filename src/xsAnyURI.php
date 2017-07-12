@@ -58,7 +58,7 @@ class xsAnyURI extends xsAnySimpleType
     {
         $this->checkLength($this->value);
         if (!UrnValidator::validate($this->value) && !UriValidator::validate($this->value)) {
-            throw new \InvalidArgumentException("the value supplied to " . get_class($this) . " Must be a URI or URN");
+            throw new \InvalidArgumentException('the value supplied to ' . get_class($this) . ' Must be a URI or URN');
         }
     }
 }
