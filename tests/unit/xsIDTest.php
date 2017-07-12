@@ -13,6 +13,7 @@ class xsIDTest extends \PHPUnit_Framework_TestCase
      *
      * @param mixed $input
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsIDValid($input, $expected, $message)
     {
@@ -23,7 +24,6 @@ class xsIDTest extends \PHPUnit_Framework_TestCase
             $this->fail($message . ' with Exception ' . $e->getMessage());
         }
         $this->assertEquals($expected, $s, $message);
-
     }
 
     public function testxsIDValidDataProvider()
@@ -40,6 +40,7 @@ class xsIDTest extends \PHPUnit_Framework_TestCase
      *
      * @param mixed $input
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsIDInvalid($input, $expected, $message)
     {

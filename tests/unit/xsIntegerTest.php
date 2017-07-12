@@ -12,6 +12,7 @@ class xsIntegerTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsIntegerValidDataProvider
      * @param mixed $input
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsIntegerValid($input, $expected, $message)
     {
@@ -22,7 +23,6 @@ class xsIntegerTest extends \PHPUnit_Framework_TestCase
             $this->fail($message . ' with Exception ' . $e->getMessage());
         }
         $this->assertEquals($expected, $s, $message);
-
     }
 
     public function testxsIntegerValidDataProvider()
@@ -40,13 +40,13 @@ class xsIntegerTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsIntegerInvalidDataProvider
      * @param mixed $input
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsIntegerInvalid($input, $expected, $message)
     {
         $d = new xsInteger($input);
         $s = (string)$d;
         $this->assertEquals($expected, $s, $message);
-
     }
 
     public function testxsIntegerInvalidDataProvider()

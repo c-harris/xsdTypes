@@ -12,6 +12,7 @@ class xsDecimalTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsDecimalValidDataProvider
      * @param mixed $input
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsDecimalValid($input, $expected, $message)
     {
@@ -22,7 +23,6 @@ class xsDecimalTest extends \PHPUnit_Framework_TestCase
             $this->fail($message . ' with Exception ' . $e->getMessage());
         }
         $this->assertEquals($expected, $s, $message);
-
     }
 
     public function testxsDecimalValidDataProvider()
@@ -46,6 +46,7 @@ class xsDecimalTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsDecimalInvalidDataProvider
      * @param mixed $input
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsDecimalInvalid($input, $expected, $message)
     {

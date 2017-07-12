@@ -12,6 +12,7 @@ class xsGMonthDayTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsGMonthDayValidDataProvider
      * @param mixed $input
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsGMonthDayValid($input, $expected, $message)
     {
@@ -22,7 +23,6 @@ class xsGMonthDayTest extends \PHPUnit_Framework_TestCase
             $this->fail($message . ' with Exception ' . $e->getMessage());
         }
         $this->assertEquals($expected, $s, $message);
-
     }
 
     public function testxsGMonthDayValidDataProvider()
@@ -37,6 +37,7 @@ class xsGMonthDayTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsGMonthDayInvalidDataProvider
      * @param mixed $input
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsGMonthDayInvalid($input, $expected, $message)
     {
