@@ -9,6 +9,57 @@ namespace AlgoWeb\xsdTypes;
 class xsBooleanTest extends \PHPUnit_Framework_TestCase
 {
     /**
+     * @dataProvider testxsBooleanValidDataProvider
+     * @param mixed $input
+     * @param mixed $message
+     * @param mixed $expected
+     */
+    public function testxsBooleanValid($input, $expected, $message)
+    {
+        try {
+            $d = new xsBoolean($input);
+            $r = (string)$d;
+        } catch (\Exception $e) {
+            $this->fail($message . ' with Exception ' . $e->getMessage());
+        }
+        $this->assertEquals($expected, $r, $message);
+    }
+
+    public function testxsBooleanValidDataProvider()
+    {
+        return array(
+            array(true, 'true', 'bool true'),
+            array(false, 'false', 'bool false'),
+            array(0, 'false', 'int false'),
+            array(1, 'true', 'int true'),
+            array('0', 'false', 'string numeric false'),
+            array('1', 'true', 'string numeric true'),
+            array('false', 'false', 'string false'),
+            array('true', 'true', 'string true'),
+        );
+    }
+
+    /**
+     * @dataProvider testxsBooleanInvalidDataProvider
+     * @param mixed $input
+     * @param mixed $message
+     * @param mixed $expected
+     */
+    public function testxsBooleanInvalid($input, $expected, $message)
+    {
+        $d = new xsBoolean($input);
+        $p = (string)$d;
+        $this->assertEquals($expected, $p, $message);
+    }
+
+    public function testxsBooleanInvalidDataProvider()
+    {
+        return array(
+            array('T', '', 'the word "true" must be spelled out'),
+        );
+    }
+
+    /**
      * Sets up the fixture, for example, opens a network connection.
      * This method is called before a test is executed.
      */
@@ -24,58 +75,5 @@ class xsBooleanTest extends \PHPUnit_Framework_TestCase
     protected function tearDown()
     {
         parent::tearDown();
-    }
-
-    /**
-     * @dataProvider testxsBooleanValidDataProvider
-     * @param mixed $input
-     * @param mixed $message
-     */
-    public function testxsBooleanValid($input, $message)
-    {
-        try {
-            $d = new xsBoolean($input);
-            $e = (string)$d;
-        } catch (\Exception $e) {
-            $this->fail($message . ' with Exception ' . $e->getMessage());
-        }
-    }
-
-    public function testxsBooleanValidDataProvider()
-    {
-        return array(
-            array(true, 'bool true'),
-            array(false, 'bool false'),
-            array(0, 'int false'),
-            array(1, 'int true'),
-            array('0', 'string numeric false'),
-            array('1', 'string numeric true'),
-            array('false', 'string false'),
-            array('true', 'string true'),
-        );
-    }
-
-    /**
-     * @dataProvider testxsBooleanInvalidDataProvider
-     * @param mixed $input
-     * @param mixed $message
-     */
-    public function testxsBooleanInvalid($input, $message)
-    {
-        try {
-            $d = new xsBoolean($input);
-            $p = (string)$d;
-            $this->fail($message);
-        } catch (\Exception $e) {
-        }
-        $this->assertEquals('', $p, $message);
-    }
-
-    public function testxsBooleanInvalidDataProvider()
-    {
-        return array(
-            array('T', 'the word "true" must be spelled out'),
-            array('', 'an empty value is not valid, unless xsi:nil is used'),
-        );
     }
 }

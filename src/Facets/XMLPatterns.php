@@ -71,7 +71,7 @@ trait XMLPatterns
     '[\x{0F20}-\x{0F29}]';
 
     private static $Extender = '\x{00B7}|\x{02D0}|\x{02D1}|\x{0387}|\x{0640}|\x{0E46}|\x{0EC6}|\x{3005}|' .
-    '[\x{3031}-\x{3035}]}|[\x{309D}-\x{309E}]|[\x{30FC}-\x{30FE}]';
+    '[\x{3031}-\x{3035}]|[\x{309D}-\x{309E}]|[\x{30FC}-\x{30FE}]';
 
     private static $NameChar;
     private static $Name;

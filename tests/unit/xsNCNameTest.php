@@ -12,8 +12,9 @@ class xsNCNameTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsNCNameValidDataProvider
      * @param mixed $input
      * @param mixed $message
+     * @param mixed $expected
      */
-    public function testxsNCNameValid($input, $message)
+    public function testxsNCNameValid($input, $expected, $message)
     {
         try {
             $d = new xsNCName($input);
@@ -21,14 +22,15 @@ class xsNCNameTest extends \PHPUnit_Framework_TestCase
         } catch (\Exception $e) {
             $this->fail($message . ' with Exception ' . $e->getMessage());
         }
+        $this->assertEquals($expected, $s, $message);
     }
 
     public function testxsNCNameValidDataProvider()
     {
         return array(
-            array('myElement', ''),
-            array('_my.Element', ''),
-            array('my-element', ''),
+            array('myElement', 'myElement', ''),
+            array('_my.Element', '_my.Element', ''),
+            array('my-element', 'my-element', ''),
         );
     }
 
@@ -36,24 +38,20 @@ class xsNCNameTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsNCNameInvalidDataProvider
      * @param mixed $input
      * @param mixed $message
+     * @param mixed $expected
      */
-    public function testxsNCNameInvalid($input, $message)
+    public function testxsNCNameInvalid($input, $expected, $message)
     {
-        try {
-            $d = new xsNCName($input);
-            $s = (string)$d;
-            $this->fail($message);
-        } catch (\Exception $e) {
-        }
-        $this->assertEquals('', $s, $message);
+        $d = new xsNCName($input);
+        $s = (string)$d;
+        $this->assertEquals($expected, $s, $message);
     }
 
     public function testxsNCNameInvalidDataProvider()
     {
         return array(
-            array('pre:myElement', 'an NCName must not contain a colon'),
-            array('-myelement', 'an NCName must not start with a hyphen'),
-            array('', 'an empty value is not valid, unless xsi:nil is used'),
+            array('pre:myElement', '', 'an NCName must not contain a colon'),
+            array('-myelement', '', 'an NCName must not start with a hyphen'),
         );
     }
 

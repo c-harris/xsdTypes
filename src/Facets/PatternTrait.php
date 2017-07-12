@@ -21,9 +21,10 @@ trait PatternTrait
         }
         $newPatternToAdd = $this->processRegex($newPatternToAdd, $processMultiCharacterEscape);
         if (!$this->checkRegexValidPattern($newPatternToAdd)) {
-            $newPatternToAdd = '/' . $newPatternToAdd . '/';
+            $newPatternToAdd = '/' . $newPatternToAdd . '/u';
             if (!$this->checkRegexValidPattern($newPatternToAdd)) {
-                throw new \InvalidArgumentException('Invalid regex pattern provided: ' . get_class($this));
+                throw new \InvalidArgumentException('Invalid regex pattern provided: ' . get_class($this) .
+                    'pattern is: ' . $newPatternToAdd);
             }
         }
         $this->pattern[] = $newPatternToAdd;
@@ -31,6 +32,7 @@ trait PatternTrait
 
     /**
      * @param string $patternToProcess
+     * @param mixed  $processMultiCharacterEscape
      *
      * @return string
      */

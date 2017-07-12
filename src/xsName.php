@@ -19,10 +19,6 @@ class xsName extends xsToken
     public function __construct($value)
     {
         parent::__construct($value);
-        /*
-         * \i matches the character i literally (case sensitive)
-         * \c* matches the control sequence CTRL+* (ASCII 106)
-         */
-        $this->setPatternFacet('\i\c*');
+        $this->setPatternFacet('(\i\c)*');
     }
 }

@@ -9,6 +9,50 @@ namespace AlgoWeb\xsdTypes;
 class xsNonNegativeIntegerTest extends \PHPUnit_Framework_TestCase
 {
     /**
+     * @dataProvider testxsNonNegativeIntegerTestValidDataProvider
+     * @param mixed $duration
+     * @param mixed $message
+     * @param mixed $expected
+     */
+    public function testxsNonNegativeIntegerTestValid($duration, $expected, $message)
+    {
+        $d = new xsNonNegativeInteger($duration);
+        $s = (string)$d;
+        $this->assertEquals($expected, $s, $message);
+    }
+
+    public function testxsNonNegativeIntegerTestValidDataProvider()
+    {
+        return array(
+            array(3, '3', '3'),
+            array('0', '0', 'Zero'),
+            array('00122', '122', 'leading zeros are permitted'),
+        );
+    }
+
+    /**
+     * @dataProvider testxsNonNegativeIntegerTestInvalidDataProvider
+     *
+     * @param mixed $duration
+     * @param mixed $message
+     * @param mixed $expected
+     */
+    public function testxsNonNegativeIntegerTestInvalid($duration, $expected, $message)
+    {
+        $d = new xsNonNegativeInteger($duration);
+        $s = (string)$d;
+        $this->assertEquals($expected, $s, $message);
+    }
+
+    public function testxsNonNegativeIntegerTestInvalidDataProvider()
+    {
+        return array(
+            array('-3', '', 'value cannot be negative'),
+            array('3.0', '', 'value must not contain a decimal point'),
+        );
+    }
+
+    /**
      * Sets up the fixture, for example, opens a network connection.
      * This method is called before a test is executed.
      */
@@ -24,46 +68,5 @@ class xsNonNegativeIntegerTest extends \PHPUnit_Framework_TestCase
     protected function tearDown()
     {
         parent::tearDown();
-    }
-
-    /**
-     * @dataProvider testxsNonNegativeIntegerTestValidDataProvider
-     * @param mixed $duration
-     * @param mixed $message
-     */
-    public function testxsNonNegativeIntegerTestValid($duration, $message)
-    {
-        $d = new xsNonNegativeInteger($duration);
-        $e = (string)$d;
-        $this->assertEquals($duration, $e, $message);
-    }
-
-    public function testxsNonNegativeIntegerTestValidDataProvider()
-    {
-        return array(
-            array(3, '3'),
-            array('0', 'Zero'),
-            array('00122', 'leading zeros are permitted'),
-        );
-    }
-    /**
-     * @dataProvider testxxsNonNegativeIntegerTestInvalidDataProvider
-     * @param mixed $duration
-     * @param mixed $message
-     */
-    public function testxsNonNegativeIntegerTestInvalid($duration, $message)
-    {
-        $d = new xsNonNegativeInteger($duration);
-        $e = (string)$d;
-        $this->assertEquals('', $e, $message);
-    }
-
-    public function testxsNonNegativeIntegerTestInvalidDataProvider()
-    {
-        return array(
-            array('-3', 'value cannot be negative'),
-            array('3.0', 'value must not contain a decimal point'),
-            array('', '	an empty value is not valid, unless xsi:nil is used'),
-        );
     }
 }

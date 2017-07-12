@@ -37,7 +37,6 @@ trait MinMaxTrait
     {
         $this->maxInclusive = $v;
     }
-
     /**
      * @param int|float|\DateTime|\DateInterval $v Specifies the lower bounds for numeric values
      *                                             (the value must be greater than this value)
@@ -62,10 +61,10 @@ trait MinMaxTrait
 
     public function checkMinMax($v)
     {
-        if (null != $this->minInclusive) {
+        if (null !== $this->minInclusive) {
             $this->checkMin($v);
         }
-        if (null != $this->maxInclusive) {
+        if (null !== $this->maxInclusive) {
             $this->checkMax($v);
         }
     }

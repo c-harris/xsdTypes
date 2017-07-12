@@ -11,19 +11,20 @@ class xsNOTATIONTest extends \PHPUnit_Framework_TestCase
      *
      * @param mixed $duration
      * @param mixed $message
+     * @param mixed $expected
      */
-    public function testxsNOTATIONTestValid($duration, $message)
+    public function testxsNOTATIONTestValid($duration, $expected, $message)
     {
-        $d = $this->getMockForAbstractClass("xsNOTATION", array($duration));
-        $e = (string)$d;
-        $this->assertEquals($duration, $e, $message);
+        $d = $this->getMockForAbstractClass('AlgoWeb\xsdTypes\xsNOTATION', array($duration));
+        $s = (string)$d;
+        $this->assertEquals($expected, $s, $message);
     }
 
     public function testxsNOTATIONTestValidDataProvider()
     {
         return array(
-            array('pre:myElement', 'valid assuming the prefix "pre" is mapped to a namespace in scope'),
-            array('myElement', 'prefix and colon are optional'),
+            array('pre:myElement', 'pre:myElement', 'valid assuming the prefix "pre" is mapped to a namespace in scope'),
+            array('myElement', 'myElement', 'prefix and colon are optional'),
         );
     }
 
@@ -32,21 +33,20 @@ class xsNOTATIONTest extends \PHPUnit_Framework_TestCase
      *
      * @param mixed $duration
      * @param mixed $message
+     * @param mixed $expected
      */
-    public function testxsNOTATIONTestInvalid($duration, $message)
+    public function testxsNOTATIONTestInvalid($duration, $expected, $message)
     {
-        $d = $this->getMockForAbstractClass("xsNOTATION", array($duration));
-        $e = (string)$d;
-        $this->fail($message);
-        $this->assertEquals('', $e, $message);
+        $d = $this->getMockForAbstractClass('AlgoWeb\xsdTypes\xsNOTATION', array($duration));
+        $s = (string)$d;
+        $this->assertEquals($expected, $s, $message);
     }
 
     public function testxsNOTATIONTestInvalidDataProvider()
     {
         return array(
-            array(':myElement', '	a QName must not start with a colon'),
-            array('pre:3rdElement', 'the local part must not start with a number; it must be a valid NCName'),
-            array('', '	an empty value is not valid, unless xsi:nil is used'),
+            array(':myElement', '', 'a QName must not start with a colon'),
+            array('pre:3rdElement', '', 'the local part must not start with a number; it must be a valid NCName'),
         );
     }
 

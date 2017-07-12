@@ -9,6 +9,50 @@ namespace AlgoWeb\xsdTypes;
 class xsUnsignedLongTest extends \PHPUnit_Framework_TestCase
 {
     /**
+     * @dataProvider testxsUnsignedLongTestValidDataProvider
+     * @param mixed $duration
+     * @param mixed $message
+     * @param mixed $expected
+     */
+    public function testxsUnsignedLongTestValid($duration, $expected, $message)
+    {
+        $d = new xsUnsignedLong($duration);
+        $s = (string)$d;
+        $this->assertEquals($expected, $s, $message);
+    }
+
+    public function testxsUnsignedLongTestValidDataProvider()
+    {
+        return array(
+            array(+3, '3', 'Positive 3'),
+            array('122', '122', '122'),
+            array('0', '0', 'zero'),
+        );
+    }
+
+    /**
+     * @dataProvider testxsUnsignedLongTestInvalidDataProvider
+     * @param mixed $duration
+     * @param mixed $message
+     * @param mixed $expected
+     */
+    public function testxsUnsignedLongTestInvalid($duration, $expected, $message)
+    {
+        $d = new xsUnsignedLong($duration);
+        $s = (string)$d;
+        $this->assertEquals($expected, $s, $message);
+    }
+
+    public function testxsUnsignedLongTestInvalidDataProvider()
+    {
+        return array(
+            array('-123', '', '	negative values are not allowed'),
+            array('18446744073709551620', '', 'number is too large'),
+            array('3.0', '', 'value must not contain a decimal point'),
+        );
+    }
+
+    /**
      * Sets up the fixture, for example, opens a network connection.
      * This method is called before a test is executed.
      */
@@ -24,47 +68,5 @@ class xsUnsignedLongTest extends \PHPUnit_Framework_TestCase
     protected function tearDown()
     {
         parent::tearDown();
-    }
-
-    /**
-     * @dataProvider testxsUnsignedLongTestValidDataProvider
-     * @param mixed $duration
-     * @param mixed $message
-     */
-    public function testxsUnsignedLongTestValid($duration, $message)
-    {
-        $d = new xsUnsignedLong($duration);
-        $e = (string)$d;
-        $this->assertEquals($duration, $e, $message);
-    }
-
-    public function testxsUnsignedLongTestValidDataProvider()
-    {
-        return array(
-            array(+3, 'Positive 1'),
-            array('122', '122'),
-            array('0', 'zero'),
-        );
-    }
-    /**
-     * @dataProvider testxsUnsignedLongTestInvalidDataProvider
-     * @param mixed $duration
-     * @param mixed $message
-     */
-    public function testxsUnsignedLongTestInvalid($duration, $message)
-    {
-        $d = new xsUnsignedLong($duration);
-        $e = (string)$d;
-        $this->assertEquals('', $e, $message);
-    }
-
-    public function testxsUnsignedLongTestInvalidDataProvider()
-    {
-        return array(
-            array('-123', '	negative values are not allowed'),
-            array('18446744073709551620', 'number is too large'),
-            array('3.0', 'value must not contain a decimal point'),
-            array('', '	an empty value is not valid, unless xsi:nil is used'),
-        );
     }
 }

@@ -24,7 +24,7 @@ trait DigitsTrait
     }
 
     /**
-     * @param integer $fd
+     * @param int $fd
      */
     private function checkDigitLength($fd)
     {

@@ -9,9 +9,52 @@ namespace AlgoWeb\xsdTypes;
 class xsGYearMonthTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var \AlgoWeb\xsdTypes\xsGYearMonth
+     * @dataProvider testxsGYearMonthValidDataProvider
+     * @param mixed $input
+     * @param mixed $message
+     * @param mixed $expected
      */
-    protected $object;
+    public function testxsGYearMonthValid($input, $expected, $message)
+    {
+        try {
+            $d = new xsGYearMonth($input);
+            $s = (string)$d;
+        } catch (\Exception $e) {
+            $this->fail($message . ' with Exception ' . $e->getMessage());
+        }
+        $this->assertEquals($expected, $s, $message);
+    }
+
+    public function testxsGYearMonthValidDataProvider()
+    {
+        return array(
+            array('2004-04', '2004-04', 'April 2004'),
+            array('2004-04-05:00', '2004-04-05:00', 'April 2004, US Eastern Standard Time'),
+        );
+    }
+
+    /**
+     * @dataProvider testxsGYearMonthInvalidDataProvider
+     * @param mixed $input
+     * @param mixed $message
+     * @param mixed $expected
+     */
+    public function testxsGYearMonthInvalid($input, $expected, $message)
+    {
+        $d = new xsGYearMonth($input);
+        $s = (string)$d;
+        $this->assertEquals($expected, $s, $message);
+    }
+
+    public function testxsGYearMonthInvalidDataProvider()
+    {
+        return array(
+            array('99-04', '', 'the century must not be truncated'),
+            array('2004', '', 'the month is required'),
+            array('2004-4', '', 'the month must be two digits'),
+            array('2004-13', '', 'the month must be a valid month'),
+        );
+    }
 
     /**
      * Sets up the fixture, for example, opens a network connection.
@@ -20,7 +63,6 @@ class xsGYearMonthTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->object = new \AlgoWeb\xsdTypes\xsGYearMonth();
     }
 
     /**
@@ -30,95 +72,5 @@ class xsGYearMonthTest extends \PHPUnit_Framework_TestCase
     protected function tearDown()
     {
         parent::tearDown();
-    }
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsGYearMonth::fixValue
-     * @todo   Implement testFixValue().
-     */
-    public function testFixValue()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsGYearMonth::__toString
-     * @todo   Implement test__toString().
-     */
-    public function test__toString()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsGYearMonth::setMaxExclusive
-     * @todo   Implement testSetMaxExclusive().
-     */
-    public function testSetMaxExclusive()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsGYearMonth::setMaxInclusive
-     * @todo   Implement testSetMaxInclusive().
-     */
-    public function testSetMaxInclusive()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsGYearMonth::setMinExclusive
-     * @todo   Implement testSetMinExclusive().
-     */
-    public function testSetMinExclusive()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsGYearMonth::setMinInclusive
-     * @todo   Implement testSetMinInclusive().
-     */
-    public function testSetMinInclusive()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
-
-
-    /**
-     * @covers \AlgoWeb\xsdTypes\xsGYearMonth::checkMinMax
-     * @todo   Implement testCheckMinMax().
-     */
-    public function testCheckMinMax()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
     }
 }

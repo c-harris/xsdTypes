@@ -12,8 +12,9 @@ class xsLanguageTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsLanguageValidDataProvider
      * @param mixed $input
      * @param mixed $message
+     * @param mixed $expected
      */
-    public function testxsLanguageValid($input, $message)
+    public function testxsLanguageValid($input, $expected, $message)
     {
         try {
             $d = new xsLanguage($input);
@@ -21,25 +22,26 @@ class xsLanguageTest extends \PHPUnit_Framework_TestCase
         } catch (\Exception $e) {
             $this->fail($message . ' with Exception ' . $e->getMessage());
         }
+        $this->assertEquals($expected, $s, $message);
     }
 
     public function testxsLanguageValidDataProvider()
     {
         return array(
-            array('en', 'English'),
-            array('en-GB', 'UK English'),
-            array('en-US', 'US English'),
-            array('fr', 'French'),
-            array('de', 'German'),
-            array('es', 'Spanish'),
-            array('it', 'Italian'),
-            array('nl', 'Dutch'),
-            array('zh', 'Chinese'),
-            array('ja', 'Japanese'),
-            array('ko', 'Korean'),
-            array('i-navajo', 'IANA-registered language'),
-            array('x-Newspeak', 'private, unregistered language'),
-            array('any-value-with-short-parts', 'although a schema processor will consider this value valid, ' .
+            array('en', 'en', 'English'),
+            array('en-GB', 'en-GB', 'UK English'),
+            array('en-US', 'en-US', 'US English'),
+            array('fr', 'fr', 'French'),
+            array('de', 'de', 'German'),
+            array('es', 'es', 'Spanish'),
+            array('it', 'it', 'Italian'),
+            array('nl', 'nl', 'Dutch'),
+            array('zh', 'zh', 'Chinese'),
+            array('ja', 'ja', 'Japanese'),
+            array('ko', 'ko', 'Korean'),
+            array('i-navajo', 'i-navajo', 'IANA-registered language'),
+            array('x-Newspeak', 'x-Newspeak', 'private, unregistered language'),
+            array('any-value-with-short-parts', 'any-value-with-short-parts', 'although a schema processor will consider this value valid, ' .
                 'it does not follow RFC 3066 guidelines'),
         );
     }
@@ -48,23 +50,19 @@ class xsLanguageTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsLanguageInvalidDataProvider
      * @param mixed $input
      * @param mixed $message
+     * @param mixed $expected
      */
-    public function testxsLanguageInvalid($input, $message)
+    public function testxsLanguageInvalid($input, $expected, $message)
     {
-        try {
-            $d = new xsLanguage($input);
-            $s = (string)$d;
-            $this->fail($message);
-        } catch (\Exception $e) {
-        }
-        $this->assertEquals('', $s, $message);
+        $d = new xsLanguage($input);
+        $s = (string)$d;
+        $this->assertEquals($expected, $s, $message);
     }
 
     public function testxsLanguageInvalidDataProvider()
     {
         return array(
-            array('longerThan8', 'parts may not exceed 8 characters in length'),
-            array('', 'an empty value is not valid, unless xsi:nil is used'),
+            array('longerThan8', '', 'parts may not exceed 8 characters in length'),
         );
     }
 
