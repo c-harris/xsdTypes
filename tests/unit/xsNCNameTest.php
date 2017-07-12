@@ -12,6 +12,7 @@ class xsNCNameTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsNCNameValidDataProvider
      * @param mixed $input
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsNCNameValid($input, $expected, $message)
     {
@@ -22,7 +23,6 @@ class xsNCNameTest extends \PHPUnit_Framework_TestCase
             $this->fail($message . ' with Exception ' . $e->getMessage());
         }
         $this->assertEquals($expected, $s, $message);
-
     }
 
     public function testxsNCNameValidDataProvider()
@@ -38,6 +38,7 @@ class xsNCNameTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsNCNameInvalidDataProvider
      * @param mixed $input
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsNCNameInvalid($input, $expected, $message)
     {

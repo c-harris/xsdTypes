@@ -12,13 +12,13 @@ class xsNormalizedStringTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsNormalizedStringTestValidDataProvider
      * @param mixed $duration
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsNormalizedStringTestValid($duration, $expected, $message)
     {
         $d = new xsNormalizedString($duration);
         $s = (string)$d;
         $this->assertEquals($expected, $s, $message);
-
     }
 
     public function testxsNormalizedStringTestValidDataProvider()
@@ -39,6 +39,7 @@ is on two lines.', 'This is on two lines.', 'when parsed, the line break will be
      * @dataProvider testxsNormalizedStringTestInvalidDataProvider
      * @param mixed $duration
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsNormalizedStringTestInvalid($duration, $expected, $message)
     {

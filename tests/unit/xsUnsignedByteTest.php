@@ -12,6 +12,7 @@ class xsUnsignedByteTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsUnsignedByteTestValidDataProvider
      * @param mixed $duration
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsUnsignedByteTestValid($duration, $expected, $message)
     {
@@ -33,6 +34,7 @@ class xsUnsignedByteTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsUnsignedByteTestInvalidDataProvider
      * @param mixed $duration
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsUnsignedByteTestInvalid($duration, $expected, $message)
     {

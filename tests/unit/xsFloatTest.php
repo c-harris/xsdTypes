@@ -12,6 +12,7 @@ class xsFloatTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsFloatValidDataProvider
      * @param mixed $input
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsFloatValid($input, $expected, $message)
     {
@@ -22,7 +23,6 @@ class xsFloatTest extends \PHPUnit_Framework_TestCase
             $this->fail($message . ' with Exception ' . $e->getMessage());
         }
         $this->assertEquals($expected, $s, $message);
-
     }
 
     public function testxsFloatValidDataProvider()
@@ -44,6 +44,7 @@ class xsFloatTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsFloatInvalidDataProvider
      * @param mixed $input
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsFloatInvalid($input, $expected, $message)
     {

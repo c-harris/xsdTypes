@@ -12,6 +12,7 @@ class xsShortTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsShortTestValidDataProvider
      * @param mixed $duration
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsShortTestValid($duration, $expected, $message)
     {
@@ -35,6 +36,7 @@ class xsShortTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsShortTestInvalidDataProvider
      * @param mixed $duration
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsShortTestInvalid($duration, $expected, $message)
     {

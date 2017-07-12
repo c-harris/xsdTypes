@@ -10,6 +10,7 @@ class xsYearMonthDurationTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testXsYearMonthDurationValidDataProvider
      * @param mixed $duration
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testXsYearMonthDurationValid($duration, $expected, $message)
     {
@@ -33,6 +34,7 @@ class xsYearMonthDurationTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testXsYearMonthDurationInvalidDataProvider
      * @param mixed $duration
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testXsYearMonthDurationInvalid($duration, $expected, $message)
     {

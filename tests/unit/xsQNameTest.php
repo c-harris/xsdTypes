@@ -12,6 +12,7 @@ class xsQNameTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsQNameTestValidDataProvider
      * @param mixed $duration
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsQNameTestValid($duration, $expected, $message)
     {
@@ -32,6 +33,7 @@ class xsQNameTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsQNameTestInvalidDataProvider
      * @param mixed $duration
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsQNameTestInvalid($duration, $expected, $message)
     {

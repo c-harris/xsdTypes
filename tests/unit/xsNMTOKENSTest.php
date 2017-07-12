@@ -12,6 +12,7 @@ class xsNMTOKENSTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsNMTOKENSValidDataProvider
      * @param mixed $input
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsNMTOKENSValid($input, $expected, $message)
     {
@@ -22,7 +23,6 @@ class xsNMTOKENSTest extends \PHPUnit_Framework_TestCase
             $this->fail($message . ' with Exception ' . $e->getMessage());
         }
         $this->assertEquals($expected, $s, $message);
-
     }
 
     public function testxsNMTOKENSValidDataProvider()
@@ -37,6 +37,7 @@ class xsNMTOKENSTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsNMTOKENSInvalidDataProvider
      * @param mixed $input
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsNMTOKENSInvalid($input, $expected, $message)
     {

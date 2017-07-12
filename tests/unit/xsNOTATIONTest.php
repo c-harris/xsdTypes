@@ -11,6 +11,7 @@ class xsNOTATIONTest extends \PHPUnit_Framework_TestCase
      *
      * @param mixed $duration
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsNOTATIONTestValid($duration, $expected, $message)
     {
@@ -32,6 +33,7 @@ class xsNOTATIONTest extends \PHPUnit_Framework_TestCase
      *
      * @param mixed $duration
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsNOTATIONTestInvalid($duration, $expected, $message)
     {

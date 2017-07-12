@@ -12,6 +12,7 @@ class xsTokenTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsTokenTestValidDataProvider
      * @param mixed $duration
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsTokenTestValid($duration, $expected, $message)
     {
@@ -38,6 +39,7 @@ is on two lines.', 'This is on two lines., when parsed, the line break will be r
      * @dataProvider testxsTokenTestInvalidDataProvider
      * @param mixed $duration
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsTokenTestInvalid($duration, $expected, $message)
     {

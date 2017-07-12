@@ -12,6 +12,7 @@ class xsUnsignedLongTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsUnsignedLongTestValidDataProvider
      * @param mixed $duration
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsUnsignedLongTestValid($duration, $expected, $message)
     {
@@ -33,6 +34,7 @@ class xsUnsignedLongTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsUnsignedLongTestInvalidDataProvider
      * @param mixed $duration
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsUnsignedLongTestInvalid($duration, $expected, $message)
     {
