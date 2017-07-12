@@ -12,6 +12,7 @@ class xsGYearTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsGYearValidDataProvider
      * @param mixed $input
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsGYearValid($input, $expected, $message)
     {
@@ -22,7 +23,6 @@ class xsGYearTest extends \PHPUnit_Framework_TestCase
             $this->fail($message . ' with Exception ' . $e->getMessage());
         }
         $this->assertEquals($expected, $s, $message);
-
     }
 
     public function testxsGYearValidDataProvider()
@@ -40,6 +40,7 @@ class xsGYearTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsGYearInvalidDataProvider
      * @param mixed $input
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsGYearInvalid($input, $expected, $message)
     {

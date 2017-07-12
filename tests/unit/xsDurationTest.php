@@ -12,6 +12,7 @@ class xsDurationTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsDurationValidDataProvider
      * @param mixed $input
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsDurationValid($input, $expected, $message)
     {
@@ -22,7 +23,6 @@ class xsDurationTest extends \PHPUnit_Framework_TestCase
             $this->fail($message . ' with Exception ' . $e->getMessage());
         }
         $this->assertEquals($expected, $s, $message);
-
     }
 
     public function testxsDurationValidDataProvider()
@@ -44,6 +44,7 @@ class xsDurationTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsDurationInvalidDataProvider
      * @param mixed $input
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsDurationInvalid($input, $expected, $message)
     {

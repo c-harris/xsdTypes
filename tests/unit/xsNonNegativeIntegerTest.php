@@ -12,13 +12,13 @@ class xsNonNegativeIntegerTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsNonNegativeIntegerTestValidDataProvider
      * @param mixed $duration
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsNonNegativeIntegerTestValid($duration, $expected, $message)
     {
         $d = new xsNonNegativeInteger($duration);
         $s = (string)$d;
         $this->assertEquals($expected, $s, $message);
-
     }
 
     public function testxsNonNegativeIntegerTestValidDataProvider()
@@ -35,6 +35,7 @@ class xsNonNegativeIntegerTest extends \PHPUnit_Framework_TestCase
      *
      * @param mixed $duration
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsNonNegativeIntegerTestInvalid($duration, $expected, $message)
     {
