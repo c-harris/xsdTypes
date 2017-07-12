@@ -35,7 +35,7 @@ class xsDoubleTest extends \PHPUnit_Framework_TestCase
             array('+3.5', '+3.5', 'any value valid for decimal is also valid for xsd:double'),
             array('-INF', '-INF', 'negative infinity'),
             array('-0', '0', '0'),
-            array('NaN', 'Not a Number'),
+            array('NaN', 'NaN', 'Not a Number'),
 
         );
     }

@@ -30,7 +30,7 @@ class xsHexBinaryTest extends \PHPUnit_Framework_TestCase
         return array(
             array('0FB8', '0FB8', ''),
             array('0fb8', '0FB8', 'equivalent to 0FB8'),
-            array('', 'an empty value is valid'),
+            array('', '', 'an empty value is valid'),
 
         );
     }
