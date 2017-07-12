@@ -12,6 +12,7 @@ class xsDateTimeTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsDateTimeValidDataProvider
      * @param mixed $input
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsDateTimeValid($input, $expected, $message)
     {
@@ -22,7 +23,6 @@ class xsDateTimeTest extends \PHPUnit_Framework_TestCase
             $this->fail($message . ' with Exception ' . $e->getMessage());
         }
         $this->assertEquals($expected, $s, $message);
-
     }
 
     public function testxsDateTimeValidDataProvider()
@@ -39,6 +39,7 @@ class xsDateTimeTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsDateTimeInvalidDataProvider
      * @param mixed $input
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsDateTimeInvalid($input, $expected, $message)
     {
