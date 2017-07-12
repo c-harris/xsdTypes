@@ -17,6 +17,19 @@ class UriValidator
      */
     public static function validate($uri)
     {
+        if (substr_count($uri, '#') > 1) {
+            return false;
+        }
+        if (filter_var($uri, FILTER_VALIDATE_URL) !== false) {
+            return true;
+        }
+        $lastPos = 0;
+        while (($lastPos = strpos($uri, '%', $lastPos)) !== false) {
+            if (!(ctype_xdigit($uri[$lastPos + 1]) && ctype_xdigit($uri[$lastPos + 2]))) {
+                return false;
+            }
+            $lastPos = $lastPos + strlen('%');
+        }
         return (bool)preg_match(self::URI_REGEXP, $uri);
     }
 }
