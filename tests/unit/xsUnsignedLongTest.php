@@ -13,19 +13,19 @@ class xsUnsignedLongTest extends \PHPUnit_Framework_TestCase
      * @param mixed $duration
      * @param mixed $message
      */
-    public function testxsUnsignedLongTestValid($duration, $message)
+    public function testxsUnsignedLongTestValid($duration, $expected, $message)
     {
         $d = new xsUnsignedLong($duration);
-        $e = (string)$d;
-        $this->assertEquals($duration, $e, $message);
+        $s = (string)$d;
+        $this->assertEquals($expected, $s, $message);
     }
 
     public function testxsUnsignedLongTestValidDataProvider()
     {
         return array(
-            array(+3, 'Positive 1'),
-            array('122', '122'),
-            array('0', 'zero'),
+            array(+3, '3', 'Positive 3'),
+            array('122', '122', '122'),
+            array('0', '0', 'zero'),
         );
     }
 
@@ -34,19 +34,19 @@ class xsUnsignedLongTest extends \PHPUnit_Framework_TestCase
      * @param mixed $duration
      * @param mixed $message
      */
-    public function testxsUnsignedLongTestInvalid($duration, $message)
+    public function testxsUnsignedLongTestInvalid($duration, $expected, $message)
     {
         $d = new xsUnsignedLong($duration);
-        $e = (string)$d;
-        $this->assertEquals('', $e, $message);
+        $s = (string)$d;
+        $this->assertEquals($expected, $s, $message);
     }
 
     public function testxsUnsignedLongTestInvalidDataProvider()
     {
         return array(
-            array('-123', '	negative values are not allowed'),
-            array('18446744073709551620', 'number is too large'),
-            array('3.0', 'value must not contain a decimal point'),
+            array('-123', '', '	negative values are not allowed'),
+            array('18446744073709551620', '', 'number is too large'),
+            array('3.0', '', 'value must not contain a decimal point'),
         );
     }
 
