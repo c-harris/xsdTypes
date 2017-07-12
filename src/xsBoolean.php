@@ -22,16 +22,11 @@ class xsBoolean extends xsAnySimpleType
     protected function fixValue()
     {
         parent::fixValue();
-        if ($this->value == 0) {
-            $this->value = false;
-        }
-        if ($this->value == 1) {
-            $this->value = true;
-        }
+        $this->value = filter_var($this->value, FILTER_VALIDATE_BOOLEAN) ? "true" : "false";
     }
     protected function isOK()
     {
-        if (boolval($this->value) !== $this->value) {
+        if (true != $this->value && false != $this->value) {
             throw new \InvalidArgumentException(
                 'The provided value for ' . __CLASS__ . ' needs to be a boolean.'
             );
