@@ -15,7 +15,7 @@ class XMLDateInterval
      *
      * @return string
      */
-    function __toString()
+    public function __toString()
     {
         $sReturn = '';
         for ($i = 0; $i < strlen($this->pattern); $i++) {
