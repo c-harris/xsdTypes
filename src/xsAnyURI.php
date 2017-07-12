@@ -63,6 +63,5 @@ class xsAnyURI extends xsAnySimpleType
         if (filter_var($this->value, FILTER_VALIDATE_URL) !== false) {
             return;
         }
-
     }
 }
