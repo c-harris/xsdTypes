@@ -14,7 +14,7 @@ class xsIDTest extends \PHPUnit_Framework_TestCase
      * @param mixed $input
      * @param mixed $message
      */
-    public function testxsIDValid($input, $message)
+    public function testxsIDValid($input, $expected, $message)
     {
         try {
             $d = new xsID($input);
@@ -22,14 +22,16 @@ class xsIDTest extends \PHPUnit_Framework_TestCase
         } catch (\Exception $e) {
             $this->fail($message . ' with Exception ' . $e->getMessage());
         }
+        $this->assertEquals($expected, $s, $message);
+
     }
 
     public function testxsIDValidDataProvider()
     {
         return array(
-            array('myElement', ''),
-            array('_my.Element', ''),
-            array('my-element', ''),
+            array('myElement', 'myElement', ''),
+            array('_my.Element', '_my.Element', ''),
+            array('my-element', 'my-element', ''),
         );
     }
 
@@ -39,18 +41,18 @@ class xsIDTest extends \PHPUnit_Framework_TestCase
      * @param mixed $input
      * @param mixed $message
      */
-    public function testxsIDInvalid($input, $message)
+    public function testxsIDInvalid($input, $expected, $message)
     {
         $d = new xsID($input);
         $s = (string)$d;
-        $this->assertEquals('', $s, $message);
+        $this->assertEquals($expected, $s, $message);
     }
 
     public function testxsIDInvalidDataProvider()
     {
         return array(
-            array('pre:myElement', 'an NCName must not contain a colon'),
-            array('-myelement', 'an NCName must not start with a hyphen'),
+            array('pre:myElement', '', 'an NCName must not contain a colon'),
+            array('-myelement', '', 'an NCName must not start with a hyphen'),
         );
     }
 

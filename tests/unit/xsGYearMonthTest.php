@@ -13,7 +13,7 @@ class xsGYearMonthTest extends \PHPUnit_Framework_TestCase
      * @param mixed $input
      * @param mixed $message
      */
-    public function testxsGYearMonthValid($input, $message)
+    public function testxsGYearMonthValid($input, $expected, $message)
     {
         try {
             $d = new xsGYearMonth($input);
@@ -21,13 +21,15 @@ class xsGYearMonthTest extends \PHPUnit_Framework_TestCase
         } catch (\Exception $e) {
             $this->fail($message . ' with Exception ' . $e->getMessage());
         }
+        $this->assertEquals($expected, $s, $message);
+
     }
 
     public function testxsGYearMonthValidDataProvider()
     {
         return array(
-            array('2004-04', 'April 2004'),
-            array('2004-04-05:00', 'April 2004, US Eastern Standard Time'),
+            array('2004-04', '2004-04', 'April 2004'),
+            array('2004-04-05:00', '2004-04-05:00', 'April 2004, US Eastern Standard Time'),
         );
     }
 
@@ -36,20 +38,20 @@ class xsGYearMonthTest extends \PHPUnit_Framework_TestCase
      * @param mixed $input
      * @param mixed $message
      */
-    public function testxsGYearMonthInvalid($input, $message)
+    public function testxsGYearMonthInvalid($input, $expected, $message)
     {
         $d = new xsGYearMonth($input);
         $s = (string)$d;
-        $this->assertEquals('', $s, $message);
+        $this->assertEquals($expected, $s, $message);
     }
 
     public function testxsGYearMonthInvalidDataProvider()
     {
         return array(
-            array('99-04', 'the century must not be truncated'),
-            array('2004', 'the month is required'),
-            array('2004-4', 'the month must be two digits'),
-            array('2004-13', 'the month must be a valid month'),
+            array('99-04', '', 'the century must not be truncated'),
+            array('2004', '', 'the month is required'),
+            array('2004-4', '', 'the month must be two digits'),
+            array('2004-13', '', 'the month must be a valid month'),
         );
     }
 

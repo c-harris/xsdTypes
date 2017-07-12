@@ -13,26 +13,27 @@ class xsDoubleTest extends \PHPUnit_Framework_TestCase
      * @param mixed $input
      * @param mixed $message
      */
-    public function testxsDoubleValid($input, $message)
+    public function testxsDoubleValid($input, $expected, $message)
     {
         try {
             $d = new xsDouble($input);
-            $e = (string)$d;
+            $s = (string)$d;
         } catch (\Exception $e) {
             $this->fail($message . ' with Exception ' . $e->getMessage());
         }
+        $this->assertEquals($expected, $s, $message);
     }
 
     public function testxsDoubleValidDataProvider()
     {
         return array(
-            array('-3E2', ''),
-            array('4268.22752E11', ''),
-            array('+24.3e-3', ''),
-            array('12', ''),
-            array('+3.5', 'any value valid for decimal is also valid for xsd:double'),
-            array('-INF', 'negative infinity'),
-            array('-0', '0'),
+            array('-3E2', '-3E2', ''),
+            array('4268.22752E11', '4268.22752E11', ''),
+            array('+24.3e-3', '+24.3e-3', ''),
+            array('12', '12', ''),
+            array('+3.5', '+3.5', 'any value valid for decimal is also valid for xsd:double'),
+            array('-INF', '-INF', 'negative infinity'),
+            array('-0', '0', '0'),
             array('NaN', 'Not a Number'),
 
         );
@@ -43,19 +44,19 @@ class xsDoubleTest extends \PHPUnit_Framework_TestCase
      * @param mixed $input
      * @param mixed $message
      */
-    public function testxsDoubleInvalid($input, $message)
+    public function testxsDoubleInvalid($input, $expected, $message)
     {
         $d = new xsBase64Binary($input);
         $s = (string)$d;
-        $this->assertEquals('NaN', $s, $message);
+        $this->assertEquals($expected, $s, $message);
     }
 
     public function testxsDoubleInvalidDataProvider()
     {
         return array(
-            array('-3E2.4', 'the exponent must be an integer'),
-            array('12E', 'an exponent must be specified if "E" is present'),
-            array('NAN', 'values are case-sensitive, must be capitalized correctly'),
+            array('-3E2.4', 'NaN', 'the exponent must be an integer'),
+            array('12E', 'NaN', 'an exponent must be specified if "E" is present'),
+            array('NAN', 'NaN', 'values are case-sensitive, must be capitalized correctly'),
         );
     }
 

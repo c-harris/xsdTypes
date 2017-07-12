@@ -13,7 +13,7 @@ class xsGMonthDayTest extends \PHPUnit_Framework_TestCase
      * @param mixed $input
      * @param mixed $message
      */
-    public function testxsGMonthDayValid($input, $message)
+    public function testxsGMonthDayValid($input, $expected, $message)
     {
         try {
             $d = new xsGMonthDay($input);
@@ -21,13 +21,15 @@ class xsGMonthDayTest extends \PHPUnit_Framework_TestCase
         } catch (\Exception $e) {
             $this->fail($message . ' with Exception ' . $e->getMessage());
         }
+        $this->assertEquals($expected, $s, $message);
+
     }
 
     public function testxsGMonthDayValidDataProvider()
     {
         return array(
-            array('--04-12', 'April 12'),
-            array('--04-12Z', 'April 12, Coordinated Universal Time (UTC)'),
+            array('--04-12', '--04-12', 'April 12'),
+            array('--04-12Z', '--04-12Z', 'April 12, Coordinated Universal Time (UTC)'),
         );
     }
 
@@ -36,20 +38,20 @@ class xsGMonthDayTest extends \PHPUnit_Framework_TestCase
      * @param mixed $input
      * @param mixed $message
      */
-    public function testxsGMonthDayInvalid($input, $message)
+    public function testxsGMonthDayInvalid($input, $expected, $message)
     {
         $d = new xsGMonthDay($input);
         $s = (string)$d;
 
-        $this->assertEquals('', $s, $message);
+        $this->assertEquals($expected, $s, $message);
     }
 
     public function testxsGMonthDayInvalidDataProvider()
     {
         return array(
-            array('04-12', 'the leading hyphens are required'),
-            array('--04-31', 'it must be a valid day of the year (April has 30 days)'),
-            array('--4-6', 'the month and day must be 2 digits each'),
+            array('04-12', '', 'the leading hyphens are required'),
+            array('--04-31', '', 'it must be a valid day of the year (April has 30 days)'),
+            array('--4-6', '', 'the month and day must be 2 digits each'),
         );
     }
 

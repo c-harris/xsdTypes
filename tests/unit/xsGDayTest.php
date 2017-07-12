@@ -13,7 +13,7 @@ class xsGDayTest extends \PHPUnit_Framework_TestCase
      * @param mixed $input
      * @param mixed $message
      */
-    public function testxsGDayValid($input, $message)
+    public function testxsGDayValid($input, $expected, $message)
     {
         try {
             $d = new xsGDay($input);
@@ -21,12 +21,14 @@ class xsGDayTest extends \PHPUnit_Framework_TestCase
         } catch (\Exception $e) {
             $this->fail($message . ' with Exception ' . $e->getMessage());
         }
+        $this->assertEquals($expected, $s, $message);
+
     }
 
     public function testxsGDayValidDataProvider()
     {
         return array(
-            array('---02', 'the 2nd of the month'),
+            array('---02', '---02', 'the 2nd of the month'),
         );
     }
 
@@ -35,19 +37,19 @@ class xsGDayTest extends \PHPUnit_Framework_TestCase
      * @param mixed $input
      * @param mixed $message
      */
-    public function testxsGDayInvalid($input, $message)
+    public function testxsGDayInvalid($input, $expected, $message)
     {
         $d = new xsGDay($input);
         $s = (string)$d;
-        $this->assertEquals('', $s, $message);
+        $this->assertEquals($expected, $s, $message);
     }
 
     public function testxsGDayInvalidDataProvider()
     {
         return array(
-            array('02', 'the leading hyphens are required'),
-            array('---2', 'the day must be 2 digits'),
-            array('---32', 'the day must be a valid day of the month; no month has 32 days'),
+            array('02', '', 'the leading hyphens are required'),
+            array('---2', '', 'the day must be 2 digits'),
+            array('---32', '', 'the day must be a valid day of the month; no month has 32 days'),
         );
     }
 
