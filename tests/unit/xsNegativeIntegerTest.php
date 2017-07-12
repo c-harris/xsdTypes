@@ -13,7 +13,7 @@ class xsNegativeIntegerTest extends \PHPUnit_Framework_TestCase
      * @param mixed $input
      * @param mixed $message
      */
-    public function testxsNegativeIntegerValid($input, $message)
+    public function testxsNegativeIntegerValid($input, $expected, $message)
     {
         try {
             $d = new xsNegativeInteger($input);
@@ -21,13 +21,15 @@ class xsNegativeIntegerTest extends \PHPUnit_Framework_TestCase
         } catch (\Exception $e) {
             $this->fail($message . ' with Exception ' . $e->getMessage());
         }
+        $this->assertEquals($expected, $s, $message);
+
     }
 
     public function testxsNegativeIntegerValidDataProvider()
     {
         return array(
-            array('-3', ''),
-            array('-00122', 'leading zeros are permitted'),
+            array('-3', '-3', ''),
+            array('-00122', '-00122', 'leading zeros are permitted'),
         );
     }
 
@@ -36,20 +38,20 @@ class xsNegativeIntegerTest extends \PHPUnit_Framework_TestCase
      * @param mixed $input
      * @param mixed $message
      */
-    public function testxsNegativeIntegerInvalid($input, $message)
+    public function testxsNegativeIntegerInvalid($input, $expected, $message)
     {
         $d = new xsNegativeInteger($input);
         $s = (string)$d;
-        $this->assertEquals('', $s, $message);
+        $this->assertEquals($expected, $s, $message);
     }
 
     public function testxsNegativeIntegerInvalidDataProvider()
     {
         return array(
-            array('0', '0 is not considered negative'),
-            array('122', 'value cannot be positive'),
-            array('+3', 'value cannot be positive'),
-            array('3.0', 'value must not contain a decimal point'),
+            array('0', '', '0 is not considered negative'),
+            array('122', '', 'value cannot be positive'),
+            array('+3', '', 'value cannot be positive'),
+            array('3.0', '', 'value must not contain a decimal point'),
         );
     }
 

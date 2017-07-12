@@ -13,7 +13,7 @@ class xsNMTOKENSTest extends \PHPUnit_Framework_TestCase
      * @param mixed $input
      * @param mixed $message
      */
-    public function testxsNMTOKENSValid($input, $message)
+    public function testxsNMTOKENSValid($input, $expected, $message)
     {
         try {
             $d = new xsNMTOKENS($input);
@@ -21,13 +21,15 @@ class xsNMTOKENSTest extends \PHPUnit_Framework_TestCase
         } catch (\Exception $e) {
             $this->fail($message . ' with Exception ' . $e->getMessage());
         }
+        $this->assertEquals($expected, $s, $message);
+
     }
 
     public function testxsNMTOKENSValidDataProvider()
     {
         return array(
-            array('ABCD 123', ''),
-            array('ABCD ', 'one-item list'),
+            array('ABCD 123', 'ABCD 123', ''),
+            array('ABCD ', 'ABCD ', 'one-item list'),
         );
     }
 
@@ -36,17 +38,17 @@ class xsNMTOKENSTest extends \PHPUnit_Framework_TestCase
      * @param mixed $input
      * @param mixed $message
      */
-    public function testxsNMTOKENSInvalid($input, $message)
+    public function testxsNMTOKENSInvalid($input, $expected, $message)
     {
         $d = new xsNMTOKENS($input);
         $s = (string)$d;
-        $this->assertEquals('', $s, $message);
+        $this->assertEquals($expected, $s, $message);
     }
 
     public function testxsNMTOKENSInvalidDataProvider()
     {
         return array(
-            array('__', 'double underscore should be invalid'),
+            array('__', '', 'double underscore should be invalid'),
         );
     }
 

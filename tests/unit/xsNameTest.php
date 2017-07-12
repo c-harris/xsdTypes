@@ -13,7 +13,7 @@ class xsNameTest extends \PHPUnit_Framework_TestCase
      * @param mixed $input
      * @param mixed $message
      */
-    public function testxsNameValid($input, $message)
+    public function testxsNameValid($input, $expected, $message)
     {
         try {
             $d = new xsName($input);
@@ -21,15 +21,17 @@ class xsNameTest extends \PHPUnit_Framework_TestCase
         } catch (\Exception $e) {
             $this->fail($message . ' with Exception ' . $e->getMessage());
         }
+        $this->assertEquals($expected, $s, $message);
+
     }
 
     public function testxsNameValidDataProvider()
     {
         return array(
-            array('myElement', ''),
-            array('_my.Element', ''),
-            array('my-element', ''),
-            array('pre:myelement3', 'this is recommended only if pre is a namespace prefix; otherwise, colons ' .
+            array('myElement', 'myElement', ''),
+            array('_my.Element', '_my.Element', ''),
+            array('my-element', 'my-element', ''),
+            array('pre:myelement3', 'pre:myelement3', 'this is recommended only if pre is a namespace prefix; otherwise, colons ' .
                 'should not be used'),
         );
     }
@@ -39,19 +41,19 @@ class xsNameTest extends \PHPUnit_Framework_TestCase
      * @param mixed $input
      * @param mixed $message
      */
-    public function testxsNameInvalid($input, $message)
+    public function testxsNameInvalid($input, $expected, $message)
     {
         $d = new xsName($input);
         $s = (string)$d;
 
-        $this->assertEquals('', $s, $message);
+        $this->assertEquals($expected, $s, $message);
     }
 
     public function testxsNameInvalidDataProvider()
     {
         return array(
-            array('-myelement', 'a Name must not start with a hyphen'),
-            array('3rdElement', 'a Name must not start with a number'),
+            array('-myelement', '', 'a Name must not start with a hyphen'),
+            array('3rdElement', '', 'a Name must not start with a number'),
         );
     }
 

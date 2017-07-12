@@ -13,7 +13,7 @@ class xsNCNameTest extends \PHPUnit_Framework_TestCase
      * @param mixed $input
      * @param mixed $message
      */
-    public function testxsNCNameValid($input, $message)
+    public function testxsNCNameValid($input, $expected, $message)
     {
         try {
             $d = new xsNCName($input);
@@ -21,14 +21,16 @@ class xsNCNameTest extends \PHPUnit_Framework_TestCase
         } catch (\Exception $e) {
             $this->fail($message . ' with Exception ' . $e->getMessage());
         }
+        $this->assertEquals($expected, $s, $message);
+
     }
 
     public function testxsNCNameValidDataProvider()
     {
         return array(
-            array('myElement', ''),
-            array('_my.Element', ''),
-            array('my-element', ''),
+            array('myElement', 'myElement', ''),
+            array('_my.Element', '_my.Element', ''),
+            array('my-element', 'my-element', ''),
         );
     }
 
@@ -37,18 +39,18 @@ class xsNCNameTest extends \PHPUnit_Framework_TestCase
      * @param mixed $input
      * @param mixed $message
      */
-    public function testxsNCNameInvalid($input, $message)
+    public function testxsNCNameInvalid($input, $expected, $message)
     {
         $d = new xsNCName($input);
         $s = (string)$d;
-        $this->assertEquals('', $s, $message);
+        $this->assertEquals($expected, $s, $message);
     }
 
     public function testxsNCNameInvalidDataProvider()
     {
         return array(
-            array('pre:myElement', 'an NCName must not contain a colon'),
-            array('-myelement', 'an NCName must not start with a hyphen'),
+            array('pre:myElement', '', 'an NCName must not contain a colon'),
+            array('-myelement', '', 'an NCName must not start with a hyphen'),
         );
     }
 

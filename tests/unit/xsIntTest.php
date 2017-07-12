@@ -13,7 +13,7 @@ class xsIntTest extends \PHPUnit_Framework_TestCase
      * @param mixed $input
      * @param mixed $message
      */
-    public function testxsIntValid($input, $message)
+    public function testxsIntValid($input, $expected, $message)
     {
         try {
             $d = new xsInt($input);
@@ -21,15 +21,17 @@ class xsIntTest extends \PHPUnit_Framework_TestCase
         } catch (\Exception $e) {
             $this->fail($message . ' with Exception ' . $e->getMessage());
         }
+        $this->assertEquals($expected, $s, $message);
+
     }
 
     public function testxsIntValidDataProvider()
     {
         return array(
-            array('+3', ''),
-            array('122', ''),
-            array('0', ''),
-            array('-12312', ''),
+            array('+3', '3', ''),
+            array('122', '122', ''),
+            array('0', '0', ''),
+            array('-12312', '-12312', ''),
         );
     }
 
@@ -38,18 +40,18 @@ class xsIntTest extends \PHPUnit_Framework_TestCase
      * @param mixed $input
      * @param mixed $message
      */
-    public function testxsIntInvalid($input, $message)
+    public function testxsIntInvalid($input, $expected, $message)
     {
         $d = new xsInt($input);
         $s = (string)$d;
-        $this->assertEquals('', $s, $message);
+        $this->assertEquals($expected, $s, $message);
     }
 
     public function testxsIntInvalidDataProvider()
     {
         return array(
-            array('2147483650', 'number is too large'),
-            array('3.0', 'value must not contain a decimal point'),
+            array('2147483650', '', 'number is too large'),
+            array('3.0', '', 'value must not contain a decimal point'),
         );
     }
 

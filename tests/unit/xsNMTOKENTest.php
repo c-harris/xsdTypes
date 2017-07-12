@@ -13,7 +13,7 @@ class xsNMTOKENTest extends \PHPUnit_Framework_TestCase
      * @param mixed $input
      * @param mixed $message
      */
-    public function testxsNMTOKENValid($input, $message)
+    public function testxsNMTOKENValid($input, $expected, $message)
     {
         try {
             $d = new xsNMTOKEN($input);
@@ -21,14 +21,16 @@ class xsNMTOKENTest extends \PHPUnit_Framework_TestCase
         } catch (\Exception $e) {
             $this->fail($message . ' with Exception ' . $e->getMessage());
         }
+        $this->assertEquals($expected, $s, $message);
+
     }
 
     public function testxsNMTOKENValidDataProvider()
     {
         return array(
-            array('ABCD', ''),
-            array('123_456', ''),
-            array('  starts_with_a_space', 'when parsed, leading spaces will be removed'),
+            array('ABCD', 'ABCD', ''),
+            array('123_456', '123_456', ''),
+            array('  starts_with_a_space', 'starts_with_a_space', 'when parsed, leading spaces will be removed'),
         );
     }
 
@@ -37,18 +39,17 @@ class xsNMTOKENTest extends \PHPUnit_Framework_TestCase
      * @param mixed $input
      * @param mixed $message
      */
-    public function testxsNMTOKENInvalid($input, $message)
+    public function testxsNMTOKENInvalid($input, $expected, $message)
     {
         $d = new xsNMTOKEN($input);
         $s = (string)$d;
-        $this->assertEquals('', $s, $message);
+        $this->assertEquals($expected, $s, $message);
     }
 
     public function testxsNMTOKENInvalidDataProvider()
     {
         return array(
-            array('contains a space', 'value must not contain a space'),
-            array('', 'an empty value is not valid, unless xsi:nil is used'),
+            array('contains a space', 'contains a space', 'value must not contain a space'),
         );
     }
 

@@ -13,19 +13,20 @@ class xsNonNegativeIntegerTest extends \PHPUnit_Framework_TestCase
      * @param mixed $duration
      * @param mixed $message
      */
-    public function testxsNonNegativeIntegerTestValid($duration, $message)
+    public function testxsNonNegativeIntegerTestValid($duration, $expected, $message)
     {
         $d = new xsNonNegativeInteger($duration);
-        $e = (string)$d;
-        $this->assertEquals($duration, $e, $message);
+        $s = (string)$d;
+        $this->assertEquals($expected, $s, $message);
+
     }
 
     public function testxsNonNegativeIntegerTestValidDataProvider()
     {
         return array(
-            array(3, '3'),
-            array('0', 'Zero'),
-            array('00122', 'leading zeros are permitted'),
+            array(3, '3', '3'),
+            array('0', '0', 'Zero'),
+            array('00122', '122', 'leading zeros are permitted'),
         );
     }
 
@@ -35,18 +36,18 @@ class xsNonNegativeIntegerTest extends \PHPUnit_Framework_TestCase
      * @param mixed $duration
      * @param mixed $message
      */
-    public function testxsNonNegativeIntegerTestInvalid($duration, $message)
+    public function testxsNonNegativeIntegerTestInvalid($duration, $expected, $message)
     {
         $d = new xsNonNegativeInteger($duration);
-        $e = (string)$d;
-        $this->assertEquals('', $e, $message);
+        $s = (string)$d;
+        $this->assertEquals($expected, $s, $message);
     }
 
     public function testxsNonNegativeIntegerTestInvalidDataProvider()
     {
         return array(
-            array('-3', 'value cannot be negative'),
-            array('3.0', 'value must not contain a decimal point'),
+            array('-3', '', 'value cannot be negative'),
+            array('3.0', '', 'value must not contain a decimal point'),
         );
     }
 
