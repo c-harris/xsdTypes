@@ -5,13 +5,13 @@ namespace AlgoWeb\xsdTypes\AxillaryClasses;
 class XMLDateInterval
 {
     /**
-     * formating string like ISO 8601 (PnYnMnDTnHnMnS)
+     * formating string like ISO 8601 (PnYnMnDTnHnMnS).
      */
     const INTERVAL_ISO8601 = 'P%yY%mM%dDT%hH%iM%sS';
     public $pattern = 'PnYnMnDTnHnMnS';
 
     /**
-     * formating the interval like ISO 8601 (PnYnMnDTnHnMnS)
+     * formating the interval like ISO 8601 (PnYnMnDTnHnMnS).
      *
      * @return string
      */
