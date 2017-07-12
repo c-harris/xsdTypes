@@ -12,6 +12,7 @@ class xsDayTimeDurationTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsDayTimeDurationValidDataProvider
      * @param mixed $input
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsDayTimeDurationValid($input, $expected, $message)
     {
@@ -42,6 +43,7 @@ class xsDayTimeDurationTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsDayTimeDurationInvalidDataProvider
      * @param mixed $input
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsDayTimeDurationInvalid($input, $expected, $message)
     {

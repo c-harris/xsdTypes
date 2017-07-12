@@ -12,6 +12,7 @@ class xsHexBinaryTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsHexBinaryValidDataProvider
      * @param mixed $input
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsHexBinaryValid($input, $expected, $message)
     {
@@ -22,7 +23,6 @@ class xsHexBinaryTest extends \PHPUnit_Framework_TestCase
             $this->fail($message . ' with Exception ' . $e->getMessage());
         }
         $this->assertEquals($expected, $s, $message);
-
     }
 
     public function testxsHexBinaryValidDataProvider()
@@ -39,6 +39,7 @@ class xsHexBinaryTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsHexBinaryInvalidDataProvider
      * @param mixed $input
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsHexBinaryInvalid($input, $expected, $message)
     {

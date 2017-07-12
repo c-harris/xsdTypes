@@ -12,6 +12,7 @@ class xsLongTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsLongValidDataProvider
      * @param mixed $input
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsLongValid($input, $expected, $message)
     {
@@ -22,7 +23,6 @@ class xsLongTest extends \PHPUnit_Framework_TestCase
             $this->fail($message . ' with Exception ' . $e->getMessage());
         }
         $this->assertEquals($expected, $s, $message);
-
     }
 
     public function testxsLongValidDataProvider()
@@ -39,6 +39,7 @@ class xsLongTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsLongInvalidDataProvider
      * @param mixed $input
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsLongInvalid($input, $expected, $message)
     {

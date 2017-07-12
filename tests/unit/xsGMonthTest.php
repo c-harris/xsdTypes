@@ -12,6 +12,7 @@ class xsGMonthTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsGMonthValidDataProvider
      * @param mixed $input
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsGMonthValid($input, $expected, $message)
     {
@@ -37,6 +38,7 @@ class xsGMonthTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsGMonthInvalidDataProvider
      * @param mixed $input
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsGMonthInvalid($input, $expected, $message)
     {
