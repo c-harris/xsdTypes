@@ -11,9 +11,9 @@ class XMLDateInterval extends \DateInterval
     private $pattern;
     private $patternLen;
 
-    public function __construct($interval_spec, $pattern = 'PnYnMnDTnHnMnS')
+    public function __construct($intervalSpec, $pattern = 'PnYnMnDTnHnMnS')
     {
-        parent::__construct($interval_spec);
+        parent::__construct($intervalSpec);
 
         $this->pattern = trim($pattern);
         $this->patternLen = strlen($this->pattern);
