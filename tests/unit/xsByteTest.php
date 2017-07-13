@@ -12,6 +12,7 @@ class xsByteTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsByteValidDataProvider
      * @param mixed $input
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsByteValid($input, $expected, $message)
     {
@@ -22,7 +23,6 @@ class xsByteTest extends \PHPUnit_Framework_TestCase
             $this->fail($message . ' with Exception ' . $e->getMessage());
         }
         $this->assertEquals($expected, $s, $message);
-
     }
 
     public function testxsByteValidDataProvider()
@@ -39,6 +39,7 @@ class xsByteTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsByteInvalidDataProvider
      * @param mixed $input
      * @param mixed $message
+     * @param mixed $expected
      */
     public function testxsByteInvalid($input, $expected, $message)
     {
