@@ -44,6 +44,7 @@ class XMLDateInterval extends \DateInterval
         if ($this->invert === 1) {
             return '-';
         }
+        return "";
     }
 
     /**
@@ -60,7 +61,7 @@ class XMLDateInterval extends \DateInterval
             case 'T':
                 return $this->handleT($tSeen);
             default:
-                return $this->HandleOther($i);
+                return $this->handleOther($i);
         }
     }
 
@@ -92,7 +93,7 @@ class XMLDateInterval extends \DateInterval
      *
      * @return string
      */
-    private function HandleOther($i)
+    private function handleOther($i)
     {
         return $this->pattern[$i];
     }
