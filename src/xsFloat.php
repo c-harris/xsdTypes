@@ -34,10 +34,10 @@ class xsFloat extends xsAnySimpleType
     {
         parent::fixValue();
         switch (strtolower($this->value)) {
-            case "inf":
+            case 'inf':
                 $this->value = INF;
                 return;
-            case "-inf":
+            case '-inf':
                 $this->value = -INF;
                 return;
             default:
