@@ -30,13 +30,13 @@ class XMLDateInterval extends \DateInterval
         $tSeen = false;
         for ($i = 0; $i < $this->patternLen; $i++) {
             switch ($this->pattern[$i]) {
-                case "n":
-                    $v = ($this->pattern[$i + 1] == "M" && $tSeen) ? "i" : strtolower($this->pattern[$i + 1]);
+                case 'n':
+                    $v = ($this->pattern[$i + 1] == 'M' && $tSeen) ? 'i' : strtolower($this->pattern[$i + 1]);
                     $sReturn .= $this->$v;
                     break;
-                case "T":
+                case 'T':
                     $tSeen = true;
-                    $sReturn .= "T";
+                    $sReturn .= 'T';
                     break;
                 default:
                     $sReturn .= $this->pattern[$i];
