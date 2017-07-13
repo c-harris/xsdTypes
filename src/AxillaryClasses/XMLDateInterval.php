@@ -27,7 +27,7 @@ class XMLDateInterval extends \DateInterval
     {
         $sReturn = '';
         $tSeen = false;
-        for ($i = 0; $i < strlen($this->pattern); $i++) {
+        for ($i = 0; $i < $this->patternLen; $i++) {
             switch ($this->pattern[$i]) {
                 case "n":
                     $v = ($this->pattern[$i + 1] == "M" && $tSeen) ? "i" : strtolower($this->pattern[$i + 1]);
