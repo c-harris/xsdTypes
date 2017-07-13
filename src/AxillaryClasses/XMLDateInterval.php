@@ -13,13 +13,11 @@ class XMLDateInterval extends \DateInterval
 
     public function __construct($intervalSpec, $pattern = 'PnYnMnDTnHnMnS')
     {
+        parent::__construct(trim($intervalSpec, '-'));
         if ($intervalSpec[0] == '-') {
-            $intervalSpec = substr($intervalSpec, 1);
             $this->invert = true;
         }
-        parent::__construct($intervalSpec);
         $this->pattern = trim($pattern);
-
         $this->patternLen = strlen($this->pattern);
     }
 

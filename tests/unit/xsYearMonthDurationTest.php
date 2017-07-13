@@ -26,7 +26,7 @@ class xsYearMonthDurationTest extends \PHPUnit_Framework_TestCase
             array('P20M', 'P0Y20M', '20 months (the number of months can be more than 12)'),
             array('P0Y20M', 'P0Y20M', '20 months (0 is permitted as a number, but is not required)'),
             array('P0Y', 'P0Y0M', '0 years'),
-            array('-P60Y', '-P60Y', 'minus 60 years'),
+            array('-P60Y', '-P60Y0M', 'minus 60 years'),
         );
     }
 
