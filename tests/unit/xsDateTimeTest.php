@@ -29,7 +29,7 @@ class xsDateTimeTest extends \PHPUnit_Framework_TestCase
     {
         return array(
             array('2004-04-12T13:20:00', '2004-04-12T13:20:00+00:00', '1:20 pm on April 12, 2004'),
-            array('2004-04-12T13:20:15.5', '2004-04-12T13:20:15.5', '1:20 pm and 15.5 seconds on April 12, 2004'),
+            array('2004-04-12T13:20:15.5', '2004-04-12T13:20:15.5+00:00', '1:20 pm and 15.5 seconds on April 12, 2004'),
             array('2004-04-12T13:20:00-05:00', '2004-04-12T13:20:00-05:00', '1:20 pm on April 12, 2004, US Eastern Standard Time'),
             array('2004-04-12T13:20:00Z', '2004-04-12T13:20:00+00:00', '	1:20 pm on April 12, 2004, Coordinated Universal Time (UTC)'),
         );

@@ -35,7 +35,15 @@ class xsDateTime extends xsAnySimpleType
     {
         parent::fixValue();
         $v = new \DateTime($this->value);
-        $this->value = $v->format("Y-m-d\TH:i:s.uP");
+        $this->value = $v->format("Y-m-d\TH:i:s") . $this->fixFractionOfSecond($v) . $v->format("P");
+    }
+
+    private function fixFractionOfSecond(\DateTime $v)
+    {
+        if (0 != (int)$v->format("u")) {
+            return "." . $v->format("u") / 100000;
+        }
+        return "";
     }
 
     protected function isOK()
