@@ -30,7 +30,7 @@ class xsDouble extends xsAnySimpleType
         $this->setWhiteSpaceFacet('collapse');
         $this->value = filter_var($this->value, FILTER_VALIDATE_FLOAT, ['options' => [
             'default' => '', // value to return if the filter fails
-            'decimal' => "."
+            'decimal' => '.'
         ]]);
     }
 
