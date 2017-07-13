@@ -29,11 +29,11 @@ class xsDurationTest extends \PHPUnit_Framework_TestCase
     {
         return array(
             array('P2Y6M5DT12H35M30S', 'P2Y6M5DT12H35M30S', '2 years, 6 months, 5 days, 12 hours, 35 minutes, 30 seconds'),
-            array('P1DT2H', 'P1DT2H', '1 day, 2 hours'),
-            array('P20M', 'P20M', '20 months (the number of months can be more than 12)'),
-            array('PT20M', 'PT20M', '20 minutes'),
-            array('P0Y20M0D', 'P0Y20M0D', '20 months (0 is permitted as a number, but is not required)'),
-            array('P0Y', 'P0Y', '0 years'),
+            array('P1DT2H', 'P0Y0M1DT2H0M0S', '1 day, 2 hours'),
+            array('P20M', 'P0Y20M0DT0H0M0S', '20 months (the number of months can be more than 12)'),
+            array('PT20M', 'P0Y0M0DT0H20M0S', '20 minutes'),
+            array('P0Y20M0D', 'P0Y20M0DT0H0M0S', '20 months (0 is permitted as a number, but is not required)'),
+            array('P0Y', 'P0Y0M0DT0H0M0S', '0 years'),
             array('-P60D', '-P60D', 'minus 60 days'),
             array('PT1M30.5S', 'PT1M30.5S', '1 minute, 30.5 seconds'),
 
