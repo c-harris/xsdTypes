@@ -2,7 +2,7 @@
 
 namespace AlgoWeb\xsdTypes\AxillaryClasses;
 
-class XMLDateInterval
+class XMLDateInterval extends \DateInterval
 {
     /**
      * formating string like ISO 8601 (PnYnMnDTnHnMnS).
