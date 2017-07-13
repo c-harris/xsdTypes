@@ -24,7 +24,7 @@ class xsNonPositiveIntegerTest extends \PHPUnit_Framework_TestCase
     public function testxsNonPositiveIntegerTestValidDataProvider()
     {
         return array(
-            array(3, '3', '3'),
+            array(-3, '-3', '3'),
             array('0', '0', 'Zero'),
             array('-00122', '-122', 'leading zeros are permitted'),
         );
