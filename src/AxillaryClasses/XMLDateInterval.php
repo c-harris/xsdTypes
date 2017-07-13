@@ -49,13 +49,28 @@ class XMLDateInterval extends \DateInterval
     {
         switch ($this->pattern[$i]) {
             case 'n':
-                $v = ($this->pattern[$i + 1] == 'M' && $tSeen) ? 'i' : strtolower($this->pattern[$i + 1]);
-                return $this->$v;
+                return $this->handleN($i, $tSeen);
             case 'T':
-                $tSeen = true;
-                return 'T';
+                return $this->handleT($tSeen);
             default:
-                return $this->pattern[$i];
+                return $this->HandleOther($i);
         }
+    }
+
+    private function handleN($i, $tSeen)
+    {
+        $v = ($this->pattern[$i + 1] == 'M' && $tSeen) ? 'i' : strtolower($this->pattern[$i + 1]);
+        return $this->$v;
+    }
+
+    private function handleT(&$tSeen)
+    {
+        $tSeen = true;
+        return 'T';
+    }
+
+    private function HandleOther($i)
+    {
+        return $this->pattern[$i];
     }
 }
