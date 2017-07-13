@@ -29,7 +29,7 @@ class xsHexBinaryTest extends \PHPUnit_Framework_TestCase
     {
         return array(
             array('0FB8', '0FB8', ''),
-            array('0fb8', '0FB8', 'equivalent to 0FB8'),
+            array('0fb8', '0fb8', 'equivalent to 0FB8'),
             array('', '', 'an empty value is valid'),
 
         );
@@ -52,6 +52,8 @@ class xsHexBinaryTest extends \PHPUnit_Framework_TestCase
     {
         return array(
             array('FB8', '', 'an odd number of characters is not valid; characters must appear in pairs'),
+            array('FB8z', '', 'z is not a valid hex character'),
+
         );
     }
 
