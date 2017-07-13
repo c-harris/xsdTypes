@@ -50,9 +50,10 @@ is on two lines.', 'This is on two lines.', 'when parsed, the line break will be
 
     public function testxsTokenTestInvalidDataProvider()
     {
+        // kicking the invalid characters down the road to JMS
         return array(
-            array('AT&T', '', 'ampersand must be escaped'),
-            array('3 < 4', '', 'the "less than" symbol must be escaped'),
+            array('AT&T', 'AT&T', 'ampersand must be escaped'),
+            array('3 < 4', '3 < 4', 'the "less than" symbol must be escaped'),
         );
     }
 
