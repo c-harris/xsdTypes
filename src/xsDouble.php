@@ -28,6 +28,10 @@ class xsDouble extends xsAnySimpleType
     {
         parent::__construct($value);
         $this->setWhiteSpaceFacet('collapse');
+        $this->value = filter_var($this->value, FILTER_VALIDATE_FLOAT, ['options' => [
+            'default' => '', // value to return if the filter fails
+            'decimal' => "."
+        ]]);
     }
 
     protected function isOK()
