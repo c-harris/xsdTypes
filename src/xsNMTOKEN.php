@@ -22,6 +22,6 @@ class xsNMTOKEN extends xsToken
         /*
          * \c+ matches the control sequence CTRL++ (ASCII 107)
          */
-        $this->setPatternFacet('\c+');
+        $this->setPatternFacet('(\c)+');
     }
 }
