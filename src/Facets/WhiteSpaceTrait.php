@@ -23,9 +23,6 @@ trait WhiteSpaceTrait
                 return preg_replace('/\s/', ' ', $val);
             case 'collapse':
                 return trim(preg_replace('/\s+/', ' ', $val));
-            default:
-                throw new \InvalidArgumentException(get_class($this) . ' called fixWhitespace with ' .
-                    'invalid handle operation.');
         }
     }
 

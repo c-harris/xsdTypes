@@ -81,4 +81,16 @@ class WhiteSpaceTraitTest extends PHPUnit_Framework_TestCase
             array("stop\thammer\r\ntime", "stop hammer time"),
         );
     }
+
+    public function testWhiteSpaceInvalid()
+    {
+        $mock = $this->getMockForTrait('AlgoWeb\xsdTypes\Facets\WhiteSpaceTrait');
+        try {
+            $this->invokeMethod($mock, 'setWhiteSpaceFacet', ["bilbo"]);
+            $this->fail("the setWhiteSpaceFacet allowed a handler of bilbo to be set");
+        } catch (\InvalidArgumentException $e) {
+            $this->assertStringStartsWith("Invalid whitespace handling method", $e->getMessage(),
+                "Exception thrown but had in correct message");
+        }
+    }
 }
