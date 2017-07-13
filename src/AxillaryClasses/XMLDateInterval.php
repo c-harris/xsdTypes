@@ -44,7 +44,7 @@ class XMLDateInterval extends \DateInterval
         if ($this->invert === 1) {
             return '-';
         }
-        return "";
+        return '';
     }
 
     /**
