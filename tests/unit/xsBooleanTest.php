@@ -55,7 +55,7 @@ class xsBooleanTest extends \PHPUnit_Framework_TestCase
     public function testxsBooleanInvalidDataProvider()
     {
         return array(
-            array('T', 'false', 'the word "true" must be spelled out'),
+            array('T', '', 'the word "true" must be spelled out'),
         );
     }
 
