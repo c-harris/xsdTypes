@@ -47,7 +47,7 @@ class WhiteSpaceTraitTest extends PHPUnit_Framework_TestCase
     public function testWhiteSpaceReplace($input, $expected)
     {
         $mock = $this->getMockForTrait('AlgoWeb\xsdTypes\Facets\WhiteSpaceTrait');
-        $this->invokeMethod($mock, 'setWhiteSpaceFacet', ["preserve"]);
+        $this->invokeMethod($mock, 'setWhiteSpaceFacet', ["replace"]);
         $fixed = $this->invokeMethod($mock, "fixWhitespace", [$input]);
         $this->assertEquals($expected, $fixed);
     }
@@ -69,7 +69,7 @@ class WhiteSpaceTraitTest extends PHPUnit_Framework_TestCase
     public function testWhiteSpaceCollapse($input, $expected)
     {
         $mock = $this->getMockForTrait('AlgoWeb\xsdTypes\Facets\WhiteSpaceTrait');
-        $this->invokeMethod($mock, 'setWhiteSpaceFacet', ["preserve"]);
+        $this->invokeMethod($mock, 'setWhiteSpaceFacet', ["collapse"]);
         $fixed = $this->invokeMethod($mock, "fixWhitespace", [$input]);
         $this->assertEquals($expected, $fixed);
     }

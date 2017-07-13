@@ -20,7 +20,7 @@ trait WhiteSpaceTrait
             case 'preserve':
                 return $val;
             case 'replace':
-                return trim(preg_replace('/\s+/', ' ', $val));
+                return preg_replace('/\s/', ' ', $val);
             case 'collapse':
                 return trim(preg_replace('/\s+/', ' ', $val));
             default:
