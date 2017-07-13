@@ -46,14 +46,14 @@ trait PatternTrait
         }
 
         $patternToProcess = str_replace('\S', '[^\s]', $patternToProcess);
-        $patternToProcess = str_replace('\s', '[\x{20}\t\n\r]', $patternToProcess);
+        $patternToProcess = str_replace('\s', '([\x{20}\t\n\r])', $patternToProcess);
         $patternToProcess = str_replace('\I', '[^\i]', $patternToProcess);
-        $patternToProcess = str_replace('\i', self::$Letter . '|_|:', $patternToProcess);
-        $patternToProcess = str_replace('\c', self::$NameChar, $patternToProcess);
+        $patternToProcess = str_replace('\i', '(' . self::$Letter . '|_|:)', $patternToProcess);
+        $patternToProcess = str_replace('\c', '(' . self::$NameChar . ')', $patternToProcess);
         $patternToProcess = str_replace('\D', '[^\d]', $patternToProcess);
-        $patternToProcess = str_replace('\d', '\p{Nd}', $patternToProcess);
+        $patternToProcess = str_replace('\d', '(\p{Nd)}', $patternToProcess);
         $patternToProcess = str_replace('\W', '[^\w]', $patternToProcess);
-        $patternToProcess = str_replace('\w', '[\x{0000}-\x{10FFFF}]-[\p{P}\p{Z}\p{C}] ', $patternToProcess);
+        $patternToProcess = str_replace('\w', '([\x{0000}-\x{10FFFF}]-[\p{P}\p{Z}\p{C}]) ', $patternToProcess);
         return $patternToProcess;
     }
 

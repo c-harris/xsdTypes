@@ -19,6 +19,6 @@ class xsName extends xsToken
     public function __construct($value)
     {
         parent::__construct($value);
-        $this->setPatternFacet('^(\i)*');
+        $this->setPatternFacet('\i\c*');
     }
 }
