@@ -34,7 +34,7 @@ class xsDecimal extends xsAnySimpleType
         $this->value = $this->fixFractionDigits($this->value);
         $this->value = filter_var($this->value, FILTER_VALIDATE_FLOAT, ['options' => [
             'default' => '', // value to return if the filter fails
-            'decimal' => "."
+            'decimal' => '.'
         ]]);
     }
 
@@ -43,6 +43,5 @@ class xsDecimal extends xsAnySimpleType
         $this->checkTotalDigits($this->value);
         $this->checkFractionDigits($this->value);
         $this->CheckMinMax($this->value);
-
     }
 }
