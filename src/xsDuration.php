@@ -47,6 +47,6 @@ class xsDuration extends xsAnySimpleType
 
     protected function isOK()
     {
-        $this->CheckMinMax(new \DateInterval($this->value));
+        $this->CheckMinMax(new XMLDateInterval($this->value));
     }
 }

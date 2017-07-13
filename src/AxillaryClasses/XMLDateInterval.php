@@ -14,6 +14,7 @@ class XMLDateInterval extends \DateInterval
     public function __construct($interval_spec, $pattern = 'PnYnMnDTnHnMnS')
     {
         parent::__construct($interval_spec);
+
         $this->pattern = trim($pattern);
         $this->patternLen = strlen($this->pattern);
     }
@@ -35,6 +36,7 @@ class XMLDateInterval extends \DateInterval
                     break;
                 case "T":
                     $tSeen = true;
+                    $sReturn .= "T";
                     break;
                 default:
                     $sReturn .= $this->pattern[$i];
