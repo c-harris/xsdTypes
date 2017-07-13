@@ -34,7 +34,7 @@ class xsDurationTest extends \PHPUnit_Framework_TestCase
             array('PT20M', 'P0Y0M0DT0H20M0S', '20 minutes'),
             array('P0Y20M0D', 'P0Y20M0DT0H0M0S', '20 months (0 is permitted as a number, but is not required)'),
             array('P0Y', 'P0Y0M0DT0H0M0S', '0 years'),
-            array('-P60D', '-P60D', 'minus 60 days'),
+            array('-P60D', '-P0Y0M60DT0H0M0S', 'minus 60 days'),
             array('PT1M30.5S', 'PT1M30.5S', '1 minute, 30.5 seconds'),
 
         );
