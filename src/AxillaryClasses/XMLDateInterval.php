@@ -51,11 +51,9 @@ class XMLDateInterval extends \DateInterval
             case 'n':
                 $v = ($this->pattern[$i + 1] == 'M' && $tSeen) ? 'i' : strtolower($this->pattern[$i + 1]);
                 return $this->$v;
-                break;
             case 'T':
                 $tSeen = true;
                 return 'T';
-                break;
             default:
                 return $this->pattern[$i];
         }
