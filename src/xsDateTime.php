@@ -35,7 +35,7 @@ class xsDateTime extends xsAnySimpleType
     {
         parent::fixValue();
         $v = new \DateTime($this->value);
-        $this->value = $v->format(\DateTime::RFC3339);
+        $this->value = $v->format("Y-m-d\TH:i:s.uP");
     }
 
     protected function isOK()
