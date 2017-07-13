@@ -44,7 +44,6 @@ abstract class xsAnySimpleType
                 $this->isOKInternal();
             }
         } catch (\Exception $e) {
-            trigger_error($e->getMessage());
             $this->value = '';
         }
         if (is_array($this->value)) {
