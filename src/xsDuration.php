@@ -2,6 +2,7 @@
 
 namespace AlgoWeb\xsdTypes;
 
+use AlgoWeb\xsdTypes\AxillaryClasses\XMLDateInterval;
 use AlgoWeb\xsdTypes\Facets\MinMaxTrait;
 
 /**
@@ -40,22 +41,8 @@ class xsDuration extends xsAnySimpleType
     public function fixValue()
     {
         parent::fixValue();
-        $v = new \DateInterval($this->value);
-        $this->value = $this->format($v);
-    }
-
-    protected function format(\DateInterval $tint, $pattern = 'PnYnMnDTnHnMnS')
-    {
-        $sReturn = '';
-        for ($i = 0; $i < strlen($pattern); $i++) {
-            if ($pattern[$i] == 'n') {
-                $v = strtolower($pattern[$i + 1]);
-                $sReturn .= $tint->$v;
-                continue;
-            }
-            $sReturn .= $pattern[$i];
-        }
-        return $sReturn;
+        $v = new XMLDateInterval($this->value);
+        $this->value = $v->__toString();
     }
 
     protected function isOK()

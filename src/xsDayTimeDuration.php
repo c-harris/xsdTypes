@@ -2,6 +2,8 @@
 
 namespace AlgoWeb\xsdTypes;
 
+use AlgoWeb\xsdTypes\AxillaryClasses\XMLDateInterval;
+
 /**
  * The type xsd:dayTimeDuration represents a duration of time expressed as a number of days, hours, minutes, and
  * seconds. The format of xsd:dayTimeDuration is PnDTnHnMnS, where P is a literal value that starts the expression,
@@ -22,7 +24,7 @@ class xsDayTimeDuration extends xsDuration
     public function fixValue()
     {
         parent::fixValue();
-        $v = new \DateInterval($this->value);
-        $this->value = $this->format($v, 'PnDTnHnMnS');
+        $v = new XMLDateInterval($this->value, 'PnDTnHnMnS');
+        $this->value = $v->__toString();
     }
 }
