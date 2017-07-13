@@ -15,8 +15,8 @@ class WhiteSpaceTraitTest extends PHPUnit_Framework_TestCase
     public function testWhiteSpacePreserve($input, $expected)
     {
         $mock = $this->getMockForTrait('AlgoWeb\xsdTypes\Facets\WhiteSpaceTrait');
-        $this->invokeMethod($mock, 'setWhiteSpaceFacet', ["preserve"]);
-        $fixed = $this->invokeMethod($mock, "fixWhitespace", [$input]);
+        $this->invokeMethod($mock, 'setWhiteSpaceFacet', ['preserve']);
+        $fixed = $this->invokeMethod($mock, 'fixWhitespace', [$input]);
         $this->assertEquals($expected, $fixed);
     }
 
@@ -47,16 +47,16 @@ class WhiteSpaceTraitTest extends PHPUnit_Framework_TestCase
     public function testWhiteSpaceReplace($input, $expected)
     {
         $mock = $this->getMockForTrait('AlgoWeb\xsdTypes\Facets\WhiteSpaceTrait');
-        $this->invokeMethod($mock, 'setWhiteSpaceFacet', ["preserve"]);
-        $fixed = $this->invokeMethod($mock, "fixWhitespace", [$input]);
+        $this->invokeMethod($mock, 'setWhiteSpaceFacet', ['preserve']);
+        $fixed = $this->invokeMethod($mock, 'fixWhitespace', [$input]);
         $this->assertEquals($expected, $fixed);
     }
 
     public function testWhiteSpaceReplaceDataProvider()
     {
         return array(
-            array("\t \n", " "),
-            array("stop\thammer\r\ntime", "stop hammer  time"),
+            array("\t \n", ' '),
+            array("stop\thammer\r\ntime", 'stop hammer  time'),
         );
     }
 
@@ -69,16 +69,16 @@ class WhiteSpaceTraitTest extends PHPUnit_Framework_TestCase
     public function testWhiteSpaceCollapse($input, $expected)
     {
         $mock = $this->getMockForTrait('AlgoWeb\xsdTypes\Facets\WhiteSpaceTrait');
-        $this->invokeMethod($mock, 'setWhiteSpaceFacet', ["preserve"]);
-        $fixed = $this->invokeMethod($mock, "fixWhitespace", [$input]);
+        $this->invokeMethod($mock, 'setWhiteSpaceFacet', ['preserve']);
+        $fixed = $this->invokeMethod($mock, 'fixWhitespace', [$input]);
         $this->assertEquals($expected, $fixed);
     }
 
     public function testWhiteSpaceCollapseDataProvider()
     {
         return array(
-            array("\t \n", ""),
-            array("stop\thammer\r\ntime", "stop hammer time"),
+            array("\t \n", ''),
+            array("stop\thammer\r\ntime", 'stop hammer time'),
         );
     }
 }
