@@ -52,7 +52,7 @@ class xsIntTest extends \PHPUnit_Framework_TestCase
     {
         return array(
             array('2147483650', '', 'number is too large'),
-            array('3.0', '', 'value must not contain a decimal point'),
+            array('3.0', '3', 'value must not contain a decimal point'),
         );
     }
 
