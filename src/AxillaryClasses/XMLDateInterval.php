@@ -15,7 +15,7 @@ class XMLDateInterval extends \DateInterval
     {
         parent::__construct(trim($intervalSpec, '-'));
         if ($intervalSpec[0] == '-') {
-            $this->invert = true;
+            $this->invert = 1;
         }
         $this->pattern = trim($pattern);
         $this->patternLen = strlen($this->pattern);
@@ -24,7 +24,7 @@ class XMLDateInterval extends \DateInterval
     /**
      * formating the interval like ISO 8601 (PnYnMnDTnHnMnS).
      *
-     * @return string
+     * @return string|null
      */
     public function __toString()
     {
@@ -36,6 +36,9 @@ class XMLDateInterval extends \DateInterval
         return $sReturn;
     }
 
+    /**
+     * @return string
+     */
     private function handleSign()
     {
         if ($this->invert === 1) {
@@ -43,6 +46,12 @@ class XMLDateInterval extends \DateInterval
         }
     }
 
+    /**
+     * @param int  $i
+     * @param bool $tSeen
+     *
+     * @return string
+     */
     private function handleChar($i, &$tSeen)
     {
         switch ($this->pattern[$i]) {
@@ -55,18 +64,34 @@ class XMLDateInterval extends \DateInterval
         }
     }
 
+    /**
+     * @param int  $i
+     * @param bool $tSeen
+     *
+     * @return string
+     */
     private function handleN($i, $tSeen)
     {
         $v = ($this->pattern[$i + 1] == 'M' && $tSeen) ? 'i' : strtolower($this->pattern[$i + 1]);
         return $this->$v;
     }
 
+    /**
+     * @param bool $tSeen
+     *
+     * @return string
+     */
     private function handleT(&$tSeen)
     {
         $tSeen = true;
         return 'T';
     }
 
+    /**
+     * @param int $i
+     *
+     * @return string
+     */
     private function HandleOther($i)
     {
         return $this->pattern[$i];
