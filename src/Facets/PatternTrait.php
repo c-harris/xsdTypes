@@ -44,17 +44,64 @@ trait PatternTrait
         if (null == self::$NameChar) {
             init();
         }
-
-        $patternToProcess = str_replace('\S', '[^\s]', $patternToProcess);
-        $patternToProcess = str_replace('\s', '[\x{20}\t\n\r]', $patternToProcess);
-        $patternToProcess = str_replace('\I', '[^\i]', $patternToProcess);
-        $patternToProcess = str_replace('\i', self::$Letter . '|_|:', $patternToProcess);
-        $patternToProcess = str_replace('\c', self::$NameChar, $patternToProcess);
-        $patternToProcess = str_replace('\D', '[^\d]', $patternToProcess);
-        $patternToProcess = str_replace('\d', '\p{Nd)', $patternToProcess);
-        $patternToProcess = str_replace('\W', '[^\w]', $patternToProcess);
-        $patternToProcess = str_replace('\w', '[\x{0000}-\x{10FFFF}]-[\p{P}\p{Z}\p{C}]', $patternToProcess);
+        $patternToProcess = $this->processRegexSlashS($patternToProcess);
+        $patternToProcess = $this->processRegexSlashI($patternToProcess);
+        $patternToProcess = $this->processRegexSlashC($patternToProcess);
+        $patternToProcess = $this->processRegexSlashD($patternToProcess);
+        $patternToProcess = $this->processRegexSlashW($patternToProcess);
         return $patternToProcess;
+    }
+
+    private function processRegexSlashS($patternToProcess)
+    {
+        // Any character except those matched by '\s'.
+        $patternToProcess = str_replace('\S', '[^\s]', $patternToProcess);
+        // Whitespace, specifically '&#20;' (space), '\t' (tab), '\n' (newline) and '\r' (return).
+        $patternToProcess = str_replace('\s', '[\x{20}\t\n\r]', $patternToProcess);
+        return $patternToProcess;
+    }
+
+    private function processRegexSlashI($patternToProcess)
+    {
+        // Any character except those matched by '\i'.
+        $patternToProcess = str_replace('\I', '[^\i]', $patternToProcess);
+        // The first character in an XML identifier. Specifically, any letter, the character '_', or the character ':',
+        // See the XML Recommendation for the complex specification of a letter. This character represents a subset of
+        // letter that might appear in '\c'.
+        $patternToProcess = str_replace('\i', self::$Letter . '|_|:', $patternToProcess);
+        return $patternToProcess;
+    }
+
+    private function processRegexSlashC($patternToProcess)
+    {
+        // Any character except those matched by '\c'.
+        $patternToProcess = str_replace('\C', '[^\i]', $patternToProcess);
+        // Any character that might appear in the built-in NMTOKEN datatype.
+        // See the XML Recommendation for the complex specification of a NameChar.
+        $patternToProcess = str_replace('\c', self::$NameChar, $patternToProcess);
+        return $patternToProcess;
+
+    }
+
+    private function processRegexSlashD($patternToProcess)
+    {
+        // Any character except those matched by '\d'.
+        $patternToProcess = str_replace('\D', '[^\d]', $patternToProcess);
+        // Any Decimal digit. A shortcut for '\p{Nd}'.
+        $patternToProcess = str_replace('\d', '\p{Nd)', $patternToProcess);
+        return $patternToProcess;
+    }
+
+    private function processRegexSlashW($patternToProcess)
+    {
+        // Any character except those matched by '\w'.
+        $patternToProcess = str_replace('\W', '[^\w]', $patternToProcess);
+        // Any character that might appear in a word. A shortcut for '[#X0000-#x10FFFF]-[\p{P}\p{Z}\p{C}]'
+        // (all characters except the set of "punctuation", "separator", and "other" characters).
+        $patternToProcess = str_replace('\w', '[\x{0000}-\x{10FFFF}]-[\p{P}\p{Z}\p{C}]',
+            $patternToProcess);
+        return $patternToProcess;
+
     }
 
     /**
