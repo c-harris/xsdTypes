@@ -3,6 +3,7 @@ namespace AlgoWeb\xsdTypes\AxillaryClasses;
 
 final class Calender
 {
+
     private $year;
     private $month;
     private $day;
@@ -11,9 +12,9 @@ final class Calender
     /**
      * Calender constructor.
      *
-     * @param int|null    $year
-     * @param int|null    $month
-     * @param int|null    $day
+     * @param string|null $year
+     * @param string|null $month
+     * @param string|null $day
      * @param string|null $timezone
      */
     private function __construct($year = null, $month = null, $day = null, $timezone = null)
@@ -27,9 +28,9 @@ final class Calender
     }
 
     /**
-     * @param int $year  |null
-     * @param int $month |null
-     * @param int $day   |null
+     * @param string|null $year
+     * @param string|null $month
+     * @param string|null $day
      *
      * @return void
      */
@@ -57,22 +58,22 @@ final class Calender
     }
 
     /**
-     * @return int
+     * @return string
      */
     private function getMaxDays()
     {
         if (null !== $this->month) {
-            return cal_days_in_month(CAL_GREGORIAN, $this->month, $this->getYearOrHolder());
+            return (string)cal_days_in_month(CAL_GREGORIAN, $this->month, $this->getYearOrHolder());
         }
-        return 31;
+        return '31';
     }
 
     /**
-     * @return int
+     * @return string
      */
     private function getYearOrHolder()
     {
-        if (null == $this->year) {
+        if (null === $this->year) {
             return '2016';
         }
         return $this->year;
