@@ -23,6 +23,13 @@ class Calender
         $this->valdidateState();
     }
 
+    /**
+     * @param int $year
+     * @param int $month
+     * @param int $day
+     *
+     * @return void
+     */
     private function validateInput($year = null, $month = null, $day = null)
     {
         if (null === $year && null === $month && null === $day) {
@@ -33,6 +40,9 @@ class Calender
         }
     }
 
+    /**
+     * @return void
+     */
     private function valdidateState()
     {
         if (null !== $this->day && (1 > $this->day || $this->getMaxDays() < $this->day)) {
@@ -43,6 +53,9 @@ class Calender
         }
     }
 
+    /**
+     * @return integer
+     */
     private function getMaxDays()
     {
         if (null !== $this->month) {
@@ -51,6 +64,9 @@ class Calender
         return 31;
     }
 
+    /**
+     * @return integer
+     */
     private function getYearOrHolder()
     {
         if (null == $this->year) {
