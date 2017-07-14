@@ -83,7 +83,6 @@ trait PatternTrait
             . self::$Extender, $patternToProcess);
         $patternToProcess = str_replace('\c', '(' . self::$NameChar . ')', $patternToProcess);
         return $patternToProcess;
-
     }
 
     private function processRegexSlashD($patternToProcess)
@@ -104,7 +103,6 @@ trait PatternTrait
         $patternToProcess = str_replace('\w', '([\x{0000}-\x{10FFFF}]-[\p{P}\p{Z}\p{C}])',
             $patternToProcess);
         return $patternToProcess;
-
     }
 
     /**
