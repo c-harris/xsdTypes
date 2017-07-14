@@ -32,7 +32,7 @@ trait PatternTrait
 
     /**
      * @param string $patternToProcess
-     * @param mixed  $processMultiCharacterEscape
+     * @param bool   $processMultiCharacterEscape
      *
      * @return string
      */
@@ -52,6 +52,11 @@ trait PatternTrait
         return $patternToProcess;
     }
 
+    /**
+     * @param string $patternToProcess
+     *
+     * @return string
+     */
     private function processRegexSlashS($patternToProcess)
     {
         // Any character except those matched by '\s'.
@@ -61,6 +66,11 @@ trait PatternTrait
         return $patternToProcess;
     }
 
+    /**
+     * @param string $patternToProcess
+     *
+     * @return string
+     */
     private function processRegexSlashI($patternToProcess)
     {
         // Any character except those matched by '\i'.
@@ -73,6 +83,11 @@ trait PatternTrait
         return $patternToProcess;
     }
 
+    /**
+     * @param string $patternToProcess
+     *
+     * @return string
+     */
     private function processRegexSlashC($patternToProcess)
     {
         // Any character except those matched by '\c'.
@@ -86,6 +101,11 @@ trait PatternTrait
 
     }
 
+    /**
+     * @param string $patternToProcess
+     *
+     * @return string
+     */
     private function processRegexSlashD($patternToProcess)
     {
         // Any character except those matched by '\d'.
@@ -95,6 +115,11 @@ trait PatternTrait
         return $patternToProcess;
     }
 
+    /**
+     * @param string $patternToProcess
+     *
+     * @return string
+     */
     private function processRegexSlashW($patternToProcess)
     {
         // Any character except those matched by '\w'.
@@ -109,6 +134,8 @@ trait PatternTrait
 
     /**
      * @param string $pattern
+     *
+     * @return bool
      */
     private function checkRegexValidPattern($pattern)
     {
