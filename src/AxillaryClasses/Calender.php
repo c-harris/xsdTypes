@@ -24,7 +24,7 @@ final class Calender
         $this->month = $month;
         $this->day = $day;
         $this->timeZone = $timezone;
-        $this->valdidateState();
+        $this->validateState();
     }
 
     /**
@@ -47,13 +47,20 @@ final class Calender
     /**
      * @return void
      */
-    private function valdidateState()
+    private function validateState()
+    {
+        $this->validateDay();
+        $this->validateMonth();
+
+    }
+
+    /**
+     * @return void
+     */
+    private function validateDay()
     {
         if (null !== $this->day && (1 > $this->day || $this->getMaxDays() < $this->day)) {
             throw new \InvalidArgumentException('the day must be greater 0 and less then 32');
-        }
-        if (null !== $this->month && (1 > $this->month || 12 < $this->month)) {
-            throw new \InvalidArgumentException('the month must be greater 0 and less then 12');
         }
     }
 
@@ -77,6 +84,16 @@ final class Calender
             return '2016';
         }
         return $this->year;
+    }
+
+    /**
+     * @return void
+     */
+    private function validateMonth()
+    {
+        if (null !== $this->month && (1 > $this->month || 12 < $this->month)) {
+            throw new \InvalidArgumentException('the month must be greater 0 and less then 12');
+        }
     }
 
     /**
