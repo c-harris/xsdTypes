@@ -54,7 +54,7 @@ class Calender
     }
 
     /**
-     * @return integer
+     * @return int
      */
     private function getMaxDays()
     {
@@ -65,7 +65,7 @@ class Calender
     }
 
     /**
-     * @return integer
+     * @return int
      */
     private function getYearOrHolder()
     {
