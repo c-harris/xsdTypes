@@ -33,11 +33,22 @@ final class Calender
      *
      * @return void
      */
-    private function validateInput($year = null, $month = null, $day = null)
+    private function validateInput($year, $month, $day)
+    {
+        $this->validateInputNotAllNull($year, $month, $day);
+        $this->validateInputNotYearAndDay($year, $month, $day);
+
+    }
+
+    private function validateInputNotAllNull($year, $month, $day)
     {
         if (null === $year && null === $month && null === $day) {
             throw new \InvalidArgumentException('A Caldender class must have at least a day, month, or year');
         }
+    }
+
+    private function validateInputNotYearAndDay($year, $month, $day)
+    {
         if (null !== $year && null === $month && null !== $day) {
             throw new \InvalidArgumentException('a year day value is not valid');
         }
@@ -50,6 +61,7 @@ final class Calender
     {
         $this->validateDay();
         $this->validateMonth();
+
     }
 
     /**
