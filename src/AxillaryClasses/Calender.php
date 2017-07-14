@@ -7,7 +7,7 @@
  */
 namespace AlgoWeb\xsdTypes\AxillaryClasses;
 
-class Calender
+final class Calender
 {
     const timezoneRegexPattern = '([-+][0-1]\d:[0-6]\d|Z*)';
     private $year;
