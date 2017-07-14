@@ -19,6 +19,6 @@ class xsNCName extends xsName
     public function __construct($value)
     {
         parent::__construct($value);
-        $this->setPatternFacet('[\i-[:]][\c-[:]]*');
+        $this->setPatternFacet('(\i-[:]\c-[:])[^:-:]*');
     }
 }

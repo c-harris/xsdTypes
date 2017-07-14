@@ -68,6 +68,7 @@ trait PatternTrait
         // The first character in an XML identifier. Specifically, any letter, the character '_', or the character ':',
         // See the XML Recommendation for the complex specification of a letter. This character represents a subset of
         // letter that might appear in '\c'.
+        $patternToProcess = str_replace('\i-[:]', self::$Letter . '|_| ', $patternToProcess);
         $patternToProcess = str_replace('\i', '(' . self::$Letter . '|_|:)', $patternToProcess);
         return $patternToProcess;
     }
@@ -78,6 +79,8 @@ trait PatternTrait
         $patternToProcess = str_replace('\C', '[^\c]', $patternToProcess);
         // Any character that might appear in the built-in NMTOKEN datatype.
         // See the XML Recommendation for the complex specification of a NameChar.
+        $patternToProcess = str_replace('\c-[:]', self::$Letter . '|' . self::$Digit . '|.|-|_|' . self::$CombiningChar . '|'
+            . self::$Extender, $patternToProcess);
         $patternToProcess = str_replace('\c', '(' . self::$NameChar . ')', $patternToProcess);
         return $patternToProcess;
 
