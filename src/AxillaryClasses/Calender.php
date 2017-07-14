@@ -78,7 +78,7 @@ class Calender
     /**
      * @param string $day should match regex pattern ----\d\d
      *
-     * @return Calender
+     * @return \AlgoWeb\xsdTypes\AxillaryClasses\Calender
      */
     public static function fromDay($day)
     {
@@ -90,6 +90,11 @@ class Calender
         return new self(null, null, $matches[0][1], $matches[0][2]);
     }
 
+    /**
+     * @param string $monthDay
+     *
+     * @return \AlgoWeb\xsdTypes\AxillaryClasses\Calender
+     */
     public static function FromMonthDay($monthDay)
     {
         $re = '/--(1[0-2]|0[1-9]|[1-9])-(0[1-9]|1[0-9]|2[0-9]|3[0-1]|[1-9])([-+][0-1]\d:[0-6]\d|Z*)/';
@@ -100,6 +105,11 @@ class Calender
         return new self(null, $matches[0][1], $matches[0][2], $matches[0][3]);
     }
 
+    /**
+     * @param string $month
+     *
+     * @return \AlgoWeb\xsdTypes\AxillaryClasses\Calender
+     */
     public static function fromMonth($month)
     {
         $re = '/--(1[0-2]|0[1-9]|[1-9])([-+][0-1]\d:[0-6]\d|Z*)/';
@@ -110,6 +120,11 @@ class Calender
         return new self(null, $matches[0][1], null, $matches[0][2]);
     }
 
+    /**
+     * @param string $yearMonth
+     *
+     * @return \AlgoWeb\xsdTypes\AxillaryClasses\Calender
+     */
     public static function fromYearMonth($yearMonth)
     {
         $re = '/(\d{4})-(1[0-2]|0[1-9]|[1-9])([-+][0-1]\d:[0-6]\d|Z*)/';
@@ -120,6 +135,11 @@ class Calender
         return new self($matches[0][1], null, $matches[0][2], $matches[0][3]);
     }
 
+    /**
+     * @param string $year
+     *
+     * @return \AlgoWeb\xsdTypes\AxillaryClasses\Calender
+     */
     public static function fromYear($year)
     {
         $re = '/(\d{4})([-+][0-1]\d:[0-6]\d|Z*)/';
