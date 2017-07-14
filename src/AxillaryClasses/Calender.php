@@ -13,20 +13,30 @@ class Calender
     private $year;
     private $month;
     private $day;
+    private $timeZone;
 
-    private function __construct($year = null, $month = null, $day = null, $timezone = 'Z')
+    /**
+     * Calender constructor.
+     *
+     * @param int|null    $year
+     * @param int|null    $month
+     * @param int|null    $day
+     * @param string|null $timezone
+     */
+    private function __construct($year = null, $month = null, $day = null, $timezone = null)
     {
         $this->validateInput($year, $month, $day);
         $this->year = $year;
         $this->month = $month;
         $this->day = $day;
+        $this->timeZone = $timezone;
         $this->valdidateState();
     }
 
     /**
-     * @param int $year
-     * @param int $month
-     * @param int $day
+     * @param int $year  |null
+     * @param int $month |null
+     * @param int $day   |null
      *
      * @return void
      */
@@ -95,7 +105,7 @@ class Calender
      *
      * @return \AlgoWeb\xsdTypes\AxillaryClasses\Calender
      */
-    public static function FromMonthDay($monthDay)
+    public static function fromMonthDay($monthDay)
     {
         $re = '/--(1[0-2]|0[1-9]|[1-9])-(0[1-9]|1[0-9]|2[0-9]|3[0-1]|[1-9])([-+][0-1]\d:[0-6]\d|Z*)/';
         preg_match_all($re, $monthDay, $matches, PREG_SET_ORDER, 0);
