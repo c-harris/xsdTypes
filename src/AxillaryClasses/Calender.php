@@ -37,7 +37,6 @@ final class Calender
     {
         $this->validateInputNotAllNull($year, $month, $day);
         $this->validateInputNotYearAndDay($year, $month, $day);
-
     }
 
     private function validateInputNotAllNull($year, $month, $day)
@@ -61,7 +60,6 @@ final class Calender
     {
         $this->validateDay();
         $this->validateMonth();
-
     }
 
     /**
