@@ -29,9 +29,9 @@ class xsNormalizedStringTest extends \PHPUnit_Framework_TestCase
             array('12.5', '12.5', 'number as string'),
             array('', '', 'an empty string is valid'),
             array('PB&amp;J', 'PB&amp;J', 'when parsed, it will become "PB&J"'),
-            array('   Separated by 3 spaces.', 'Separated by 3 spaces.', 'when parsed, it will become "Separated by 3 spaces."'),
+            array('   Separated by 3 spaces.', '   Separated by 3 spaces.', 'when parsed, it will become "Separated by 3 spaces."'),
             array('This
-is on two lines.', 'This is on two lines.', 'when parsed, the line break will be replaced with a space'),
+is on two lines.', 'This  is on two lines.', 'when parsed, the line break will be replaced with a space'),
         );
     }
 
