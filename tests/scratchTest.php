@@ -58,7 +58,7 @@ class scratchTest extends PHPUnit_Framework_TestCase
          *** 2nd Alternative Z*
          ***** Z* matches the character Z literally (case sensitive)
          ***** Quantifier — Matches between zero and unlimited times, as many times as possible, giving back as needed
-         *        (greedy)
+         *        (greedy).
          */
         $re = '/--(1[0-2]|0[1-9]|[1-9])-(0[1-9]|1[0-9]|2[0-9]|3[0-1]|[1-9])([-+][0-1]\d:[0-6]\d|Z*)/';
         $str = '--12-25Z';
