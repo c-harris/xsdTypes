@@ -24,6 +24,7 @@ trait WhiteSpaceTrait
             case 'collapse':
                 return trim(preg_replace('/\s+/', ' ', $val));
         }
+        return "";
     }
 
     /**
