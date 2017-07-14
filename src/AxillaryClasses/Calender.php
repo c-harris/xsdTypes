@@ -48,7 +48,7 @@ class Calender
     private function getMaxDays()
     {
         if (null !== $this->month) {
-            return cal_days_in_month(CAL_GREGORIAN, $this->month, $this->getYearOrHolder())
+            return cal_days_in_month(CAL_GREGORIAN, $this->month, $this->getYearOrHolder());
         }
         return 31;
     }
