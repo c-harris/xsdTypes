@@ -87,5 +87,14 @@ class scratchTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('12', $matches[0][1]);
         $this->assertEquals('25', $matches[0][2]);
         $this->assertEquals('-08:30', $matches[0][3]);
+
+        $str = '--12-25';
+
+        preg_match_all($re, $str, $matches, PREG_SET_ORDER, 0);
+        $this->assertEquals(1, count($matches));
+        $this->assertEquals('--12-25', $matches[0][0]);
+        $this->assertEquals('12', $matches[0][1]);
+        $this->assertEquals('25', $matches[0][2]);
+        $this->assertEquals('', $matches[0][3]);
     }
 }
