@@ -3,7 +3,6 @@ namespace AlgoWeb\xsdTypes\AxillaryClasses;
 
 final class Calender
 {
-
     private $year;
     private $month;
     private $day;
