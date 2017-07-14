@@ -1,15 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Barnso
- * Date: 14/07/2017
- * Time: 8:28 PM.
- */
 namespace AlgoWeb\xsdTypes\AxillaryClasses;
 
 final class Calender
 {
-    const timezoneRegexPattern = '([-+][0-1]\d:[0-6]\d|Z*)';
     private $year;
     private $month;
     private $day;
