@@ -73,8 +73,8 @@ class XMLDateInterval extends \DateInterval
      */
     private function handleN($i, $tSeen)
     {
-        $v = ($this->pattern[$i + 1] == 'M' && $tSeen) ? 'i' : strtolower($this->pattern[$i + 1]);
-        return $this->$v;
+        $componentProperty = ($this->pattern[$i + 1] == 'M' && $tSeen) ? 'i' : strtolower($this->pattern[$i + 1]);
+        return $this->$componentProperty;
     }
 
     /**
