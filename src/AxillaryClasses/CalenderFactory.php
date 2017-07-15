@@ -14,7 +14,7 @@ class CalenderFactory extends Calender
     {
         $re = '/----(0[1-9]|1[0-9]|2[0-9]|3[0-1]|[1-9])([-+][0-1]\d:[0-6]\d|Z*)/';
         preg_match_all($re, $day, $matches, PREG_SET_ORDER, 0);
-        if (count($matches) != 1 && count($matches[0]) != 3) {
+        if (count($matches) != 1 || count($matches[0]) != 3) {
             throw new \InvalidArgumentException('Unable to extract day from input string');
         }
         return new self(null, null, $matches[0][1], $matches[0][2]);
@@ -29,7 +29,7 @@ class CalenderFactory extends Calender
     {
         $re = '/--(1[0-2]|0[1-9]|[1-9])-(0[1-9]|1[0-9]|2[0-9]|3[0-1]|[1-9])([-+][0-1]\d:[0-6]\d|Z*)/';
         preg_match_all($re, $monthDay, $matches, PREG_SET_ORDER, 0);
-        if (count($matches) != 1 && count($matches[0]) != 4) {
+        if (count($matches) != 1 || count($matches[0]) != 4) {
             throw new \InvalidArgumentException('Unable to extract month day from input string');
         }
         return new self(null, $matches[0][1], $matches[0][2], $matches[0][3]);
@@ -44,7 +44,7 @@ class CalenderFactory extends Calender
     {
         $re = '/--(1[0-2]|0[1-9]|[1-9])([-+][0-1]\d:[0-6]\d|Z*)/';
         preg_match_all($re, $month, $matches, PREG_SET_ORDER, 0);
-        if (count($matches) != 1 && count($matches[0]) != 3) {
+        if (count($matches) != 1 || count($matches[0]) != 3) {
             throw new \InvalidArgumentException('Unable to extract month from input string');
         }
         return new self(null, $matches[0][1], null, $matches[0][2]);
@@ -59,7 +59,7 @@ class CalenderFactory extends Calender
     {
         $re = '/(\d{4})-(1[0-2]|0[1-9]|[1-9])([-+][0-1]\d:[0-6]\d|Z*)/';
         preg_match_all($re, $yearMonth, $matches, PREG_SET_ORDER, 0);
-        if (count($matches) != 1 && count($matches[0]) != 3) {
+        if (count($matches) != 1 || count($matches[0]) != 3) {
             throw new \InvalidArgumentException('Unable to extract month from input string');
         }
         return new self($matches[0][1], null, $matches[0][2], $matches[0][3]);
@@ -74,7 +74,7 @@ class CalenderFactory extends Calender
     {
         $re = '/(\d{4})([-+][0-1]\d:[0-6]\d|Z*)/';
         preg_match_all($re, $year, $matches, PREG_SET_ORDER, 0);
-        if (count($matches) != 1 && count($matches[0]) != 3) {
+        if (count($matches) != 1 || count($matches[0]) != 3) {
             throw new \InvalidArgumentException('Unable to extract month from input string');
         }
         return new self($matches[0][1], null, null, $matches[0][2]);
