@@ -141,13 +141,13 @@ trait PatternTrait
     }
 
     /**
-     * @param string $v
+     * @param string $value
      */
-    private function checkPattern($v)
+    private function checkPattern($value)
     {
         if (!empty($this->pattern)) {
             foreach ($this->pattern as $pattern) {
-                if (!$this->matchesRegexPattern($pattern, $v)) {
+                if (!$this->matchesRegexPattern($pattern, $value)) {
                     throw new \InvalidArgumentException('Assigned value for ' . get_class($this) .
                         ' does not match pattern ' . $pattern);
                 }
