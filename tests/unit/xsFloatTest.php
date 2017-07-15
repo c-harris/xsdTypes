@@ -34,6 +34,7 @@ class xsFloatTest extends \PHPUnit_Framework_TestCase
             array('12', '12', 'any value valid for decimal is also valid for float'),
             array('+3.5	', '3.5', 'any value valid for decimal is also valid for float'),
             array('-INF', '-INF', 'negative infinity'),
+            array('INF', 'INF', 'infinity'),
             array('-0', '0', 'Zero'),
             array('NaN', 'NaN', 'Not a Number'),
 
