@@ -26,7 +26,7 @@ class CalenderFactory extends Calender
      */
     public static function fromMonthDay($monthDay)
     {
-        $monthDayTimezone = '/--(1[0-2]|0[1-9]|[1-9])-(0[1-9]|1[0-9]|2[0-9]|3[0-1]|[1-9])([-+][0-1]\d:[0-6]\d|Z*)/';
+        $monthDayTimezone = '/--(1[0-2]|0[1-9]])-(0[1-9]|1[0-9]|2[0-9]|3[0-1]|[1-9])([-+][0-1]\d:[0-6]\d|Z*)/';
         preg_match_all($monthDayTimezone, $monthDay, $matches, PREG_SET_ORDER, 0);
         if (count($matches) != 1 || count($matches[0]) != 4) {
             throw new \InvalidArgumentException('Unable to extract month day from input string');
@@ -41,7 +41,7 @@ class CalenderFactory extends Calender
      */
     public static function fromMonth($month)
     {
-        $monthTimezone = '/--(1[0-2]|0[1-9]|[1-9])([-+][0-1]\d:[0-6]\d|Z*)/';
+        $monthTimezone = '/--(1[0-2]|0[1-9]])([-+][0-1]\d:[0-6]\d|Z*)/';
         preg_match_all($monthTimezone, $month, $matches, PREG_SET_ORDER, 0);
         if (count($matches) != 1 || count($matches[0]) != 3) {
             throw new \InvalidArgumentException('Unable to extract month from input string');
@@ -56,7 +56,7 @@ class CalenderFactory extends Calender
      */
     public static function fromYearMonth($yearMonth)
     {
-        $yearMonthTimezone = '/(\d{4})-(1[0-2]|0[1-9]|[1-9])([-+][0-1]\d:[0-6]\d|Z*)/';
+        $yearMonthTimezone = '/(\d{4})-(1[0-2]|0[1-9]])([-+][0-1]\d:[0-6]\d|Z*)/';
         preg_match_all($yearMonthTimezone, $yearMonth, $matches, PREG_SET_ORDER, 0);
         if (count($matches) != 1 || count($matches[0]) != 3) {
             throw new \InvalidArgumentException('Unable to extract month from input string');
