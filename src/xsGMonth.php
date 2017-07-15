@@ -35,11 +35,11 @@ class xsGMonth extends xsAnySimpleType
     public function fixValue()
     {
         parent::fixValue();
-        $v = CalenderFactory::fromMonthDay($this->value);
+        $v = CalenderFactory::fromMonth($this->value);
     }
 
     protected function isOK()
     {
-        $this->CheckMinMax(CalenderFactory::fromMonthDay($this->value));
+        $this->CheckMinMax(CalenderFactory::fromMonth($this->value));
     }
 }
