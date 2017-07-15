@@ -105,7 +105,7 @@ checks:
     code_rating: true
     closure_use_not_conflicting: true
     closure_use_modifiable: true
-    classes_in_camel_caps: true
+    classes_in_camel_caps: false
     check_method_contracts:
       verify_interface_like_constraints: true
       verify_documented_constraints: true
