@@ -58,10 +58,10 @@ class CalenderFactory extends Calender
     {
         $yearMonthTimezone = '/(\d{4})-((?:1[0-2])|(?:0[0-9]))([-+][0-1]\d:[0-6]\d|Z*)/';
         preg_match_all($yearMonthTimezone, $yearMonth, $matches, PREG_SET_ORDER, 0);
-        if (count($matches) != 1 || count($matches[0]) != 3) {
-            throw new \InvalidArgumentException('Unable to extract month from input string');
+        if (count($matches) != 1 || count($matches[0]) != 4) {
+            throw new \InvalidArgumentException('Unable to extract year month from input string');
         }
-        return new self($matches[0][1], null, $matches[0][2], $matches[0][3]);
+        return new self($matches[0][1], $matches[0][2], null, $matches[0][3]);
     }
 
     /**
