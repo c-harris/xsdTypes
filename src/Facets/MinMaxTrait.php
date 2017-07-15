@@ -5,28 +5,43 @@ trait MinMaxTrait
 {
     /**
      * @Exclude
-     * @var int|float|\DateTime|\DateInterval Specifies the lower bounds for numeric values (the value must be greater
-     *                                        than or equal to this value)
+     * @var int|float|\DateTime|\AlgoWeb\xsdTypes\AxillaryClasses\Calender Specifies the lower bounds for numeric values
+     *                                                                     (the value must be greater than or equal to
+     *                                                                      this value)
      */
     private $minInclusive = null;
     /**
      * @Exclude
-     * @var int|float|\DateTime|\DateInterval Specifies the upper bounds for numeric values (the value must be less
-     *                                        than or equal to this value)
+     * @var int|float|\DateTime|\AlgoWeb\xsdTypes\AxillaryClasses\Calender Specifies the upper bounds for numeric values
+     *                                                                     (the value must be less than or equal to this
+     *                                                                      value)
      */
     private $maxInclusive = null;
 
     /**
-     * @param int|float|\DateTime|\DateInterval $v Specifies the upper bounds for numeric values (the value must be
-     *                                             less than this value)
+     * @Exclude
+     * @var int|float|\DateTime|\AlgoWeb\xsdTypes\AxillaryClasses\Calender Specifies the upper bounds for numeric values
+     *                                                                     (the value must be less than or equal to this
+     *                                                                      value)
+     */
+    private $minExclusive = null;
+    /**
+     * @Exclude
+     * @var int|float|\DateTime|\AlgoWeb\xsdTypes\AxillaryClasses\Calender Specifies the upper bounds for numeric values
+     *                                                                     (the value must be less than or equal to this
+     *                                                                      value)
+     */
+    private $maxExclusive = null;
+
+    /**
+     * @param int|float|\DateTime|\AlgoWeb\xsdTypes\AxillaryClasses\Calender $v Specifies the upper bounds for numeric
+     *                                                                          values (the value must be less than this
+     *                                                                          value)
      */
     public function setMaxExclusive($v)
     {
-        if (is_int($v)) {
-            $this->maxInclusive = $v - 1;
-        } else {
-            $this->minInclusive = $v - 0.000001;
-        }
+        $this->maxExclusive = $v;
+
     }
 
     /**
@@ -43,11 +58,7 @@ trait MinMaxTrait
      */
     public function setMinExclusive($v)
     {
-        if (is_int($v)) {
-            $this->minInclusive = $v + 1;
-        } else {
-            $this->minInclusive = $v + 0.000001;
-        }
+        $this->minExclusive = $v;
     }
 
     /**
