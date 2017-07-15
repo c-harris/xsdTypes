@@ -16,8 +16,8 @@ class xsGDayTest extends \PHPUnit_Framework_TestCase
      */
     public function testxsGDayValid($input, $expected, $message)
     {
-            $d = new xsGDay($input);
-            $s = (string)$d;
+        $d = new xsGDay($input);
+        $s = (string)$d;
         $this->assertEquals($expected, $s, $message);
     }
 
