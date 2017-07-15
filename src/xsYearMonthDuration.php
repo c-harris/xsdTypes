@@ -23,7 +23,7 @@ class xsYearMonthDuration extends xsDuration
     public function fixValue()
     {
         parent::fixValue();
-        $v = new XMLDateInterval($this->value, 'PnYnM');
-        $this->value = $v->__toString();
+        $dateIntervalObject = new XMLDateInterval($this->value, 'PnYnM');
+        $this->value = $dateIntervalObject->__toString();
     }
 }
