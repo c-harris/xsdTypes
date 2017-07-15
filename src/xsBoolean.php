@@ -40,6 +40,5 @@ class xsBoolean extends xsAnySimpleType
      */
     protected function isOK()
     {
-
     }
 }
