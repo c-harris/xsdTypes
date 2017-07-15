@@ -103,6 +103,4 @@ class Calender
             throw new \InvalidArgumentException('the month must be greater 0 and less then 12');
         }
     }
-
-
 }
