@@ -36,7 +36,6 @@ class xsGYear extends xsAnySimpleType
     {
         parent::fixValue();
         $v = CalenderFactory::fromYear($this->value);
-
     }
 
     protected function isOK()
