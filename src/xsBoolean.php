@@ -19,6 +19,10 @@ class xsBoolean extends xsAnySimpleType
         parent::__construct($value);
         $this->setWhiteSpaceFacet('collapse');
     }
+
+    /**
+     * @return void
+     */
     protected function fixValue()
     {
         parent::fixValue();
@@ -30,12 +34,12 @@ class xsBoolean extends xsAnySimpleType
         }
         $this->value = $this->value ? 'true' : 'false';
     }
+
+    /**
+     * @return void
+     */
     protected function isOK()
     {
-        if (true != $this->value && false != $this->value) {
-            throw new \InvalidArgumentException(
-                'The provided value for ' . __CLASS__ . ' needs to be a boolean.'
-            );
-        }
+
     }
 }
