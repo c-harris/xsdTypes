@@ -36,7 +36,6 @@ class xsGMonthDay extends xsAnySimpleType
     {
         parent::fixValue();
         $v = CalenderFactory::fromMonth($this->value);
-
     }
 
     protected function isOK()
