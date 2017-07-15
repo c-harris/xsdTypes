@@ -63,6 +63,7 @@ class xsLanguageTest extends \PHPUnit_Framework_TestCase
     {
         return array(
             array('longerThan8', '', 'parts may not exceed 8 characters in length'),
+            array('', '', 'Empty String'),
         );
     }
 
