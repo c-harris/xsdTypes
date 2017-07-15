@@ -13,6 +13,7 @@ trait PatternTrait
     /**
      * @param string $newPatternToAdd
      * @param mixed  $processMultiCharacterEscape
+     * @param mixed  $multiCharacterEscape
      */
     protected function setPatternFacet($newPatternToAdd, $multiCharacterEscape = true)
     {
@@ -33,6 +34,7 @@ trait PatternTrait
     /**
      * @param string $patternToProcess
      * @param bool   $processMultiCharacterEscape
+     * @param mixed  $multiCharacterEscape
      *
      * @return string
      */
