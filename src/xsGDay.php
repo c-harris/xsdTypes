@@ -36,7 +36,7 @@ class xsGDay extends xsAnySimpleType
     public function fixValue()
     {
         parent::fixValue();
-        $v = CalenderFactory::fromDay($this->value);
+        $dayObject = CalenderFactory::fromDay($this->value);
     }
 
     protected function isOK()

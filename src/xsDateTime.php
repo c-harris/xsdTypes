@@ -34,14 +34,14 @@ class xsDateTime extends xsAnySimpleType
     public function fixValue()
     {
         parent::fixValue();
-        $v = new \DateTime($this->value);
-        $this->value = $v->format('Y-m-d\TH:i:s') . $this->fixFractionOfSecond($v) . $v->format('P');
+        $dateTimeValue = new \DateTime($this->value);
+        $this->value = $dateTimeValue->format('Y-m-d\TH:i:s') . $this->fixFractionOfSecond($dateTimeValue) . $dateTimeValue->format('P');
     }
 
-    private function fixFractionOfSecond(\DateTime $v)
+    private function fixFractionOfSecond(\DateTime $dateTimeValue)
     {
-        if (0 != (int)$v->format('u')) {
-            return '.' . $v->format('u') / 100000;
+        if (0 != (int)$dateTimeValue->format('u')) {
+            return '.' . $dateTimeValue->format('u') / 100000;
         }
         return '';
     }

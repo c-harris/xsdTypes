@@ -24,7 +24,7 @@ class xsDayTimeDuration extends xsDuration
     public function fixValue()
     {
         parent::fixValue();
-        $v = new XMLDateInterval($this->value, 'PnDTnHnMnS');
-        $this->value = $v->__toString();
+        $objectValue = new XMLDateInterval($this->value, 'PnDTnHnMnS');
+        $this->value = $objectValue->__toString();
     }
 }

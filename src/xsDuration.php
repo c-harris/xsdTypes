@@ -41,8 +41,8 @@ class xsDuration extends xsAnySimpleType
     public function fixValue()
     {
         parent::fixValue();
-        $v = new XMLDateInterval($this->value);
-        $this->value = $v->__toString();
+        $objectValue = new XMLDateInterval($this->value);
+        $this->value = $objectValue->__toString();
     }
 
     protected function isOK()

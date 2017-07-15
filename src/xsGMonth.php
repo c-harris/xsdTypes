@@ -35,7 +35,7 @@ class xsGMonth extends xsAnySimpleType
     public function fixValue()
     {
         parent::fixValue();
-        $v = CalenderFactory::fromMonth($this->value);
+        $monthObject = CalenderFactory::fromMonth($this->value);
     }
 
     protected function isOK()
