@@ -7,14 +7,14 @@ trait MinMaxTrait
      * @Exclude
      * @var int|float|\DateTime|\AlgoWeb\xsdTypes\AxillaryClasses\Calender Specifies the lower bounds for numeric values
      *                                                                     (the value must be greater than or equal to
-     *                                                                      this value)
+     *                                                                     this value)
      */
     private $minInclusive = null;
     /**
      * @Exclude
      * @var int|float|\DateTime|\AlgoWeb\xsdTypes\AxillaryClasses\Calender Specifies the upper bounds for numeric values
      *                                                                     (the value must be less than or equal to this
-     *                                                                      value)
+     *                                                                     value)
      */
     private $maxInclusive = null;
 
@@ -22,14 +22,14 @@ trait MinMaxTrait
      * @Exclude
      * @var int|float|\DateTime|\AlgoWeb\xsdTypes\AxillaryClasses\Calender Specifies the upper bounds for numeric values
      *                                                                     (the value must be less than or equal to this
-     *                                                                      value)
+     *                                                                     value)
      */
     private $minExclusive = null;
     /**
      * @Exclude
      * @var int|float|\DateTime|\AlgoWeb\xsdTypes\AxillaryClasses\Calender Specifies the upper bounds for numeric values
      *                                                                     (the value must be less than or equal to this
-     *                                                                      value)
+     *                                                                     value)
      */
     private $maxExclusive = null;
 
@@ -41,7 +41,6 @@ trait MinMaxTrait
     public function setMaxExclusive($v)
     {
         $this->maxExclusive = $v;
-
     }
 
     /**
