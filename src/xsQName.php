@@ -46,7 +46,6 @@ class xsQName extends xsAnySimpleType
 
     private function checkParts($bitz)
     {
-
         foreach ($bitz as $bit) {
             $ncName = new xsNCName($bit);
             $ncNameStr = $ncName->__toString();
