@@ -44,18 +44,16 @@ trait MinMaxTrait
     }
 
     /**
-     * @param int|float|\DateTime|\DateInterval $v      Specifies the upper bounds for numeric values
+     * @param int|float|\DateTime|\DateInterval $newMin Specifies the upper bounds for numeric values
      *                                                  (the value must be less than or equal to this value)
-     * @param mixed                             $newMax
      */
     public function setMaxInclusive($newMax)
     {
         $this->maxInclusive = $newMax;
     }
     /**
-     * @param int|float|\DateTime|\DateInterval $v      Specifies the lower bounds for numeric values
+     * @param int|float|\DateTime|\DateInterval $newMin Specifies the lower bounds for numeric values
      *                                                  (the value must be greater than this value)
-     * @param mixed                             $newMin
      */
     public function setMinExclusive($newMin)
     {
@@ -63,9 +61,8 @@ trait MinMaxTrait
     }
 
     /**
-     * @param int|float|\DateTime|\DateInterval $v      Specifies the lower bounds for numeric values
+     * @param int|float|\DateTime|\DateInterval $newMin Specifies the lower bounds for numeric values
      *                                                  (the value must be greater than or equal to this value)
-     * @param mixed                             $newMin
      */
     public function setMinInclusive($newMin)
     {
