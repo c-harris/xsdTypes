@@ -91,9 +91,15 @@ class XMLDateInterval extends \DateInterval
     {
         $componentProperty = ($this->pattern[$i + 1] == 'M' && $tSeen) ? 'i' : strtolower($this->pattern[$i + 1]);
         if ('s' === $componentProperty) {
-            return $this->f === 0 ? $this->$componentProperty : trim($this->$componentProperty . '.' . $this->f, '.');
+            return $this->handleS();
         }
         return $this->$componentProperty;
+    }
+
+    private function handleS()
+    {
+        return $this->f === 0 ? $this->s : trim($this->s . '.' . $this->f, '.');
+
     }
 
     /**
