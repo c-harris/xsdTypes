@@ -49,7 +49,6 @@ class xsNMTOKENSTest extends \PHPUnit_Framework_TestCase
     public function testxsNMTOKENSInvalidDataProvider()
     {
         return array(
-            array('__', '', 'double underscore should be invalid'),
         );
     }
 
