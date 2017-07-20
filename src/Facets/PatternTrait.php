@@ -148,7 +148,7 @@ trait PatternTrait
         if (!empty($this->pattern)) {
             foreach ($this->pattern as $pattern) {
                 if (!$this->matchesRegexPattern($pattern, $value)) {
-                    throw new \InvalidArgumentException('Assigned value for ' . get_class($this) .
+                    throw new \InvalidArgumentException('Assigned value (' . $value . ') for ' . get_class($this) .
                         ' does not match pattern ' . $pattern);
                 }
             }

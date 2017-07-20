@@ -29,7 +29,7 @@ class xsNMTOKENSTest extends \PHPUnit_Framework_TestCase
     {
         return array(
             array('ABCD 123', 'ABCD 123', ''),
-            array('ABCD ', 'ABCD ', 'one-item list'),
+            array('ABCD ', 'ABCD', 'one-item list'),
         );
     }
 

@@ -31,7 +31,9 @@ class xsNMTOKENS extends xsAnySimpleType
             $parts = explode(' ', $this->value);
             $this->value = [];
             foreach ($parts as $part) {
-                $this->value[] = new xsNMTOKEN($part);
+                if (0 != strlen(trim($part))) {
+                    $this->value[] = new xsNMTOKEN(trim($part));
+                }
             }
         }
         assert(is_array($this->value), 'Somehow, xsNMTOKENs ended up not being an array.');
