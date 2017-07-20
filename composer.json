@@ -1,5 +1,5 @@
 {
-  "name": "algo-web/xsdTypes",
+  "name": "algo-web/xsd-types",
   "description": "Simple Types taken from XML Schema 1.0",
   "minimum-stability": "stable",
   "license": "proprietary",
