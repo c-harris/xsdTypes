@@ -35,7 +35,7 @@ class xsDayTimeDurationTest extends \PHPUnit_Framework_TestCase
             array('P0Y20M0D', 'P0DT0H0M0S', '20 months (0 is permitted as a number, but is not required)'),
             array('P0Y', 'P0DT0H0M0S', '0 years'),
             array('-P60D', '-P60DT0H0M0S', 'minus 60 days'),
-            array('PT1M30.5S', 'PT1M30.5S', '1 minute, 30.5 seconds'),
+            array('PT1M30.5S', 'P0DT0H1M30.5S', '1 minute, 30.5 seconds'),
         );
     }
 

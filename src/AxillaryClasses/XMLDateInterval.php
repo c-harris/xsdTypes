@@ -11,14 +11,30 @@ class XMLDateInterval extends \DateInterval
     private $pattern;
     private $patternLen;
 
+    private $fractionOfSecond;
+
     public function __construct($intervalSpec, $pattern = 'PnYnMnDTnHnMnS')
     {
+        if (-1 === version_compare(PHP_VERSION, '7.1.0')) {
+            $intervalSpec = $this->handleFractionOfSecond($intervalSpec);
+        }
         parent::__construct(trim($intervalSpec, '-'));
         if ($intervalSpec[0] == '-') {
             $this->invert = 1;
         }
         $this->pattern = trim($pattern);
         $this->patternLen = strlen($this->pattern);
+    }
+
+    private function handleFractionOfSecond($intervalSpec)
+    {
+        $re = '/(?:[0-5][0-9]|60)(.\d+)S/';
+        preg_match_all($re, $intervalSpec, $matches, PREG_SET_ORDER, 0);
+        if (1 != count($matches) || strpos($intervalSpec, '.') === false) {
+            return $intervalSpec;
+        }
+        $this->fractionOfSecond = trim($matches[0][1], '.');
+        return str_replace($matches[0][1], '', $intervalSpec);
     }
 
     /**
@@ -74,6 +90,9 @@ class XMLDateInterval extends \DateInterval
     private function handleN($i, $tSeen)
     {
         $componentProperty = ($this->pattern[$i + 1] == 'M' && $tSeen) ? 'i' : strtolower($this->pattern[$i + 1]);
+        if ("s" === $componentProperty) {
+            return trim($this->$componentProperty . '.' . $this->f, '.');
+        }
         return $this->$componentProperty;
     }
 
@@ -96,5 +115,12 @@ class XMLDateInterval extends \DateInterval
     private function handleOther($i)
     {
         return $this->pattern[$i];
+    }
+
+    public function __get($name)
+    {
+        if ($name == 'f') {
+            return $this->fractionOfSecond;
+        }
     }
 }
