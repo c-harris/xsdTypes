@@ -56,7 +56,7 @@ class WhiteSpaceTraitTest extends PHPUnit_Framework_TestCase
     {
         return array(
             array("\t \n", '   '),
-            array("stop\thammer\r\ntime", 'stop hammer  time'),
+            array("stop\thammer\r\ntime", 'stop hammer time'),
         );
     }
 
