@@ -44,7 +44,7 @@ trait MinMaxTrait
     }
 
     /**
-     * @param int|float|\DateTime|\DateInterval $newMin Specifies the upper bounds for numeric values
+     * @param int|float|\DateTime|\DateInterval $newMax Specifies the upper bounds for numeric values
      *                                                  (the value must be less than or equal to this value)
      */
     public function setMaxInclusive($newMax)

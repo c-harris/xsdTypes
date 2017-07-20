@@ -99,7 +99,6 @@ class XMLDateInterval extends \DateInterval
     private function handleS()
     {
         return $this->f === 0 ? $this->s : trim($this->s . '.' . $this->f, '.');
-
     }
 
     /**
