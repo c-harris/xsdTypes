@@ -32,7 +32,7 @@ class xsQName extends xsAnySimpleType
         if (':' == $this->value[0]) {
             throw new \InvalidArgumentException('QName cannot start with colon');
         }
-
+        $this->checkColen();
     }
 
     private function checkColen()
@@ -50,7 +50,7 @@ class xsQName extends xsAnySimpleType
         foreach ($bitz as $bit) {
             $ncName = new xsNCName($bit);
             $ncNameStr = $ncName->__toString();
-            if ($ncName != $ncNameStr) {
+            if ($bit != $ncNameStr) {
                 throw new \InvalidArgumentException($bit . ' is not a valid NCName so can not be part ofa QName');
             }
         }
