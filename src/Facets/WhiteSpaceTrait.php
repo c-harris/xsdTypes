@@ -20,6 +20,7 @@ trait WhiteSpaceTrait
             case 'preserve':
                 return $val;
             case 'replace':
+                $val = str_replace("\r\n", "\n", $val);
                 return preg_replace('/\s/', ' ', $val);
             case 'collapse':
                 return trim(preg_replace('/\s+/', ' ', $val));
