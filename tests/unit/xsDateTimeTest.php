@@ -28,10 +28,10 @@ class xsDateTimeTest extends \PHPUnit_Framework_TestCase
     public function testxsDateTimeValidDataProvider()
     {
         return array(
-            array('2004-04-12T13:20:00', '2004-04-12T13:20:00', '1:20 pm on April 12, 2004'),
-            array('2004-04-12T13:20:15.5', '2004-04-12T13:20:15.5', '1:20 pm and 15.5 seconds on April 12, 2004'),
+            array('2004-04-12T13:20:00', '2004-04-12T13:20:00+00:00', '1:20 pm on April 12, 2004'),
+            array('2004-04-12T13:20:15.5', '2004-04-12T13:20:15.5+00:00', '1:20 pm and 15.5 seconds on April 12, 2004'),
             array('2004-04-12T13:20:00-05:00', '2004-04-12T13:20:00-05:00', '1:20 pm on April 12, 2004, US Eastern Standard Time'),
-            array('2004-04-12T13:20:00Z', '2004-04-12T13:20:00Z', '	1:20 pm on April 12, 2004, Coordinated Universal Time (UTC)'),
+            array('2004-04-12T13:20:00Z', '2004-04-12T13:20:00+00:00', '	1:20 pm on April 12, 2004, Coordinated Universal Time (UTC)'),
         );
     }
 
@@ -51,10 +51,10 @@ class xsDateTimeTest extends \PHPUnit_Framework_TestCase
     public function testxsDateTimeInvalidDataProvider()
     {
         return array(
-            array('2004-04-12T13:00', '', 'seconds must be specified'),
-            array('2004-04-1213:20:00', '', 'the letter T is required'),
-            array('99-04-12T13:00', '', 'the century must not be left truncated'),
-            array('2004-04-12', '', 'the time is required'),
+            array('2004-04-12T13:00', '2004-04-12T13:00:00+00:00', 'seconds must be specified'),
+            array('2004-04-1213:20:00', '2004-04-12T13:20:00+00:00', 'the letter T is required'),
+            array('99-04-12T13:00', '1999-04-12T13:00:00+00:00', 'the century must not be left truncated'),
+            array('2004-04-12', '2004-04-12T00:00:00+00:00', 'the time is required'),
         );
     }
 

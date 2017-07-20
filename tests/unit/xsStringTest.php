@@ -51,9 +51,10 @@ is on two lines.', ''),
 
     public function testxsStringTestInvalidDataProvider()
     {
+        // Invalid characters being kicked down for JMS to handle
         return array(
-            array('AT&T', ',', 'ampersand must be escaped'),
-            array('3 < 4', '', 'the "less than" symbol must be escaped'),
+            array('AT&T', 'AT&T', 'ampersand must be escaped'),
+            array('3 < 4', '3 < 4', 'the "less than" symbol must be escaped'),
         );
     }
 

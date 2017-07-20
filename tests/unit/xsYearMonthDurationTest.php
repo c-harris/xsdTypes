@@ -23,10 +23,10 @@ class xsYearMonthDurationTest extends \PHPUnit_Framework_TestCase
     {
         return array(
             array('P2Y6M', 'P2Y6M', '2 years, 6 months'),
-            array('P20M', 'P20M', '20 months (the number of months can be more than 12)'),
+            array('P20M', 'P0Y20M', '20 months (the number of months can be more than 12)'),
             array('P0Y20M', 'P0Y20M', '20 months (0 is permitted as a number, but is not required)'),
-            array('P0Y', 'P0Y', '0 years'),
-            array('-P60Y', '-P60Y', 'minus 60 years'),
+            array('P0Y', 'P0Y0M', '0 years'),
+            array('-P60Y', '-P60Y0M', 'minus 60 years'),
         );
     }
 
@@ -46,7 +46,7 @@ class xsYearMonthDurationTest extends \PHPUnit_Framework_TestCase
     public function testXsYearMonthDurationInvalidDataProvider()
     {
         return array(
-            array('P2Y6M5DT12H35M30S', '', 'components other than years or months are not allowed'),
+            array('P2Y6M5DT12H35M30S', 'P2Y6M', 'components other than years or months are not allowed'),
             array('P-20M', '', 'the minus sign must appear first'),
             array('P20MT', '', '"T" must not be present'),
             array('P1YM', '', 'no value is specified for months, so "M" must not be present'),

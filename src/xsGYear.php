@@ -2,6 +2,7 @@
 
 namespace AlgoWeb\xsdTypes;
 
+use AlgoWeb\xsdTypes\AxillaryClasses\CalenderFactory;
 use AlgoWeb\xsdTypes\Facets\MinMaxTrait;
 
 /**
@@ -34,12 +35,11 @@ class xsGYear extends xsAnySimpleType
     public function fixValue()
     {
         parent::fixValue();
-        $v = new \DateTime($this->value);
-        $this->value = $v->format('Y');
+        $yearObject = CalenderFactory::fromYear($this->value);
     }
 
     protected function isOK()
     {
-        $this->CheckMinMax(new \DateTime($this->value));
+        $this->CheckMinMax(CalenderFactory::fromYear($this->value));
     }
 }

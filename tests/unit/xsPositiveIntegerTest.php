@@ -48,7 +48,7 @@ class xsPositiveIntegerTest extends \PHPUnit_Framework_TestCase
         return array(
             array('0', '', '0 is not considered positive'),
             array('-3', '', 'value cannot be negative'),
-            array('3.0', '', 'value must not contain a decimal point'),
+            array('3.0', '3', 'value must not contain a decimal point'),
         );
     }
 

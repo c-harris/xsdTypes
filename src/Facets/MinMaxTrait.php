@@ -5,80 +5,90 @@ trait MinMaxTrait
 {
     /**
      * @Exclude
-     * @var int|float|\DateTime|\DateInterval Specifies the lower bounds for numeric values (the value must be greater
-     *                                        than or equal to this value)
+     * @var int|float|\DateTime|\AlgoWeb\xsdTypes\AxillaryClasses\Calender Specifies the lower bounds for numeric values
+     *                                                                     (the value must be greater than or equal to
+     *                                                                     this value)
      */
     private $minInclusive = null;
     /**
      * @Exclude
-     * @var int|float|\DateTime|\DateInterval Specifies the upper bounds for numeric values (the value must be less
-     *                                        than or equal to this value)
+     * @var int|float|\DateTime|\AlgoWeb\xsdTypes\AxillaryClasses\Calender Specifies the upper bounds for numeric values
+     *                                                                     (the value must be less than or equal to this
+     *                                                                     value)
      */
     private $maxInclusive = null;
 
     /**
-     * @param int|float|\DateTime|\DateInterval $v Specifies the upper bounds for numeric values (the value must be
-     *                                             less than this value)
+     * @Exclude
+     * @var int|float|\DateTime|\AlgoWeb\xsdTypes\AxillaryClasses\Calender Specifies the upper bounds for numeric values
+     *                                                                     (the value must be less than or equal to this
+     *                                                                     value)
      */
-    public function setMaxExclusive($v)
+    private $minExclusive = null;
+    /**
+     * @Exclude
+     * @var int|float|\DateTime|\AlgoWeb\xsdTypes\AxillaryClasses\Calender Specifies the upper bounds for numeric values
+     *                                                                     (the value must be less than or equal to this
+     *                                                                     value)
+     */
+    private $maxExclusive = null;
+
+    /**
+     * @param int|float|\DateTime|\AlgoWeb\xsdTypes\AxillaryClasses\Calender $newMax Specifies the upper bounds for numeric
+     *                                                                               values (the value must be less than this
+     *                                                                               value)
+     */
+    public function setMaxExclusive($newMax)
     {
-        if (is_int($v)) {
-            $this->maxInclusive = $v - 1;
-        } else {
-            $this->minInclusive = $v - 0.000001;
-        }
+        $this->maxExclusive = $newMax;
     }
 
     /**
-     * @param int|float|\DateTime|\DateInterval $v Specifies the upper bounds for numeric values
-     *                                             (the value must be less than or equal to this value)
+     * @param int|float|\DateTime|\DateInterval $newMax Specifies the upper bounds for numeric values
+     *                                                  (the value must be less than or equal to this value)
      */
-    public function setMaxInclusive($v)
+    public function setMaxInclusive($newMax)
     {
-        $this->maxInclusive = $v;
+        $this->maxInclusive = $newMax;
     }
     /**
-     * @param int|float|\DateTime|\DateInterval $v Specifies the lower bounds for numeric values
-     *                                             (the value must be greater than this value)
+     * @param int|float|\DateTime|\DateInterval $newMin Specifies the lower bounds for numeric values
+     *                                                  (the value must be greater than this value)
      */
-    public function setMinExclusive($v)
+    public function setMinExclusive($newMin)
     {
-        if (is_int($v)) {
-            $this->minInclusive = $v + 1;
-        } else {
-            $this->minInclusive = $v + 0.000001;
-        }
+        $this->minExclusive = $newMin;
     }
 
     /**
-     * @param int|float|\DateTime|\DateInterval $v Specifies the lower bounds for numeric values
-     *                                             (the value must be greater than or equal to this value)
+     * @param int|float|\DateTime|\DateInterval $newMin Specifies the lower bounds for numeric values
+     *                                                  (the value must be greater than or equal to this value)
      */
-    public function setMinInclusive($v)
+    public function setMinInclusive($newMin)
     {
-        $this->minInclusive = $v;
+        $this->minInclusive = $newMin;
     }
 
-    public function checkMinMax($v)
+    public function checkMinMax($value)
     {
         if (null !== $this->minInclusive) {
-            $this->checkMin($v);
+            $this->checkMin($value);
         }
         if (null !== $this->maxInclusive) {
-            $this->checkMax($v);
+            $this->checkMax($value);
         }
     }
 
-    private function checkMin($v)
+    private function checkMin($value)
     {
-        if ($v < $this->minInclusive) {
+        if ($value < $this->minInclusive) {
             throw new \InvalidArgumentException('Value less than allowed min value ' . get_class($this));
         }
     }
 
-    private function checkMax($v)
+    private function checkMax($value)
     {
-        if ($v > $this->maxInclusive) {
+        if ($value > $this->maxInclusive) {
             throw new \InvalidArgumentException('Value greater than allowed max value ' . get_class($this));
         }
     }

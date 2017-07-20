@@ -20,12 +20,10 @@ trait WhiteSpaceTrait
             case 'preserve':
                 return $val;
             case 'replace':
+                $val = str_replace("\r\n", "\n", $val);
                 return preg_replace('/\s/', ' ', $val);
             case 'collapse':
-                return preg_replace('/\s+/', ' ', $val);
-            default:
-                throw new \InvalidArgumentException(get_class($this) . ' called fixWhitespace with ' .
-                    'invalid handle operation.');
+                return trim(preg_replace('/\s+/', ' ', $val));
         }
     }
 

@@ -2,6 +2,8 @@
 
 namespace AlgoWeb\xsdTypes;
 
+use AlgoWeb\xsdTypes\AxillaryClasses\XMLDateInterval;
+
 /**
  * The type xsd:yearMonthDuration represents a duration of time expressed as a number of years and months. The format
  * of xsd:yearMonthDuration is PnYnM, where P is a literal value that starts the expression, nY is the number of years
@@ -21,7 +23,7 @@ class xsYearMonthDuration extends xsDuration
     public function fixValue()
     {
         parent::fixValue();
-        $v = new \DateInterval($this->value);
-        $this->value = $this->format($v, 'PnYnM');
+        $dateIntervalObject = new XMLDateInterval($this->value, 'PnYnM');
+        $this->value = $dateIntervalObject->__toString();
     }
 }

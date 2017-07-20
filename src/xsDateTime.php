@@ -34,8 +34,16 @@ class xsDateTime extends xsAnySimpleType
     public function fixValue()
     {
         parent::fixValue();
-        $v = new \DateTime($this->value);
-        $this->value = $v->format(\DateTime::RFC3339);
+        $dateTimeValue = new \DateTime($this->value);
+        $this->value = $dateTimeValue->format('Y-m-d\TH:i:s') . $this->fixFractionOfSecond($dateTimeValue) . $dateTimeValue->format('P');
+    }
+
+    private function fixFractionOfSecond(\DateTime $dateTimeValue)
+    {
+        if (0 != (int)$dateTimeValue->format('u')) {
+            return '.' . $dateTimeValue->format('u') / 100000;
+        }
+        return '';
     }
 
     protected function isOK()

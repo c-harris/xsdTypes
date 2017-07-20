@@ -19,22 +19,26 @@ class xsBoolean extends xsAnySimpleType
         parent::__construct($value);
         $this->setWhiteSpaceFacet('collapse');
     }
+
+    /**
+     * @return void
+     */
     protected function fixValue()
     {
         parent::fixValue();
-        if ($this->value == 0) {
-            $this->value = false;
+
+        $this->value = filter_var($this->value, FILTER_VALIDATE_BOOLEAN, ['options' => [],
+            'flags' => FILTER_NULL_ON_FAILURE]);
+        if (null === $this->value) {
+            throw new \InvalidArgumentException('the value passed to ' . get_class($this) . 'was not a booliean');
         }
-        if ($this->value == 1) {
-            $this->value = true;
-        }
+        $this->value = $this->value ? 'true' : 'false';
     }
+
+    /**
+     * @return void
+     */
     protected function isOK()
     {
-        if (boolval($this->value) !== $this->value) {
-            throw new \InvalidArgumentException(
-                'The provided value for ' . __CLASS__ . ' needs to be a boolean.'
-            );
-        }
     }
 }

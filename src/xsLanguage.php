@@ -70,10 +70,5 @@ class xsLanguage extends xsToken
                 'The provided value for ' . __CLASS__ . ' must not be a blank string.'
             );
         }
-        if (8 < strlen($this->value)) {
-            throw new \InvalidArgumentException(
-                'The provided value for ' . __CLASS__ . ' must not be longer than 8 characters.'
-            );
-        }
     }
 }

@@ -33,5 +33,7 @@ abstract class xsNOTATION extends xsAnySimpleType
     protected function isOK()
     {
         $this->checkLength($this->value);
+        $Qname = new xsQName($this->value);
+        $this->value = $Qname->__toString();
     }
 }

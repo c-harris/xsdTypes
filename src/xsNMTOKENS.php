@@ -27,16 +27,23 @@ class xsNMTOKENS extends xsAnySimpleType
 
     protected function fixValue()
     {
+        $this->FixValueForString();
+        assert(is_array($this->value), 'Somehow, xsNMTOKENs ended up not being an array.');
+        foreach ($this->value as $v) {
+            $v->fixValue($v);
+        }
+    }
+
+    private function FixValueForString()
+    {
         if (is_string($this->value)) {
             $parts = explode(' ', $this->value);
             $this->value = [];
             foreach ($parts as $part) {
-                $this->value[] = new xsNMTOKEN($part);
+                if (0 != strlen(trim($part))) {
+                    $this->value[] = new xsNMTOKEN(trim($part));
+                }
             }
-        }
-        assert(is_array($this->value), 'Somehow, xsNMTOKENs ended up not being an array.');
-        foreach ($this->value as $v) {
-            $v->fixValue($v);
         }
     }
 

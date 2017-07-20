@@ -28,5 +28,13 @@ class xsHexBinary extends xsAnySimpleType
     protected function isOK()
     {
         $this->checkLength($this->value);
+        $lengthOfValue = strlen($this->value);
+        if ($lengthOfValue % 2 != 0) {
+            throw new \InvalidArgumentException('the value ' . $this->value . 'is not valid; characters must appear' .
+                'in pairs');
+        }
+        if (!ctype_xdigit($this->value)) {
+            throw new \InvalidArgumentException('the value ' . $this->value . 'contains invalid characters');
+        }
     }
 }

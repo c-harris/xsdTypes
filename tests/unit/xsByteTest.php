@@ -12,24 +12,26 @@ class xsByteTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsByteValidDataProvider
      * @param mixed $input
      * @param mixed $message
+     * @param mixed $expected
      */
-    public function testxsByteValid($input, $message)
+    public function testxsByteValid($input, $expected, $message)
     {
         try {
             $d = new xsByte($input);
-            $e = (string)$d;
+            $s = (string)$d;
         } catch (\Exception $e) {
             $this->fail($message . ' with Exception ' . $e->getMessage());
         }
+        $this->assertEquals($expected, $s, $message);
     }
 
     public function testxsByteValidDataProvider()
     {
         return array(
-            array(+3, 'positive 3'),
-            array(122, 'postive 122'),
-            array(0, 'Zero'),
-            array(-123, 'Negative 123'),
+            array(+3, '3', 'positive 3'),
+            array(122, '122', 'postive 122'),
+            array(0, '0', 'Zero'),
+            array(-123, '-123', 'Negative 123'),
         );
     }
 
@@ -37,19 +39,19 @@ class xsByteTest extends \PHPUnit_Framework_TestCase
      * @dataProvider testxsByteInvalidDataProvider
      * @param mixed $input
      * @param mixed $message
+     * @param mixed $expected
      */
-    public function testxsByteInvalid($input, $message)
+    public function testxsByteInvalid($input, $expected, $message)
     {
         $d = new xsByte($input);
         $s = (string)$d;
-        $this->assertEquals('', $s, $message);
+        $this->assertEquals($expected, $s, $message);
     }
 
     public function testxsByteInvalidDataProvider()
     {
         return array(
-            array(130, 'number is too large'),
-            array('', 'an empty value is not valid, unless xsi:nil is used'),
+            array(130, '', 'number is too large'),
         );
     }
 

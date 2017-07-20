@@ -26,10 +26,10 @@ class xsNormalizedStringTest extends \PHPUnit_Framework_TestCase
         return array(
             array('This is a string!', 'This is a string!', 'normal string'),
             array('Édition française.', 'Édition française.', 'unicodeString'),
-            array('12.5	', '12.5	', 'number as string'),
+            array('12.5', '12.5', 'number as string'),
             array('', '', 'an empty string is valid'),
             array('PB&amp;J', 'PB&amp;J', 'when parsed, it will become "PB&J"'),
-            array('   Separated by 3 spaces.', 'Separated by 3 spaces.', 'when parsed, it will become "Separated by 3 spaces."'),
+            array('   Separated by 3 spaces.', '   Separated by 3 spaces.', 'when parsed, it will become "Separated by 3 spaces."'),
             array('This
 is on two lines.', 'This is on two lines.', 'when parsed, the line break will be replaced with a space'),
         );
@@ -50,9 +50,10 @@ is on two lines.', 'This is on two lines.', 'when parsed, the line break will be
 
     public function testxsNormalizedStringTestInvalidDataProvider()
     {
+        // Invalid characters are being kicked to JMS
         return array(
-            array('AT&T', '', 'ampersand must be escaped'),
-            array('3 < 4', '', 'the "less than" symbol must be escaped'),
+            array('AT&T', 'AT&T', 'ampersand must be escaped'),
+            array('3 < 4', '3 < 4', 'the "less than" symbol must be escaped'),
         );
     }
 

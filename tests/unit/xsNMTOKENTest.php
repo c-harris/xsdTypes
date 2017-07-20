@@ -50,7 +50,7 @@ class xsNMTOKENTest extends \PHPUnit_Framework_TestCase
     public function testxsNMTOKENInvalidDataProvider()
     {
         return array(
-            array('contains a space', 'contains a space', 'value must not contain a space'),
+            array('contains a space', '', 'value must not contain a space'),
         );
     }
 

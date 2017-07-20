@@ -16,19 +16,15 @@ class xsGDayTest extends \PHPUnit_Framework_TestCase
      */
     public function testxsGDayValid($input, $expected, $message)
     {
-        try {
-            $d = new xsGDay($input);
-            $s = (string)$d;
-        } catch (\Exception $e) {
-            $this->fail($message . ' with Exception ' . $e->getMessage());
-        }
+        $d = new xsGDay($input);
+        $s = (string)$d;
         $this->assertEquals($expected, $s, $message);
     }
 
     public function testxsGDayValidDataProvider()
     {
         return array(
-            array('---02', '---02', 'the 2nd of the month'),
+            array('----02', '----02', 'the 2nd of the month'),
         );
     }
 

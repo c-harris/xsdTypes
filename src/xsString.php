@@ -42,6 +42,11 @@ class xsString extends xsAnySimpleType
         $this->setWhiteSpaceFacet('preserve');
     }
 
+    protected function fixValue()
+    {
+        parent::fixValue();
+    }
+
     protected function isOK()
     {
         $this->checkLength($this->value);

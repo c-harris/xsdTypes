@@ -29,5 +29,29 @@ class xsQName extends xsAnySimpleType
     protected function isOK()
     {
         $this->checkLength($this->value);
+        if (':' == $this->value[0]) {
+            throw new \InvalidArgumentException('QName cannot start with colon');
+        }
+        $this->checkColen();
+    }
+
+    private function checkColen()
+    {
+        $bitz = explode(':', $this->value);
+        if (2 < count($bitz)) {
+            throw new \InvalidArgumentException('QName cannot contain two or more colons');
+        }
+        $this->checkParts($bitz);
+    }
+
+    private function checkParts($bitz)
+    {
+        foreach ($bitz as $bit) {
+            $ncName = new xsNCName($bit);
+            $ncNameStr = $ncName->__toString();
+            if ($bit != $ncNameStr) {
+                throw new \InvalidArgumentException($bit . ' is not a valid NCName so can not be part ofa QName');
+            }
+        }
     }
 }
