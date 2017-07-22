@@ -22,6 +22,10 @@ abstract class xsAnySimpleType
     protected $fixed = false;
 
     /**
+     * @Expose
+     * @XmlValue
+     * @type("string")
+     * @Accessor(getter="__toString",
      * @property mixed $value
      */
     protected $value = null;
